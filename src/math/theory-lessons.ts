@@ -1,5 +1,8 @@
 import { mathGlossaryBank } from './glossary-banks'
 import { mathTheorySupplements as extra } from './theory-supplements'
+import { simpleArithmeticTheory as simple } from './simple-arithmetic-theory'
+import { equationTheory } from './equation-theory'
+import { curriculumTheory } from './curriculum-theory'
 
 export type MathTheoryRole = 'given' | 'step' | 'result'
 
@@ -18,7 +21,7 @@ export type MathTheoryLesson = {
 
 type MathTheoryCourse = MathTheoryLesson & { continuation?: MathTheoryLesson[] }
 
-export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
+const baseTheoryLessons: Record<string, MathTheoryCourse> = {
   nombres: {
     title: 'Lire un nombre',
     heading: 'Combien de centaines, de dizaines et d’unités ?',
@@ -31,25 +34,30 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     continuation: [extra.zeroPlace, extra.compareWhole],
   },
   addition: {
-    title: 'Poser une addition',
-    heading: 'Comment additionner ?',
-    goal: 'Je réunis deux quantités pour trouver le total.',
-    words: [['Retenue', 'La dizaine que j’ajoute à gauche, dans cet exemple.', 'step'], ['Somme', 'Le résultat de l’addition.', 'result']],
-    steps: ['Je place les unités sous les unités.', 'Je calcule 7 + 5 = 12.', 'J’écris 2 unités. Je reporte 1 dizaine à gauche.', 'Je calcule 2 + 1 + 1 = 4 dizaines.'],
-    example: 'La somme de 27 et 15 est 42.',
-    visualAlt: 'Addition posée. Le 1 entouré au-dessus des dizaines est la retenue. Le résultat 42 est encadré.',
-    illustration: 'addition',
+    ...simple.addition,
+    continuation: [simple.additionGap, {
+      title: 'Poser une addition',
+      heading: 'Comment additionner ?',
+      goal: 'Je réunis deux quantités pour trouver le total.',
+      words: [['Retenue', 'La dizaine que j’ajoute à gauche, dans cet exemple.', 'step'], ['Somme', 'Le résultat de l’addition.', 'result']],
+      steps: ['Je place les unités sous les unités.', 'Je calcule 7 + 5 = 12.', 'J’écris 2 unités. Je reporte 1 dizaine à gauche.', 'Je calcule 2 + 1 + 1 = 4 dizaines.'],
+      example: 'La somme de 27 et 15 est 42.',
+      visualAlt: 'Addition posée. Le 1 entouré au-dessus des dizaines est la retenue. Le résultat 42 est encadré.',
+      illustration: 'addition',
+    }],
   },
   soustraction: {
-    title: 'Poser une soustraction',
-    heading: 'Que faire quand les unités manquent ?',
-    goal: 'Je peux échanger 1 dizaine contre 10 unités.',
-    words: [['Échange', 'Je change 1 dizaine en 10 unités.', 'step'], ['Différence', 'Le résultat de la soustraction.', 'result']],
-    steps: ['Je place les unités sous les unités.', 'Avec 2 unités, je ne peux pas en enlever 7.', 'J’échange 1 dizaine. Il reste 3 dizaines et j’ai 12 unités.', 'Je calcule 12 − 7 = 5 et 3 − 1 = 2.'],
-    example: '42 − 17 = 25. Je vérifie avec 25 + 17 = 42.',
-    visualAlt: 'Dans 42, 4 dizaines et 2 unités deviennent 3 dizaines et 12 unités. En enlevant 17, il reste 25.',
-    illustration: 'soustraction',
-    continuation: [extra.exchangeZero],
+    ...simple.subtraction,
+    continuation: [simple.subtractionGap, {
+      title: 'Poser une soustraction',
+      heading: 'Que faire quand les unités manquent ?',
+      goal: 'Je peux échanger 1 dizaine contre 10 unités.',
+      words: [['Échange', 'Je change 1 dizaine en 10 unités.', 'step'], ['Différence', 'Le résultat de la soustraction.', 'result']],
+      steps: ['Je place les unités sous les unités.', 'Avec 2 unités, je ne peux pas en enlever 7.', 'J’échange 1 dizaine. Il reste 3 dizaines et j’ai 12 unités.', 'Je calcule 12 − 7 = 5 et 3 − 1 = 2.'],
+      example: '42 − 17 = 25. Je vérifie avec 25 + 17 = 42.',
+      visualAlt: 'Dans 42, 4 dizaines et 2 unités deviennent 3 dizaines et 12 unités. En enlevant 17, il reste 25.',
+      illustration: 'soustraction',
+    }, extra.exchangeZero],
   },
   estimation: {
     title: 'Arrondir à la dizaine',
@@ -63,26 +71,30 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     continuation: [extra.roundHundred],
   },
   multiplication: {
-    title: 'Multiplier des groupes',
-    heading: 'Comment compter des groupes égaux ?',
-    goal: 'Je compte plusieurs groupes de même taille.',
-    words: [['Facteurs', 'Les nombres que je multiplie. Ici, 3 et 4.', 'step'], ['Produit', 'Le résultat de la multiplication.', 'result']],
-    steps: ['Je compte 3 groupes.', 'Je compte 4 objets dans chaque groupe.', 'Je multiplie 3 par 4.'],
-    example: '3 × 4 = 12.',
-    visualAlt: 'Trois plateaux contiennent chacun quatre jetons. Le produit 12 est le nombre total de jetons.',
-    illustration: 'multiplication',
-    continuation: [extra.multiplyOneDigit, extra.multiplyTwoDigits],
+    ...simple.multiplication,
+    continuation: [{
+      title: 'Multiplier des groupes',
+      heading: 'Comment compter des groupes égaux ?',
+      goal: 'Je compte plusieurs groupes de même taille.',
+      words: [['Facteurs', 'Les nombres que je multiplie. Ici, 3 et 4.', 'step'], ['Produit', 'Le résultat de la multiplication.', 'result']],
+      steps: ['Je compte 3 groupes.', 'Je compte 4 objets dans chaque groupe.', 'Je multiplie 3 par 4.'],
+      example: '3 × 4 = 12.',
+      visualAlt: 'Trois plateaux contiennent chacun quatre jetons. Le produit 12 est le nombre total de jetons.',
+      illustration: 'multiplication',
+    }, simple.multiplicationGap, extra.multiplyOneDigit, extra.multiplyTwoDigits],
   },
   division: {
-    title: 'Partager en parts égales',
-    heading: 'Combien reçoit chaque groupe ?',
-    goal: 'Chaque groupe reçoit la même quantité.',
-    words: [['Dividende', 'Le nombre à partager. Ici, 14.', 'given'], ['Diviseur', 'Ici, le nombre de groupes. Il y en a 4.', 'step'], ['Quotient', 'Le nombre reçu dans chaque groupe. Ici, 3.', 'result'], ['Reste', 'Ce qui est encore à côté. Ici, 2.', 'given']],
-    steps: ['Je distribue les jetons dans 4 groupes.', 'Chaque groupe reçoit 3 jetons.', 'Je compte les 2 jetons restés à côté.'],
-    example: 'Je vérifie avec 4 × 3 + 2 = 14.',
-    visualAlt: 'Les 14 jetons forment quatre groupes de trois. Deux jetons, à l’extérieur, forment le reste.',
-    illustration: 'division',
-    continuation: [extra.longDivision, extra.zeroInQuotient],
+    ...simple.division,
+    continuation: [simple.divisionGap, {
+      title: 'Partager en parts égales',
+      heading: 'Combien reçoit chaque groupe ?',
+      goal: 'Chaque groupe reçoit la même quantité.',
+      words: [['Dividende', 'Le nombre à partager. Ici, 14.', 'given'], ['Diviseur', 'Ici, le nombre de groupes. Il y en a 4.', 'step'], ['Quotient', 'Le nombre reçu dans chaque groupe. Ici, 3.', 'result'], ['Reste', 'Ce qui est encore à côté. Ici, 2.', 'given']],
+      steps: ['Je distribue les jetons dans 4 groupes.', 'Chaque groupe reçoit 3 jetons.', 'Je compte les 2 jetons restés à côté.'],
+      example: 'Je vérifie avec 4 × 3 + 2 = 14.',
+      visualAlt: 'Les 14 jetons forment quatre groupes de trois. Deux jetons, à l’extérieur, forment le reste.',
+      illustration: 'division',
+    }, extra.longDivision, extra.zeroInQuotient],
   },
   problemes: {
     title: 'Lire un problème',
@@ -93,6 +105,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     example: 'Lina a 4 crayons. Elle reçoit 3 crayons. Elle a maintenant 7 crayons.',
     visualAlt: 'Quatre crayons et trois nouveaux crayons sont reliés à la question. La réponse encadrée est 7 crayons.',
     illustration: 'problemes',
+    continuation: [simple.more, simple.less, simple.comparison],
   },
   multiples: {
     title: 'Multiples et diviseurs',
@@ -205,6 +218,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     example: 'La solution de x + 3 = 8 est 5.',
     visualAlt: 'À gauche et à droite de x plus 3 égale 8, deux flèches indiquent moins 3. Il reste x égale 5.',
     illustration: 'equations',
+    continuation: equationTheory,
   },
   figures: {
     title: 'Reconnaître les parties d’une figure',
@@ -290,9 +304,9 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     title: 'Faire une translation',
     heading: 'De combien de cases faut-il avancer ?',
     goal: 'Je fais glisser toute la figure dans la même direction.',
-    words: [['Figure de départ', 'C’est la figure avant le déplacement.', 'given'], ['Déplacement', 'Je suis la direction et la longueur de la flèche.', 'step'], ['Image', 'C’est la figure obtenue.', 'result']],
-    steps: ['Je repère le point A.', 'Je vais de 3 cases à droite, puis de 1 case vers le haut.', 'Je fais le même déplacement pour chaque sommet.', 'Je relie les nouveaux points.'],
-    example: 'Je trouve A′ en déplaçant A de 3 cases à droite et de 1 case vers le haut.',
+    words: [['Départ', 'La figure avant le déplacement.', 'given'], ['Déplacement', 'Le sens et le nombre de cases.', 'step'], ['Image', 'La figure obtenue.', 'result']],
+    steps: ['Je pars du point A.', 'Je vais 3 cases à droite et 1 vers le haut.', 'Je refais ces pas pour chaque sommet.', 'Je relie les nouveaux points.'],
+    example: 'A′ est le point obtenu après le déplacement de A.',
     visualAlt: 'Le triangle garde son orientation. Deux flèches relient A et A′ en allant trois cases à droite et une en haut.',
     illustration: 'translation',
     continuation: [
@@ -339,6 +353,12 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     ],
   },
 }
+
+export const mathTheoryLessons: Record<string, MathTheoryCourse> = Object.fromEntries(
+  Object.entries(baseTheoryLessons).map(([topic, { continuation = [], ...lesson }]) => [
+    topic, { ...lesson, continuation: [...continuation, ...curriculumTheory(topic)] },
+  ]),
+)
 
 export const MATH_THEORY_PREFIX = 'math-theorie-'
 

@@ -612,6 +612,7 @@ export type MathItem = {
   /** Rangement compact (cadres/traits étroits, une ligne — max. ~3 chiffres). */
   orderCompact?: boolean
   calcAnswer?: string
+  shortProblem?: import('./short-problems').ShortProblem
   /** Second calcul (layout geo dual : aire à droite). */
   calcAnswerSecondary?: string
   responseAnswer?: string
@@ -627,6 +628,7 @@ export type MathItem = {
   problemPart?: 0 | 1
   /** Inconnues à afficher sur les lignes de réponse (équations). */
   unknowns?: string[]
+  equationPositiveOnly?: boolean
   /** Lignes de développement (corrigé équations, style soutien-scolaire). */
   development?: string[]
   /** Opérations en marge gauche, alignées sur development. */

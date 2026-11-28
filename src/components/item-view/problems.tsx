@@ -16,6 +16,7 @@ import {
   theoryTableColWidths,
 } from './theory-marks'
 import { problemAid } from '@/math/problem-help'
+import { ShortProblemDiagram } from './short-problems'
 import { MoneyChangeBoard } from './money-change'
 import { LogistiqueTableView } from './logistique-table'
 import { formatPointsLabel } from '@/tpm/test'
@@ -945,13 +946,18 @@ export function ProblemBlock({
   const prompt = item.prompt ?? ''
   const parts = /^(.*[.!?]\s+)([^.!?]+\?)$/s.exec(prompt.trim())
   return (
-    <div className={`problem-block${item.logistiqueTable ? ' has-logistique-table' : ''}`}>
+    <div className={`problem-block${item.logistiqueTable ? ' has-logistique-table' : ''}${item.shortProblem ? ' short-problem' : ''}`}>
       <LogistiqueIllustratedPrompt item={item} mode={mode}>
         <p className="problem-prompt">
           {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
         </p>
       </LogistiqueIllustratedPrompt>
       {item.logistiqueTable ? <LogistiqueTableView table={item.logistiqueTable} mode={mode} /> : null}
+      {item.shortProblem?.guided && (
+        <aside className="short-problem-guide" aria-label="Données utiles">
+          <ShortProblemDiagram diagram={item.shortProblem.diagram} />
+        </aside>
+      )}
       {showHelp && <ProblemHelp item={item} />}
       {showHelp && item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />
@@ -965,7 +971,7 @@ export function ProblemBlock({
         </div>
       </div>
       <div className="problem-response-line">
-        <span className="response-label">Phrase réponse :</span>
+        <span className="response-label">{item.shortProblem ? 'Réponse' : 'Phrase réponse :'}</span>
         {show ? (
           <strong className="filled-answer response-value">{item.responseAnswer ?? item.answer}</strong>
         ) : (
@@ -1119,6 +1125,7 @@ export function EquationBlock({
           })}
         </div>
       )}
+      {item.equationPositiveOnly && <p className="equation-positive-only">Cherchez la solution positive.</p>}
       <div className="problem-field">
         <span className="field-label">{show ? 'Correction' : 'Développement'}</span>
         <div

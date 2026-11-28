@@ -1,5 +1,6 @@
 import { fmt } from './column-arith'
 import { int, shuffle, type Rng } from './rng'
+import { isShortProblemType, tryGenerateShortProblems } from './short-problems'
 import type { Difficulty, MathItem } from './types'
 
 export const PLACE_VALUE_PRACTICE = 'nombres-groupements-guide'
@@ -9,7 +10,7 @@ export const LENGTH_PRACTICE = 'mesures-addition-longueurs'
 
 export function isFundamentalPractice(typeId: string): boolean {
   return typeId === PLACE_VALUE_PRACTICE || typeId === DECIMAL_LINE_PRACTICE ||
-    typeId === SHAPE_PRACTICE || typeId === LENGTH_PRACTICE
+    typeId === SHAPE_PRACTICE || typeId === LENGTH_PRACTICE || isShortProblemType(typeId)
 }
 
 function placeValue(rng: Rng, difficulty: Difficulty, index: number): MathItem {
@@ -76,5 +77,5 @@ export function tryGenerateFundamentalPractice(typeId: string, rng: Rng, count: 
   if (typeId === PLACE_VALUE_PRACTICE) return Array.from({ length: count }, (_, i) => placeValue(rng, difficulty, i))
   if (typeId === DECIMAL_LINE_PRACTICE) return Array.from({ length: count }, (_, i) => decimalLine(rng, difficulty, i))
   if (typeId === LENGTH_PRACTICE) return Array.from({ length: count }, (_, i) => sumLengths(rng, difficulty, i))
-  return undefined
+  return tryGenerateShortProblems(typeId, rng, count, difficulty)
 }

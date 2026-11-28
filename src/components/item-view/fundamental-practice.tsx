@@ -4,6 +4,9 @@ import zeroExample from '@/math/media/theory/falc/numeration-zero.png'
 import decimalExample from '@/math/media/theory/falc/decimaux-droite.png'
 import shapeExample from '@/math/media/theory/falc/figures-classer.png'
 import lengthExample from '@/math/media/theory/falc/mesures-melangees.png'
+import triangleImage from '@/math/media/theory/elements/forme-triangle.png'
+import squareImage from '@/math/media/theory/elements/forme-carre.png'
+import rectangleImage from '@/math/media/theory/elements/forme-rectangle.png'
 
 const examples: Readonly<Record<string, { image: string; alt: string; steps: string[] } | undefined>> = {
   [PLACE_VALUE_PRACTICE]: { image: zeroExample, alt: '4 centaines, 0 dizaine et 6 unités', steps: ['La colonne des dizaines est vide.', 'J’écris 0. Je lis 406.'] },
@@ -28,15 +31,14 @@ export function FundamentalExample({ exerciseType }: { exerciseType: string }) {
 
 export function FundamentalShape({ shape }: { shape: NonNullable<MathItem['shapePractice']> }) {
   const outlines = {
-    triangle: { points: '18,88 63,18 111,88', label: '3 côtés' },
-    carre: { points: '31,25 97,25 97,91 31,91', label: '4 côtés égaux et 4 angles droits' },
-    rectangle: { points: '16,36 112,36 112,80 16,80', label: 'deux côtés longs, deux courts et 4 angles droits' },
+    triangle: { src: triangleImage, label: '3 côtés' },
+    carre: { src: squareImage, label: '4 côtés égaux et 4 angles droits' },
+    rectangle: { src: rectangleImage, label: 'deux côtés longs, deux courts et 4 angles droits' },
   }
-  const { points, label } = outlines[shape.kind]
+  const { src, label } = outlines[shape.kind]
   return (
-    <svg className="math-fundamental-shape" viewBox="0 0 128 116" role="img" aria-label={`Figure avec ${label}.`}>
-      <polygon points={points} transform={`rotate(${shape.angle} 64 58)`} />
-    </svg>
+    <img className="math-fundamental-shape" src={src} alt={`Figure avec ${label}.`}
+      width={768} height={696} style={{ transform: `rotate(${shape.angle}deg)` }} />
   )
 }
 

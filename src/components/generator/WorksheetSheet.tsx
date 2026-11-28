@@ -24,6 +24,7 @@ import { DecomposeExample } from '@/components/item-view/decompose'
 import { MathWorkedExample } from '@/components/item-view/guided-practice'
 import { MathGeometryExample } from '@/components/item-view/guided-geometry'
 import { FundamentalExample } from '@/components/item-view/fundamental-practice'
+import { ShortProblemExample } from '@/components/item-view/short-problems'
 import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
 import { isDraftPadExercise } from '@/math/catalog'
 import { isGuidedColumnType, isSingleColumnPractice } from '@/math/guided-practice'
@@ -347,6 +348,7 @@ export function WorksheetSheet({
           const sideProblemInstruction = cfrSideProblemInstruction(block)
           const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
+          const shortProblem = block.items[0]?.shortProblem
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const blockColumns = isGuidedColumnType(block.exerciseType) || block.exerciseType === SHAPE_PRACTICE
             ? Math.min(block.columns ?? 2, 2) : (block.columns ?? 1)
@@ -529,6 +531,7 @@ export function WorksheetSheet({
               {!evalMode && <MathWorkedExample exerciseType={block.exerciseType} subtractionAcrossZero={block.items[0]?.subtractionExchange?.digits.length === 3} />}
               {!evalMode && <MathGeometryExample exerciseType={block.exerciseType} />}
               {!evalMode && <FundamentalExample exerciseType={block.exerciseType} />}
+              {!evalMode && !block.itemOffset && shortProblem && <ShortProblemExample problem={shortProblem} />}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
@@ -658,7 +661,7 @@ export function WorksheetSheet({
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
-                      index={block.problemHelp || isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
+                      index={block.problemHelp || shortProblem || isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       problemHelp={block.problemHelp ?? false}

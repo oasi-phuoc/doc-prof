@@ -46,6 +46,7 @@ import { NUMBER_PLACES, numberQuestion } from './libre/number-notation'
 import { numberSequence } from './libre/number-sequence'
 import { buildDecompose, decomposeAnswer, decomposeError } from '@/math/decompose'
 import { algebraProblemOptions, rebuildAlgebraProblem, rollAlgebraProblem } from '@/math/word-problems'
+import { rebuildShortProblem } from '@/math/short-problems'
 import { opTableAnswer, opTableCell, opTableError } from '@/math/op-table'
 import { mulAudioParts, numberAudioParts } from '@/tcm-cfr/audio-nombres'
 import { clampFracShapeCfr } from '@/math/fraction-shapes'
@@ -2317,8 +2318,14 @@ function renderFields(
     const problemOptions = algebraOptions ?? problemOptionsForExercise(exerciseType)
     const commitVar = (key: string, raw: string) => {
       const n = parseFrNumber(raw)
-      if (n == null || !item.problemTemplateId) return
+      if (n == null) return
       const nextVars = { ...vars, [key]: n }
+      if (item.shortProblem) {
+        const rebuilt = rebuildShortProblem(item.shortProblem, nextVars)
+        if (rebuilt) patch(index, { ...item, ...rebuilt })
+        return
+      }
+      if (!item.problemTemplateId) return
       if (item.problemTemplateId.startsWith('wp-')) {
         const one = rebuildAlgebraProblem(item.problemTemplateId, nextVars)
         if (one) patch(index, one)

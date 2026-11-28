@@ -1,0 +1,916 @@
+{
+  "figures": [
+    {
+      "id": "figures-familles",
+      "title": "Reconnaître des familles de figures",
+      "question": "Que faut-il compter ou comparer ?",
+      "goal": "Je compte les côtés et je regarde s’ils sont droits.",
+      "word": [
+        "Trapèze",
+        "Il a quatre côtés et deux côtés opposés parallèles."
+      ],
+      "steps": [
+        "Avec 3 côtés, je reconnais un triangle.",
+        "Avec 4 côtés, je compare les longueurs et les angles.",
+        "Pour un cercle, le bord reste à la même distance du centre."
+      ],
+      "answer": "Un cercle et un ovale ont un bord courbe.",
+      "diagram": [
+        [
+          "Triangle",
+          "3 côtés"
+        ],
+        [
+          "Trapèze",
+          "4 côtés, 2 parallèles"
+        ],
+        [
+          "Cercle",
+          "Rayon toujours égal"
+        ]
+      ]
+    },
+    {
+      "id": "figures-tracer-parallele",
+      "title": "Tracer des droites à l’équerre",
+      "question": "Comment tracer une droite qui garde le même écart ?",
+      "goal": "J’utilise une règle pour faire glisser l’équerre.",
+      "word": [
+        "Faire glisser",
+        "Déplacer l’équerre en gardant le même bord contre la règle."
+      ],
+      "steps": [
+        "Je pose un bord de l’équerre sur la droite.",
+        "Je bloque une règle contre l’autre bord.",
+        "Je fais glisser l’équerre et je trace le nouveau trait."
+      ],
+      "answer": "Pour une perpendiculaire, je trace le long de l’autre côté de l’angle droit.",
+      "diagram": [
+        [
+          "Premier bord",
+          "Je suis la droite."
+        ],
+        [
+          "Règle bloquée",
+          "Je fais glisser l’équerre."
+        ],
+        [
+          "Résultat",
+          "Je trace une parallèle."
+        ]
+      ]
+    },
+    {
+      "id": "figures-patron-theorie",
+      "title": "Reconnaître un patron de cube",
+      "question": "Comment savoir si les faces se replient ?",
+      "goal": "Les 6 carrés couvrent les 6 faces du cube.",
+      "word": [
+        "Patron",
+        "Un dessin à plat que je peux plier."
+      ],
+      "steps": [
+        "Je compte 6 carrés de même taille.",
+        "Je choisis un carré comme base.",
+        "Je replie les côtés et je vérifie chaque face."
+      ],
+      "answer": "Chaque face du cube doit être couverte une fois.",
+      "diagram": [
+        [
+          "À plat",
+          "6 carrés égaux"
+        ],
+        [
+          "Je plie",
+          "Les bords se rejoignent."
+        ],
+        [
+          "Dans l’espace",
+          "6 faces du cube"
+        ]
+      ]
+    },
+    {
+      "id": "figures-vues-cubes",
+      "title": "Lire les vues d’un empilement",
+      "question": "Que voit-on de face, de côté et du dessus ?",
+      "goal": "La vue change selon l’endroit où je regarde.",
+      "word": [
+        "Vue de dessus",
+        "Ce que je vois en regardant depuis le haut."
+      ],
+      "steps": [
+        "De face, je regarde la hauteur dans chaque colonne.",
+        "De côté, je regarde les hauteurs dans l’autre sens.",
+        "Sur le plan, j’écris le nombre de cubes dans chaque pile."
+      ],
+      "answer": "Une pile de 2 cubes donne la hauteur 2 dans une vue de côté.",
+      "diagram": [
+        [
+          "De face",
+          "Je compte les hauteurs."
+        ],
+        [
+          "De côté",
+          "Je regarde depuis le côté."
+        ],
+        [
+          "Du dessus",
+          "Une case par pile."
+        ]
+      ]
+    },
+    {
+      "id": "figures-points-vue-theorie",
+      "title": "Associer une vue à un point de vue",
+      "question": "Que voit-on dans le sens de la flèche ?",
+      "goal": "Je me place au départ de la flèche.",
+      "word": [
+        "Point de vue",
+        "L’endroit d’où je regarde."
+      ],
+      "steps": [
+        "Je repère la flèche sur le plan.",
+        "Je regarde dans le sens de la pointe.",
+        "Je cherche quel objet est devant, à gauche et à droite."
+      ],
+      "answer": "Si je me place de l’autre côté, je vois l’arrière.",
+      "diagram": [
+        [
+          "Je me place",
+          "Au départ de la flèche."
+        ],
+        [
+          "Je regarde",
+          "Dans le sens de la pointe."
+        ],
+        [
+          "Je compare",
+          "Devant · à gauche · à droite"
+        ]
+      ]
+    },
+    {
+      "id": "figures-copier-theorie",
+      "title": "Copier ou agrandir sur un quadrillage",
+      "question": "Comment replacer les sommets ?",
+      "goal": "Je compte les cases à partir d’un point de départ.",
+      "word": [
+        "Agrandir par 2",
+        "Faire des longueurs deux fois plus grandes."
+      ],
+      "steps": [
+        "Je repère un sommet de départ.",
+        "Pour une copie, je garde le nombre de cases.",
+        "Pour agrandir par 2, je double chaque déplacement."
+      ],
+      "answer": "3 cases à droite et 1 vers le haut deviennent 6 et 2.",
+      "diagram": [
+        [
+          "Modèle",
+          "3 cases à droite, 1 vers le haut"
+        ],
+        [
+          "Copie",
+          "3 cases à droite, 1 vers le haut"
+        ],
+        [
+          "Agrandissement ×2",
+          "6 cases à droite, 2 vers le haut"
+        ]
+      ]
+    },
+    {
+      "id": "figures-reconstruire-vues",
+      "title": "Retrouver un solide avec ses vues",
+      "question": "Quelles informations donnent les vues ensemble ?",
+      "goal": "Je compare la place et la hauteur des piles.",
+      "word": [
+        "Pile",
+        "Des cubes placés les uns sur les autres."
+      ],
+      "steps": [
+        "Je lis les cases occupées sur la vue du dessus.",
+        "Je regarde la hauteur dans chaque colonne de face.",
+        "Je contrôle aussi la hauteur vue de côté."
+      ],
+      "answer": "Je garde le solide qui correspond aux trois vues.",
+      "diagram": [
+        [
+          "Dessus",
+          "Montre quelles cases sont occupées."
+        ],
+        [
+          "Face",
+          "Montre les hauteurs de face."
+        ],
+        [
+          "Côté",
+          "Vérifie les hauteurs de l’autre côté."
+        ]
+      ]
+    }
+  ],
+  "conversions": [
+    {
+      "id": "mesures-lire-echelle",
+      "title": "Lire un instrument gradué",
+      "question": "Combien vaut un petit trait ?",
+      "goal": "Je calcule la valeur entre deux graduations numérotées.",
+      "word": [
+        "Intervalle",
+        "L’espace entre deux traits."
+      ],
+      "steps": [
+        "Je lis 100 mL et 200 mL.",
+        "Je compte 5 intervalles. Chaque pas vaut 20 mL.",
+        "Je compte 2 pas après 100 mL."
+      ],
+      "answer": "Le liquide atteint 140 mL.",
+      "diagram": [
+        [
+          "Deux repères",
+          "100 mL et 200 mL"
+        ],
+        [
+          "Un pas",
+          "(200 − 100) ÷ 5 = 20 mL"
+        ],
+        [
+          "Deux pas",
+          "100 + 2 × 20 = 140 mL"
+        ]
+      ]
+    },
+    {
+      "id": "mesures-etalon-theorie",
+      "title": "Comparer avec une même unité",
+      "question": "Comment comparer deux longueurs ?",
+      "goal": "Je mesure les deux objets avec le même repère.",
+      "word": [
+        "Étalon",
+        "Un morceau fixé que je reporte pour mesurer."
+      ],
+      "steps": [
+        "Je reporte l’étalon sur la bande A.",
+        "Je fais pareil sur la bande B.",
+        "Je compare 4 étalons et 6 étalons."
+      ],
+      "answer": "Pour des unités différentes, je convertis d’abord. 2 m = 200 cm.",
+      "diagram": [
+        [
+          "Bande A",
+          "▮ ▮ ▮ ▮   4 étalons"
+        ],
+        [
+          "Bande B",
+          "▮ ▮ ▮ ▮ ▮ ▮   6 étalons"
+        ],
+        [
+          "Comparer",
+          "A est plus courte que B."
+        ]
+      ]
+    },
+    {
+      "id": "conversions-surfaces-volumes",
+      "title": "Convertir des aires et des volumes",
+      "question": "Pourquoi les nombres changent-ils de deux ou trois rangs ?",
+      "goal": "Je compte les unités sur chaque direction de la figure.",
+      "word": [
+        "Un pas d’unité",
+        "Par exemple, passer du mètre au décimètre."
+      ],
+      "steps": [
+        "Sur un carré de 1 m, chaque côté vaut 10 dm.",
+        "Je compte 10 × 10. Cela donne 100 dm².",
+        "Dans un cube, je compte aussi 10 couches."
+      ],
+      "answer": "1 m² = 100 dm². 1 m³ = 1 000 dm³.",
+      "diagram": [
+        [
+          "Longueur",
+          "1 m = 10 dm"
+        ],
+        [
+          "Aire",
+          "1 m² = 10 × 10 dm² = 100 dm²"
+        ],
+        [
+          "Volume",
+          "1 m³ = 10 × 10 × 10 dm³"
+        ]
+      ]
+    },
+    {
+      "id": "conversions-masses-capacites",
+      "title": "Convertir des masses et des capacités",
+      "question": "Combien de grammes et de millilitres ?",
+      "goal": "Je garde le même objet ou la même quantité de liquide.",
+      "word": [
+        "Capacité",
+        "Le volume que peut contenir un récipient."
+      ],
+      "steps": [
+        "1 kg vaut 1 000 g. Je multiplie par 1 000.",
+        "1 L vaut 1 000 mL. Je multiplie par 1 000.",
+        "Pour revenir à l’unité de départ, je divise par 1 000."
+      ],
+      "answer": "2 kg = 2 000 g. 0,5 L = 500 mL.",
+      "diagram": [
+        [
+          "Masse",
+          "1 kg = 1 000 g · 1 g = 1 000 mg"
+        ],
+        [
+          "Capacité",
+          "1 L = 10 dL = 100 cL = 1 000 mL"
+        ],
+        [
+          "Un demi-litre",
+          "0,5 × 1 000 = 500 mL"
+        ]
+      ]
+    }
+  ],
+  "perimetres": [
+    {
+      "id": "perimetres-cotes-manquants",
+      "title": "Retrouver un côté avec le périmètre",
+      "question": "Quelle longueur manque sur le contour ?",
+      "goal": "Je retire du tour les côtés dont je connais la longueur.",
+      "word": [
+        "Côtés égaux",
+        "Les traits semblables sur le dessin indiquent la même longueur."
+      ],
+      "steps": [
+        "Le tour du triangle mesure 15 cm.",
+        "Je lis deux côtés de 4 cm et 5 cm.",
+        "Je retire ces deux longueurs à 15 cm."
+      ],
+      "answer": "Le côté manquant mesure 6 cm. Pour un carré, je divise le tour par 4.",
+      "diagram": [
+        [
+          "Tour du triangle",
+          "15 cm"
+        ],
+        [
+          "Côtés connus",
+          "4 cm + 5 cm = 9 cm"
+        ],
+        [
+          "Côté manquant",
+          "15 cm − 9 cm = 6 cm"
+        ]
+      ]
+    },
+    {
+      "id": "perimetres-cotes-egaux",
+      "title": "Calculer le tour avec des côtés égaux",
+      "question": "Quels côtés peut-on compter ensemble ?",
+      "goal": "Je compte tout le contour une seule fois.",
+      "word": [
+        "Marque",
+        "Un petit trait indique des côtés égaux."
+      ],
+      "steps": [
+        "Un losange a quatre côtés égaux.",
+        "Avec un côté de 4 cm, je calcule 4 × 4.",
+        "Dans un rectangle, les deux côtés opposés sont égaux."
+      ],
+      "answer": "Pour un rectangle de 5 cm et 3 cm, le tour vaut 2 × (5 + 3) = 16 cm.",
+      "diagram": [
+        [
+          "Losange / carré",
+          "4 × côté"
+        ],
+        [
+          "Rectangle / parallélogramme",
+          "2 × (un côté + l’autre côté)"
+        ],
+        [
+          "Triangle / trapèze",
+          "Additionner chaque côté."
+        ]
+      ]
+    },
+    {
+      "id": "perimetres-cercle-theorie",
+      "title": "Calculer le tour d’un cercle",
+      "question": "Comment trouver le tour ou le rayon ?",
+      "goal": "Le diamètre traverse le cercle en passant par le centre.",
+      "word": [
+        "Rayon",
+        "La distance du centre au bord."
+      ],
+      "steps": [
+        "Un rayon de 3 cm donne un diamètre de 6 cm.",
+        "Je multiplie le diamètre par 3,14.",
+        "Si je connais le tour, je divise par 2 × 3,14 pour trouver le rayon."
+      ],
+      "answer": "Le tour d’un cercle de rayon 3 cm vaut 18,84 cm avec π = 3,14.",
+      "diagram": [
+        [
+          "Rayon",
+          "r = 3 cm"
+        ],
+        [
+          "Diamètre",
+          "2 × 3 = 6 cm"
+        ],
+        [
+          "Tour",
+          "3,14 × 6 = 18,84 cm"
+        ]
+      ]
+    },
+    {
+      "id": "perimetres-figure-composee",
+      "title": "Mesurer le tour d’une figure composée",
+      "question": "Quels traits font partie du contour ?",
+      "goal": "Je suis le bord sans passer par les lignes de découpe.",
+      "word": [
+        "Contour",
+        "Le bord complet de la figure."
+      ],
+      "steps": [
+        "Je pars d’un coin. Je suis tout le bord.",
+        "Je complète une longueur en comparant les côtés alignés.",
+        "J’ajoute seulement les longueurs du bord."
+      ],
+      "answer": "Sur l’exemple, 5 + 2 + 2 + 2 + 3 + 4 = 18 cm.",
+      "diagram": [
+        [
+          "Hauteur totale",
+          "4 cm = 2 cm + 2 cm"
+        ],
+        [
+          "Largeur totale",
+          "5 cm = 2 cm + 3 cm"
+        ],
+        [
+          "Le tour",
+          "5 + 2 + 2 + 2 + 3 + 4 = 18 cm"
+        ]
+      ]
+    }
+  ],
+  "aires": [
+    {
+      "id": "aires-bases-hauteurs",
+      "title": "Calculer l’aire avec une base et une hauteur",
+      "question": "Où mesurer la hauteur ?",
+      "goal": "La hauteur forme un angle droit avec la base.",
+      "word": [
+        "Hauteur",
+        "La distance à angle droit entre la base et le haut."
+      ],
+      "steps": [
+        "Je lis une base de 6 cm et une hauteur de 4 cm.",
+        "Pour un parallélogramme, je multiplie 6 par 4.",
+        "Pour le triangle, je prends la moitié."
+      ],
+      "answer": "Le parallélogramme a 24 cm². Le triangle a 12 cm². Pour le losange, je fais côté × hauteur.",
+      "diagram": [
+        [
+          "Base et hauteur",
+          "6 cm et 4 cm"
+        ],
+        [
+          "Parallélogramme / losange",
+          "6 × 4 = 24 cm²"
+        ],
+        [
+          "Triangle",
+          "6 × 4 ÷ 2 = 12 cm²"
+        ]
+      ]
+    },
+    {
+      "id": "aires-trapeze-theorie",
+      "title": "Calculer l’aire d’un trapèze",
+      "question": "Quelles longueurs faut-il additionner ?",
+      "goal": "Je repère les deux côtés parallèles.",
+      "word": [
+        "Bases",
+        "Les deux côtés parallèles du trapèze."
+      ],
+      "steps": [
+        "Je lis les bases de 8 cm et 4 cm.",
+        "J’additionne les bases. Je trouve 12 cm.",
+        "Je multiplie par la hauteur 3 cm, puis je divise par 2."
+      ],
+      "answer": "(8 + 4) × 3 ÷ 2 = 18 cm².",
+      "diagram": [
+        [
+          "Les deux bases",
+          "8 cm + 4 cm = 12 cm"
+        ],
+        [
+          "Avec la hauteur",
+          "12 × 3 = 36"
+        ],
+        [
+          "Prendre la moitié",
+          "36 ÷ 2 = 18 cm²"
+        ]
+      ]
+    },
+    {
+      "id": "aires-mesure-manquante",
+      "title": "Retrouver une longueur avec l’aire",
+      "question": "Par quoi doit-on diviser ?",
+      "goal": "Je pars de la formule utilisée pour la figure.",
+      "word": [
+        "Mesure manquante",
+        "La longueur que je cherche dans la figure."
+      ],
+      "steps": [
+        "Pour un rectangle, je divise l’aire par la longueur.",
+        "Pour un triangle, je double l’aire avant de diviser par la base.",
+        "Pour un trapèze, je double l’aire puis je divise par la somme des bases."
+      ],
+      "answer": "Un carré de 25 cm² a un côté de 5 cm, car 5 × 5 = 25.",
+      "diagram": [
+        [
+          "Rectangle / parallélogramme",
+          "Aire ÷ base"
+        ],
+        [
+          "Triangle",
+          "2 × aire ÷ base"
+        ],
+        [
+          "Trapèze",
+          "2 × aire ÷ (grande base + petite base)"
+        ]
+      ]
+    },
+    {
+      "id": "aires-disque-theorie",
+      "title": "Calculer l’aire d’un disque",
+      "question": "Pourquoi utiliser le rayon deux fois ?",
+      "goal": "Je mesure du centre au bord.",
+      "word": [
+        "Disque",
+        "La surface à l’intérieur du cercle."
+      ],
+      "steps": [
+        "Avec un rayon de 3 cm, je fais 3 × 3.",
+        "Je multiplie le résultat par 3,14.",
+        "Pour retrouver le rayon, je divise l’aire par 3,14 et je cherche la racine carrée."
+      ],
+      "answer": "Aire de 28,26 cm². Le rayon vaut √(28,26 ÷ 3,14) = 3 cm.",
+      "diagram": [
+        [
+          "Le rayon au carré",
+          "3 × 3 = 9"
+        ],
+        [
+          "L’aire",
+          "3,14 × 9 = 28,26 cm²"
+        ],
+        [
+          "Revenir au rayon",
+          "√(28,26 ÷ 3,14) = 3 cm"
+        ]
+      ]
+    },
+    {
+      "id": "aires-decouper",
+      "title": "Calculer une aire en plusieurs morceaux",
+      "question": "Où peut-on découper la figure ?",
+      "goal": "Je sépare la figure en parties que je sais mesurer.",
+      "word": [
+        "Aire composée",
+        "Une aire formée de plusieurs morceaux."
+      ],
+      "steps": [
+        "Je trace une ligne pour obtenir deux rectangles.",
+        "Je calcule 3 × 2 puis 2 × 2.",
+        "J’additionne 6 et 4."
+      ],
+      "answer": "La surface vaut 10 cm². Pour le périmètre, je suis seulement le bord extérieur.",
+      "diagram": [
+        [
+          "Premier morceau",
+          "3 × 2 = 6 cm²"
+        ],
+        [
+          "Deuxième morceau",
+          "2 × 2 = 4 cm²"
+        ],
+        [
+          "Aire totale",
+          "6 + 4 = 10 cm²"
+        ]
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "id": "volumes-base-hauteur",
+      "title": "Calculer le volume d’un pavé ou d’un cylindre",
+      "question": "Quel calcul se répète dans toutes les couches ?",
+      "goal": "Je multiplie l’aire de la base par la hauteur.",
+      "word": [
+        "Base",
+        "La face qui sert de point de départ."
+      ],
+      "steps": [
+        "Pour un pavé, la base est un rectangle.",
+        "Pour un cylindre, la base est un disque.",
+        "Je calcule cette aire puis je multiplie par la hauteur."
+      ],
+      "answer": "Pavé de base 6 cm² et de hauteur 4 cm. Volume de 24 cm³.",
+      "diagram": [
+        [
+          "Pavé",
+          "Aire de base = longueur × largeur"
+        ],
+        [
+          "Cylindre",
+          "Aire de base = π × rayon²"
+        ],
+        [
+          "Volume",
+          "Aire de base × hauteur"
+        ]
+      ]
+    },
+    {
+      "id": "volumes-cone-theorie",
+      "title": "Calculer le volume d’un cône",
+      "question": "Quel lien avec un cylindre de même taille ?",
+      "goal": "Le cône a la même base ronde et la même hauteur ici.",
+      "word": [
+        "Tiers",
+        "Une part sur trois parts égales."
+      ],
+      "steps": [
+        "Je calcule l’aire du disque de base.",
+        "Je multiplie par la hauteur du cône.",
+        "Je divise le résultat par 3."
+      ],
+      "answer": "Avec une base de 12,56 cm² et une hauteur de 6 cm, le volume vaut 25,12 cm³.",
+      "diagram": [
+        [
+          "Base du cône",
+          "3,14 × 2² = 12,56 cm²"
+        ],
+        [
+          "Cylindre de même base",
+          "12,56 × 6 = 75,36 cm³"
+        ],
+        [
+          "Cône",
+          "75,36 ÷ 3 = 25,12 cm³"
+        ]
+      ]
+    },
+    {
+      "id": "volumes-sphere-theorie",
+      "title": "Calculer le volume d’une sphère",
+      "question": "Où mesure-t-on le rayon ?",
+      "goal": "Le rayon va du centre à la surface de la sphère.",
+      "word": [
+        "Rayon au cube",
+        "Le rayon multiplié trois fois par lui-même."
+      ],
+      "steps": [
+        "Je lis un rayon de 3 cm.",
+        "Je calcule 3 × 3 × 3. Je trouve 27.",
+        "Je multiplie 27 par 4 et par 3,14, puis je divise par 3."
+      ],
+      "answer": "Le volume vaut 113,04 cm³ avec π = 3,14.",
+      "diagram": [
+        [
+          "Rayon au cube",
+          "3 × 3 × 3 = 27"
+        ],
+        [
+          "Formule",
+          "4 × π × rayon³ ÷ 3"
+        ],
+        [
+          "Volume",
+          "4 × 3,14 × 27 ÷ 3 = 113,04 cm³"
+        ]
+      ]
+    },
+    {
+      "id": "volumes-mesure-manquante",
+      "title": "Retrouver une mesure avec le volume",
+      "question": "Comment retrouver la hauteur ?",
+      "goal": "Je repars du volume et je défais le calcul.",
+      "word": [
+        "Arête",
+        "Un bord du cube, entre deux sommets."
+      ],
+      "steps": [
+        "Pour un pavé ou un cylindre, je divise par l’aire de la base.",
+        "Pour un cône, je multiplie d’abord le volume par 3.",
+        "Dans un cube, je cherche une même longueur utilisée trois fois."
+      ],
+      "answer": "Avec 24 cm³ et une base de 6 cm², un pavé mesure 4 cm de haut.",
+      "diagram": [
+        [
+          "Pavé / cylindre",
+          "Hauteur = volume ÷ aire de base"
+        ],
+        [
+          "Cône",
+          "Hauteur = 3 × volume ÷ aire de base"
+        ],
+        [
+          "Cube",
+          "27 cm³ = 3 cm × 3 cm × 3 cm"
+        ]
+      ]
+    }
+  ],
+  "reperage": [
+    {
+      "id": "reperage-cases-theorie",
+      "title": "Lire les cases d’un plan",
+      "question": "Où trouver le code B3 ?",
+      "goal": "La lettre indique la colonne et le chiffre indique la ligne.",
+      "word": [
+        "Repère",
+        "Un point qui indique un lieu précis."
+      ],
+      "steps": [
+        "Je cherche B en haut du plan.",
+        "Je descends jusqu’à la ligne 3.",
+        "Je lis le nom près du point dans cette case."
+      ],
+      "answer": "Sur l’exemple, B3 indique la gare.",
+      "diagram": [
+        [
+          "D’abord",
+          "Colonne B"
+        ],
+        [
+          "Ensuite",
+          "Ligne 3"
+        ],
+        [
+          "Dans la case",
+          "B3 · Gare"
+        ]
+      ]
+    },
+    {
+      "id": "reperage-trajet-theorie",
+      "title": "Suivre un trajet et s’orienter",
+      "question": "Dans quel sens se déplacer ?",
+      "goal": "J’utilise la flèche du nord et je compte les cases.",
+      "word": [
+        "Case fermée",
+        "Une case que le trajet doit éviter."
+      ],
+      "steps": [
+        "Je repère le départ et l’arrivée.",
+        "Je suis les directions autorisées.",
+        "Je compare les nombres de pas de deux trajets."
+      ],
+      "answer": "Si le nord est en haut, une case vers la droite va vers l’est.",
+      "diagram": [
+        [
+          "Nord",
+          "Vers le haut"
+        ],
+        [
+          "Est",
+          "Vers la droite"
+        ],
+        [
+          "Trajet le plus court",
+          "Le moins de pas autorisés."
+        ]
+      ]
+    },
+    {
+      "id": "reperage-quatre-cadrans",
+      "title": "Placer un point dans les quatre cadrans",
+      "question": "Par quel déplacement commencer ?",
+      "goal": "Je pars de l’origine, le point (0 ; 0).",
+      "word": [
+        "Coordonnées",
+        "Les deux nombres qui donnent la position."
+      ],
+      "steps": [
+        "Pour (−2 ; 3), je vais deux cases à gauche.",
+        "Je monte de trois cases. Je place le point.",
+        "Si le point est donné, je défais les pas pour trouver l’origine."
+      ],
+      "answer": "Le premier nombre donne le déplacement horizontal.",
+      "diagram": [
+        [
+          "Origine",
+          "(0 ; 0)"
+        ],
+        [
+          "Horizontal",
+          "−2  →  2 cases à gauche"
+        ],
+        [
+          "Vertical",
+          "+3  →  3 cases vers le haut"
+        ]
+      ]
+    },
+    {
+      "id": "reperage-droites-theorie",
+      "title": "Lire ou tracer des droites sur un repère",
+      "question": "Comment trouver un point commun à deux droites ?",
+      "goal": "Je lis les coordonnées là où les deux droites se croisent.",
+      "word": [
+        "Intersection",
+        "Le point où les deux droites se coupent."
+      ],
+      "steps": [
+        "Je repère le croisement et je descends pour lire x.",
+        "Je vais vers l’axe vertical pour lire y.",
+        "Pour tracer une droite, je place deux points et je les relie à la règle."
+      ],
+      "answer": "Une droite qui coupe l’axe vertical en y = 2 passe par (0 ; 2).",
+      "diagram": [
+        [
+          "Point commun",
+          "(2 ; 3)"
+        ],
+        [
+          "Sur l’axe des x",
+          "y = 0"
+        ],
+        [
+          "Sur l’axe des y",
+          "x = 0"
+        ]
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "transformations-axes-theorie",
+      "title": "Trouver les axes d’une figure",
+      "question": "Où peut-on plier la figure en deux ?",
+      "goal": "Les deux parties se superposent quand je plie le long de l’axe.",
+      "word": [
+        "Axe de symétrie",
+        "La ligne du pli."
+      ],
+      "steps": [
+        "J’essaie un premier axe.",
+        "Je vérifie que les deux moitiés se recouvrent.",
+        "Je cherche d’autres plis qui fonctionnent."
+      ],
+      "answer": "Un carré a 4 axes. Un rectangle non carré en a 2.",
+      "diagram": [
+        [
+          "Carré",
+          "2 axes droits et 2 axes en diagonale"
+        ],
+        [
+          "Rectangle",
+          "1 axe horizontal et 1 vertical"
+        ],
+        [
+          "Vérifier",
+          "Les deux moitiés se recouvrent."
+        ]
+      ]
+    },
+    {
+      "id": "transformations-coordonnees-theorie",
+      "title": "Lire les coordonnées après une symétrie",
+      "question": "Quel nombre change de signe ?",
+      "goal": "Je compare le point de départ et son image.",
+      "word": [
+        "Origine",
+        "Le point (0 ; 0), au croisement des axes."
+      ],
+      "steps": [
+        "Pour le miroir horizontal, je garde x et j’inverse y.",
+        "Pour le miroir vertical, j’inverse x et je garde y.",
+        "Pour le demi-tour autour de l’origine, j’inverse les deux signes."
+      ],
+      "answer": "Pour P (2 ; 3), le miroir vertical donne P′ (−2 ; 3).",
+      "diagram": [
+        [
+          "Axe horizontal",
+          "(2 ; 3) → (2 ; −3)"
+        ],
+        [
+          "Axe vertical",
+          "(2 ; 3) → (−2 ; 3)"
+        ],
+        [
+          "Centre (0 ; 0)",
+          "(2 ; 3) → (−2 ; −3)"
+        ]
+      ]
+    }
+  ]
+}

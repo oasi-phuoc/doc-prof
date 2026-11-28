@@ -32,7 +32,7 @@ try {
   await test('every math theory is listed first and produces a page for each illustrated part', async () => {
     assert.equal(configs.length, 23)
     const sheets = buildWorksheets(configs, 41)
-    assert.equal(sheets.length, 49)
+    assert.equal(sheets.length, 142)
     for (const [index, config] of configs.entries()) {
       assert.equal(typeChoicesForBlock(config.domain, config)[0].id, config.exerciseType)
       const { continuation = [], ...lesson } = mathTheoryLessons[config.topic]
@@ -60,10 +60,19 @@ try {
       const config = configs.find(({ topic }) => topic === id)
       return buildWorksheets([config], 41).map((sheet) => sheet.items[0].mathTheory)
     }
-    assert.deepEqual(parts('addition').map(({ title, heading }) => [title, heading]), [['Poser une addition', 'Comment additionner ?']])
-    assert.deepEqual(parts('multiplication').map(({ illustration }) => illustration), ['multiplication', 'multiplication-colonne', 'multiplication-deux-chiffres'])
-    assert.deepEqual(parts('division').map(({ illustration }) => illustration), ['division', 'division-posee', 'division-zero-quotient'])
-    assert.equal(parts('decimaux').at(-1).example, '7,5 ÷ 0,3 = 75 ÷ 3 = 25.')
+    assert.deepEqual(parts('addition').slice(0, 3).map(({ illustration }) => illustration), ['addition-en-ligne', 'addition-a-trou', 'addition'])
+    assert.equal(parts('addition')[2].heading, 'Comment additionner ?')
+    assert.deepEqual(parts('soustraction').slice(0, 4).map(({ illustration }) => illustration), ['soustraction-en-ligne', 'soustraction-a-trou', 'soustraction', 'soustraction-zero'])
+    assert.deepEqual(parts('multiplication').map(({ illustration }) => illustration), ['multiplication-en-ligne', 'multiplication', 'multiplication-a-trou', 'multiplication-colonne', 'multiplication-deux-chiffres'])
+    assert.deepEqual(parts('division').slice(0, 5).map(({ illustration }) => illustration), ['division-en-ligne', 'division-a-trou', 'division', 'division-posee', 'division-zero-quotient'])
+    assert(parts('decimaux').some(({ example }) => example === '7,5 ÷ 0,3 = 75 ÷ 3 = 25.'))
+    assert.deepEqual(parts('problemes').slice(0, 4).map(({ illustration }) => illustration),
+      ['problemes', 'problemes-de-plus', 'problemes-de-moins', 'problemes-quantite-depart'])
+    assert.match(parts('problemes')[3].example, /7 − 2 = 5/)
+    assert.deepEqual(parts('equations').map(({ illustration }) => illustration), [
+      'equations', 'equation-isoler', 'equation-deux-cotes', 'equation-fraction', 'equation-racine', 'equation-carre',
+      'systeme-verifier', 'systeme-substitution', 'systeme-addition', 'systeme-addition-preparer',
+    ])
   })
 
   await test('multipage transformations preserve the title and order of surrounding exercises', () => {
@@ -75,10 +84,10 @@ try {
       extraBlocks: [transformations, { topic: 'aires', exerciseType: 'aires-rectangle', count: 1, columns: 1 }],
     }
     const sheets = buildWorksheets([mixed], 41)
-    assert.equal(sheets.length, 7)
-    assert.deepEqual(sheets.map((sheet) => sheet.blocks[0].sourceBlockIndex), [0, 1, 1, 1, 1, 1, 2])
-    assert.deepEqual(sheets.slice(1, 6).map((sheet) => sheet.items[0].mathTheory.illustration),
-      ['translation', 'rotation', 'symetrie-axiale', 'symetrie-centrale', 'agrandissement'])
+    assert.equal(sheets.length, 9)
+    assert.deepEqual(sheets.map((sheet) => sheet.blocks[0].sourceBlockIndex), [0, 1, 1, 1, 1, 1, 1, 1, 2])
+    assert.deepEqual(sheets.slice(1, -1).map((sheet) => sheet.items[0].mathTheory.illustration),
+      ['translation', 'rotation', 'symetrie-axiale', 'symetrie-centrale', 'agrandissement', 'transformations-axes-theorie', 'transformations-coordonnees-theorie'])
     assert.equal(sheets.at(-1).blocks[0].exerciseType, 'aires-rectangle')
   })
 } finally {

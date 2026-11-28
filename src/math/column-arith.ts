@@ -51,7 +51,8 @@ const TEXT_KEYS = [
 
 /** Applique `fmt` / nettoyage de bruit binaire sur les champs texte d’un item. */
 export function sanitizeItemNumberNoise<T extends Record<string, unknown>>(item: T): T {
-  if (item.freeOperandPlaces) return item
+  // Les étiquettes, l’énoncé et le corrigé partagent les montants à deux décimales.
+  if (item.freeOperandPlaces || item.shortProblem) return item
   const out: Record<string, unknown> = { ...item }
   for (const key of TEXT_KEYS) {
     const v = out[key]

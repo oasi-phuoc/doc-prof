@@ -1,5 +1,6 @@
 import { mathTheoryLessons, mathTheoryTopic } from './theory-lessons'
 import { isMathProblemHelpType } from './problem-help'
+import { isShortProblemType } from './short-problems'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
@@ -696,7 +697,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     }
 
     const hasFullPageContent = (block: WorksheetBlock) =>
-      block.problemHelp || Boolean(grammarScenarioFor(block.exerciseType)) ||
+      block.problemHelp || isShortProblemType(block.exerciseType) || Boolean(grammarScenarioFor(block.exerciseType)) ||
       block.items.some((item) => item.mathTheory || item.grammarTheoryFalc) ||
       (worksheet.blocks.length > 1 && isGrammaireTheoryType(block.exerciseType))
     if (worksheet.blocks.some(hasFullPageContent)) {
@@ -743,7 +744,9 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
           }
           return
         }
-        const capacity = block.problemHelp && block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
+        const capacity = isShortProblemType(block.exerciseType)
+          ? (logisticsLayout?.a5 ? 1 : 2)
+          : (block.problemHelp && block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1)
         for (let offset = 0; offset < block.items.length; offset += capacity) {
           const end = offset + capacity
           append([{

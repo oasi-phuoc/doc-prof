@@ -1,0 +1,1320 @@
+{
+  "nombres": [
+    {
+      "id": "nombres-ecrire",
+      "title": "Écrire un nombre en chiffres et en lettres",
+      "question": "Comment lire 243 ?",
+      "goal": "Je lis le nombre par groupes.",
+      "word": [
+        "Chiffre",
+        "Un des 10 signes de 0 à 9."
+      ],
+      "steps": [
+        "Je lis 2 centaines. Je dis « deux cents ».",
+        "Je lis 43. Je dis « quarante-trois ».",
+        "J’écris le nombre entier sans espace entre les chiffres."
+      ],
+      "answer": "243 se lit « deux cent quarante-trois ».",
+      "diagram": [
+        [
+          "Centaines",
+          "2 → deux cent"
+        ],
+        [
+          "Dizaines et unités",
+          "43 → quarante-trois"
+        ],
+        [
+          "Nombre entier",
+          "243 → deux cent quarante-trois"
+        ]
+      ]
+    },
+    {
+      "id": "nombres-encadrer-ranger",
+      "title": "Encadrer et ranger des nombres",
+      "question": "Entre quelles dizaines placer 47 ?",
+      "goal": "J’utilise la droite pour comparer les nombres.",
+      "word": [
+        "Encadrer",
+        "Trouver un nombre plus petit et un nombre plus grand."
+      ],
+      "steps": [
+        "Sur la droite, 47 vient après 40.",
+        "Sur la droite, 47 vient avant 50.",
+        "Pour ranger du plus petit au plus grand, je vais vers la droite."
+      ],
+      "answer": "40 < 47 < 50. Pour les centaines, 200 < 243 < 300.",
+      "diagram": [
+        [
+          "Sur la droite",
+          "40 ───── 47 ── 50"
+        ],
+        [
+          "Dans l’ordre",
+          "40 < 47 < 50"
+        ],
+        [
+          "À la centaine",
+          "200 < 243 < 300"
+        ]
+      ]
+    },
+    {
+      "id": "nombres-pairs",
+      "title": "Reconnaître les nombres pairs",
+      "question": "Que dit le dernier chiffre ?",
+      "goal": "Un nombre pair se partage en deux parts égales.",
+      "word": [
+        "Pair",
+        "Un nombre qui finit par 0, 2, 4, 6 ou 8."
+      ],
+      "steps": [
+        "Je regarde le dernier chiffre de 24.",
+        "Je vois 4. Le nombre 24 est pair.",
+        "Je regarde le dernier chiffre de 25. Le nombre est impair."
+      ],
+      "answer": "24 = 12 + 12. Dans 25, il reste une unité.",
+      "diagram": [
+        [
+          "24",
+          "12 + 12"
+        ],
+        [
+          "25",
+          "12 + 12 + 1"
+        ],
+        [
+          "Repère",
+          "0 · 2 · 4 · 6 · 8"
+        ]
+      ]
+    },
+    {
+      "id": "nombres-suite",
+      "title": "Compléter une suite",
+      "question": "Quel pas se répète ici ?",
+      "goal": "Je trouve la règle entre deux nombres connus.",
+      "word": [
+        "Pas",
+        "La quantité ajoutée ou enlevée à chaque fois."
+      ],
+      "steps": [
+        "Je lis 12 puis 15. Le pas est de 3.",
+        "J’ajoute 3 à 15. Je trouve 18.",
+        "Je vérifie que 18 + 3 donne 21."
+      ],
+      "answer": "12, 15, 18, 21.",
+      "diagram": [
+        [
+          "Suite à compléter",
+          "12 → 15 → □ → 21"
+        ],
+        [
+          "Chaque pas",
+          "+3     +3     +3"
+        ],
+        [
+          "Réponse",
+          "12 → 15 → 18 → 21"
+        ]
+      ]
+    },
+    {
+      "id": "nombres-lire-graduations",
+      "title": "Lire une droite graduée",
+      "question": "Combien vaut un pas entre deux traits ?",
+      "goal": "Je compte les espaces entre les nombres connus.",
+      "word": [
+        "Graduation",
+        "Un trait qui indique une position."
+      ],
+      "steps": [
+        "Je lis 20 au départ et 40 à l’arrivée.",
+        "Je compte 4 espaces. Je divise 20 par 4.",
+        "Chaque pas vaut 5. Je compte deux pas après 20."
+      ],
+      "answer": "20 + 5 + 5 = 30.",
+      "diagram": [
+        [
+          "4 espaces",
+          "20 ─┬─┬─┬─ 40"
+        ],
+        [
+          "Un pas",
+          "(40 − 20) ÷ 4 = 5"
+        ],
+        [
+          "Tous les traits",
+          "20 · 25 · 30 · 35 · 40"
+        ]
+      ]
+    },
+    {
+      "id": "nombres-compter-formes",
+      "title": "Compter une collection de formes",
+      "question": "Comment compter chaque forme une fois ?",
+      "goal": "Je suis un ordre pour garder ma place.",
+      "word": [
+        "Collection",
+        "Tous les objets à compter."
+      ],
+      "steps": [
+        "Je commence en haut à gauche.",
+        "Je montre chaque forme en disant un nombre.",
+        "Je fais une marque pour chaque groupe de 5."
+      ],
+      "answer": "5 formes puis 3 formes donnent 8 formes.",
+      "diagram": [
+        [
+          "Premier groupe",
+          "○  ○  ○  ○  ○"
+        ],
+        [
+          "Deuxième groupe",
+          "○  ○  ○"
+        ],
+        [
+          "Toutes les formes",
+          "5 + 3 = 8"
+        ]
+      ]
+    }
+  ],
+  "addition": [
+    {
+      "id": "addition-decomposer",
+      "title": "Additionner de tête",
+      "question": "Comment séparer les dizaines et les unités ?",
+      "goal": "Je calcule les dizaines et les unités séparément.",
+      "word": [
+        "Décomposer",
+        "Écrire un nombre en plusieurs morceaux."
+      ],
+      "steps": [
+        "Je lis 24 comme 20 et 4.",
+        "Je lis 13 comme 10 et 3.",
+        "Je réunis 30 et 7."
+      ],
+      "answer": "24 + 13 = 37.",
+      "diagram": [
+        [
+          "Dizaines",
+          "20 + 10 = 30"
+        ],
+        [
+          "Unités",
+          "4 + 3 = 7"
+        ],
+        [
+          "Somme",
+          "30 + 7 = 37"
+        ]
+      ]
+    },
+    {
+      "id": "addition-comparer-sommes",
+      "title": "Comparer deux additions",
+      "question": "Quelle somme est la plus grande ?",
+      "goal": "Je calcule les deux sommes avant de les comparer.",
+      "word": [
+        "Comparer",
+        "Dire si un résultat est plus petit, égal ou plus grand."
+      ],
+      "steps": [
+        "Je calcule 12 + 8. Je trouve 20.",
+        "Je calcule 15 + 4. Je trouve 19.",
+        "Je lis que 20 est plus grand que 19."
+      ],
+      "answer": "12 + 8 > 15 + 4.",
+      "diagram": [
+        [
+          "À gauche",
+          "12 + 8 = 20"
+        ],
+        [
+          "À droite",
+          "15 + 4 = 19"
+        ],
+        [
+          "Comparer",
+          "20 > 19"
+        ]
+      ]
+    },
+    {
+      "id": "addition-tableau-sommes",
+      "title": "Compléter un tableau d’addition",
+      "question": "Que faire si une case ou un en-tête manque ?",
+      "goal": "Chaque case donne une somme.",
+      "word": [
+        "En-tête",
+        "Un nombre au début d’une ligne ou d’une colonne."
+      ],
+      "steps": [
+        "Je lis 4 au début de la ligne et 3 en haut.",
+        "Dans la case, j’écris 4 + 3 = 7.",
+        "Si 4 manque, je calcule 7 − 3 pour le retrouver."
+      ],
+      "answer": "Avec 3 en haut et 7 dans la case, l’en-tête vaut 4.",
+      "diagram": [
+        [
+          "Ligne et colonne",
+          "4 + 3 → 7 dans la case"
+        ],
+        [
+          "Avec une case connue",
+          "□ + 3 = 7"
+        ],
+        [
+          "Nombre de la ligne",
+          "7 − 3 = 4"
+        ]
+      ]
+    }
+  ],
+  "soustraction": [
+    {
+      "id": "soustraction-depart-manquant",
+      "title": "Retrouver le nombre de départ",
+      "question": "Quel nombre manque dans □ − 3 = 2 ?",
+      "goal": "Je remets les pommes qui ont été enlevées.",
+      "word": [
+        "Vérifier",
+        "Refaire le calcul avec le nombre trouvé."
+      ],
+      "steps": [
+        "Il reste 2 pommes.",
+        "Je remets les 3 pommes enlevées.",
+        "Je compte 5 pommes au départ."
+      ],
+      "answer": "2 + 3 = 5. Je vérifie 5 − 3 = 2.",
+      "diagram": [
+        [
+          "Le reste",
+          "2 pommes"
+        ],
+        [
+          "Je remets",
+          "2 + 3 = 5"
+        ],
+        [
+          "Je vérifie",
+          "5 − 3 = 2"
+        ]
+      ]
+    },
+    {
+      "id": "soustraction-decomposer",
+      "title": "Soustraire de tête",
+      "question": "Comment enlever 17 en deux fois ?",
+      "goal": "J’enlève d’abord les dizaines, puis les unités.",
+      "word": [
+        "Décomposer",
+        "Ici, écrire 17 comme 10 et 7."
+      ],
+      "steps": [
+        "Je pars de 42.",
+        "J’enlève 10. Il reste 32.",
+        "J’enlève 7. Il reste 25."
+      ],
+      "answer": "42 − 17 = 25.",
+      "diagram": [
+        [
+          "Départ",
+          "42"
+        ],
+        [
+          "Enlever 10",
+          "42 − 10 = 32"
+        ],
+        [
+          "Enlever 7",
+          "32 − 7 = 25"
+        ]
+      ]
+    },
+    {
+      "id": "soustraction-comparer-differences",
+      "title": "Comparer deux soustractions",
+      "question": "Quelle différence est la plus grande ?",
+      "goal": "Je calcule les deux résultats avant de choisir le signe.",
+      "word": [
+        "Différence",
+        "Le résultat d’une soustraction."
+      ],
+      "steps": [
+        "Je calcule 90 − 12. Je trouve 78.",
+        "Je calcule 88 − 8. Je trouve 80.",
+        "Je lis 78 < 80."
+      ],
+      "answer": "90 − 12 < 88 − 8.",
+      "diagram": [
+        [
+          "À gauche",
+          "90 − 12 = 78"
+        ],
+        [
+          "À droite",
+          "88 − 8 = 80"
+        ],
+        [
+          "Comparer",
+          "78 < 80"
+        ]
+      ]
+    },
+    {
+      "id": "soustraction-tableau-differences",
+      "title": "Compléter un tableau de soustraction",
+      "question": "Quel nombre vient en premier dans le calcul ?",
+      "goal": "Je prends le nombre de la ligne en premier.",
+      "word": [
+        "En-tête",
+        "Un nombre au début d’une ligne ou d’une colonne."
+      ],
+      "steps": [
+        "Je lis 9 sur la ligne et 4 en haut.",
+        "J’écris 9 − 4 = 5 dans la case.",
+        "Si 9 manque, je remets les 4 au résultat 5."
+      ],
+      "answer": "Si le nombre en haut manque, je fais 9 − 5 = 4.",
+      "diagram": [
+        [
+          "Entrée de la case",
+          "9 − 4 = 5"
+        ],
+        [
+          "Ligne à retrouver",
+          "5 + 4 = 9"
+        ],
+        [
+          "Colonne à retrouver",
+          "9 − 5 = 4"
+        ]
+      ]
+    }
+  ],
+  "estimation": [
+    {
+      "id": "estimer-calcul",
+      "title": "Estimer le résultat d’un calcul",
+      "question": "Comment calculer à peu près ?",
+      "goal": "J’arrondis les nombres avant de calculer.",
+      "word": [
+        "Estimer",
+        "Trouver un résultat proche du résultat exact."
+      ],
+      "steps": [
+        "Pour 48 + 33, j’arrondis à 50 et 30.",
+        "J’ajoute 50 et 30. Je trouve environ 80.",
+        "Pour 91 − 28, je fais 90 − 30."
+      ],
+      "answer": "48 + 33 ≈ 80. 91 − 28 ≈ 60.",
+      "diagram": [
+        [
+          "Addition",
+          "48 + 33  →  50 + 30"
+        ],
+        [
+          "Somme estimée",
+          "80"
+        ],
+        [
+          "Soustraction",
+          "91 − 28  →  90 − 30 = 60"
+        ]
+      ]
+    }
+  ],
+  "division": [
+    {
+      "id": "division-depart-manquant",
+      "title": "Retrouver le nombre à partager",
+      "question": "Quel nombre manque dans □ ÷ 2 = 3 ?",
+      "goal": "Je reconstruis la quantité du départ.",
+      "word": [
+        "Dividende",
+        "Le nombre de départ que je partage."
+      ],
+      "steps": [
+        "Je dessine 2 parts.",
+        "Je mets 3 objets dans chaque part.",
+        "Je réunis les deux parts. Je compte 6 objets."
+      ],
+      "answer": "2 × 3 = 6. Je vérifie 6 ÷ 2 = 3.",
+      "diagram": [
+        [
+          "Part 1",
+          "● ● ●"
+        ],
+        [
+          "Part 2",
+          "● ● ●"
+        ],
+        [
+          "Départ",
+          "2 × 3 = 6"
+        ]
+      ]
+    }
+  ],
+  "problemes": [
+    {
+      "id": "problemes-choisir-operation",
+      "title": "Choisir les nombres et l’opération",
+      "question": "Quels nombres répondent à la question ?",
+      "goal": "La question indique les données à garder.",
+      "word": [
+        "Donnée utile",
+        "Une information qui aide à répondre."
+      ],
+      "steps": [
+        "Il y a 4 sachets de 3 billes.",
+        "Je cherche le nombre de billes.",
+        "J’ajoute 4 fois 3, ou je multiplie 4 par 3."
+      ],
+      "answer": "Il y a 12 billes. Pour partager 12 billes en 4 parts, je fais 12 ÷ 4 = 3.",
+      "diagram": [
+        [
+          "Groupes égaux",
+          "3 + 3 + 3 + 3"
+        ],
+        [
+          "Chercher le total",
+          "4 × 3 = 12"
+        ],
+        [
+          "Chercher une part",
+          "12 ÷ 4 = 3"
+        ]
+      ]
+    },
+    {
+      "id": "problemes-achat",
+      "title": "Lire un prix et rendre la monnaie",
+      "question": "Comment calculer la somme à rendre ?",
+      "goal": "Je trouve le prix total, puis je regarde la somme payée.",
+      "word": [
+        "Monnaie à rendre",
+        "L’argent que le vendeur rend."
+      ],
+      "steps": [
+        "Je lis 4,50 CHF et 2,00 CHF sur le menu.",
+        "J’ajoute les deux prix. Le total vaut 6,50 CHF.",
+        "Je retire 6,50 CHF des 10,00 CHF donnés."
+      ],
+      "answer": "Il faut rendre 3,50 CHF.",
+      "diagram": [
+        [
+          "Menu",
+          "Sandwich 4,50 CHF · Jus 2,00 CHF"
+        ],
+        [
+          "Prix total",
+          "4,50 CHF + 2,00 CHF = 6,50 CHF"
+        ],
+        [
+          "À rendre",
+          "10,00 CHF − 6,50 CHF = 3,50 CHF"
+        ]
+      ]
+    },
+    {
+      "id": "problemes-frise-horaire",
+      "title": "Trouver la durée d’un trajet",
+      "question": "Combien de minutes entre 8 h 50 et 9 h 15 ?",
+      "goal": "Je coupe le trajet à 9 h 00 pour compter les minutes.",
+      "word": [
+        "Durée",
+        "Le temps entre le départ et l’arrivée."
+      ],
+      "steps": [
+        "De 8 h 50 à 9 h 00, je compte 10 minutes.",
+        "De 9 h 00 à 9 h 15, je compte 15 minutes.",
+        "J’additionne les deux durées."
+      ],
+      "answer": "Le trajet dure 25 minutes.",
+      "diagram": [
+        [
+          "Départ et arrivée",
+          "8 h 50   →   9 h 00   →   9 h 15"
+        ],
+        [
+          "Les deux durées",
+          "10 min puis 15 min"
+        ],
+        [
+          "Durée totale",
+          "10 min + 15 min = 25 min"
+        ]
+      ]
+    },
+    {
+      "id": "problemes-trajets",
+      "title": "Comparer les longueurs de deux trajets",
+      "question": "Quel trajet est le plus court ?",
+      "goal": "Je calcule la longueur complète de chaque trajet.",
+      "word": [
+        "Trajet",
+        "Le chemin d’un lieu à un autre."
+      ],
+      "steps": [
+        "Dans le trajet A, je change 1 km en 1 000 m.",
+        "Je trouve 1 350 m pour A et 1 500 m pour B.",
+        "Je compare 1 350 et 1 500."
+      ],
+      "answer": "Le trajet A est le plus court. Il mesure 1 350 m.",
+      "diagram": [
+        [
+          "Trajet A",
+          "1 km + 350 m = 1 350 m"
+        ],
+        [
+          "Trajet B",
+          "800 m + 700 m = 1 500 m"
+        ],
+        [
+          "Comparer",
+          "1 350 m < 1 500 m"
+        ]
+      ]
+    }
+  ],
+  "multiples": [
+    {
+      "id": "multiples-lister",
+      "title": "Lister les diviseurs d’un nombre",
+      "question": "Quels nombres divisent 12 sans reste ?",
+      "goal": "Je cherche les paires dont le produit vaut 12.",
+      "word": [
+        "Diviseur",
+        "Un nombre qui divise sans laisser de reste."
+      ],
+      "steps": [
+        "Je trouve 1 × 12.",
+        "Je trouve 2 × 6 et 3 × 4.",
+        "Je réunis les six nombres et je les range."
+      ],
+      "answer": "Les diviseurs de 12 sont 1, 2, 3, 4, 6 et 12.",
+      "diagram": [
+        [
+          "Paire 1",
+          "1 × 12 = 12"
+        ],
+        [
+          "Paire 2",
+          "2 × 6 = 12"
+        ],
+        [
+          "Paire 3",
+          "3 × 4 = 12"
+        ]
+      ]
+    },
+    {
+      "id": "multiples-commun",
+      "title": "Trouver le PGCD et le PPCM",
+      "question": "Quel nombre apparaît dans les deux listes ?",
+      "goal": "Je choisis la bonne liste pour ce que je cherche.",
+      "word": [
+        "Commun",
+        "Présent dans les deux listes."
+      ],
+      "steps": [
+        "Pour le PGCD de 6 et de 8, je liste leurs diviseurs.",
+        "Les diviseurs communs sont 1 et 2. Le plus grand est 2.",
+        "Pour le PPCM, je prends le premier multiple commun positif."
+      ],
+      "answer": "PGCD de 6 et 8 = 2. PPCM de 6 et 8 = 24.",
+      "diagram": [
+        [
+          "Diviseurs communs",
+          "1 · 2  →  PGCD = 2"
+        ],
+        [
+          "Multiples de 6",
+          "6 · 12 · 18 · 24"
+        ],
+        [
+          "Multiples de 8",
+          "8 · 16 · 24  →  PPCM = 24"
+        ]
+      ]
+    }
+  ],
+  "fractions": [
+    {
+      "id": "fractions-equivalentes-theorie",
+      "title": "Transformer une fraction sans changer sa valeur",
+      "question": "Pourquoi 2/4 et 1/2 donnent-ils la même part ?",
+      "goal": "Je change le nombre de parts et leur taille ensemble.",
+      "word": [
+        "Simplifier",
+        "Écrire la même valeur avec de plus petits nombres."
+      ],
+      "steps": [
+        "Je prends la fraction 2/4.",
+        "Je divise le nombre du haut et celui du bas par 2.",
+        "Je trouve 1/2, la moitié."
+      ],
+      "answer": "2/4 = 1/2. En multipliant les deux nombres par 3, 1/2 = 3/6.",
+      "diagram": [
+        [
+          "Fraction de départ",
+          "2/4"
+        ],
+        [
+          "Haut et bas ÷ 2",
+          "2 ÷ 2 = 1   ·   4 ÷ 2 = 2"
+        ],
+        [
+          "Même moitié",
+          "2/4 = 1/2 = 3/6"
+        ]
+      ]
+    },
+    {
+      "id": "fractions-decimal-theorie",
+      "title": "Écrire une fraction avec une virgule",
+      "question": "Quel calcul donne la valeur de 3/4 ?",
+      "goal": "La barre de fraction indique une division.",
+      "word": [
+        "Numérateur",
+        "Le nombre au-dessus de la barre."
+      ],
+      "steps": [
+        "Je lis 3 en haut et 4 en bas.",
+        "Je divise 3 par 4.",
+        "J’écris le résultat avec la virgule."
+      ],
+      "answer": "3/4 = 3 ÷ 4 = 0,75.",
+      "diagram": [
+        [
+          "Fraction",
+          "3/4"
+        ],
+        [
+          "Division",
+          "3 ÷ 4"
+        ],
+        [
+          "Écriture décimale",
+          "0,75"
+        ]
+      ]
+    },
+    {
+      "id": "fractions-comparer-theorie",
+      "title": "Comparer des fractions",
+      "question": "Comment comparer 1/2 et 2/3 ?",
+      "goal": "Je fais des parts de la même taille.",
+      "word": [
+        "Dénominateur",
+        "Le nombre sous la barre."
+      ],
+      "steps": [
+        "Je transforme 1/2 en 3/6.",
+        "Je transforme 2/3 en 4/6.",
+        "Sur des sixièmes, 3 parts sont moins que 4."
+      ],
+      "answer": "1/2 < 2/3.",
+      "diagram": [
+        [
+          "Première fraction",
+          "1/2 = 3/6"
+        ],
+        [
+          "Deuxième fraction",
+          "2/3 = 4/6"
+        ],
+        [
+          "Comparer les sixièmes",
+          "3/6 < 4/6"
+        ]
+      ]
+    },
+    {
+      "id": "fractions-addition-theorie",
+      "title": "Ajouter ou retirer des fractions",
+      "question": "Comment faire des parts de la même taille ?",
+      "goal": "J’utilise le même nombre sous les deux barres.",
+      "word": [
+        "Même dénominateur",
+        "Les parts ont la même taille."
+      ],
+      "steps": [
+        "Je change 1/2 en 3/6 et 1/3 en 2/6.",
+        "J’ajoute ou je retire les parts.",
+        "Je garde 6 sous la barre."
+      ],
+      "answer": "1/2 + 1/3 = 5/6. 1/2 − 1/3 = 1/6.",
+      "diagram": [
+        [
+          "Même taille de part",
+          "1/2 = 3/6   ·   1/3 = 2/6"
+        ],
+        [
+          "Ajouter",
+          "3/6 + 2/6 = 5/6"
+        ],
+        [
+          "Retirer",
+          "3/6 − 2/6 = 1/6"
+        ]
+      ]
+    },
+    {
+      "id": "fractions-multiplication-theorie",
+      "title": "Multiplier deux fractions",
+      "question": "Combien vaut la moitié de 3/4 ?",
+      "goal": "Je prends une partie d’une autre partie.",
+      "word": [
+        "De",
+        "Ici, « la moitié de » veut dire « fois 1/2 »."
+      ],
+      "steps": [
+        "J’écris 1/2 × 3/4.",
+        "Je multiplie les nombres du haut.",
+        "Je multiplie les nombres du bas."
+      ],
+      "answer": "1/2 × 3/4 = 3/8.",
+      "diagram": [
+        [
+          "Au départ",
+          "1/2 × 3/4"
+        ],
+        [
+          "Multiplier le haut",
+          "1 × 3 = 3"
+        ],
+        [
+          "Multiplier le bas",
+          "2 × 4 = 8   →   3/8"
+        ]
+      ]
+    },
+    {
+      "id": "fractions-division-theorie",
+      "title": "Diviser par une fraction",
+      "question": "Comment diviser par 1/4 ?",
+      "goal": "Je multiplie par l’inverse de la deuxième fraction.",
+      "word": [
+        "Inverse",
+        "Pour 1/4, je retourne le haut et le bas."
+      ],
+      "steps": [
+        "Je lis la division 1/2 ÷ 1/4.",
+        "J’inverse 1/4. Je trouve 4/1.",
+        "Je multiplie 1/2 par 4/1."
+      ],
+      "answer": "1/2 ÷ 1/4 = 2. Il y a deux quarts dans une moitié.",
+      "diagram": [
+        [
+          "Division",
+          "1/2 ÷ 1/4"
+        ],
+        [
+          "Retourner 1/4",
+          "1/4 → 4/1"
+        ],
+        [
+          "Multiplier",
+          "1/2 × 4/1 = 2"
+        ]
+      ]
+    }
+  ],
+  "proportionnalite": [
+    {
+      "id": "pourcentage-quantite",
+      "title": "Calculer le pourcentage d’une quantité",
+      "question": "Combien font 25 % de 80 CHF ?",
+      "goal": "Je peux lire 25 % comme un quart.",
+      "word": [
+        "25 %",
+        "25 pour 100, soit une part sur 4."
+      ],
+      "steps": [
+        "Je veux 25 % de 80 CHF.",
+        "Je partage 80 CHF en 4 parts égales.",
+        "Je prends une part."
+      ],
+      "answer": "25 % de 80 CHF = 20 CHF. Je peux aussi calculer (25 ÷ 100) × 80.",
+      "diagram": [
+        [
+          "Le tout",
+          "80 CHF → 100 %"
+        ],
+        [
+          "Une part sur quatre",
+          "80 CHF ÷ 4"
+        ],
+        [
+          "La part",
+          "20 CHF → 25 %"
+        ]
+      ]
+    },
+    {
+      "id": "pourcentage-varier",
+      "title": "Augmenter ou baisser un prix",
+      "question": "Quel prix reste après une remise ?",
+      "goal": "Je commence par trouver le montant de la remise.",
+      "word": [
+        "Remise",
+        "Le montant que le magasin enlève au prix."
+      ],
+      "steps": [
+        "Je pars d’un prix de 80 CHF.",
+        "Je calcule 25 % de 80 CHF. Je trouve 20 CHF.",
+        "Je retire 20 CHF pour une remise."
+      ],
+      "answer": "Après la remise, je paie 60 CHF. Avec une hausse de 25 %, je paie 100 CHF.",
+      "diagram": [
+        [
+          "25 % de 80 CHF",
+          "80 CHF ÷ 4 = 20 CHF"
+        ],
+        [
+          "Remise",
+          "80 CHF − 20 CHF = 60 CHF"
+        ],
+        [
+          "Hausse",
+          "80 CHF + 20 CHF = 100 CHF"
+        ]
+      ]
+    }
+  ],
+  "relatifs": [
+    {
+      "id": "relatifs-addition-theorie",
+      "title": "Additionner sur la droite des nombres",
+      "question": "Dans quel sens avancer ?",
+      "goal": "Vers la droite, les nombres augmentent.",
+      "word": [
+        "Nombre négatif",
+        "Un nombre plus petit que zéro."
+      ],
+      "steps": [
+        "Je me place sur −2.",
+        "J’ajoute +5. Je fais 5 pas vers la droite.",
+        "J’arrive sur +3. Avec −5, je ferais 5 pas à gauche."
+      ],
+      "answer": "−2 + 5 = 3.",
+      "diagram": [
+        [
+          "Départ",
+          "−2"
+        ],
+        [
+          "Avancer de 5",
+          "−2 → −1 → 0 → 1 → 2 → 3"
+        ],
+        [
+          "Arrivée",
+          "3"
+        ]
+      ]
+    },
+    {
+      "id": "relatifs-soustraction-theorie",
+      "title": "Soustraire un nombre négatif",
+      "question": "Que faire dans 3 − (−2) ?",
+      "goal": "Je peux ajouter le nombre opposé.",
+      "word": [
+        "Opposé",
+        "Même distance de zéro, de l’autre côté."
+      ],
+      "steps": [
+        "Je cherche l’opposé de −2.",
+        "L’opposé de −2 est +2.",
+        "Je fais l’addition 3 + 2."
+      ],
+      "answer": "3 − (−2) = 3 + 2 = 5.",
+      "diagram": [
+        [
+          "Nombre retiré",
+          "−2"
+        ],
+        [
+          "Son opposé",
+          "+2"
+        ],
+        [
+          "Résultat",
+          "3 + 2 = 5"
+        ]
+      ]
+    },
+    {
+      "id": "relatifs-signes-theorie",
+      "title": "Multiplier et diviser avec des signes",
+      "question": "Quel signe écrire devant le résultat ?",
+      "goal": "Je regarde les deux signes avant de calculer.",
+      "word": [
+        "Même signe",
+        "Deux plus ou deux moins. Le résultat est positif."
+      ],
+      "steps": [
+        "Je lis les signes des deux nombres.",
+        "Avec des signes différents, le résultat est négatif.",
+        "Je calcule les valeurs sans leurs signes."
+      ],
+      "answer": "(−3) × 4 = −12. (−12) ÷ (−3) = 4.",
+      "diagram": [
+        [
+          "Mêmes signes",
+          "(−3) × (−4) = 12"
+        ],
+        [
+          "Signes différents",
+          "(−3) × 4 = −12"
+        ],
+        [
+          "Même règle en division",
+          "(−12) ÷ (−3) = 4"
+        ]
+      ]
+    }
+  ],
+  "puissances": [
+    {
+      "id": "puissances-dix-theorie",
+      "title": "Calculer les puissances de 10",
+      "question": "Que veut dire 10³ ?",
+      "goal": "Une puissance indique combien de fois le nombre est utilisé.",
+      "word": [
+        "Exposant",
+        "Le petit nombre en haut à droite."
+      ],
+      "steps": [
+        "Je lis le petit 3 dans 10³.",
+        "J’utilise 10 trois fois en multiplication.",
+        "Je trouve 1 000, avec trois zéros."
+      ],
+      "answer": "10² = 100 et 10³ = 1 000.",
+      "diagram": [
+        [
+          "Deux fois 10",
+          "10² = 10 × 10 = 100"
+        ],
+        [
+          "Trois fois 10",
+          "10³ = 10 × 10 × 10"
+        ],
+        [
+          "Résultat",
+          "1 000"
+        ]
+      ]
+    },
+    {
+      "id": "puissances-priorites-theorie",
+      "title": "Respecter la priorité des opérations",
+      "question": "Quel calcul faut-il faire en premier ?",
+      "goal": "Je calcule par étapes, une opération à la fois.",
+      "word": [
+        "Parenthèses",
+        "Les signes ( ) entourent un calcul à faire d’abord."
+      ],
+      "steps": [
+        "Je calcule les parenthèses.",
+        "Je calcule les puissances, puis les produits et les divisions.",
+        "Je termine par les additions et les soustractions."
+      ],
+      "answer": "2 + 3 × (4 − 2)² = 2 + 3 × 4 = 14.",
+      "diagram": [
+        [
+          "Parenthèses",
+          "2 + 3 × 2²"
+        ],
+        [
+          "Puissance",
+          "2 + 3 × 4"
+        ],
+        [
+          "Produit puis somme",
+          "2 + 12 = 14"
+        ]
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "expressions-plusieurs-lettres",
+      "title": "Calculer avec plusieurs lettres",
+      "question": "Par quel nombre remplacer chaque lettre ?",
+      "goal": "Chaque lettre garde sa valeur pendant le calcul.",
+      "word": [
+        "Variable",
+        "Une lettre qui remplace un nombre."
+      ],
+      "steps": [
+        "Je lis a = 2, b = 3 et c = 4.",
+        "Je remplace chaque lettre dans a × b + c.",
+        "Je calcule d’abord la multiplication."
+      ],
+      "answer": "a × b + c = 2 × 3 + 4 = 10.",
+      "diagram": [
+        [
+          "Valeurs",
+          "a = 2   ·   b = 3   ·   c = 4"
+        ],
+        [
+          "Dans le calcul",
+          "2 × 3 + 4"
+        ],
+        [
+          "Résultat",
+          "6 + 4 = 10"
+        ]
+      ]
+    },
+    {
+      "id": "expressions-produits-theorie",
+      "title": "Simplifier un produit avec des lettres",
+      "question": "Quels nombres et quelles lettres peut-on grouper ?",
+      "goal": "Je multiplie les nombres puis je groupe les mêmes lettres.",
+      "word": [
+        "Coefficient",
+        "Le nombre qui multiplie les lettres."
+      ],
+      "steps": [
+        "Dans 2x × 3x, je calcule 2 × 3.",
+        "Je groupe x × x. Cela donne x².",
+        "J’écris le résultat 6x²."
+      ],
+      "answer": "2x × 3x = 6x².",
+      "diagram": [
+        [
+          "Nombres",
+          "2 × 3 = 6"
+        ],
+        [
+          "Lettres",
+          "x × x = x²"
+        ],
+        [
+          "Produit",
+          "6x²"
+        ]
+      ]
+    },
+    {
+      "id": "expressions-reduction-theorie",
+      "title": "Réduire une somme avec des lettres",
+      "question": "Quelles parties vont ensemble ?",
+      "goal": "Je groupe les termes qui ont les mêmes lettres.",
+      "word": [
+        "Terme",
+        "Une partie séparée par + ou −."
+      ],
+      "steps": [
+        "Dans 3x + 5x − 2, je repère 3x et 5x.",
+        "J’ajoute 3 et 5. Cela donne 8x.",
+        "Je garde −2 dans l’expression."
+      ],
+      "answer": "3x + 5x − 2 = 8x − 2.",
+      "diagram": [
+        [
+          "Termes en x",
+          "3x + 5x = 8x"
+        ],
+        [
+          "Partie sans lettre",
+          "−2"
+        ],
+        [
+          "Résultat",
+          "8x − 2"
+        ]
+      ]
+    },
+    {
+      "id": "expressions-developpement-theorie",
+      "title": "Développer une expression",
+      "question": "Comment enlever les parenthèses ?",
+      "goal": "Le nombre devant la parenthèse multiplie chaque terme.",
+      "word": [
+        "Développer",
+        "Transformer un produit en une somme."
+      ],
+      "steps": [
+        "Je lis 3(x + 4).",
+        "Je multiplie x par 3.",
+        "Je multiplie aussi 4 par 3."
+      ],
+      "answer": "3(x + 4) = 3x + 12.",
+      "diagram": [
+        [
+          "Expression",
+          "3(x + 4)"
+        ],
+        [
+          "Deux produits",
+          "3 × x   et   3 × 4"
+        ],
+        [
+          "Somme",
+          "3x + 12"
+        ]
+      ]
+    },
+    {
+      "id": "expressions-factorisation-theorie",
+      "title": "Factoriser une expression",
+      "question": "Quel nombre est dans les deux termes ?",
+      "goal": "Je mets le facteur commun devant une parenthèse.",
+      "word": [
+        "Facteur commun",
+        "Un même nombre qui multiplie chaque terme."
+      ],
+      "steps": [
+        "6x et 9 contiennent tous les deux le facteur 3.",
+        "Je divise chaque terme par 3.",
+        "Je place 2x + 3 entre parenthèses."
+      ],
+      "answer": "6x + 9 = 3(2x + 3).",
+      "diagram": [
+        [
+          "Expression",
+          "6x + 9"
+        ],
+        [
+          "Facteur commun",
+          "3 × 2x   et   3 × 3"
+        ],
+        [
+          "Produit",
+          "3(2x + 3)"
+        ]
+      ]
+    },
+    {
+      "id": "expressions-puissances-theorie",
+      "title": "Évaluer avec des puissances et des racines",
+      "question": "Quel calcul faire après le remplacement ?",
+      "goal": "Je remplace la lettre, puis je respecte l’ordre des calculs.",
+      "word": [
+        "Carré",
+        "Multiplier un nombre par lui-même."
+      ],
+      "steps": [
+        "Je lis x = 3 dans x² + √16.",
+        "Je remplace x par 3.",
+        "Je calcule 3² et √16 avant l’addition."
+      ],
+      "answer": "3² + √16 = 9 + 4 = 13.",
+      "diagram": [
+        [
+          "Remplacer x",
+          "3² + √16"
+        ],
+        [
+          "Faire les deux calculs",
+          "3² = 9   ·   √16 = 4"
+        ],
+        [
+          "Additionner",
+          "9 + 4 = 13"
+        ]
+      ]
+    }
+  ],
+  "fonctions": [
+    {
+      "id": "fonction-retrouver-regle",
+      "title": "Retrouver la règle dans un tableau",
+      "question": "Quel calcul relie x et y ?",
+      "goal": "Je regarde le résultat quand x vaut 0 et quand x augmente.",
+      "word": [
+        "Tableau de valeurs",
+        "Les valeurs de x et les résultats de y."
+      ],
+      "steps": [
+        "Pour x = 0, je lis y = 1.",
+        "Quand x augmente de 1, y augmente de 2.",
+        "Je multiplie x par 2, puis j’ajoute 1."
+      ],
+      "answer": "La règle est y = 2x + 1.",
+      "diagram": [
+        [
+          "Entrées x",
+          "0     1     2     3"
+        ],
+        [
+          "Sorties y",
+          "1     3     5     7"
+        ],
+        [
+          "Règle",
+          "y = 2x + 1"
+        ]
+      ]
+    },
+    {
+      "id": "fonction-prix-fixes",
+      "title": "Reconnaître un prix proportionnel",
+      "question": "Que paie-t-on quand on prend zéro article ?",
+      "goal": "Je regarde s’il faut déjà payer un montant de départ.",
+      "word": [
+        "Frais fixes",
+        "Un montant qui reste le même."
+      ],
+      "steps": [
+        "À 2 CHF par article, zéro article coûte 0 CHF.",
+        "Avec des frais de 3 CHF, zéro article coûte 3 CHF.",
+        "Je compare ces deux règles."
+      ],
+      "answer": "2x est proportionnel. 2x + 3 comprend des frais fixes.",
+      "diagram": [
+        [
+          "Articles",
+          "0     1     2"
+        ],
+        [
+          "À 2 CHF par article",
+          "0     2     4"
+        ],
+        [
+          "Avec 3 CHF de frais",
+          "3     5     7"
+        ]
+      ]
+    }
+  ],
+  "decimaux": [
+    {
+      "id": "decimaux-calculs-en-ligne",
+      "title": "Calculer des décimaux en ligne",
+      "question": "Comment utiliser les dixièmes et les centièmes ?",
+      "goal": "Je garde en tête la valeur de chaque chiffre.",
+      "word": [
+        "Dixième",
+        "Une part sur dix. 10 dixièmes font 1."
+      ],
+      "steps": [
+        "2,4 représente 24 dixièmes.",
+        "Je multiplie 24 par 3. Je trouve 72 dixièmes.",
+        "Je place 7 unités et 2 dixièmes. Je trouve 7,2."
+      ],
+      "answer": "2,4 × 3 = 7,2. À l’inverse, 7,2 ÷ 3 = 2,4.",
+      "diagram": [
+        [
+          "Multiplier",
+          "24 dixièmes × 3 = 72 dixièmes"
+        ],
+        [
+          "Diviser",
+          "72 dixièmes ÷ 3 = 24 dixièmes"
+        ],
+        [
+          "En décimaux",
+          "2,4 × 3 = 7,2   ·   7,2 ÷ 3 = 2,4"
+        ]
+      ]
+    }
+  ]
+}

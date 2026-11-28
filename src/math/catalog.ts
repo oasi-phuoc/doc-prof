@@ -1,5 +1,6 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { DECIMAL_LINE_PRACTICE, LENGTH_PRACTICE, PLACE_VALUE_PRACTICE, SHAPE_PRACTICE } from './fundamental-practice'
+import { SHORT_PROBLEM_DISTANCES, SHORT_PROBLEM_HOURS, SHORT_PROBLEM_PRICES } from './short-problems'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import {
   ADDITION_CARRY_TYPE,
@@ -580,6 +581,9 @@ export const exerciseTypes: ExerciseType[] = [
 
   t('problemes-donnees-utiles', 'problemes', 'Choisir les données et l’opération', 'Repérer les données utiles à la question et proposer une opération.', 'Notez les deux données utiles. Écrivez l’opération qui permet de répondre, sans l’effectuer.', 'texte', { preferredColumns: 1, preferredCount: 4, maxCount: 5, supportsNumberRange: false }),
   t('problemes-lire-menu', 'problemes', 'Lire un menu et calculer en CHF', 'Prélever les prix d’une commande puis calculer le total ou la monnaie à rendre.', 'Utilisez les prix du menu pour calculer. Écrivez votre démarche.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t(SHORT_PROBLEM_HOURS, 'problemes', 'Calculer une durée', 'Trouver la durée d’un trajet à partir des horaires de départ et d’arrivée.', 'Écrivez votre calcul. Répondez par une phrase.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t(SHORT_PROBLEM_PRICES, 'problemes', 'Calculer un prix total', 'Additionner deux prix en francs suisses.', 'Écrivez votre calcul. Répondez par une phrase.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t(SHORT_PROBLEM_DISTANCES, 'problemes', 'Calculer une distance', 'Additionner les distances d’un trajet et comparer deux trajets.', 'Écrivez votre calcul. Répondez par une phrase.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
 
   t('multiples-reconnaitre', 'multiples', 'Reconnaître un multiple', 'Dire si un nombre est multiple d’un autre.', 'Répondez par oui ou non.', 'ligne'),
   t('multiples-diviseurs', 'multiples', 'Lister les diviseurs', 'Trouver tous les diviseurs d’un nombre.', 'Écrivez tous les diviseurs, du plus petit au plus grand.', 'texte'),
