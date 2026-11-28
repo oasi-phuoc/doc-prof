@@ -27,7 +27,7 @@ import { applyType, clearLibreContentFreeze } from '@/components/generator/page-
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiquePresentationFor, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
-import { initialLogistiqueStory, logistiqueStorySelectionCompatible } from '@/logistique/evaluation'
+import { logistiqueStorySelectionCompatible, logistiqueStoryTemplates } from '@/logistique/evaluation'
 import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
 import { exerciseTypeById } from '@/math/catalog'
 import { santeActivityLevel, santeLevelsForTopic } from '@/sante/catalog'
@@ -226,11 +226,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     className={evalMode ? 'active' : ''}
                     onClick={() => {
                       const modules = activeBlock.logistiqueSelection?.modules ?? (logisticsType ? [logisticsType.module] : [])
+                      const story = Object.values(logistiqueStoryTemplates).find(({ initial }) =>
+                        logistiqueStorySelectionCompatible(modules, activeBlock.logistiqueSelection?.quantities, initial))?.initial
                       if (!evalMode && logisticsType?.kind === 'maths' && !activeBlock.logistiqueEvaluation &&
                         !activeBlock.libreItems?.length && !logistiquePresentationFor(activeBlock) &&
-                        logistiqueStorySelectionCompatible(modules, activeBlock.logistiqueSelection?.quantities)) {
+                        story) {
                         updatePage({
-                          logistiqueEvaluation: { mode: 'histoire', story: initialLogistiqueStory },
+                          logistiqueEvaluation: { mode: 'histoire', story },
                           logistiqueSelection: { modules, quantities: Object.fromEntries(modules.map((code) => [code, 1])) },
                           count: modules.length,
                         })

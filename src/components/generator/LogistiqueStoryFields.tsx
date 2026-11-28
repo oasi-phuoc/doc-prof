@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { logistiqueStoryIntro, logistiqueStoryModules, validLogistiqueStory, type LogistiqueStory } from '@/logistique/evaluation'
 
-const quantities = [
+const receptionQuantities = [
   ['expected', 'Quantité annoncée'],
   ['received', 'Quantité reçue'],
   ['held', 'Quantité bloquée'],
+  ['ordered', 'Quantité demandée par le client'],
+] as const
+const inventoryQuantities = [
+  ['expected', 'Stock théorique'],
+  ['received', 'Stock réel compté'],
+  ['held', 'Quantité dans le lot le plus ancien'],
   ['ordered', 'Quantité demandée par le client'],
 ] as const
 
@@ -16,11 +22,15 @@ export function LogistiqueStoryFields({ story, modules, onChange }: {
   const [draft, setDraft] = useState<{ basis: LogistiqueStory; value: LogistiqueStory; error: string }>()
   const local = draft?.basis === story ? draft : undefined
   const value = local?.value ?? story
+  const inventory = story.template === 'inventaire'
+  const quantities = inventory ? inventoryQuantities : receptionQuantities
 
   function update(patch: Partial<LogistiqueStory>) {
     const next = { ...value, ...patch }
     const error = !validLogistiqueStory(next)
-      ? 'Renseignez l’entreprise et la marchandise. Les quantités doivent être des entiers positifs ou nuls et la quantité bloquée doit tenir dans la réception.'
+      ? inventory
+        ? 'Renseignez l’entreprise et la marchandise. Les quantités doivent être entières et positives ou nulles. Le lot le plus ancien fait partie du stock réel.'
+        : 'Renseignez l’entreprise et la marchandise. Les quantités doivent être des entiers positifs ou nuls et la quantité bloquée doit tenir dans la réception.'
       : onChange(next)
     setDraft(error ? { basis: story, value: next, error } : undefined)
   }
@@ -58,7 +68,7 @@ export function LogistiqueStoryFields({ story, modules, onChange }: {
           onChange={(event) => update({ introductionLocked: event.target.checked })} />
         Protéger l’introduction
       </label>
-      {logistiqueStoryModules.filter((code) => modules.includes(code)).map((code) => {
+      {logistiqueStoryModules(story).filter((code) => modules.includes(code)).map((code) => {
         const passage = value.passages?.[code]
         function updatePassage(patch: { text?: string; locked?: boolean }) {
           update({ passages: { ...value.passages, [code]: { text: passage?.text ?? '', locked: passage?.locked, ...patch } } })

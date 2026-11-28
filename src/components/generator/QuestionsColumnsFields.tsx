@@ -236,7 +236,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
   const hasSummary = isLogistiqueTheory && logistiqueHasSummary(activeBlock.exerciseType, activeBlock.logistiqueBankRevision)
   const presentation = logistiquePresentationFor(activeBlock)
-  const supportsPresentation = logistics?.kind === 'verification' || logistics?.kind === 'maths' || logistics?.kind === 'situation'
+  const supportsPresentation = (logistics?.kind === 'verification' || logistics?.kind === 'maths' || logistics?.kind === 'situation') &&
+    !(evalMode && activeBlock.logistiqueEvaluation?.mode === 'histoire')
   const selectedModules = supportsPresentation
     ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
   const presentations = supportsPresentation ? ([

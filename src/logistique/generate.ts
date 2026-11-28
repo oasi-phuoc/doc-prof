@@ -121,7 +121,7 @@ export function logistiqueModuleCapacities(
   evaluation?: LogistiqueEvaluation,
 ) {
   if (evaluation?.mode === 'histoire' && type.kind === 'maths') {
-    return new Map(modules.map((code) => [code, logistiqueStoryModules.some((module) => module === code) ? 1 : 0]))
+    return new Map(modules.map((code) => [code, logistiqueStoryModules(evaluation.story).some((module) => module === code) ? 1 : 0]))
   }
   const counts = new Map(modules.map((code) => [code, 0]))
   for (const unit of eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation)) {
@@ -203,8 +203,8 @@ export function generateLogistique(
   const evaluation = config.logistiqueEvaluation
   if (evaluation?.mode === 'histoire') {
     if (type.kind !== 'maths' || presentation !== undefined || !validLogistiqueEvaluation(evaluation) ||
-        !evaluation.story || !logistiqueStorySelectionCompatible(modules, quantities)) {
-      return { title: logistiqueDocumentTitle([config], true), instruction: 'La sélection doit correspondre à la trame de réception et de préparation.', items: [], bankQuestionCap: 0 }
+        !evaluation.story || !logistiqueStorySelectionCompatible(modules, quantities, evaluation.story)) {
+      return { title: logistiqueDocumentTitle([config], true), instruction: 'Sélectionnez les modules de la trame active.', items: [], bankQuestionCap: 0 }
     }
     const items = logistiqueStoryQuestions(evaluation.story, modules)
       .filter((item) => !excludedIds?.has(item.logistiqueSource!.id))

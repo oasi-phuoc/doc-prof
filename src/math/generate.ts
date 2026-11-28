@@ -3,6 +3,7 @@ import { isMathProblemHelpType } from './problem-help'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
+import { isLogistiqueStoryQuestion } from '@/logistique/evaluation'
 import { completeLogistiqueGlossaryItem } from '@/logistique/glossary'
 import { validLogistiquePages } from '@/logistique/recipe'
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
@@ -491,7 +492,7 @@ export function buildPage(
     }
     const hasStandaloneQuestions = logisticsQuestions && result.items.length === 0 &&
       libre?.items.some((item) => item.logistiqueLocalModule ||
-        single.logistiqueEvaluation?.story && item.logistiqueSource?.revision === 'evaluation-v010') &&
+        single.logistiqueEvaluation?.story && isLogistiqueStoryQuestion(item.logistiqueSource?.revision)) &&
       validLogistiquePages([single])
     const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasStandaloneQuestions
       ? result.items : (libre?.items ?? result.items)
