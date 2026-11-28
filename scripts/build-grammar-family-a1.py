@@ -11,9 +11,6 @@ SOURCE = ROOT / 'scripts/grammar_curriculum'
 DATE = '2026-11-21'
 DEST = 'src/grammaire/curriculum/data/famille.json'
 MEDIA_MANIFEST = 'docs/grammaire/implementation/family-media.json'
-BABY_COMMIT = 'a49ee23d85707ef103300090350373e6731f882a'
-BABY_PATH = 'public/lib/images/documents/famille/bebe.webp'
-BABY_SHA = '576ff826e945a47a819053f34a9cee7b0b553d36a37dabca25faa98d7aa5b0b0'
 
 
 def read_rows(filename, width):
@@ -54,27 +51,17 @@ def make_bank(kind, label, presentations, instructions, units):
 
 
 def baby_support():
-    original = ROOT / BABY_PATH
-    if original.exists() and hashlib.sha256(original.read_bytes()).hexdigest() == BABY_SHA:
-        data = original.read_bytes()
-    else:
-        data = subprocess.check_output(['git', 'show', BABY_COMMIT+':'+BABY_PATH], cwd=ROOT)
-    assert hashlib.sha256(data).hexdigest() == BABY_SHA
-    src = f'/lib/images/grammaire/curriculum/sha256/{BABY_SHA}.webp'
-    path = ROOT / ('public'+src)
+    [support] = json.loads((ROOT / MEDIA_MANIFEST).read_text())['supports']
+    original = 'public' + support['source']['path']
+    source = ROOT / original
+    data = source.read_bytes() if source.exists() else subprocess.check_output(['git', 'show', 'HEAD:'+original], cwd=ROOT)
+    assert hashlib.sha256(data).hexdigest() == support['sha256']
+    path = ROOT / ('public' + support['src'])
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
         assert path.read_bytes() == data, 'Never replace an immutable support'
     else:
         path.write_bytes(data)
-    support = {'id': 'grammar-family-baby', 'src': src, 'sha256': BABY_SHA, 'width': 280, 'height': 280,
-               'alt': 'Illustration d’un bébé allongé sur un fond clair.',
-               'source': {'path': '/lib/images/documents/famille/bebe.webp', 'manifest': MEDIA_MANIFEST,
-                          'rights': 'permitted-reuse',
-                          'note': 'Réemploi interne demandé par le propriétaire. Fichier restauré depuis '+BABY_COMMIT+' ; vérification visuelle le 21 novembre 2026. Aucune licence tierce ou nouvelle génération affirmée.'}}
-    (ROOT / MEDIA_MANIFEST).write_text(json.dumps({'schemaVersion': 1, 'date': DATE, 'generatedImages': 0,
-        'restoredFromCommit': BABY_COMMIT, 'supports': [support],
-        'limitations': 'Illustration commune ; le visage ne permet pas d’identifier les bébés fictifs des annonces. Approbation enseignante en attente.'}, ensure_ascii=False, indent=2)+'\n')
     return support
 
 

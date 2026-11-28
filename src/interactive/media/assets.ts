@@ -1,3 +1,4 @@
+import { currentGrammarImageSupport } from '@/grammaire/curriculum/image-support'
 import type { Question } from '../domain/types'
 import type { MediaAsset, MediaPolicy, MediaResult } from './types'
 import { mediaUrl } from './policy'
@@ -21,7 +22,7 @@ export function collectMedia(
     add(q.audio, 'audio')
     q.audioParts?.forEach((part) => add(part, 'audio'))
     q.images.forEach((image) => add(image, 'image'))
-    q.grammarImages?.forEach((image) => add(image.src, 'image'))
+    q.grammarImages?.forEach((image) => add(currentGrammarImageSupport(image).src, 'image'))
     q.choices.forEach((choice) => {
       add(choice.image, 'image')
       add(choice.audio, 'audio')

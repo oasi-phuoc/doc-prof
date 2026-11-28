@@ -1,4 +1,14 @@
 import type { GrammarImageSupport } from './types'
+import replacements from './media-replacements.json'
+
+const grammarImageReplacements: Readonly<Record<string, GrammarImageSupport>> =
+  Object.fromEntries(Object.entries(replacements).filter(([, support]) => validGrammarImage(support))) as Record<string, GrammarImageSupport>
+
+/** Keep saved activities usable when a retired illustration is replaced. */
+export function currentGrammarImageSupport(support: GrammarImageSupport): GrammarImageSupport {
+  const replacement = grammarImageReplacements[support.sha256]
+  return replacement?.id === support.id ? replacement : support
+}
 
 /** Immutable, local, content-addressed files only; never an overwritable legacy URL. */
 export function validGrammarImage(value: unknown): value is GrammarImageSupport {

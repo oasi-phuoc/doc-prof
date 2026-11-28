@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { currentGrammarImageSupport } from '@/grammaire/curriculum/image-support'
 import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
 import { acquireGrammarImageUrl } from './verified-image-url'
 import { SafeImage } from '@/interactive/components/Media'
@@ -26,6 +27,11 @@ function VerifiedImage({support,zoom}:{support:GrammarImageSupport;zoom:boolean}
 export function GrammarImageSupports({supports,zoom=false}:{supports?:GrammarImageSupport[];zoom?:boolean}) {
   if(!supports?.length)return null
   return <div className="grammar-support-images" style={{gridTemplateColumns:`repeat(${supports.length}, minmax(0, 1fr))`}}>
-    {supports.map(s=><figure className="grammar-support-image" data-support-id={s.id} key={s.id+':'+s.sha256}><VerifiedImage support={s} zoom={zoom}/></figure>)}
+    {supports.map((support) => {
+      const image = currentGrammarImageSupport(support)
+      return <figure className="grammar-support-image" data-support-id={image.id} key={image.id + ':' + image.sha256}>
+        <VerifiedImage support={image} zoom={zoom}/>
+      </figure>
+    })}
   </div>
 }

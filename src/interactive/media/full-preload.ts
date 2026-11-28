@@ -1,4 +1,4 @@
-import { validGrammarImage } from '@/grammaire/curriculum/image-support'
+import { currentGrammarImageSupport, validGrammarImage } from '@/grammaire/curriculum/image-support'
 import { MASCOT_IMAGES } from '../domain/mascot'
 import { collectMedia } from './assets'
 import { aborted, decodeAudio, decodeImage } from './decode'
@@ -65,7 +65,8 @@ async function readBlob(response: Response, maximum: number, signal: AbortSignal
 
 /** Publish an all-or-nothing, memory-only pack. No plan or correction is rewritten. */
 export async function preloadSession(plan: PublicMediaPlan, options: Options, signal: AbortSignal, onProgress?: (progress: PreloadProgress) => void, dependencies?: Dependencies): Promise<PreparedMedia> {
-  const assets=sessionAssets(plan,options), grammar=plan.questions.flatMap(q=>q.grammarImages??[])
+  const assets=sessionAssets(plan,options)
+  const grammar=plan.questions.flatMap(q=>q.grammarImages?.map(currentGrammarImageSupport)??[])
   if (assets.length>1024 || assets.some(asset=>asset.conflictingKinds||!mediaUrl(asset.url,options)) || grammar.some(image=>!validGrammarImage(image))) throw new PreloadError('Certains médias ne peuvent pas être préparés. Vérifiez la sélection et les références des images.')
   if (signal.aborted) throw aborted()
   if (plan.questions.some(question => question.fractionFigure)) await abortable(loadFractionDrawing(), signal)

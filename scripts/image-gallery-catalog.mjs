@@ -78,9 +78,14 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], keywords: [image.action] })
   }
+  const familyImageCopies = new Set()
   for (const manifest of ['media-supports', 'presentation-media', 'family-media']) {
     for (const image of read(root, `docs/grammaire/implementation/${manifest}.json`, {}).supports ?? []) {
       add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'] })
+      const original = image.source?.path
+      if (manifest === 'family-media' && original && original !== image.src && files.includes('public' + original)) {
+        familyImageCopies.add('public' + image.src)
+      }
     }
   }
   for (const image of read(root, 'docs/grammaire/implementation/decrire-media-manifest.json', {}).images ?? []) {
@@ -140,7 +145,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   const placeholder = path.join(root, 'docs/vie-scolaire/illustration-provisoire.webp')
   const schoolPlaceholder = existsSync(placeholder) ? readFileSync(placeholder) : undefined
   return files.filter(file => {
-    if (['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))) return false
+    if (familyImageCopies.has(file) || ['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))) return false
     return !schoolPlaceholder || !file.startsWith('public/lib/images/vie-scolaire/') ||
       !schoolPlaceholder.equals(readFileSync(path.join(root, file)))
   }).map(file => {
