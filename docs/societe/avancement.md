@@ -24,6 +24,13 @@ Les 15 théories produisent chacune deux pages. Le parcours contient 44 visuels 
 
 Pour chaque remplacement, utiliser un visuel individuel 4:3 dans le style semi-réaliste de la banque PO. Conserver l’adresse du média et actualiser le texte alternatif dans [la théorie illustrée](../../src/societe/parcours/theorie-illustree.ts). Les schémas du décompte et de la consultation sont déjà intégrés aux fiches.
 
+## Atlas des cantons et des paysages
+
+- Les quatre cartes isolent le contour suisse et les limites cantonales. Le générateur propose les variantes muette, avec sigles, avec écussons et avec les deux. Les activités de repérage ont un corrigé.
+- La liste présente les 26 cantons, leurs sigles, leurs écussons et leurs chefs-lieux. Les six anciens demi-cantons sont signalés. Chaque chef-lieu a aussi une vue réservée en grand format.
+- Les autres emplacements couvrent trois villes, sept lacs, sept cours d’eau et trois paysages. Les 46 vues géographiques et les deux scènes B1 restent à compléter. [Images à produire](images-a-produire.md)
+- Les supports de compréhension écrite et de production ont été illustrés. Les exercices d’écoute utilisent un visuel de contexte lorsqu’il laisse l’information à trouver dans l’audio. [Sources de l’atlas](sources-atlas.md)
+
 ## Médias
 
 - Les pistes sont des voix françaises de synthèse, à partir des transcriptions de [la banque](../../src/societe/parcours/). Le corrigé affiche la transcription pour une lecture par l’enseignant.

@@ -43,3 +43,83 @@
 .a5-half [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image figcaption {
   font-size: 11pt;
 }
+
+.societe-with-context img {
+  max-height: 33mm;
+}
+.a5-half .societe-with-context img {
+  max-height: 25mm;
+}
+.societe-with-context figcaption {
+  line-height: 1.2;
+}
+.a5-half .societe-support:not(.societe-with-context) img {
+  max-height: 53mm;
+}
+[data-exercise-type*="-carte-"] .societe-support figure img {
+  width: 100%;
+  max-height: 110mm;
+}
+.a5-half [data-exercise-type*="-carte-"] .societe-support figure img {
+  max-height: 77mm;
+}
+[data-exercise-type="societe-cantons-theorie"] img[src$="/atlas/cantons-sigles.webp"] {
+  max-height: 79mm;
+}
+.a5-half [data-exercise-type="societe-cantons-theorie"] img[src$="/atlas/cantons-sigles.webp"] {
+  max-height: 55mm;
+}
+.societe-cantons-table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.25;
+  text-align: left;
+  font-size: 12pt;
+}
+.societe-cantons-table :is(td, th) {
+  border-bottom: 1px solid var(--line, #ccc);
+  padding: 1.4mm 2mm;
+}
+.societe-cantons-table tbody th {
+  width: 54%;
+}
+.societe-canton,
+.societe-chef-lieu {
+  display: flex;
+  gap: 2.2mm;
+  align-items: center;
+  justify-content: space-between;
+}
+.societe-canton {
+  justify-content: start;
+}
+.societe-canton small {
+  display: block;
+  font-weight: 400;
+}
+.societe-ecusson {
+  flex: none;
+  width: 11mm;
+  height: 14mm;
+  object-fit: contain;
+}
+.societe-chef-lieu-vue {
+  flex: none;
+  width: 23mm;
+  height: 17.25mm;
+  object-fit: contain;
+}
+.a5-half .societe-chef-lieu-vue {
+  width: 19mm;
+  height: 14.25mm;
+}
+.a5-half .societe-cantons-table {
+  font-size: 11pt;
+}
+[data-exercise-type$="-atlas"] .theory-image-table img {
+  height: 34mm;
+  background: #fff;
+}
+.a5-half [data-exercise-type$="-atlas"] .theory-image-table img {
+  height: 29mm;
+}
