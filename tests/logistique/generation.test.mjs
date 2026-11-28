@@ -837,6 +837,29 @@ test('les processus gardent les étapes, les réponses et les suites dans l’or
   }
 })
 
+test('les applications 300 à 600 suivent le cours, le programme du diplôme et les révisions de banque', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'applications-v019')
+  assert.equal(units.length, 8)
+  assert.equal(units.filter(({ approvedFor }) => approvedFor.includes('AFP')).length, 6)
+  assert.deepEqual(units.map(({ module }) => module), ['302', '309', '402', '404', '502', '504', '602', '605'])
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: unit.table.presentation }
+      const [item] = generateLogistique(page, 20).items
+      assert.equal(item?.logistiqueSource.id, unit.approvedFor.includes(diploma) ? unit.id : undefined)
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-graphiques-v018' }, 20).bankQuestionCap, 0)
+      if (!item) continue
+      assert(reviewableLogistiqueAnswer(item), unit.id)
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }], true)
+      assert(validLogistiquePages([frozen]), unit.id)
+      assert.deepEqual(buildPage(frozen, 30).items, [item])
+    }
+  }
+})
+
 test('les deux présentations de graphiques gardent les valeurs, les repères et le corrigé', () => {
   const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'graphiques-v018')
   assert.equal(units.length, 4)
