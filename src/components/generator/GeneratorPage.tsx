@@ -178,7 +178,7 @@ export function GeneratorPage({
     })
   }
   const [ficheRef, setFicheRef] = useState<{ id: string; name: string } | null>(() =>
-    openedFiche ? { id: openedFiche.id, name: openedFiche.name } : null,
+    openedFiche?.id ? { id: openedFiche.id, name: openedFiche.name } : null,
   )
   const [saveOpen, setSaveOpen] = useState(false)
   const [transientFields, setTransientFields] = useState<Record<string, string>>({})
@@ -958,6 +958,7 @@ export function GeneratorPage({
           </h1>
           <p className="hero-text">Chaque génération crée une nouvelle série d’exercices aléatoires.</p>
         </div>
+        {openedFiche?.notice && <p role="status" className="no-print">{openedFiche.notice}</p>}
         <div
           className={`workspace${libreMode ? ' has-libre-panel' : ''}${!libreMode && footerPanelOpen ? ' has-footer-panel' : ''}`}
           data-libre-view={libreMode ? libreView : undefined}
@@ -1107,7 +1108,7 @@ export function GeneratorPage({
       </main>
       {saveOpen ? (
         <SaveFicheDialog
-          initialName={ficheRef?.name ?? ''}
+          initialName={ficheRef?.name ?? openedFiche?.name ?? ''}
           canUpdate={ficheRef != null}
           onClose={() => setSaveOpen(false)}
           onSubmit={persistFiche}

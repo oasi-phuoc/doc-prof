@@ -48,9 +48,10 @@ export type SavedFiche = {
 }
 
 export type StagedFiche = {
-  id: string
+  id: string | null
   name: string
   recipe: FicheRecipe
+  notice?: string
 }
 
 const HISTORY_KEY = 'clairfleFiche'
@@ -176,12 +177,12 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
 
 export function parseStagedFiche(value: unknown): StagedFiche | null {
   if (!isRecord(value)) return null
-  if (typeof value.id !== 'string' || typeof value.name !== 'string') return null
+  if ((value.id !== null && typeof value.id !== 'string') || typeof value.name !== 'string') return null
   const user = readSessionUser()
   if (user ? value.sessionOwner !== user.id : typeof value.sessionOwner === 'string') return null
   const recipe = parseFicheRecipe(value.recipe)
   if (!recipe) return null
-  return { id: value.id, name: value.name, recipe }
+  return { id: value.id, name: value.name, recipe, notice: typeof value.notice === 'string' ? value.notice : undefined }
 }
 
 export function buildFicheRecipe(input: {

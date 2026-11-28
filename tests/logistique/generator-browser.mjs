@@ -465,6 +465,30 @@ try {
     await page.emulateMedia({ media: 'screen' })
     await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
   }
+  const savedOriginal = structuredClone(saved)
+  await page.goto(base + '/fiches')
+  await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
+  await page.waitForURL('**/generateur')
+  await sheet.getByText(/Vous en comptez 48/).waitFor()
+  await page.goto(base + '/fiches')
+  await page.getByRole('button', { name: 'Nouveau tirage', exact: true }).click()
+  await page.waitForURL('**/generateur')
+  await page.getByText('1 trame actualisée.', { exact: true }).waitFor()
+  await page.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+  assert.match(await dialog.getByLabel('Nom de la fiche').inputValue(), /nouveau tirage$/)
+  assert.equal(await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).count(), 0)
+  assert.deepEqual(saved, savedOriginal)
+  const saveCopy = page.waitForResponse((response) =>
+    new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST')
+  await dialog.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+  await saveCopy
+  await dialog.waitFor({ state: 'hidden' })
+  const newBlock = saved.recipe.pages[0]
+  const oldStory = savedOriginal.recipe.pages[0].logistiqueEvaluation.story
+  const newStory = newBlock.logistiqueEvaluation.story
+  assert.notDeepEqual(newStory, oldStory)
+  assert.deepEqual(newBlock.libreItems.map(({ points }) => points), [3, 2.5, 4.5])
+  assert.equal(newBlock.libreItems[0].logistiqueAssessment.pointsLocked, true)
   assert.deepEqual(errors, [])
   console.log('Pilotes CFC et AFP : évaluations, édition Libre des questions et des tableaux, enregistrement et PDF.')
 } finally {

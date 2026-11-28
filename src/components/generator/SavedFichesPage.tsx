@@ -14,6 +14,8 @@ import {
 } from '@/fiches/api'
 import { readAccessPassword } from '@/fiches/password'
 import { stageFicheNavigation, type SavedFiche } from '@/fiches/recipe'
+import { canReuseLogistiqueEvaluation, reuseLogistiqueEvaluation } from '@/logistique/model'
+import { randomSeed } from '@/math/rng'
 import type { Domain } from '@/math/types'
 import { LoadingScreen } from '@/components/LoadingScreen'
 
@@ -78,6 +80,7 @@ export function SavedFichesPage({
   const [loading, setLoading] = useState(unlocked && configured)
   const [error, setError] = useState<string | null>(null)
   const [pendingDelete, setPendingDelete] = useState<string | null>(null)
+  const [modelError, setModelError] = useState<{ id: string; message: string } | null>(null)
   const [unlockError, setUnlockError] = useState<string | null>(null)
 
   const load = async () => {
@@ -178,6 +181,17 @@ export function SavedFichesPage({
 
   const openFiche = (fiche: SavedFiche) => {
     stageFicheNavigation({ id: fiche.id, name: fiche.name, recipe: fiche.recipe })
+    onOpenGenerator()
+  }
+
+  const reuseEvaluation = (fiche: SavedFiche) => {
+    const draw = reuseLogistiqueEvaluation(fiche.recipe, randomSeed())
+    if ('error' in draw) {
+      setModelError({ id: fiche.id, message: draw.error })
+      return
+    }
+    const name = `${fiche.name.slice(0, 62).trimEnd()} — nouveau tirage`
+    stageFicheNavigation({ id: null, name, recipe: draw.recipe, notice: draw.notice })
     onOpenGenerator()
   }
 
@@ -319,6 +333,7 @@ export function SavedFichesPage({
                       {fiche.domains.map(domainLabel).join(' · ')}
                       {formatUpdated(fiche.updatedAt) ? ` — ${formatUpdated(fiche.updatedAt)}` : ''}
                     </span>
+                    {modelError?.id === fiche.id && <span className="access-error" role="status">{modelError.message}</span>}
                   </div>
                   <div className="fiches-row-actions">
                     {pendingDelete === fiche.id ? (
@@ -352,6 +367,11 @@ export function SavedFichesPage({
                         ) : (
                           <button className="button small" type="button" onClick={() => openFiche(fiche)}>
                             Ouvrir
+                          </button>
+                        )}
+                        {library === 'fiches' && canReuseLogistiqueEvaluation(fiche.recipe) && (
+                          <button type="button" className="button small" onClick={() => reuseEvaluation(fiche)}>
+                            Nouveau tirage
                           </button>
                         )}
                         <button className="button small" type="button" onClick={() => openInteractive(fiche.recipe, fiche.name, fiche.id)}>Jouer cette fiche</button>

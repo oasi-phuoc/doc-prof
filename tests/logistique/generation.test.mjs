@@ -17,6 +17,8 @@ const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryCh
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
+const { canReuseLogistiqueEvaluation, reuseLogistiqueEvaluation } = load(root + '/src/logistique/model.ts')
+const { parseFicheRecipe } = load(root + '/src/fiches/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
 const { blockItemsForConfig } = load(root + '/src/components/generator/sheet-items.ts')
@@ -746,6 +748,65 @@ test('une introduction longue se poursuit avant les calculs sans dupliquer les q
     page.items[0].logistiqueNarrative.replace(/\s+/g, ' '))
   assert(sheets.slice(0, contexts.length).every((sheet) => !sheet.items.length))
   assert.deepEqual(sheets[contexts.length].blocks[0].logistiqueDetachedNarratives, [0])
+})
+
+test('une évaluation enregistrée peut servir de modèle avec des questions renouvelées par module', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    const page = { ...config(diploma, '303', 'maths'), count: 4,
+      logistiqueSelection: { modules: ['303', '312'], quantities: { 303: 2, 312: 2 } },
+      logistiqueEvaluation: { mode: 'independantes', targetPoints: 10, targetMinutes: 15 }, contentSeed: 17 }
+    const seed = 110
+    const fromBank = buildPage(page, seed).items
+    const slots = fromBank.map((item, index) => ({ ...item, libreId: `question-${index}`, points: index + 1 }))
+    slots[0].libreLocked = true
+    const savedPage = { ...page, libreId: 'activite-garde', libreItems: slots, libreInstruction: 'Montrez votre démarche.' }
+    const recipe = { version: 1, pages: freezeLogistiquePages([savedPage], true), seed, evalMode: true,
+      institutional: { documentTitle: 'Évaluation logistique' }, pointsPerQuestion: 1, libreMode: false, libreSnapshot: null }
+    const untouched = structuredClone(recipe)
+    assert(canReuseLogistiqueEvaluation(recipe))
+    const result = reuseLogistiqueEvaluation(recipe, 20261128)
+    assert(!result.error, result.error)
+    assert.match(result.notice, /3 questions renouvelées/)
+    const [fresh] = result.recipe.pages
+    assert.deepEqual(recipe, untouched)
+    assert.strictEqual(fresh.libreItems[0], slots[0])
+    assert.equal(fresh.libreInstruction, page.libreInstruction ?? savedPage.libreInstruction)
+    assert.deepEqual(fresh.logistiqueSelection, page.logistiqueSelection)
+    assert.deepEqual(fresh.logistiqueEvaluation, page.logistiqueEvaluation)
+    assert.deepEqual(fresh.libreItems.map((item) => item.points), [1, 2, 3, 4])
+    assert.deepEqual(fresh.libreItems.map((item) => item.logistiqueSource.module), slots.map((item) => item.logistiqueSource.module))
+    assert(fresh.libreItems.slice(1).every((item) => !slots.some((source) => source.logistiqueSource.id === item.logistiqueSource.id)))
+    assert(parseFicheRecipe(result.recipe))
+    const double = reuseLogistiqueEvaluation({ ...recipe, sheetFormat: 'a5-double-landscape' }, 20261128)
+    assert(!double.error, double.error)
+    assert(parseFicheRecipe(double.recipe))
+    const [both] = double.recipe.pages
+    assert.strictEqual(both.libreItems[0], slots[0])
+    assert(both.a5RightLibre.items.length > 0)
+    assert(buildPage(pageForA5Half(both, 'left'), seed).items.every((item, index) => item.answer === both.libreItems[index].answer))
+    assert.deepEqual(buildPage(pageForA5Half(both, 'right'), seed).items, both.a5RightLibre.items)
+  }
+})
+
+test('un nouveau tirage narratif respecte les passages protégés et laisse l’original intact', () => {
+  const story = { ...initialLogistiqueStory, passages: { 303: { text: 'Vous contrôlez la réception.', locked: true } } }
+  const page = { ...config('AFP', '303', 'maths'), count: 3,
+    logistiqueSelection: { modules: ['303', '312', '601'], quantities: { 303: 1, 312: 1, 601: 1 } },
+    logistiqueEvaluation: { mode: 'histoire', story } }
+  const recipe = { version: 1, pages: freezeLogistiquePages([page], true), institutional: {},
+    seed: 99, evalMode: true, pointsPerQuestion: 1, libreMode: false, libreSnapshot: null }
+  const result = reuseLogistiqueEvaluation(recipe, 20261128)
+  assert(!result.error, result.error)
+  const [fresh] = result.recipe.pages
+  assert.equal(fresh.logistiqueEvaluation.story.expected, story.expected)
+  assert.equal(fresh.logistiqueEvaluation.story.received, story.received)
+  assert.deepEqual(fresh.logistiqueEvaluation.story.passages, story.passages)
+  assert.deepEqual(fresh.libreItems[0], recipe.pages[0].libreItems[0])
+  assert.notDeepEqual(fresh.libreItems[2], recipe.pages[0].libreItems[2])
+  assert(parseFicheRecipe(result.recipe))
+  const blocked = { ...page, logistiqueEvaluation: { mode: 'histoire', story: { ...story, introductionLocked: true } } }
+  assert.match(reuseLogistiqueEvaluation({ ...recipe, pages: [blocked] }, 20261128).error, /Déverrouillez l’introduction/)
+  assert.match(reuseLogistiqueEvaluation({ ...recipe, pages: [{ ...page, logistiqueBankRevision: 'absente' }] }, 25).error, /révision de banque/)
 })
 
 test('le barème atteint la cible par demi-points et la durée compte une seule lecture commune', () => {
