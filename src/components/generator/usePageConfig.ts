@@ -563,7 +563,7 @@ export function usePageConfig({
         const sheet = renderedSheet ?? worksheets[sheetAt]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         if (questionModeIndex != null && questionModeIndex > 1) {
-          const breaks = block.tcfQuestionPageBreakBefore ?? []
+          const breaks = block.tcfQuestionPageBreakBefore ?? sheetBlock?.tcfQuestionPageBreakBefore ?? []
           return setPageBlock(page, targetBlock, { tcfQuestionPageBreakBefore: breaks.includes(questionModeIndex)
             ? breaks.filter(value => value !== questionModeIndex) : [...breaks, questionModeIndex].sort((a, b) => a - b) })
         }

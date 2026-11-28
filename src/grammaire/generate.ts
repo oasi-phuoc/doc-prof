@@ -58,7 +58,7 @@ export function tryGenerateGrammaireBlock(
   // Les anciennes recettes enregistrent leurs coupes selon les index du gabarit historique.
   const legacyBlocks = normalizeTheoryBlocks(doc.blocks)
   const usesLegacyBreaks = config.tcfPageBreakAfter?.length === legacyBlocks.filter(block => block.kind !== 'page').length
-  const falcBlocks = usesLegacyBreaks ? undefined : falcLessonBlocks(doc, config.grammarTheoryPaper)
+  const falcBlocks = usesLegacyBreaks ? undefined : falcLessonBlocks(doc, config.worksheetPaper)
   const items = (falcBlocks ?? legacyBlocks).reduce<MathItem[]>((result, block) => {
     if (block.kind === 'page') {
       const previous = result[result.length - 1]

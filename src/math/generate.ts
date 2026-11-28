@@ -52,7 +52,7 @@ import { tryGenerateSanteBlock } from '@/sante/generate'
 import { paginateSanteWorksheet } from '@/sante/pagination'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { isSocieteTheoryType } from '@/societe/types'
-import { tryGenerateVieScolaireBlock } from '@/vie-scolaire/generate'
+import { schoolA5Breaks, tryGenerateVieScolaireBlock } from '@/vie-scolaire/generate'
 import { isVieScolaireTheoryType } from '@/vie-scolaire/types'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
@@ -124,6 +124,7 @@ function buildSingleBlock(
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   bankQuestionCap?: number
+  tcfQuestionPageBreakBefore?: number[]
 } {
   if (isLogistiqueDomain(config.domain)) return generateLogistique(config, seed)
   const rng = createRng(seed)
@@ -543,10 +544,14 @@ export function buildPage(
     const placementReadingBreaks = tpfPlacementTask(block.exerciseType)?.competence === 'CE' && items.length > 4
       ? items.map((_, index) => index === 3)
       : undefined
+    const schoolBreaks = page.worksheetPaper === 'a5' && page.domain === 'vie-scolaire'
+      ? schoolA5Breaks(block.exerciseType, items.length, block.columns)
+      : undefined
     const tcfPageBreakAfter =
       block.tcfPageBreakAfter ??
       (isGrammaireTheoryType(block.exerciseType) ? undefined : page.tcfPageBreakAfter) ??
       placementReadingBreaks ??
+      schoolBreaks ??
       (isTheory ? items.map((item) => Boolean(item.theoryPageBreakAfter)) : undefined)
     return {
       exerciseIndex,
@@ -578,7 +583,7 @@ export function buildPage(
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
       tcfPageBreakAfter,
-      tcfQuestionPageBreakBefore: block.tcfQuestionPageBreakBefore,
+      tcfQuestionPageBreakBefore: block.tcfQuestionPageBreakBefore ?? result.tcfQuestionPageBreakBefore,
       bankQuestionCap: result.bankQuestionCap,
       grammarPageBreakAfterQuestionIds: block.grammarPageBreakAfterQuestionIds,
       corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
@@ -698,13 +703,17 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       let continuation = false
       const append = (blocks: WorksheetBlock[]) => {
         if (blocks.length === 0) return
-        out.push({
+        const sheet = {
           ...worksheet,
           blocks,
           items: blocks.flatMap((block) => block.items),
           configIndex: index,
           isContinuation: continuation,
-        })
+        }
+        const schoolActivities = page.domain === 'vie-scolaire' && !blocks.some(hasFullPageContent)
+          ? splitTcfAudioQuestionPages(sheet, true)
+          : null
+        out.push(...(schoolActivities?.map((part, index) => ({ ...part, isContinuation: continuation || index > 0 })) ?? [sheet]))
         continuation = true
       }
       let preceding: WorksheetBlock[] = []

@@ -13,7 +13,7 @@ Le programme couvre 19 thèmes. Le registre recense 230 pistes de compréhension
 | 5 | Devoirs, inscription, papeterie, tâches domestiques, immeuble, activités extrascolaires, sport, week-end et vacances | Intégré. 63 activités et 27 pistes. |
 | 6 | Examens, vie de classe et sortie au B1 | Intégré. 21 activités et 9 pistes. |
 | 7 | Illustrations définitives | 35 scènes illustrées, 37 à produire et 12 schémas terminés. |
-| 8 | Réception en classe et vérification des impressions | À faire |
+| 8 | Réception en classe et vérification des impressions | PDF A4 et double A5 contrôlés. L’essai papier et la réception en classe restent à faire. |
 
 ## Détail par thème
 
@@ -41,7 +41,9 @@ Le programme couvre 19 thèmes. Le registre recense 230 pistes de compréhension
 
 Les 72 scènes prévues sont en place dans les fiches. 35 utilisent des illustrations existantes du catalogue, avec un texte alternatif adapté. Les 37 emplacements provisoires sont signalés dans l’inventaire, y compris les suites du week-end, de la journée à la maison et du prêt de matériel. Les 8 cadrans et les 4 modèles de consignes sont disponibles. Les tableaux lisibles couvrent aussi les horaires, les devoirs, le budget de papeterie, les tâches, les ateliers, le week-end, les vacances, les examens et le choix d’une sortie. Le matériel scolaire reprend les images existantes. [Banque CO A1–B1](../../src/vie-scolaire/audios.json)
 
-Le contrôle du générateur couvre les 133 activités, les deux formats des 57 pistes, leurs transcriptions, leurs chemins média, les corrigés et la relecture d’une recette enregistrée. Les 57 fichiers MP3 ont été décodés et rapprochés de leurs transcriptions sources. L’écoute intégrale et la vérification d’une impression réelle en A4 et en double A5 restent à faire. [Inventaire des visuels](images-a-produire.md)
+Le contrôle du générateur couvre les 133 activités, les deux formats des 57 pistes, leurs transcriptions, leurs chemins média, les corrigés et la relecture d’une recette enregistrée. Les 57 fichiers MP3 ont été décodés et rapprochés de leurs transcriptions sources. L’écoute intégrale reste à faire. [Inventaire des visuels](images-a-produire.md)
+
+Les PDF de fiches A1 à B1 ont été contrôlés en A4 et en double A5 avec les réglages standard. Le contrôle de débordement en double A5 couvre les 19 thèmes et les 57 pistes dans les deux formats. Les fiches plus longues répartissent la théorie, les questions ou les cartes de vocabulaire sur plusieurs feuillets. Les annexes de correction conservent le format A4 portrait utilisé par le générateur.
 
 ## Vérifications à consigner lors de l’intégration
 

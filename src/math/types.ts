@@ -1303,7 +1303,7 @@ export type ExerciseBlock = {
 export type PageConfig = ExerciseBlock & {
   domain: Domain
   /** Format transmis à la génération des deux exemplaires A5. */
-  grammarTheoryPaper?: 'a5'
+  worksheetPaper?: 'a5'
   /** Types d’exercices supplémentaires sur la même feuille A4. */
   extraBlocks?: ExerciseBlock[]
 }

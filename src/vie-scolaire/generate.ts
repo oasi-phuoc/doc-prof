@@ -20,29 +20,39 @@ export function vieScolaireAudiosForType(typeId: string): readonly SchoolAudio[]
   return isSchoolKind(typeId, 'co') ? audios[typeId.slice('vie-scolaire-'.length, -'-co'.length)] ?? [] : []
 }
 
+export function schoolA5Breaks(typeId: string, count: number, columns: number): boolean[] | undefined {
+  if (isSchoolKind(typeId, 'ce')) return count > 4 ? [true, false, true] : [true]
+  if (isSchoolKind(typeId, 'lexique')) {
+    const cardsPerPage = Math.max(1, columns) * 2
+    if (count > cardsPerPage) return Array.from({ length: count }, (_, index) => (index + 1) % cardsPerPage === 0)
+  }
+  if (isSchoolKind(typeId, 'pratique') && count > 3) return [false, true]
+}
+
 function theory(block: GrammarTheoryBlock): MathItem {
   return { layout: 'theory', answer: '', noPoints: true, theoryBlock: block, grammarTheoryFalc: true }
 }
 
-function pictureRows(pictures: readonly SchoolPicture[]): MathItem[] {
+function pictureRows(pictures: readonly SchoolPicture[], breakAfter: boolean): MathItem[] {
   const rows: MathItem[] = []
   for (let index = 0; index < pictures.length; index += 2) {
-    rows.push(theory({ kind: 'image-row', label: 'Illustrations', cells: pictures.slice(index, index + 2) }))
+    const row = theory({ kind: 'image-row', label: 'Illustrations', cells: pictures.slice(index, index + 2) })
+    rows.push(breakAfter && index + 2 >= pictures.length ? { ...row, theoryPageBreakAfter: true } : row)
   }
   return rows
 }
 
-function theoryItems(lesson: SchoolLesson): MathItem[] {
+function theoryItems(lesson: SchoolLesson, a5: boolean): MathItem[] {
   const descriptions = Math.ceil(lesson.steps.length / 2)
   const pictures = Math.ceil(lesson.pictures.length / 4) * 2
   return [
     theory({ kind: 'heading', text: lesson.title }),
     theory({ kind: 'paragraph', text: lesson.objective }),
-    ...pictureRows(lesson.pictures.slice(0, pictures)),
+    ...pictureRows(lesson.pictures.slice(0, pictures), a5),
     theory({ kind: 'examples', label: 'Je regarde', marker: 'border', items: [lesson.situation] }),
     { ...theory({ kind: 'examples', label: 'Je comprends', marker: 'puces', items: [...lesson.steps.slice(0, descriptions)] }), theoryPageBreakAfter: true },
     theory({ kind: 'heading', text: `${lesson.title} · Un exemple`, sub: true }),
-    ...pictureRows(lesson.pictures.slice(pictures)),
+    ...pictureRows(lesson.pictures.slice(pictures), a5),
     theory({ kind: 'examples', label: 'Je retiens', marker: 'puces', items: [...lesson.steps.slice(descriptions)] }),
     theory(typeof lesson.example === 'string'
       ? { kind: 'examples', label: 'Je regarde l’exemple', marker: 'border', items: [lesson.example] }
@@ -103,7 +113,7 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
   const instruction = type[2]
   switch (kind) {
     case 'theorie':
-      return { instruction: lesson.title, items: theoryItems(lesson) }
+      return { instruction: lesson.title, items: theoryItems(lesson, config.worksheetPaper === 'a5') }
     case 'lexique': {
       const recall = Boolean(config.grammarVocabRecall)
       const entries = shuffle(rng, lesson.words)
@@ -131,6 +141,8 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
         instruction: kind === 'co' && config.grammarCoFormat === 'true-false'
           ? 'Écoutez l’enregistrement. Pour chaque phrase, cochez Vrai ou Faux.'
           : instruction,
+        tcfQuestionPageBreakBefore: kind === 'co' && config.grammarCoFormat !== 'true-false'
+          && config.worksheetPaper === 'a5' && lesson.level === 'B1' ? [3] : undefined,
         items: ficheCommunicationItems(exercise, config, rng, {
           reference: 'Vie scolaire',
           writingLines: writingLines[lesson.level],
