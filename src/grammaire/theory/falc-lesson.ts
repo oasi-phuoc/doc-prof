@@ -12,8 +12,8 @@ const placeIllustration: GrammarTheoryBlock = {
   kind: 'image-row',
   label: 'Deux positions du vélo autour de la même maison',
   cells: [
-    { src: '/lib/images/grammaire/theorie/velo-devant.png', alt: 'Le vélo est près de la porte, du côté de la rue.', caption: 'Le vélo est devant la maison.' },
-    { src: '/lib/images/grammaire/theorie/velo-derriere.png', alt: 'La maison cache une partie du vélo.', caption: 'Le vélo est derrière la maison.' },
+    { src: '/lib/images/grammaire/theorie/velo-devant.png', alt: 'Le vélo est devant la porte bleue, du côté de l’entrée.', caption: 'Le vélo est devant la maison.' },
+    { src: '/lib/images/grammaire/theorie/velo-derriere.png', alt: 'Le même vélo est du côté du jardin, contre le mur à l’arrière de la maison.', caption: 'Le vélo est derrière la maison.' },
   ],
 }
 
@@ -58,10 +58,11 @@ export function falcLessonBlocks(doc: GrammaireTheoryDoc, paper: 'a4' | 'a5' = '
   const openingExample: GrammarTheoryBlock = doc.id === 'e6' ? placeIllustration : visuals ? {
     kind: 'image-row',
     label: doc.title,
-    cells: visuals.map(({ caption, brief, exampleIndex, src }, index) => ({
-      src: src ?? '',
-      alt: brief,
+    cells: visuals.map(({ src, caption, alt, description, exampleIndex }, index) => ({
+      src,
       caption,
+      alt,
+      description,
       example: visuals.length === 1 && exampleIndex === undefined
         ? opening.examples.join('/n')
         : opening.examples[exampleIndex ?? index],
