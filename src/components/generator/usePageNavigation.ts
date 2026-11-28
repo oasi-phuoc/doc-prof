@@ -367,6 +367,7 @@ export function usePageNavigation({
       next === 'grammaire' ||
       next === 'vocabulaire' ||
       next === 'société' ||
+      next === 'vie-scolaire' ||
       next === 'acm' ||
       next === 'jeux' ||
       next === 'calligraphie'

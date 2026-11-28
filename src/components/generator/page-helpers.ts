@@ -1,5 +1,6 @@
 import { logistiqueType } from '@/logistique/catalog'
 import { isSanteType } from '@/sante/types'
+import { isSchoolKind } from '@/vie-scolaire/catalog'
 import { isSocieteCoType } from '@/societe/types'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import {
@@ -238,8 +239,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     grammarCoLevel,
     grammarVocabRecall: prev?.exerciseType === type.id ? prev.grammarVocabRecall : undefined,
     completionPresentation: prev?.exerciseType === type.id ? prev.completionPresentation : undefined,
-    grammarCoFormat: (isGrammarCoType(type.id) || isSocieteCoType(type.id)) && prev?.exerciseType === type.id ? prev.grammarCoFormat : undefined,
-    grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
+    grammarCoFormat: (isGrammarCoType(type.id) || isSocieteCoType(type.id) || isSchoolKind(type.id, 'co')) && prev?.exerciseType === type.id ? prev.grammarCoFormat : undefined,
+    grammarCoAudioId: (isGrammarCoType(type.id) || isSchoolKind(type.id, 'co')) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
     grammarLevel: undefined,
     grammarActivityId: undefined,
     grammarPresentation: undefined,

@@ -1,0 +1,895 @@
+{
+  "reglement": [
+    {
+      "id": "reglement-1",
+      "label": "Aller jouer dans la cour",
+      "bankId": "tcf-ssx-a1-ecole-ne-pas-jouer-ici-co-4",
+      "src": "/lib/audio/tcf/co/ecole/14-école-ne-pas-jouer-ici.mp3",
+      "transcript": "- S'il vous plaît, vous ne jouez pas ici. Prenez votre ballon et allez dans la cour. - Oui, désolé, Monsieur.",
+      "questions": [
+        {
+          "prompt": "Où faut-il aller ?",
+          "answer": "Dans la cour",
+          "options": [
+            "Dans la classe",
+            "Dans la cour",
+            "À la bibliothèque"
+          ]
+        },
+        {
+          "prompt": "Quel objet faut-il prendre ?",
+          "answer": "Le ballon",
+          "options": [
+            "Le sac",
+            "Le ballon",
+            "Le livre"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "reglement-1-1",
+          "text": "Il faut prendre le ballon.",
+          "correct": true,
+          "evidence": "« Prenez votre ballon. »"
+        },
+        {
+          "id": "reglement-1-2",
+          "text": "On peut continuer à jouer ici.",
+          "correct": false,
+          "evidence": "« Vous ne jouez pas ici. »"
+        }
+      ]
+    },
+    {
+      "id": "reglement-2",
+      "label": "Entrer en classe en silence",
+      "bankId": "tcf-delf-actif-a1-031-04",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
+      "transcript": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+      "questions": [
+        {
+          "prompt": "Comment faut-il entrer ?",
+          "answer": "En silence",
+          "options": [
+            "En courant",
+            "En silence",
+            "En parlant fort"
+          ]
+        },
+        {
+          "prompt": "Que regardent les élèves ?",
+          "answer": "Un film",
+          "options": [
+            "Un exposé sur les planètes",
+            "Un film",
+            "Un dessin au tableau"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "reglement-2-1",
+          "text": "Les élèves peuvent parler en entrant.",
+          "correct": false,
+          "evidence": "« Rentrez en classe en silence. »"
+        },
+        {
+          "id": "reglement-2-2",
+          "text": "L’élève doit présenter son travail sur Lupin.",
+          "correct": true,
+          "evidence": "« C’est à toi de présenter ton travail sur Lupin. »"
+        }
+      ]
+    },
+    {
+      "id": "reglement-3",
+      "label": "Sortir prendre l’air",
+      "bankId": "tcf-delf-actif-a1-032-01",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
+      "transcript": "Prenez vos blousons et sortez dans la cour ! Mais madame il fait froid aujourd’hui. On peut rester en classe ? Non, ce n’est pas possible vous devez prendre l’air.",
+      "questions": [
+        {
+          "prompt": "Quel vêtement faut-il prendre ?",
+          "answer": "Un blouson",
+          "options": [
+            "Un maillot",
+            "Un blouson",
+            "Une casquette"
+          ]
+        },
+        {
+          "prompt": "Où faut-il aller ?",
+          "answer": "Dans la cour",
+          "options": [
+            "À la cantine",
+            "Dans la cour",
+            "Chez soi"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "reglement-3-1",
+          "text": "Les élèves doivent prendre l’air.",
+          "correct": true,
+          "evidence": "« Vous devez prendre l’air. »"
+        },
+        {
+          "id": "reglement-3-2",
+          "text": "Les élèves peuvent rester en classe.",
+          "correct": false,
+          "evidence": "« Non, ce n’est pas possible. »"
+        }
+      ]
+    }
+  ],
+  "consignes": [
+    {
+      "id": "consignes-1",
+      "label": "Ouvrir le livre à la page 16",
+      "bankId": "tcf-delf-actif-a1-050-04-02",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-02.mp3",
+      "transcript": "Bonjour à tous. Un peu de silence s’il vous plaît. Ouvrez le livre à la page 16. Léna tu peux commencer ? Madame, je n’ai pas mon livre.",
+      "questions": [
+        {
+          "prompt": "À quelle page faut-il ouvrir le livre ?",
+          "answer": "16",
+          "options": [
+            "6",
+            "16",
+            "60"
+          ]
+        },
+        {
+          "prompt": "Que demande la professeure au début ?",
+          "answer": "Le silence",
+          "options": [
+            "Un stylo",
+            "Le silence",
+            "Un dessin"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "consignes-1-1",
+          "text": "La professeure demande d’ouvrir le livre.",
+          "correct": true,
+          "evidence": "« Ouvrez le livre à la page 16. »"
+        },
+        {
+          "id": "consignes-1-2",
+          "text": "Léna a son livre.",
+          "correct": false,
+          "evidence": "« Madame, je n’ai pas mon livre. »"
+        }
+      ]
+    },
+    {
+      "id": "consignes-2",
+      "label": "Regarder le livre du voisin",
+      "bankId": "tcf-ssx-a1-ecole-livre-de-maths-co-4",
+      "src": "/lib/audio/tcf/co/ecole/04-école-oublier-le-livre-de-math.mp3",
+      "transcript": "- On va faire des exercices de maths. Prenez votre livre page 54. - Monsieur, je n'ai pas mon livre. - Regarde sur le livre de ton voisin.",
+      "questions": [
+        {
+          "prompt": "À quelle page faut-il ouvrir le livre ?",
+          "answer": "54",
+          "options": [
+            "14",
+            "54",
+            "45"
+          ]
+        },
+        {
+          "prompt": "Dans quel livre l’élève peut-il regarder ?",
+          "answer": "Le livre de son voisin",
+          "options": [
+            "Le livre de la bibliothèque",
+            "Le livre de son voisin",
+            "Le livre du professeur"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "consignes-2-1",
+          "text": "Les exercices sont des exercices de maths.",
+          "correct": true,
+          "evidence": "« On va faire des exercices de maths. »"
+        },
+        {
+          "id": "consignes-2-2",
+          "text": "L’élève a son livre.",
+          "correct": false,
+          "evidence": "« Je n’ai pas mon livre. »"
+        }
+      ]
+    },
+    {
+      "id": "consignes-3",
+      "label": "Écrire la date",
+      "bankId": "tcf-ssx-a1-ecole-stylo-vert-co-4",
+      "src": "/lib/audio/tcf/co/ecole/21-école-stylo-vert.mp3",
+      "transcript": "Tiens, mon stylo vert. Oh, merci. Qu'est-ce que je dois écrire en vert? Tu écris la date en haut de la feuille.",
+      "questions": [
+        {
+          "prompt": "Dans quelle couleur faut-il écrire ?",
+          "answer": "En vert",
+          "options": [
+            "En rouge",
+            "En vert",
+            "En bleu"
+          ]
+        },
+        {
+          "prompt": "Où faut-il écrire ?",
+          "answer": "En haut de la feuille",
+          "options": [
+            "En bas de la feuille",
+            "En haut de la feuille",
+            "Sur le tableau"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "consignes-3-1",
+          "text": "Il faut écrire le prénom.",
+          "correct": false,
+          "evidence": "« Tu écris la date. »"
+        },
+        {
+          "id": "consignes-3-2",
+          "text": "Le stylo est vert.",
+          "correct": true,
+          "evidence": "« Tiens, mon stylo vert. »"
+        }
+      ]
+    }
+  ],
+  "materiel": [
+    {
+      "id": "materiel-1",
+      "label": "Préparer le matériel de dessin",
+      "bankId": "tcf-ssx-a1-objet-18-co-1",
+      "src": "/lib/audio/tcf/co/ecole/32-école-cours-de-dessin-objets.mp3",
+      "transcript": "Bonjour, c'est Lidie. Pour le cours de dessin demain, le prof nous demande d'apporter des ciseaux et de la colle. Il faut aussi un grand cahier et des crayons de couleur. On va dessiner des fleurs. Ah oui, et n'oublie pas ta règle. À demain.",
+      "questions": [
+        {
+          "prompt": "Quel objet Lidie rappelle-t-elle à la fin ?",
+          "answer": "La règle",
+          "options": [
+            "La gomme",
+            "La règle",
+            "Une trousse"
+          ]
+        },
+        {
+          "prompt": "Que vont dessiner les élèves ?",
+          "answer": "Des fleurs",
+          "options": [
+            "Des maisons",
+            "Des fleurs",
+            "Des voitures"
+          ]
+        },
+        {
+          "prompt": "Quel cahier faut-il apporter ?",
+          "answer": "Un grand cahier",
+          "options": [
+            "Un petit cahier",
+            "Un grand cahier",
+            "Un cahier de musique"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "materiel-1-1",
+          "text": "Il faut apporter de la colle.",
+          "correct": true,
+          "evidence": "« Le prof nous demande d’apporter des ciseaux et de la colle. »"
+        },
+        {
+          "id": "materiel-1-2",
+          "text": "Le cours a lieu aujourd’hui.",
+          "correct": false,
+          "evidence": "« Pour le cours de dessin demain… »"
+        }
+      ]
+    },
+    {
+      "id": "materiel-2",
+      "label": "Emprunter un dictionnaire",
+      "bankId": "tcf-ssx-a1-ecole-preter-le-dictionnaire-co-4",
+      "src": "/lib/audio/tcf/co/ecole/12-école-prêter-le-dictionnaire.mp3",
+      "transcript": "- Tu peux me prêter ton dictionnaire ? - Oui, tiens, prends-le. - Merci.",
+      "questions": [
+        {
+          "prompt": "Quel objet la personne demande-t-elle ?",
+          "answer": "Un dictionnaire",
+          "options": [
+            "Un cahier",
+            "Un dictionnaire",
+            "Une règle"
+          ]
+        },
+        {
+          "prompt": "Que répond l’autre personne ?",
+          "answer": "Oui, prends-le.",
+          "options": [
+            "Non, je l’ai oublié.",
+            "Oui, prends-le.",
+            "Va le chercher à la bibliothèque."
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "materiel-2-1",
+          "text": "La personne demande une règle.",
+          "correct": false,
+          "evidence": "« Tu peux me prêter ton dictionnaire ? »"
+        },
+        {
+          "id": "materiel-2-2",
+          "text": "L’autre personne prête l’objet.",
+          "correct": true,
+          "evidence": "« Oui, tiens, prends-le. »"
+        }
+      ]
+    },
+    {
+      "id": "materiel-3",
+      "label": "Chercher le cahier de sciences",
+      "bankId": "tcf-delf-actif-a1-029-03",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
+      "transcript": "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ? Attends je cherche dans mon sac. Désolée … j’oublie toujours ton cahier.",
+      "questions": [
+        {
+          "prompt": "Quel cahier les élèves cherchent-elles ?",
+          "answer": "Le cahier de sciences",
+          "options": [
+            "Le cahier de français",
+            "Le cahier de sciences",
+            "Le cahier de maths"
+          ]
+        },
+        {
+          "prompt": "Où la personne cherche-t-elle ?",
+          "answer": "Dans son sac",
+          "options": [
+            "Dans une armoire",
+            "Dans son sac",
+            "Sous la table"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "materiel-3-1",
+          "text": "La personne cherche dans son sac.",
+          "correct": true,
+          "evidence": "« Attends je cherche dans mon sac. »"
+        },
+        {
+          "id": "materiel-3-2",
+          "text": "La personne retrouve le cahier.",
+          "correct": false,
+          "evidence": "« Désolée… j’oublie toujours ton cahier. »"
+        }
+      ]
+    }
+  ],
+  "heure": [
+    {
+      "id": "heure-1",
+      "label": "Choisir l’heure du rendez-vous",
+      "bankId": "tcf-ss-a1-s27-co-3",
+      "src": "/lib/audio/tcf/co/vie-quotidienne/catherine-prend-petit-dejeuner-1.mp3",
+      "transcript": "- Catherine, on prend le petit déjeuner ensemble demain matin ? - Avec plaisir. À quelle heure ? - À huit heures et demie, ça va ? - Mais Chantal, c'est trop tôt ! Demain, c'est le week-end. Je me lève à 10 heures. - Mets ton réveil ! - Ah non, pas de réveil le week-end ! Le samedi, j'aime me réveiller tard. - Moi, le samedi matin, je fais du sport, je cuisine pour la semaine… - Oh là là, quel emploi du temps ! - Bon, d'accord. Alors tu déjeunes avec moi ? - À midi ? D'accord !",
+      "questions": [
+        {
+          "prompt": "À quelle heure se donnent-elles rendez-vous ?",
+          "answer": "À midi",
+          "options": [
+            "À 8 h 30",
+            "À midi",
+            "À 10 h"
+          ]
+        },
+        {
+          "prompt": "À quelle heure Catherine se lève-t-elle samedi ?",
+          "answer": "À 10 h",
+          "options": [
+            "À 8 h 30",
+            "À 10 h",
+            "À midi"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "heure-1-1",
+          "text": "8 h 30, c’est trop tôt pour Catherine.",
+          "correct": true,
+          "evidence": "« Mais Chantal, c’est trop tôt ! »"
+        },
+        {
+          "id": "heure-1-2",
+          "text": "Elles acceptent de se voir à 8 h 30.",
+          "correct": false,
+          "evidence": "« À midi ? D’accord ! »"
+        }
+      ]
+    },
+    {
+      "id": "heure-2",
+      "label": "Écouter les deux sonneries",
+      "bankId": "tcf-delf-actif-a2-030-02",
+      "src": "/lib/audio/tcf/co/delf-actif-a2/a2-030-02.mp3",
+      "transcript": "Dans votre lycée, vous rentrez en classe à quelle heure ? Nous avons deux sonneries, la première à 7h35 et la deuxième à 7h40. 7h40 !! vous commencez tôt ! Et oui parce qu’on sort à midi et demi.",
+      "questions": [
+        {
+          "prompt": "À quelle heure sonne la première sonnerie ?",
+          "answer": "À 7 h 35",
+          "options": [
+            "À 7 h 40",
+            "À 7 h 35",
+            "À 8 h"
+          ]
+        },
+        {
+          "prompt": "À quelle heure les élèves sortent-ils ?",
+          "answer": "À midi et demi",
+          "options": [
+            "À midi",
+            "À midi et demi",
+            "À 16 h"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "heure-2-1",
+          "text": "Il y a deux sonneries.",
+          "correct": true,
+          "evidence": "« Nous avons deux sonneries. »"
+        },
+        {
+          "id": "heure-2-2",
+          "text": "La seconde sonnerie est à 7 h 35.",
+          "correct": false,
+          "evidence": "« La deuxième à 7 h 40. »"
+        }
+      ]
+    },
+    {
+      "id": "heure-3",
+      "label": "Entendre une nouvelle heure",
+      "bankId": "tcf-ss-a1-s9-co-2",
+      "src": "/lib/audio/tcf/co/loisirs/01-loisirs-leçon-de-piano.mp3",
+      "transcript": "Bonjour, c'est madame Tourette, la professeur de piano. Je vais arriver un peu en retard pour le cours, à 18h15. Je suis désolé, il y a une panne dans le métro. Tu peux commencer à travailler sans moi, à tout à l'heure.",
+      "questions": [
+        {
+          "prompt": "À quelle heure arrive la professeure ?",
+          "answer": "À 18 h 15",
+          "options": [
+            "À 18 h",
+            "À 18 h 15",
+            "À 18 h 45"
+          ]
+        },
+        {
+          "prompt": "Quel cours est prévu ?",
+          "answer": "Piano",
+          "options": [
+            "Guitare",
+            "Piano",
+            "Chant"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "heure-3-1",
+          "text": "La professeure annonce un retard.",
+          "correct": true,
+          "evidence": "« Je vais arriver un peu en retard pour le cours. »"
+        },
+        {
+          "id": "heure-3-2",
+          "text": "Il y a une panne dans le bus.",
+          "correct": false,
+          "evidence": "« Il y a une panne dans le métro. »"
+        }
+      ]
+    }
+  ],
+  "horaires": [
+    {
+      "id": "horaires-1",
+      "label": "Deux heures de début différentes",
+      "bankId": "tcf-ssx-a1-ecole-horaires-des-cours-co-4",
+      "src": "/lib/audio/tcf/co/ecole/13-école-horaire-des-cours.mp3",
+      "transcript": "- Tu commences à quelle heure demain ? - À 10 h. Le prof de maths est absent. - Moi, je commence à 8 h. J'ai cours d'histoire.",
+      "questions": [
+        {
+          "prompt": "À quelle heure commence le cours d’histoire ?",
+          "answer": "8 h",
+          "options": [
+            "9 h",
+            "8 h",
+            "10 h"
+          ]
+        },
+        {
+          "prompt": "Quel professeur est absent ?",
+          "answer": "Le prof de maths",
+          "options": [
+            "Le prof d’histoire",
+            "Le prof de maths",
+            "Le prof de français"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "horaires-1-1",
+          "text": "Le prof de maths est absent.",
+          "correct": true,
+          "evidence": "« Le prof de maths est absent. »"
+        },
+        {
+          "id": "horaires-1-2",
+          "text": "Les deux élèves commencent à 10 h.",
+          "correct": false,
+          "evidence": "« Moi, je commence à 8 h. »"
+        }
+      ]
+    },
+    {
+      "id": "horaires-2",
+      "label": "Un changement à la cafétéria",
+      "bankId": "tcf-ss-a2-s7-co-3",
+      "src": "/lib/audio/tcf/co/ecole/ecole-5-1.mp3",
+      "transcript": "Lundi prochain, la cafétéria ouvrira exceptionnellement à 11h30 au lieu de midi et demi. Les élèves qui veulent manger plus tôt lundi doivent prévenir le secrétariat avant demain à 14h00.",
+      "questions": [
+        {
+          "prompt": "À quelle heure la cafétéria ouvre-t-elle lundi ?",
+          "answer": "À 11 h 30",
+          "options": [
+            "À 12 h 30",
+            "À 11 h 30",
+            "À 14 h"
+          ]
+        },
+        {
+          "prompt": "Qui faut-il prévenir pour manger plus tôt ?",
+          "answer": "Le secrétariat",
+          "options": [
+            "Le professeur de maths",
+            "Le secrétariat",
+            "Le club sportif"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "horaires-2-1",
+          "text": "Le changement est prévu lundi prochain.",
+          "correct": true,
+          "evidence": "« Lundi prochain, la cafétéria ouvrira exceptionnellement à 11 h 30. »"
+        },
+        {
+          "id": "horaires-2-2",
+          "text": "On doit prévenir le secrétariat après 14 h demain.",
+          "correct": false,
+          "evidence": "« Avant demain à 14 h. »"
+        }
+      ]
+    },
+    {
+      "id": "horaires-3",
+      "label": "Un remplacement de cours",
+      "bankId": "tcf-ss-a2-s7-co-3",
+      "src": "/lib/audio/tcf/co/ecole/ecole-5-2.mp3",
+      "transcript": "Votre professeur d'histoire, monsieur Lemaître, sera absent aujourd'hui. C'est madame Lenfant qui vous accueillera en salle 4 pour un cours de chant.",
+      "questions": [
+        {
+          "prompt": "Quel cours remplace le cours d’histoire ?",
+          "answer": "Le chant",
+          "options": [
+            "Les maths",
+            "Le chant",
+            "Le sport"
+          ]
+        },
+        {
+          "prompt": "Dans quelle salle faut-il aller ?",
+          "answer": "Salle 4",
+          "options": [
+            "Salle 14",
+            "Salle 4",
+            "Salle 40"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "horaires-3-1",
+          "text": "Le professeur d’histoire est absent.",
+          "correct": true,
+          "evidence": "« Votre professeur d’histoire […] sera absent aujourd’hui. »"
+        },
+        {
+          "id": "horaires-3-2",
+          "text": "Les élèves vont en salle 14.",
+          "correct": false,
+          "evidence": "« En salle 4 pour un cours de chant. »"
+        }
+      ]
+    }
+  ],
+  "lieux": [
+    {
+      "id": "lieux-1",
+      "label": "Trouver le bureau du directeur",
+      "bankId": "tcf-ssx-a1-ecole-bureau-du-directeur-co-4",
+      "src": "/lib/audio/tcf/co/ecole/07-école-où-est-le-bureau-du-directeur.mp3",
+      "transcript": "Madame, il est où le bureau du directeur s'il vous plaît ? Là-bas, regarde, à côté de la bibliothèque.",
+      "questions": [
+        {
+          "prompt": "Quel endroit la personne cherche-t-elle ?",
+          "answer": "Le bureau du directeur",
+          "options": [
+            "La cantine",
+            "Le bureau du directeur",
+            "Le gymnase"
+          ]
+        },
+        {
+          "prompt": "Où est le bureau ?",
+          "answer": "À côté de la bibliothèque",
+          "options": [
+            "À côté de la cantine",
+            "À côté de la bibliothèque",
+            "Dans la cour"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "lieux-1-1",
+          "text": "La bibliothèque sert de repère.",
+          "correct": true,
+          "evidence": "« À côté de la bibliothèque. »"
+        },
+        {
+          "id": "lieux-1-2",
+          "text": "La personne cherche la salle de sport.",
+          "correct": false,
+          "evidence": "« Où est le bureau du directeur ? »"
+        }
+      ]
+    },
+    {
+      "id": "lieux-2",
+      "label": "Trouver la salle d’informatique",
+      "bankId": "tcf-ssx-a1-ecole-salle-informatique-co-4",
+      "src": "/lib/audio/tcf/co/ecole/08-école-aller-en-salle-d-informatique.mp3",
+      "transcript": "- On va en salle informatique ce matin. - C'est où ? - Au premier étage. Suivez-moi !",
+      "questions": [
+        {
+          "prompt": "À quel étage faut-il aller ?",
+          "answer": "Au premier étage",
+          "options": [
+            "Au deuxième étage",
+            "Au premier étage",
+            "Au rez-de-chaussée"
+          ]
+        },
+        {
+          "prompt": "Où vont les élèves ?",
+          "answer": "En salle d’informatique",
+          "options": [
+            "À la bibliothèque",
+            "En salle d’informatique",
+            "Au secrétariat"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "lieux-2-1",
+          "text": "La salle est au deuxième étage.",
+          "correct": false,
+          "evidence": "« Au premier étage. »"
+        },
+        {
+          "id": "lieux-2-2",
+          "text": "La personne propose de montrer le chemin.",
+          "correct": true,
+          "evidence": "« Suivez-moi ! »"
+        }
+      ]
+    },
+    {
+      "id": "lieux-3",
+      "label": "Repérer la salle 25",
+      "bankId": "tcf-a1-tpbb-co-1",
+      "src": "/lib/audio/tcf/co/ecole/46-école-rendez-vous-professeur-de-français.mp3",
+      "transcript": "Bonjour, j'ai rendez-vous avec monsieur Richard, le professeur de français de ma fille. Bonjour. Oui, il est dans la classe au premier étage à gauche, salle 25.",
+      "questions": [
+        {
+          "prompt": "Quelle salle faut-il chercher ?",
+          "answer": "La salle 25",
+          "options": [
+            "La salle 15",
+            "La salle 25",
+            "La salle 52"
+          ]
+        },
+        {
+          "prompt": "De quel côté se trouve la salle ?",
+          "answer": "À gauche",
+          "options": [
+            "À droite",
+            "À gauche",
+            "En face de l’entrée"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "lieux-3-1",
+          "text": "La salle est au premier étage.",
+          "correct": true,
+          "evidence": "« Au premier étage à gauche. »"
+        },
+        {
+          "id": "lieux-3-2",
+          "text": "Le rendez-vous est avec le professeur d’histoire.",
+          "correct": false,
+          "evidence": "« Le professeur de français de ma fille. »"
+        }
+      ]
+    }
+  ],
+  "quotidien": [
+    {
+      "id": "quotidien-1",
+      "label": "Sacha se prépare le matin",
+      "bankId": "tcf-ss-a1-s26-co-3",
+      "src": "/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3",
+      "transcript": "- Sacha, on est en retard ! - Maman, je prends mon petit déjeuner ! - Tu te couches trop tard ! Après, tu as des problèmes pour te réveiller le matin. - D'accord... Ce soir, je me couche tôt et je mets mon réveil pour me lever à 6 h 30 demain. - Bien. Et arrête de regarder la télé ! Tu peux lire aussi ! - Anaïs, elle, regarde des séries après le dîner. - Je dois parler avec elle. Mais… elle est où ta sœur ? - Elle se douche, se maquille, ou s'habille peut-être. Elle a besoin d'une heure pour se préparer. - Elle n'est pas en avance… Anaïs ! - Tu finis le travail à quelle heure aujourd'hui ? - À 17 h. Je fais les courses et je rentre à la maison pour cuisiner.",
+      "questions": [
+        {
+          "prompt": "Que fait Sacha maintenant ?",
+          "answer": "Il prend son petit déjeuner",
+          "options": [
+            "Il regarde la télévision",
+            "Il prend son petit déjeuner",
+            "Il fait ses courses"
+          ]
+        },
+        {
+          "prompt": "À quelle heure veut-il se lever demain ?",
+          "answer": "À 6 h 30",
+          "options": [
+            "À 7 h",
+            "À 6 h 30",
+            "À 8 h"
+          ]
+        },
+        {
+          "prompt": "Que va faire sa mère après le travail ?",
+          "answer": "Les courses",
+          "options": [
+            "Une promenade",
+            "Les courses",
+            "Du sport"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "quotidien-1-1",
+          "text": "Sacha prévoit de se coucher tôt ce soir.",
+          "correct": true,
+          "evidence": "« Ce soir, je me couche tôt. »"
+        },
+        {
+          "id": "quotidien-1-2",
+          "text": "Anaïs regarde ses séries avant le dîner.",
+          "correct": false,
+          "evidence": "« Anaïs, elle, regarde des séries après le dîner. »"
+        }
+      ]
+    },
+    {
+      "id": "quotidien-2",
+      "label": "S’organiser le lundi matin",
+      "bankId": "gram-co-quotidien-piste090",
+      "src": "/lib/audio/grammaire/co/quotidien/piste090.mp3",
+      "transcript": "Page 57. Exercice 2. Le lundi n'est pas une journée facile On se réveille fatigué On a besoin de temps pour s'habiller se coiffer Prendre le petit déjeuner Voilà comment on peut s'organiser",
+      "questions": [
+        {
+          "prompt": "De quel jour parle l’enregistrement ?",
+          "answer": "Lundi",
+          "options": [
+            "Mardi",
+            "Lundi",
+            "Samedi"
+          ]
+        },
+        {
+          "prompt": "Comment se sent-on au réveil dans cet extrait ?",
+          "answer": "Fatigué",
+          "options": [
+            "En colère",
+            "Fatigué",
+            "Très en forme"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "quotidien-2-1",
+          "text": "On parle du petit déjeuner.",
+          "correct": true,
+          "evidence": "« Prendre le petit déjeuner. »"
+        },
+        {
+          "id": "quotidien-2-2",
+          "text": "Le dimanche est présenté comme difficile.",
+          "correct": false,
+          "evidence": "« Le lundi n’est pas une journée facile. »"
+        }
+      ]
+    },
+    {
+      "id": "quotidien-3",
+      "label": "Se lever et nager le samedi",
+      "bankId": "tcf-delf-actif-a1-044-01",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+      "transcript": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+      "questions": [
+        {
+          "prompt": "Que fait la personne après s’être levée ?",
+          "answer": "De la natation",
+          "options": [
+            "Du vélo",
+            "De la natation",
+            "Du tennis"
+          ]
+        },
+        {
+          "prompt": "À quel moment se lève-t-elle samedi ?",
+          "answer": "Tard",
+          "options": [
+            "Tôt",
+            "Tard",
+            "À 6 h précises"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "quotidien-3-1",
+          "text": "La personne aime nager.",
+          "correct": true,
+          "evidence": "« J’adore nager ! »"
+        },
+        {
+          "id": "quotidien-3-2",
+          "text": "Elle se lève tôt le samedi.",
+          "correct": false,
+          "evidence": "« Le samedi je me lève tard. »"
+        }
+      ]
+    }
+  ]
+}

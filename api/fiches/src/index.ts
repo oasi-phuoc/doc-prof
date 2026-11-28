@@ -79,6 +79,7 @@ const ALL_DOMAINS = [
   'logistique-afp',
   'vocabulaire',
   'société',
+  'vie-scolaire',
   'santé',
   'acm',
   'tpm',

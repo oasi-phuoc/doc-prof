@@ -137,13 +137,19 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     associationScenes.add(reuse.path)
     add(reuse.path, { types: ['Scénario'], labels: [reuse.label], themes: ['CO CFR A2', 'Situations CO'] })
   }
-  return files.filter(file => !['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))).map(file => {
+  const placeholder = path.join(root, 'docs/vie-scolaire/illustration-provisoire.webp')
+  const schoolPlaceholder = existsSync(placeholder) ? readFileSync(placeholder) : undefined
+  return files.filter(file => {
+    if (['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))) return false
+    return !schoolPlaceholder || !file.startsWith('public/lib/images/vie-scolaire/') ||
+      !schoolPlaceholder.equals(readFileSync(path.join(root, file)))
+  }).map(file => {
     const src = file.startsWith('public/') ? '/' + file.slice(7) : '/' + file
     const meta = metadata.get(src) ?? { labels: [], themes: [], types: [], keywords: [] }
     const stem = path.basename(file, path.extname(file)).replace(/^(?:extension573|co\d+|co-personnages-\d+|vocab)-/, '').replace(/-dessine[es]?$/, '')
     let label = meta.labels.find(Boolean) ?? pretty(stem)
     if (/^\d+$/.test(label) && file.includes('/logique/')) label = `${pretty(file.split('/logique/')[1].split('/')[0])} — ${label}`
-    const collection = file.startsWith('docs/') || file.startsWith('scripts/') || file.startsWith('tmp/') ? 'Documentation et captures' : file.includes('/vocabulaire/') ? 'Vocabulaire' : file.includes('/tcf/') ? 'TCF' : file.includes('/gattegno/') ? 'Gattegno' : file.includes('/grammaire/') ? 'Grammaire' : file.includes('/logique/') ? 'Logique' : file.includes('/jeux/') || file.includes('/interactive/') ? 'Jeux et interactif' : 'Identité visuelle'
+    const collection = file.startsWith('docs/') || file.startsWith('scripts/') || file.startsWith('tmp/') ? 'Documentation et captures' : file.includes('/vocabulaire/') ? 'Vocabulaire' : file.includes('/tcf/') ? 'TCF' : file.includes('/gattegno/') ? 'Gattegno' : file.includes('/grammaire/') ? 'Grammaire' : file.includes('/vie-scolaire/') ? 'Vie scolaire' : file.includes('/logique/') ? 'Logique' : file.includes('/jeux/') || file.includes('/interactive/') ? 'Jeux et interactif' : 'Identité visuelle'
     let types = [...meta.types]
     if (/logo|favicon|icons?\.|react.svg|vite.svg/.test(file)) types = ['Illustration']
     else if (/\/logique\/|\/formes\/|\/couleurs\/|\/nombres-mesures\//.test(file)) types = ['Forme et symbole']

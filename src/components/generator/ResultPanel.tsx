@@ -175,7 +175,7 @@ export function ResultPanel({
     [renderedSheets],
   )
   const hasDomainAudio = renderedSheets.some((sheet) =>
-    (sheet.domain === 'santé' || sheet.domain === 'société') && sheet.blocks.some((block) => block.corrigeAudios?.length),
+    (sheet.domain === 'santé' || sheet.domain === 'société' || sheet.domain === 'vie-scolaire') && sheet.blocks.some((block) => block.corrigeAudios?.length),
   )
   const showTcfAudioDownload = isTcf || Boolean(isGrammaireExercise) || hasDomainAudio
   const unavailableLogistique = renderedSheets.some((sheet) =>
@@ -260,10 +260,10 @@ export function ResultPanel({
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
       onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
       interactiveTcfOptions={
-        isTcf || sheet.domain === 'santé' || sheet.domain === 'société' || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
+        isTcf || sheet.domain === 'santé' || sheet.domain === 'société' || sheet.domain === 'vie-scolaire' || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
-        sheet.domain === 'grammaire' || sheet.domain === 'société' || isLogistiqueDomain(sheet.domain) || isTcf ||
+        sheet.domain === 'grammaire' || sheet.domain === 'société' || sheet.domain === 'vie-scolaire' || isLogistiqueDomain(sheet.domain) || isTcf ||
         pageExerciseBlocks.some(
           (block) =>
             block.grammarPresentation==='document-set' || block.grammarPresentation==='scenario-set' ||
@@ -594,8 +594,9 @@ export function ResultPanel({
                             onCycleOralAnswerMode={cycleOralAnswerMode}
                             interactiveTcfOptions={isTcf || left?.domain === 'santé' || right?.domain === 'santé' ||
                               left?.domain === 'société' || right?.domain === 'société' ||
+                              left?.domain === 'vie-scolaire' || right?.domain === 'vie-scolaire' ||
                               (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)}
-                            interactiveTcfPageBreaks={domain === 'grammaire' || domain === 'société' || (domain != null && isLogistiqueDomain(domain)) ||
+                            interactiveTcfPageBreaks={domain === 'grammaire' || domain === 'société' || domain === 'vie-scolaire' || (domain != null && isLogistiqueDomain(domain)) ||
                               isTcf || pageExerciseBlocks.some((block) => block.grammarPresentation === 'document-set' ||
                                 block.grammarPresentation === 'scenario-set' || isGrammarReadingType(block.exerciseType) ||
                                 block.exerciseType === 'tcm-cfr-ex28')}

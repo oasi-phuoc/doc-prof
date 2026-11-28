@@ -130,12 +130,13 @@ export function tcmCfrAudioZipDownloadName(date = new Date()): string {
 
 // ─── TCF ──────────────────────────────────────────────────────────────────
 
-export type TcfAudioFamilyPrefix = 'TCF' | 'TPF' | 'Sciences-et-sante' | 'Societe-suisse'
+export type TcfAudioFamilyPrefix = 'TCF' | 'TPF' | 'Sciences-et-sante' | 'Societe-suisse' | 'Vie-scolaire'
 
 /** Préfixe des téléchargements audio selon le domaine de la fiche. */
 export function tcfAudioFamilyPrefix(domain: string | undefined): TcfAudioFamilyPrefix {
   if (domain === 'santé') return 'Sciences-et-sante'
   if (domain === 'société') return 'Societe-suisse'
+  if (domain === 'vie-scolaire') return 'Vie-scolaire'
   return domain === 'tpf' ? 'TPF' : 'TCF'
 }
 

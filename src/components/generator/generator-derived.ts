@@ -1,3 +1,4 @@
+import { SCHOOL_TOPICS } from '@/vie-scolaire/catalog'
 import { grammarScenarios } from '@/grammaire/exercises/parcours'
 import {
   algebraTopics,
@@ -55,6 +56,7 @@ import type { Domain, ExerciseBlock, WorksheetPage } from '@/math/types'
 
 /** Thèmes du sélecteur selon le domaine actif. */
 export function topicsForDomain(domain: Domain) {
+  if (domain === 'vie-scolaire') return SCHOOL_TOPICS
   if (isLogistiqueDomain(domain)) return logistiqueTopics.filter((topic) => topic.domain === domain)
   return domain === 'algèbre'
     ? algebraTopics

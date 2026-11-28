@@ -13,6 +13,7 @@ export type Domain =
   | 'grammaire'
   | 'vocabulaire'
   | 'société'
+  | 'vie-scolaire'
   | 'santé'
   | 'acm'
   | 'logique'

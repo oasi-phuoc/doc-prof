@@ -2,6 +2,8 @@ import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
 import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
 import { hasSocieteAtlasQuestions } from '@/societe/atlas'
 import { isSocieteCoType, isSocieteVocabType } from '@/societe/types'
+import { isSchoolKind } from '@/vie-scolaire/catalog'
+import { vieScolaireAudiosForType } from '@/vie-scolaire/generate'
 import { isMathReferenceType } from '@/math/theory-lessons'
 import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathProblemHelpType } from '@/math/problem-help'
@@ -187,7 +189,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     updatePage(applyType(type, activeBlock))
   }
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
-  const societyListening = isSocieteCoType(activeBlock.exerciseType)
+  const schoolAudios = vieScolaireAudiosForType(activeBlock.exerciseType)
+  const fixedListening = isSocieteCoType(activeBlock.exerciseType) || schoolAudios.length > 0
+  const selectedSchoolAudio = schoolAudios.find((audio) => audio.id === activeBlock.grammarCoAudioId) ?? schoolAudios[0]
   const grammarOrderBank=activeBlock.grammarLevel?grammarBankFor(activeBlock.exerciseType,activeBlock.grammarLevel):undefined
   const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && (!grammarOrderBank||grammarOrderHasSentenceFilters(grammarOrderBank.units))
   const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
@@ -522,26 +526,35 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {(isGrammaireDomain && isWordVocabType(activeBlock.exerciseType)) || isSocieteVocabType(activeBlock.exerciseType) ? (
+              {selectedSchoolAudio && schoolAudios.length > 1 ? (
+                <SelectBox label="Audio" value={selectedSchoolAudio.id}
+                  onChange={(grammarCoAudioId) => updatePage({
+                    ...clearLibreContentFreeze(), grammarCoAudioId, tcfFormModes: undefined, tcfPageBreakAfter: undefined,
+                  })}>
+                  {schoolAudios.map((audio) => <option key={audio.id} value={audio.id}>{audio.label}</option>)}
+                </SelectBox>
+              ) : null}
+              {(isGrammaireDomain && isWordVocabType(activeBlock.exerciseType)) ||
+                isSocieteVocabType(activeBlock.exerciseType) || isSchoolKind(activeBlock.exerciseType, 'lexique') ? (
                 <SelectBox label="Présentation" value={activeBlock.grammarVocabRecall ? 'recall' : 'learn'}
                   onChange={(value) => updatePage({ ...clearLibreContentFreeze(), grammarVocabRecall: value === 'recall' })}>
                   <option value="learn">Lire les mots</option>
                   <option value="recall">Retrouver les mots</option>
                 </SelectBox>
               ) : null}
-              {hasSocieteAtlasQuestions(activeBlock.exerciseType) ? (
+              {hasSocieteAtlasQuestions(activeBlock.exerciseType) || isSchoolKind(activeBlock.exerciseType, 'pratique') ? (
                 <SelectBox label="Présentation" value={activeBlock.completionPresentation ?? 'choice'}
                   onChange={(value) => updatePage({ ...clearLibreContentFreeze(), completionPresentation: value === 'gap' ? 'gap' : 'choice' })}>
                   <option value="choice">QCM</option>
                   <option value="gap">Lacune</option>
                 </SelectBox>
               ) : null}
-              {(isGrammaireDomain && availableTrueFalse > 0) || societyListening ? (
+              {(isGrammaireDomain && availableTrueFalse > 0) || fixedListening ? (
                 <SelectBox label="Présentation" value={activeBlock.grammarCoFormat ?? 'questions'}
                   onChange={(value) => updatePage({
                     ...clearLibreContentFreeze(),
                     grammarCoFormat: value === 'true-false' ? 'true-false' : 'questions',
-                    count: societyListening ? activeBlock.count : Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
+                    count: fixedListening ? activeBlock.count : Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
                     tcfPageBreakAfter: undefined,
                   })}>
                   <option value="questions">Questions</option>

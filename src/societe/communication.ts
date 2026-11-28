@@ -1,25 +1,14 @@
-import { shuffle, type Rng } from '@/math/rng'
+import type { Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
-import { tcfExerciseItems } from '@/tcf/generate'
-import { peEvaluation } from '@/tcf/pe-evaluation'
-import type { TcfExercise, TcfNiveau, TcfQuestion } from '@/tcf/types'
+import { ficheCommunicationItems, ficheQuestion } from '@/francais/fiches-communication'
+import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { listeningStatements } from './ecoute'
-import type { SocieteImage, SocieteNiveau, SocieteProduction, SocieteQuestion, SocieteUnite } from './types'
+import type { SocieteImage, SocieteNiveau, SocieteProduction, SocieteUnite } from './types'
 
 type Competence = 'ce' | 'co' | 'po' | 'pe'
 
 const niveaux: Record<SocieteNiveau, TcfNiveau> = { A1: 'A0-A1', A2: 'A1-A2', B1: 'A2-B1' }
 const lignes: Record<SocieteNiveau, number> = { A1: 4, A2: 6, B1: 9 }
-
-function question({ prompt, answer, options }: SocieteQuestion): TcfQuestion {
-  if (!options) return { type_reponse: 'lignes', enonce: prompt, nb_lignes: 1, reponse_modele: answer }
-  return {
-    type_reponse: 'qcm_texte',
-    enonce: prompt,
-    melanger: false,
-    choix: options.map((texte, index) => ({ id: 'abc'[index]!, texte, correct: texte === answer })),
-  }
-}
 
 function productionPrompt({ consigne, actions }: SocieteProduction): string {
   return [consigne, ...actions.map((action) => `• ${action}`)].join('\n')
@@ -50,7 +39,7 @@ function communicationExercise(
           texte: unit.document.lignes.join('\n\n'),
           image: documentImage?.src ?? null,
         },
-        questions: unit.document.questions.map(question),
+        questions: unit.document.questions.map(ficheQuestion),
       }
     case 'co':
       return {
@@ -63,7 +52,7 @@ function communicationExercise(
           image: listeningImage?.src,
           image_description: listeningImage?.alt,
         },
-        questions: unit.ecoute.questions.map(question),
+        questions: unit.ecoute.questions.map(ficheQuestion),
       }
     case 'po':
       return {
@@ -100,35 +89,9 @@ export function societeCommunicationItems(
   listeningImage: SocieteImage | undefined,
 ): MathItem[] {
   const exercise = communicationExercise(unit, kind, context, documentImage, listeningImage)
-  const sourceStatements = kind === 'co' && config.grammarCoFormat === 'true-false' ? listeningStatements(unit.id) : undefined
-  const statements = sourceStatements ? shuffle(rng, sourceStatements) : undefined
-  return tcfExerciseItems(exercise, rng, config.tcfFormModes).map((item) => {
-    const base = { ...item, tcfExerciseId: exercise.id }
-    if (item.tcf?.kind === 'audio_cadre') {
-      const pointsParQuestion = config.pointsPerQuestion ?? 1
-      return {
-        ...base,
-        tcf: {
-          ...item.tcf,
-          showAudioInStudent: true,
-          questions: statements ? [] : item.tcf.questions.map((question) => ({ ...question, points: pointsParQuestion })),
-        },
-        points: (statements?.length ?? item.tcf.questions.length) * pointsParQuestion,
-        ...(statements ? {
-          grammarCoTrueFalse: statements,
-          answer: statements.map((statement) => statement.correct ? 'Vrai' : 'Faux').join(' · '),
-        } : {}),
-      }
-    }
-    if (item.tcf?.kind === 'ecriture' && exercise.competence === 'PE') {
-      const points = exercise.points ?? 10
-      return {
-        ...base,
-        points,
-        tcf: { ...item.tcf, nbLignes: lignes[unit.niveau] },
-        tcfPeEvaluation: { ...peEvaluation(exercise, points), reference: 'Société suisse' },
-      }
-    }
-    return base
+  return ficheCommunicationItems(exercise, config, rng, {
+    reference: 'Société suisse',
+    writingLines: lignes[unit.niveau],
+    statements: kind === 'co' ? listeningStatements(unit.id) : undefined,
   })
 }

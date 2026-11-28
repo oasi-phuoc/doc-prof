@@ -9,6 +9,7 @@ import { audioOrderKind } from '@/francais/soutien/audio-order'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
 import { isProtectedGrammarCo, type GrammarPresentation } from '@/grammaire/curriculum/types'
 import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
+import { isVieScolaireTheoryType, isVieScolaireType } from '@/vie-scolaire/types'
 import { isSocieteTheoryType, isSocieteType } from '@/societe/types'
 import { isSanteTheoryType } from '@/sante/catalog'
 import { isLogiqueType } from '@/logique/types'
@@ -64,6 +65,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'santé' && isSanteTheoryType(exerciseType) ||
     (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
     domain === 'société' && isSocieteTheoryType(exerciseType) ||
+    domain === 'vie-scolaire' && isVieScolaireTheoryType(exerciseType) ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
   if (domain === 'logique' && isLogiqueType(exerciseType)) return 'logique-visuelle'
   const wordKind = domain === 'alphabetisation' ? parseAlphaType(exerciseType)?.kind
@@ -84,7 +86,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (audioOrderKind(wordKind)) return 'association-audio'
   if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   if (wordKind === 'ecouter' || wordKind === 'ecouter-image') return 'ecoute-de-mots'
-  if (logistics?.domain === domain || domain === 'société' && isSocieteType(exerciseType)) return 'question-simple'
+  if (logistics?.domain === domain || domain === 'société' && isSocieteType(exerciseType) ||
+    domain === 'vie-scolaire' && isVieScolaireType(exerciseType)) return 'question-simple'
   if (domain === 'grammaire' && isGrammaireExerciseType(exerciseType)) {
     if (isProtectedGrammarCo(exerciseType)) return 'audio-grammaire'
     if (grammarPresentation) return 'grammaire-graduee'

@@ -49,6 +49,8 @@ import { tryGenerateSanteBlock } from '@/sante/generate'
 import { paginateSanteWorksheet } from '@/sante/pagination'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { isSocieteTheoryType } from '@/societe/types'
+import { tryGenerateVieScolaireBlock } from '@/vie-scolaire/generate'
+import { isVieScolaireTheoryType } from '@/vie-scolaire/types'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
 import { isTcmCscConsignesType, TCM_CSC_MAX_SCORE } from '@/tcm-csc/test'
@@ -183,6 +185,8 @@ function buildSingleBlock(
       items: societe.items,
     }
   }
+  const school = tryGenerateVieScolaireBlock(config, rng)
+  if (school) return { title: fallbackTitle, ...school }
   const sante = tryGenerateSanteBlock(config, rng)
   if (sante) {
     return {
@@ -456,7 +460,7 @@ export function buildPage(
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const logistics = logistiqueType(block.exerciseType)
     const logisticsQuestions = logistics?.domain === page.domain && !isLogistiqueReferenceType(block.exerciseType)
-    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType) || isSocieteTheoryType(block.exerciseType)
+    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType) || isSocieteTheoryType(block.exerciseType) || isVieScolaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
@@ -823,7 +827,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
 
-    const audioQuestionPages = page.domain === 'société'
+    const audioQuestionPages = page.domain === 'société' || page.domain === 'vie-scolaire'
       ? splitTcfAudioQuestionPages(worksheet, true)
       : isTpfFamilyDomain(page.domain) ? splitTcfAudioQuestionPages(worksheet) : null
     if (audioQuestionPages) {

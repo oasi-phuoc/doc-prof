@@ -4,6 +4,7 @@ import { mathGlossaryBank, type GlossaryFigureId } from '@/math/glossary-banks'
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import type { MathItem } from '@/math/types'
 import { isSanteTheoryType } from '@/sante/catalog'
+import { isVieScolaireTheoryType } from '@/vie-scolaire/types'
 import { isSocieteTheoryType } from '@/societe/types'
 import { ImageField } from '@/tcf/fields'
 import { SelectBox } from '../SelectBox'
@@ -230,7 +231,7 @@ export function TheoryEditor({ exerciseType, items, onChange }: {
   onChange: (items: MathItem[], removedIndex?: number) => void
 }) {
   const removable = Boolean(mathTheoryTopic(exerciseType)) || isGrammarTheoryType(exerciseType) ||
-    isSocieteTheoryType(exerciseType) || isSanteTheoryType(exerciseType) || logistiqueType(exerciseType)?.kind === 'theorie'
+    isSocieteTheoryType(exerciseType) || isVieScolaireTheoryType(exerciseType) || isSanteTheoryType(exerciseType) || logistiqueType(exerciseType)?.kind === 'theorie'
   const glossaryBank = mathGlossaryBank(exerciseType)
   const figures = new Map<GlossaryFigureId, string>()
   for (const { id, figure, term } of glossaryBank ?? []) {

@@ -29,6 +29,7 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
   { id: 'santé', label: 'Sciences et santé' },
   { id: 'société', label: 'Société suisse' },
   { id: 'soutien-fr', label: 'Soutien FR' },
+  { id: 'vie-scolaire', label: 'Vie scolaire' },
   { id: 'vocabulaire', label: 'Vocabulaire' },
 ]
 
@@ -67,6 +68,7 @@ const DOMAIN_ALIASES: Readonly<Record<string, Domain>> = {
   geometrie: 'géométrie',
   francais: 'français',
   societe: 'société',
+  vie_scolaire: 'vie-scolaire',
   sante: 'santé',
   lecture: 'alphabetisation',
   alphabetization: 'alphabetisation',

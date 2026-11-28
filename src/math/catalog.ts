@@ -29,6 +29,8 @@ import { logistiqueEligibleCount } from '@/logistique/generate'
 import { isLogistiqueDomain, logistiqueTopics, logistiqueType, logistiqueTypes } from '@/logistique/catalog'
 import { LOGIQUE_EXERCISE_TYPES, LOGIQUE_TOPICS } from '@/logique/catalog'
 import { SANTE_DEFAULT_TOPIC, SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
+import { SCHOOL_EXERCISE_TYPES, SCHOOL_TOPICS } from '@/vie-scolaire/catalog'
+import { VIE_SCOLAIRE_FIRST_TOPIC } from '@/vie-scolaire/types'
 import { SOCIETE_EXERCISE_TYPES, SOCIETE_FIRST_TOPIC, SOCIETE_TOPICS } from '@/societe/catalog'
 import {
   TCF_EXERCISE_TYPES,
@@ -82,6 +84,7 @@ export const topics: Topic[] = [
   // —— Vocabulaire / Société / Santé / ACM (squelettes) ——
   ...VOCABULAIRE_TOPICS,
   ...SOCIETE_TOPICS,
+  ...SCHOOL_TOPICS,
   ...SANTE_TOPICS,
   ...ACM_TOPICS,
   ...LOGIQUE_TOPICS,
@@ -917,6 +920,7 @@ export const exerciseTypes: ExerciseType[] = [
   ...GRAMMAIRE_EXERCISE_TYPES,
   ...VOCABULAIRE_EXERCISE_TYPES,
   ...SOCIETE_EXERCISE_TYPES,
+  ...SCHOOL_EXERCISE_TYPES,
   ...SANTE_EXERCISE_TYPES,
   ...ACM_EXERCISE_TYPES,
   ...LOGIQUE_EXERCISE_TYPES,
@@ -1073,6 +1077,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
     const any = typesForTopic(topic)
     if (any[0]) return any[0]
   }
+  if (domain === 'vie-scolaire') return typesForTopic(VIE_SCOLAIRE_FIRST_TOPIC)[0]!
   const fallbackTopic =
     domain === 'algèbre' || domain === 'tpm' || domain === 'français'
         ? 'addition'
@@ -1120,6 +1125,7 @@ export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
     isLogistiqueDomain(domain) ||
     domain === 'vocabulaire' ||
     domain === 'société' ||
+    domain === 'vie-scolaire' ||
     domain === 'santé' ||
     domain === 'acm' ||
     domain === 'tcm-csc' ||
