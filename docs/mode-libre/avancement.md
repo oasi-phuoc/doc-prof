@@ -58,6 +58,12 @@ Le panneau Libre propose le retrait d’un bloc principal ou d’un élément à
 
 `node tests/mode-libre/structured-browser.mjs` couvre l’Algèbre, la Géométrie, la Grammaire, la Logistique AFP et CFC, Société et Sciences et santé. Le parcours de Grammaire vérifie le retrait avant un saut de page, l’annulation, le rétablissement et la recette après enregistrement et réouverture. Le PDF témoin présente les blocs conservés sur deux pages A4. Les témoins de glossaire vérifient la portée de la commande. L’inventaire raccorde les 12 théories de Sciences et santé et relève 483 contextes en attente sur 4 420, sans erreur de génération.
 
+### Phrases à lire en Alphabétisation
+
+Les 15 récits donnent accès à la consigne et au texte de chaque phrase dans le panneau Libre. Le nombre de phrases suit le récit choisi. La fiche présente le texte à lire, y compris lorsqu’elle est associée à des activités notées.
+
+Le parcours Chromium vérifie un récit généré, une ancienne recette, l’annulation et la mise à jour du texte imprimable. L’inventaire relève 468 contextes A4 à raccorder sur 4 420 et aucune erreur de génération.
+
 ### Symétries axiales et centrales en A4
 
 Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l’axe ou au centre Ω, à la taille et à la graduation du repère dans le panneau Libre. L’édition au clavier et le placement sur le repère recalculent le sujet et le corrigé. Une valeur hors du repère conserve la dernière figure applicable. Les contrôles avancés restent dans le panneau Libre.

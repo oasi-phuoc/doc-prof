@@ -173,7 +173,7 @@ export function usePageConfig({
           ...(right && rightGrid ? { a5RightLibre: { ...rightGrid, items: identifyItems(right, rightGrid.id) } } : {}) }
       }
     }
-    if (isIndependentListProfile(editorProfile) &&
+    if (isIndependentListProfile(editorProfile) && parseAlphaType(activeBlock.exerciseType)?.kind !== 'lire-phrases' &&
       activeSheet && (activeBlock.libreItems?.length || rightGrid?.items.length) && !patch.libreItems && !patch.exerciseType &&
       (count !== undefined || patch.columns !== undefined)) {
       const nextBlock = { ...activeBlock, ...patch, libreItems: undefined }

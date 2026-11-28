@@ -650,6 +650,7 @@ function stackedLineAnswer(item: MathItem): string {
 export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem; mode: PreviewMode; showHelp?: boolean }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
+  if (item.readingText) return <p className="prompt-stack-text">{prompt}</p>
   if (item.logistiqueGaps) {
     const { answers, words } = item.logistiqueGaps
     return (

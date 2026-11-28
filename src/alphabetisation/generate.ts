@@ -247,6 +247,8 @@ function genLirePhrases(bankId: string): AlphaBatch {
       layout: 'text',
       prompt: sentence,
       answer: sentence,
+      readingText: true,
+      noPoints: true,
     })),
   }
 }

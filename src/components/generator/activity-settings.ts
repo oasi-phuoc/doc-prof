@@ -1,4 +1,5 @@
 import { exerciseTypeById } from '@/math/catalog'
+import { parseAlphaType } from '@/alphabetisation/kinds'
 import { TRANSLATION_PRACTICE_TYPE } from '@/math/guided-practice'
 import { grammarScenarioFor } from '@/grammaire/exercises/parcours'
 
@@ -39,7 +40,8 @@ const fixedQuestionCounts = new Set([
 ])
 
 export function supportsActivityQuestionCount(type: string, min: number, max: number) {
-  return max > min && !fixedQuestionCounts.has(type) && !grammarScenarioFor(type)
+  return max > min && !fixedQuestionCounts.has(type) && !grammarScenarioFor(type) &&
+    parseAlphaType(type)?.kind !== 'lire-phrases'
 }
 
 

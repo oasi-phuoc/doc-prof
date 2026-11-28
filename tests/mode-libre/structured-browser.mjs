@@ -422,6 +422,41 @@ async function removeTheoryParts(context) {
   }
 }
 
+async function alphaStoryReading(context) {
+  const config = { domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-lire-phrases' }
+  for (const archive of [false, true]) {
+    const page = await context.newPage()
+    const data = theoryRecipe({
+      ...config,
+      ...(archive ? { libreItems: [
+        { layout: 'text', prompt: 'Le chat longe la fenêtre.', answer: 'Le chat longe la fenêtre.' },
+        { layout: 'text', prompt: 'La pluie tombe dans la cour.', answer: 'La pluie tombe dans la cour.' },
+      ] } : {}),
+    })
+    data.evalMode = true
+    await openFiche(page, data, false)
+    const panel = page.locator('#activity-editor')
+    const first = panel.getByRole('textbox', { name: 'Phrase 1', exact: true })
+    const original = await first.inputValue()
+    assert(original)
+    if (archive) assert.equal(original, 'Le chat longe la fenêtre.')
+    assert.equal(await panel.getByRole('spinbutton', { name: 'Nombre de questions', exact: true }).count(), 0)
+    assert.equal(await panel.getByRole('spinbutton', { name: /Points par question/ }).count(), 0)
+    const written = worksheet(page).locator('.prompt-stack-text')
+    const sentences = await written.allTextContents()
+    await first.fill('Le chat regarde tomber la pluie.')
+    assert.deepEqual(await written.allTextContents(), ['Le chat regarde tomber la pluie.', ...sentences.slice(1)])
+    assert.equal(await worksheet(page).locator('.answer-line-field').count(), 0)
+    await button(page, 'Annuler').click()
+    assert.equal(await first.inputValue(), original)
+    await button(page, 'Rétablir').click()
+    await button(page, 'Fermer le mode libre').click()
+    assert.match(await page.locator('.print-only-sheets .worksheet-sheet').first().textContent(), /Le chat regarde tomber la pluie/)
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true }).count(), 0)
+    await page.close()
+  }
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -445,8 +480,9 @@ try {
   await formAndOral(context)
   await worksheetImage(await context.newPage())
   await removeTheoryParts(context)
+  await alphaStoryReading(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral et retrait en théorie vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie et lecture de récits vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

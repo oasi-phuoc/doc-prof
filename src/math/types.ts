@@ -815,6 +815,8 @@ export type MathItem = {
   }>
   /** Soutien FR type 14 : phrases à lire (voyelle colorée). */
   readPhrases?: string[]
+  /** Phrase à lire, sans zone de réponse. */
+  readingText?: true
   /** Soutien FR type 15 (ancien) : QR audio + mots à relier. */
   audioMatchRows?: Array<{
     /** Mot entendu (ordre d’écoute / QR). */

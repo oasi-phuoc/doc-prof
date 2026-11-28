@@ -21,7 +21,7 @@ export function LetterGridEditor({ items, onChange, instruction, onInstruction, 
       {items.map((item, index) => {
         const words = item.layout === 'mark-letter'
         const letters = item.layout === 'letter-grid'
-        const label = item.layout === 'read-phrases' ? 'Phrase' : item.layout === 'dictee-grid' ? 'Mot dicté' : 'Case'
+        const label = item.layout === 'read-phrases' || item.readingText ? 'Phrase' : item.layout === 'dictee-grid' ? 'Mot dicté' : 'Case'
         const cells = gridCells(item)
         const targets = letters ? item.labels : words ? item.themeGraphemes : undefined
         const columns = item.letterGridCols ?? (label === 'Phrase' ? 1 : label === 'Mot dicté' ? 2 : 4)
@@ -42,17 +42,19 @@ export function LetterGridEditor({ items, onChange, instruction, onInstruction, 
         }
         return (
           <fieldset key={index} className="libre-grid-fields">
-            <legend>{items.length === 1 ? (label === 'Phrase' ? 'Phrases à lire' : label === 'Mot dicté' ? 'Mots dictés' : 'Cases') : `Grille ${index + 1}`}</legend>
+            <legend>{item.readingText ? `Phrase ${index + 1}`
+              : items.length === 1 ? (label === 'Phrase' ? 'Phrases à lire' : label === 'Mot dicté' ? 'Mots dictés' : 'Cases') : `Grille ${index + 1}`}</legend>
             {targets?.length ? <p>Cible imprimée {targets.join(', ')}</p> : null}
             <div className="libre-grid-inputs" style={{ gridTemplateColumns: `repeat(${Math.min(4, columns)}, minmax(0, 1fr))` }}>
               {cells.map((cell, position) => {
                 const key = `${activityId}:grille-${index}:${position}`
                 const raw = fields[key]
+                const cellLabel = `${label} ${item.readingText ? index + 1 : position + 1}`
                 return (
                   <label key={position} className="libre-field is-line">
-                    <span>{label} {position + 1}</span>
+                    <span>{cellLabel}</span>
                     <input className="libre-line-input" type="text" value={raw ?? cell}
-                      aria-label={`${label} ${position + 1}`} data-applied-value={cell} aria-invalid={raw !== undefined}
+                      aria-label={cellLabel} data-applied-value={cell} aria-invalid={raw !== undefined}
                       onChange={(event) => editCell(position, event.target.value)} />
                     {raw !== undefined && <span className="libre-field-error" role="alert">{letters ? 'Saisissez une à trois lettres.' : 'Indiquez le texte à imprimer.'}</span>}
                   </label>

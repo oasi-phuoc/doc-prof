@@ -484,8 +484,13 @@ export function buildPage(
     const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasLocalQuestions
       ? result.items : (libre?.items ?? result.items)
     const glossaryBank = mathGlossaryBank(block.exerciseType)
+    const alphaStoryReading = page.domain === 'alphabetisation' && parseAlphaType(block.exerciseType)?.kind === 'lire-phrases'
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      if (alphaStoryReading && clean.layout === 'text') {
+        const sentence = clean.prompt ?? clean.answer
+        return { ...clean, prompt: sentence, answer: sentence, readingText: true as const, noPoints: true }
+      }
       if (clean.sionMap && block.sionMapBackground) {
         return { ...clean, sionMap: { ...clean.sionMap, background: block.sionMapBackground } }
       }
