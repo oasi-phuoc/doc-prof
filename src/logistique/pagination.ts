@@ -137,7 +137,7 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
 
 function height(item: MathItem, a5: boolean, scale: number): number {
   const table = item.logistiqueTable
-  if (a5 && table) scale = Math.min(1.125, scale)
+  if (a5 && table) scale = Math.min(table.presentation === 'cas-mixte' ? 1 : 1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
   const entry = item.logistiqueGlossaryEntry
@@ -193,8 +193,12 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
   }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
   if (table?.questions) {
-    const questions = table.questions.reduce((total, { prompt, answer }) => total + 6 * scale +
-      (18 * lineCount(prompt, width * 1.1) + 19 * lineCount(answer, width * 1.1)) * scale, 0)
+    const questions = table.questions.reduce((total, question) => {
+      const response = 18 * lineCount(question.prompt, width * 1.1) + 19 * lineCount(question.answer, width * 1.1)
+      const format = question.kind === 'calcul' ? (a5 ? 97 : 154) + 19 * Math.max(0, lineCount(question.calculation, width) - 2)
+        : question.kind === 'choix' ? 24 + 14 * Math.max(0, ...question.options.map((option) => lineCount(option, width * .27) - 1)) : 0
+      return total + (6 + response + format + (question.points !== undefined ? 15 : 0)) * scale
+    }, 0)
     return imageHeight + prompt * 0.85 + tableHeight + questions + 22 * scale
   }
   if (isWrittenProblem(item)) {
@@ -264,12 +268,13 @@ export function splitLogistiquePages(
       }
       if (table?.questions) {
         const { questions } = table
-        const scale = a5 ? Math.min(fontScale, 1.125) : fontScale
-        const limit = budget(0, a5 ? Math.min(fontScale, 1.25) : fontScale) - (a5 ? 66 : 55)
+        const mixed = table.presentation === 'cas-mixte'
+        const scale = a5 ? Math.min(fontScale, mixed ? 1 : 1.125) : fontScale
+        const limit = budget(0, a5 ? Math.min(fontScale, mixed ? 1 : 1.25) : fontScale) - (a5 ? 66 : 55)
         const fragments: TheoryLayoutSlice[] = []
         let start = 0
         for (let end = 2; end <= questions.length; end++) {
-          const available = start === 0 ? limit : a5 ? limit + 40 : budget(1) - 55
+          const available = start === 0 ? limit : a5 ? limit + (mixed ? 90 : 40) : budget(1) - 55
           if (height({ ...item, logistiqueTable: { ...table, questions: questions.slice(start, end) } }, a5, scale) <= available) continue
           fragments.push({ item, sourceIndex, subquestionRange: { start, end: end - 1 }, isLast: false })
           start = end - 1

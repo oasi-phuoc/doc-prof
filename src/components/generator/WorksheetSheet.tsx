@@ -281,6 +281,7 @@ export function WorksheetSheet({
   const compactHeader = asHalf && (page.domain === 'grammaire' || page.domain === 'société' || page.domain === 'vie-scolaire' || isTpfFamilyDomain(page.domain))
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
+  const hasLogistiqueMixedCase = Boolean(asHalf && page.items.some(({ logistiqueTable }) => logistiqueTable?.presentation === 'cas-mixte'))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const posterClass = page.cePosterSheet
@@ -293,7 +294,7 @@ export function WorksheetSheet({
   return (
     <Root
       className={rootClass + domainClass + posterClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
-        (hasLogistiqueStory ? ' has-logistique-story' : '')}
+        (hasLogistiqueStory ? ' has-logistique-story' : '') + (hasLogistiqueMixedCase ? ' has-logistique-mixed-case' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (

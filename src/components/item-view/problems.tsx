@@ -18,6 +18,7 @@ import {
 import { problemAid } from '@/math/problem-help'
 import { MoneyChangeBoard } from './money-change'
 import { LogistiqueTableView } from './logistique-table'
+import { formatPointsLabel } from '@/tpm/test'
 import type { MathItem, PreviewMode } from '@/math/types'
 import {
   computeScale,
@@ -682,16 +683,25 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
     const questions = item.logistiqueTable.questions
     const offset = item.logistiqueSubquestionOffset ?? 0
     return (
-      <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}`}>
+      <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}${item.logistiqueTable.presentation === 'cas-mixte' ? ' logistique-mixed-case' : ''}`}>
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{prompt}</p>
         </LogistiqueIllustratedPrompt>
         <LogistiqueTableView table={item.logistiqueTable} mode={mode} />
         {questions ? <ol type="a" start={offset + 1} className="logistique-document-questions">
-          {questions.map((question, index) => <li key={index}>
-            <p>{question.prompt}</p>
-            <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? question.answer : '\u00a0'}</span>
-          </li>)}
+          {questions.map((question, index) => {
+            const part: MathItem = { layout: 'text', prompt: question.prompt, answer: question.answer,
+              logistiqueSource: item.logistiqueSource, logistiqueLocalModule: item.logistiqueLocalModule }
+            return <li key={index}>
+              {question.points !== undefined && <small className="logistique-subquestion-points">{formatPointsLabel(question.points)}</small>}
+              {question.kind === 'choix' ? <SelectPillsRow item={{ ...part, layout: 'select', options: question.options }} mode={mode} />
+                : question.kind === 'calcul' ? <ProblemBlock item={{ ...part, calcAnswer: question.calculation }} mode={mode} />
+                : <>
+                  <p>{question.prompt}</p>
+                  <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? question.answer : '\u00a0'}</span>
+                </>}
+            </li>
+          })}
         </ol> : show && item.answer ? <strong className="filled-answer logistique-table-note">{item.answer}</strong> : null}
       </div>
     )

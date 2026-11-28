@@ -497,6 +497,23 @@ try {
     assert.deepEqual(await page.locator('.print-only-sheets .logistique-document-questions .filled').allTextContents(),
       ['Le lot B.', 'Il contient les quatre palettes nécessaires.', 'Une palette.'])
     await page.emulateMedia({ media: 'screen' })
+    await select('Type d’exercice', 'Mises en situation (à compléter)')
+    await select('Présentation des questions', 'Cas mixte')
+    await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
+    await sheet.getByText('Retour du transporteur', { exact: true }).waitFor()
+    await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+    await editor.getByText('Modifier le tableau', { exact: true }).click()
+    await editor.getByLabel('Points de la sous-question 2', { exact: true }).fill('3.5')
+    await editor.getByRole('button', { name: 'Corrigé vérifié', exact: true }).click()
+    await page.emulateMedia({ media: 'print' })
+    const mixed = page.locator('.print-only-sheets .logistique-mixed-case')
+    assert.deepEqual(await mixed.locator('.logistique-subquestion-points').allTextContents(),
+      ['1 point', '3,5 points', '2 points', '1 point', '3,5 points', '2 points'])
+    assert.equal(await mixed.locator('.oral-qcm-box.checked').count(), 1)
+    assert.deepEqual(await mixed.locator('.draft-pad-answer').allTextContents(), ['12 − 5 = 7'])
+    await page.emulateMedia({ media: 'screen' })
+    await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
+    await page.getByRole('button', { name: 'Exercice', exact: true }).click()
   }
   const savedOriginal = structuredClone(saved)
   await page.goto(base + '/fiches')

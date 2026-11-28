@@ -266,6 +266,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       { id: 'frise-chronologique', label: 'Frise chronologique à compléter' },
       { id: 'justifier-decision', label: 'Décision à justifier' },
     ] as const : []),
+    ...(logistics.kind === 'situation' ? [{ id: 'cas-mixte', label: 'Cas mixte' }] as const : []),
   ] as const).map(({ id, label }) => ({
     id, label, capacity: [...logistiqueModuleCapacities(
       logistics, selectedModules, activeBlock.logistiqueBankRevision, id,

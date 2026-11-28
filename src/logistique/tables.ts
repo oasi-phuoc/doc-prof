@@ -1,8 +1,12 @@
 export type LogistiqueTablePresentation =
   | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
-  | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique'
+  | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique' | 'cas-mixte'
 export type LogistiqueTableCell = string | { answer: string }
-export type LogistiqueDocumentQuestion = { prompt: string; answer: string }
+export type LogistiqueDocumentQuestion = { prompt: string; answer: string; points?: number } & (
+  | { kind?: 'redaction' }
+  | { kind: 'choix'; options: string[] }
+  | { kind: 'calcul'; calculation: string }
+)
 
 export type LogistiqueExerciseTable = {
   presentation: LogistiqueTablePresentation
@@ -18,8 +22,27 @@ export function isLogistiqueTablePresentation(value: unknown): value is Logistiq
     value === 'frise-chronologique' || isLogistiqueDocumentPresentation(value)
 }
 
-export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' | 'justifier-decision' {
-  return value === 'lire-document' || value === 'corriger-erreurs' || value === 'justifier-decision'
+export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'cas-mixte' {
+  return value === 'lire-document' || value === 'corriger-erreurs' || value === 'justifier-decision' || value === 'cas-mixte'
+}
+
+export function logistiqueCasePoints(table?: LogistiqueExerciseTable): number | undefined {
+  return table?.presentation === 'cas-mixte' ? table.questions?.reduce((total, question) => total + (question.points ?? 0), 0) : undefined
+}
+
+function isLogistiqueDocumentQuestion(value: unknown, mixed: boolean): value is LogistiqueDocumentQuestion {
+  if (!value || typeof value !== 'object') return false
+  const question = value as LogistiqueDocumentQuestion
+  if (typeof question.prompt !== 'string' || !question.prompt.trim() || typeof question.answer !== 'string' || !question.answer.trim()) return false
+  if (!mixed) return question.kind === undefined && question.points === undefined
+  if (typeof question.points !== 'number' || question.points < 0.5 || question.points > 20 || !Number.isInteger(question.points * 2)) return false
+  if (question.kind === 'choix') {
+    return Array.isArray(question.options) && question.options.length >= 2 && question.options.length <= 4 &&
+      question.options.every((option) => typeof option === 'string' && Boolean(option.trim())) &&
+      new Set(question.options.map((option) => option.trim())).size === question.options.length && question.options.includes(question.answer)
+  }
+  if (question.kind === 'calcul') return typeof question.calculation === 'string' && Boolean(question.calculation.trim())
+  return question.kind === undefined || question.kind === 'redaction'
 }
 
 function isLogistiqueTableCell(value: unknown): value is LogistiqueTableCell {
@@ -37,10 +60,11 @@ export function validLogistiqueExerciseTable(value: unknown): value is Logistiqu
     return false
   }
   if (isLogistiqueDocumentPresentation(presentation)) {
+    const mixed = presentation === 'cas-mixte'
     return typeof title === 'string' && Boolean(title.trim()) && rows.every((row) => row.every((cell) => typeof cell === 'string')) &&
       Array.isArray(questions) && questions.length >= 3 && questions.length <= 8 && questions.every((question) =>
-        question && typeof question.prompt === 'string' && Boolean(question.prompt.trim()) &&
-        typeof question.answer === 'string' && Boolean(question.answer.trim()))
+        isLogistiqueDocumentQuestion(question, mixed)) &&
+      (!mixed || new Set(questions.map(({ kind }) => kind ?? 'redaction')).size >= 2)
   }
   return title === undefined && questions === undefined && rows.some((row) => row.some((cell) => typeof cell !== 'string'))
 }

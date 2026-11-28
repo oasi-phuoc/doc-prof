@@ -16,7 +16,7 @@ const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryCh
   logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
 const { initialInventoryStory } = load(root + '/src/logistique/inventory-story.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
-const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
+const { logistiqueCasePoints, validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { canReuseLogistiqueEvaluation, reuseLogistiqueEvaluation } = load(root + '/src/logistique/model.ts')
 const { parseFicheRecipe } = load(root + '/src/fiches/recipe.ts')
@@ -748,6 +748,34 @@ test('frises et décisions utilisent les sections du cours et respectent les dip
       const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
       assert(validLogistiquePages([frozen]))
       assert.deepEqual(buildPage(frozen, 267).items, [item])
+    }
+  }
+})
+
+test('les cas mixtes réunissent les trois réponses et dérivent le barème des sous-questions', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'cas-mixtes-v016')
+  assert.equal(units.length, 4)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    assert.equal(logistiqueCasePoints(unit.table), 6)
+    const { questions } = unit.table
+    assert.deepEqual(questions.map(({ kind }) => kind ?? 'redaction'), ['choix', 'calcul', 'redaction'])
+    assert(!validLogistiqueExerciseTable({ ...unit.table, questions: questions.with(0, { ...questions[0], answer: 'Autre choix' }) }))
+    assert(!validLogistiqueExerciseTable({ ...unit.table, questions: questions.with(1, { ...questions[1], calculation: '' }) }))
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, 'situation'), logistiquePresentation: 'cas-mixte' }
+      const worksheet = buildPage(page, 40)
+      const [item] = worksheet.items
+      assert.equal(item.points, 6)
+      assert(reviewableLogistiqueAnswer(item))
+      assert(allocateLogistiquePoints([item], 2, 1).conflict)
+      assert(!validLogistiquePages([{ ...page, libreItems: [{ ...item, points: 2 }] }]))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }], true)
+      assert(validLogistiquePages([frozen]))
+      const split = splitLogistiquePages(worksheet, { a5: true, fontScale: 1.5, evaluation: true }).map((sheet) => ({ ...sheet, configIndex: 0 }))
+      assert.deepEqual(blockItemsForConfig(split, 0, 0).items, [item])
     }
   }
 })

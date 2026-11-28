@@ -179,6 +179,26 @@
       }
     },
     {
+      "id": "fixture-306-cas-mixte",
+      "module": "306",
+      "kind": "situation",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Préparez l’échange des supports conformes.",
+      "answer": "",
+      "table": {
+        "presentation": "cas-mixte",
+        "title": "Retour du transporteur",
+        "headers": ["Donnée", "Quantité"],
+        "rows": [["Supports présentés", "12"], ["Supports écartés", "5"]],
+        "questions": [
+          { "kind": "choix", "prompt": "Combien de supports sont écartés ?", "answer": "5", "options": ["12", "7", "5"], "points": 1 },
+          { "kind": "calcul", "prompt": "Calculez le nombre de supports conformes.", "calculation": "12 − 5 = 7", "answer": "Sept supports conformes.", "points": 3 },
+          { "prompt": "Quel nombre consignez-vous comme admissible ?", "answer": "Sept supports admissibles.", "points": 2 }
+        ]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

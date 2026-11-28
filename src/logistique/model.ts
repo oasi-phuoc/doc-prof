@@ -33,6 +33,7 @@ function newIndependentQuestions(block: ExerciseBlock, items: MathItem[], seed: 
     if (previous.libreLocked || previous.logistiqueLocalModule) return previous
     const index = pool.findIndex((candidate) => candidate.logistiqueSource?.module === source?.module &&
       !sourceIds.has(candidate.logistiqueSource?.id) && !printed.has(promptKey(candidate)) &&
+      (candidate.logistiqueTable?.presentation !== 'cas-mixte' || candidate.points === previous.points) &&
       (!previous.logistiqueAssessment?.objective || previous.logistiqueAssessment.objective === candidate.logistiqueAssessment?.objective) &&
       (!previous.logistiqueAssessment?.bloom || previous.logistiqueAssessment.bloom === candidate.logistiqueAssessment?.bloom) &&
       (!previous.logistiqueAssessment?.difficulty || previous.logistiqueAssessment.difficulty === candidate.logistiqueAssessment?.difficulty))

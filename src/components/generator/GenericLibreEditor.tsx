@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
 import { logistiqueBloomLevels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
+import { logistiqueCasePoints } from '@/logistique/tables'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
@@ -102,6 +103,7 @@ export function GenericLibreEditor({
       <ul className="libre-item-list" aria-label="Questions">
         {items.map((item, index) => {
           const choice = item.logistiqueChoice
+          const casePoints = logistiqueCasePoints(item.logistiqueTable)
           return (
           <li key={item.libreId ?? index} className="libre-item-card is-libre-row">
             <span className="libre-item-num is-accent">{index + 1}.</span>
@@ -172,6 +174,7 @@ export function GenericLibreEditor({
               {item.logistiqueTable && <LogistiqueTableEditor table={item.logistiqueTable}
                 onChange={(logistiqueTable) => patchItem(index, { logistiqueTable, libreCorrectionPending: true,
                   ...(logistiqueTable.questions ? { answer: logistiqueTable.questions.map(({ answer }) => answer).join('\n') } : {}),
+                  ...(logistiqueTable.presentation === 'cas-mixte' ? { points: logistiqueCasePoints(logistiqueTable) } : {}),
                 })} />}
               {(editableCalculation || direct && item.calcAnswer != null) && (
                 <label className="libre-field is-line">
@@ -314,7 +317,7 @@ export function GenericLibreEditor({
                 <label className="libre-field is-line">
                   <span>Points de la question</span>
                   <input type="number" className="libre-line-input" min={0} max={1000} step={0.5}
-                    value={item.points ?? ''} placeholder="Barème de l’activité"
+                    value={casePoints ?? item.points ?? ''} readOnly={casePoints !== undefined} placeholder="Barème de l’activité"
                     onChange={(event) => {
                       const points = event.target.valueAsNumber
                       if (!event.target.value || points >= 0 && points <= 1000 && points * 2 % 1 === 0) {
@@ -322,10 +325,10 @@ export function GenericLibreEditor({
                       }
                     }} />
                 </label>
-                <label>
+                {casePoints === undefined && <label>
                   <input type="checkbox" checked={Boolean(item.logistiqueAssessment?.pointsLocked)}
                     onChange={(event) => patchAssessment(index, { pointsLocked: event.target.checked })} /> Verrouiller les points de cette question
-                </label>
+                </label>}
                 <SelectBox label="Niveau de Bloom" value={item.logistiqueAssessment?.bloom ?? ''} onChange={(bloom) =>
                   patchAssessment(index, { bloom: bloom ? bloom as LogistiqueAssessment['bloom'] : undefined })}>
                   <option value="">À renseigner</option>

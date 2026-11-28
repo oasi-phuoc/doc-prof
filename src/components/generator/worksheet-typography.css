@@ -213,11 +213,11 @@
 }
 
 :root {
-  --logistique-story-a5-scale: min(var(--sheet-font-scale, 1), 1);
+  --logistique-compact-a5-scale: min(var(--sheet-font-scale, 1), 1);
 }
 
-.a5-half.is-logistique.has-logistique-story {
-  --sheet-font-scale: var(--logistique-story-a5-scale, 1);
+.a5-half.is-logistique:is(.has-logistique-story, .has-logistique-mixed-case) {
+  --sheet-font-scale: var(--logistique-compact-a5-scale, 1);
 }
 
 .has-logistique-story .exercise-document-text {
@@ -321,6 +321,24 @@
 .logistique-document-questions .answer-line-field {
   display: block;
   width: 100%;
+}
+
+.logistique-subquestion-points {
+  display: none;
+}
+
+.is-eval .logistique-subquestion-points {
+  display: inline-block;
+  margin-block-end: 3px;
+  font-weight: 700;
+}
+
+.logistique-mixed-case .problem-block .draft-pad {
+  --grid-rows: 4;
+}
+
+.a5-half .logistique-mixed-case .problem-block .draft-pad {
+  --grid-rows: 2;
 }
 
 .a5-half .exercise-block:has(.logistique-document-exercise) .exercise-heading {
