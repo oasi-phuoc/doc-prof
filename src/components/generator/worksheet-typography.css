@@ -258,6 +258,43 @@
   gap: 4px;
 }
 
+.logistique-timeline :is(th, td):first-child {
+  width: 32%;
+}
+
+.logistique-timeline tbody td:first-child {
+  position: relative;
+  padding-inline-start: 1.5em;
+  border: 0;
+}
+
+.logistique-timeline tbody td:first-child::before,
+.logistique-timeline tbody td:first-child::after {
+  content: '';
+  position: absolute;
+  left: .66em;
+  color: var(--purple);
+}
+
+.logistique-timeline tbody td:first-child::before {
+  top: 0;
+  bottom: 0;
+  border-inline-start: 1.5px solid currentColor;
+}
+
+.logistique-timeline tbody td:first-child::after {
+  top: 50%;
+  translate: -46% -50%;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid currentColor;
+  background: white;
+  border-radius: 50%;
+}
+
+.logistique-timeline tbody tr:first-child td:first-child::before { top: 50%; }
+.logistique-timeline tbody tr:last-child td:first-child::before { bottom: 50%; }
+
 .logistique-document-exercise .logistique-exercise-table caption {
   padding-bottom: 4px;
   text-align: left;

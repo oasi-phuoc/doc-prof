@@ -4,6 +4,7 @@ import { isLogistiqueDomain, type LogistiqueType } from './catalog'
 import { logistiqueVerdicts, validLogistiqueChoice } from './choices'
 import { generateLogistique } from './generate'
 import { validLogistiqueMatching } from './matching'
+import { validLogistiqueExerciseTable } from './tables'
 
 export type LogistiqueQuestionFormat = 'open' | 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'associer-textes'
 
@@ -36,8 +37,8 @@ export function completeLogistiquePrompt(item: MathItem): boolean {
 
 export function reviewableLogistiqueAnswer(item: MathItem): boolean {
   if (item.logistiqueMatching) return completeLogistiquePrompt(item) && validLogistiqueMatching(item)
-  if (item.logistiqueTable?.questions) {
-    return completeLogistiquePrompt(item) && item.logistiqueTable.questions.every(({ answer }) => answer.trim())
+  if (item.logistiqueTable && item.calcAnswer === undefined) {
+    return completeLogistiquePrompt(item) && validLogistiqueExerciseTable(item.logistiqueTable)
   }
   if (item.logistiqueChoice) {
     const choice = item.logistiqueChoice

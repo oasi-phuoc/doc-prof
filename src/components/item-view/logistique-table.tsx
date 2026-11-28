@@ -3,8 +3,9 @@ import type { PreviewMode } from '@/math/types'
 
 export function LogistiqueTableView({ table, mode }: { table: LogistiqueExerciseTable; mode: PreviewMode }) {
   const corrected = mode === 'answers'
+  const chronology = table.presentation === 'frise-chronologique'
   return (
-    <table className="theory-table has-col-head logistique-exercise-table">
+    <table className={`theory-table has-col-head logistique-exercise-table${chronology ? ' logistique-timeline' : ''}`}>
       {table.title && <caption>{table.title}</caption>}
       <thead>
         <tr>{table.headers.map((header, col) => <th key={col} scope="col">{header}</th>)}</tr>

@@ -263,6 +263,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       { id: 'tableau-ordre', label: 'Ordre des étapes' },
       { id: 'lire-document', label: 'Lecture de document professionnel' },
       { id: 'corriger-erreurs', label: 'Repérage et correction d’erreurs' },
+      { id: 'frise-chronologique', label: 'Frise chronologique à compléter' },
+      { id: 'justifier-decision', label: 'Décision à justifier' },
     ] as const : []),
   ] as const).map(({ id, label }) => ({
     id, label, capacity: [...logistiqueModuleCapacities(

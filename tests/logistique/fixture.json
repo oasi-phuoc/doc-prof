@@ -145,6 +145,40 @@
       ]
     },
     {
+      "id": "fixture-306-frise",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Complétez la chronologie du suivi.",
+      "answer": "",
+      "table": {
+        "presentation": "frise-chronologique",
+        "headers": ["Date", "Mouvement"],
+        "rows": [["8 avril", "Constat au quai"], [{ "answer": "9 avril" }, "Retour d’un support"]]
+      }
+    },
+    {
+      "id": "fixture-306-decision",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Il vous faut quatre palettes conformes pour l’expédition.",
+      "answer": "",
+      "table": {
+        "presentation": "justifier-decision",
+        "title": "Lots disponibles",
+        "headers": ["Lot", "Palettes conformes"],
+        "rows": [["A", "3"], ["B", "4"]],
+        "questions": [
+          { "prompt": "Quel lot retenez-vous ?", "answer": "Le lot B." },
+          { "prompt": "Justifiez ce choix.", "answer": "Il contient les quatre palettes nécessaires." },
+          { "prompt": "Combien de palettes manquent dans le lot A ?", "answer": "Une palette." }
+        ]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

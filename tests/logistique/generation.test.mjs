@@ -731,6 +731,27 @@ test('les associations textuelles mélangent les définitions sans perdre les pa
   assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [extended])
 })
 
+test('frises et décisions utilisent les sections du cours et respectent les diplômes', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'complementaires-v015')
+  assert.equal(units.length, 8)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, unit.kind), count: 5, logistiquePresentation: unit.table.presentation }
+      const draw = generateLogistique(page, 71)
+      const item = draw.items.find((entry) => entry.logistiqueSource.id === unit.id)
+      assert.equal(Boolean(item), unit.approvedFor.includes(diploma))
+      if (!item) continue
+      assert.deepEqual(item.logistiqueTable, unit.table)
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 267).items, [item])
+    }
+  }
+})
+
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
   const scenario = initialLogistiqueStory
   for (const diploma of ['CFC', 'AFP']) {

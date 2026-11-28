@@ -272,6 +272,7 @@ import { logistiqueResponseExercises, logistiqueStructuredExercises } from './ba
 import { logistiqueChoiceExercises } from './banks/choix-v011'
 import { logistiqueDocumentExercises } from './banks/documents-v012'
 import { logistiqueMatchingExercises } from './banks/associations-v013'
+import { logistiqueComplementaryFormats } from './banks/complementaires-v015'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
@@ -680,6 +681,9 @@ const choiceExercisesPublication: LogistiquePublication = {
 const documentExercisesPublication: LogistiquePublication = {
   revision: 'logistique-documents-v012', units: [...choiceExercisesPublication.units, ...logistiqueDocumentExercises],
 }
+const matchingExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-associations-v013', units: [...documentExercisesPublication.units, ...logistiqueMatchingExercises],
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -775,7 +779,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   responseExercisesPublication,
   choiceExercisesPublication,
   documentExercisesPublication,
-  { revision: 'logistique-associations-v013', units: [...documentExercisesPublication.units, ...logistiqueMatchingExercises] },
+  matchingExercisesPublication,
+  { revision: 'logistique-complementaires-v015', units: [...matchingExercisesPublication.units, ...logistiqueComplementaryFormats] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

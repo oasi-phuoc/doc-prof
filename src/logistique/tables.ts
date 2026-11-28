@@ -1,6 +1,6 @@
 export type LogistiqueTablePresentation =
   | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
-  | 'lire-document' | 'corriger-erreurs'
+  | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique'
 export type LogistiqueTableCell = string | { answer: string }
 export type LogistiqueDocumentQuestion = { prompt: string; answer: string }
 
@@ -14,11 +14,12 @@ export type LogistiqueExerciseTable = {
 
 export function isLogistiqueTablePresentation(value: unknown): value is LogistiqueTablePresentation {
   return value === 'tableau-donnees' || value === 'tableau-dates' ||
-    value === 'tableau-comparaison' || value === 'tableau-classement' || value === 'tableau-ordre' || isLogistiqueDocumentPresentation(value)
+    value === 'tableau-comparaison' || value === 'tableau-classement' || value === 'tableau-ordre' ||
+    value === 'frise-chronologique' || isLogistiqueDocumentPresentation(value)
 }
 
-export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' {
-  return value === 'lire-document' || value === 'corriger-erreurs'
+export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' | 'justifier-decision' {
+  return value === 'lire-document' || value === 'corriger-erreurs' || value === 'justifier-decision'
 }
 
 function isLogistiqueTableCell(value: unknown): value is LogistiqueTableCell {

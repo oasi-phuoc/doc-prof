@@ -269,7 +269,8 @@ export function splitLogistiquePages(
         const fragments: TheoryLayoutSlice[] = []
         let start = 0
         for (let end = 2; end <= questions.length; end++) {
-          if (height({ ...item, logistiqueTable: { ...table, questions: questions.slice(start, end) } }, a5, scale) <= limit) continue
+          const available = start === 0 ? limit : a5 ? limit + 40 : budget(1) - 55
+          if (height({ ...item, logistiqueTable: { ...table, questions: questions.slice(start, end) } }, a5, scale) <= available) continue
           fragments.push({ item, sourceIndex, subquestionRange: { start, end: end - 1 }, isLast: false })
           start = end - 1
         }
