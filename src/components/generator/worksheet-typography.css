@@ -295,6 +295,73 @@
   line-height: 1.25;
 }
 
+.logistique-match-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 34fr) minmax(24px, 12fr) minmax(0, 54fr);
+  grid-template-rows: repeat(var(--match-rows), 1fr);
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+}
+
+.logistique-match-term,
+.logistique-match-definition {
+  position: relative;
+  align-content: center;
+  min-height: 2.75em;
+  padding: .32em .65em;
+  overflow-wrap: anywhere;
+}
+
+.logistique-match-term { grid-column: 1; }
+.logistique-match-definition { grid-column: 3; }
+
+.logistique-match-term::after,
+.logistique-match-definition::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+
+.logistique-match-term::after { left: 100%; }
+.logistique-match-definition::before { left: 0; }
+
+.logistique-match-links {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  container-type: size;
+  position: relative;
+  pointer-events: none;
+}
+
+.logistique-match-link {
+  position: absolute;
+  left: 0;
+  top: calc(var(--match-start) * 100%);
+  width: hypot(100cqw, calc(var(--match-change) * 100cqh));
+  border-top: 1px solid var(--purple);
+  transform: rotate(atan2(calc(var(--match-change) * 100cqh), 100cqw));
+  transform-origin: left;
+}
+
+.logistique-match-key { color: var(--purple); white-space: nowrap; }
+
+.a5-half .logistique-match { gap: 6px; }
+
+.a5-half .logistique-match-grid {
+  font-size: calc(13px * min(var(--app-font-scale, 1), 1));
+  line-height: 1.28;
+}
+
+.a5-half :is(.logistique-match-term, .logistique-match-definition) {
+  min-height: 2.5em;
+  padding: .25em .55em;
+}
+
 .logistique-assessment-points {
   margin: 0 0 .15em;
   font-size: calc(11px * var(--app-font-scale, 1));

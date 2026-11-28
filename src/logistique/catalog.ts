@@ -2,6 +2,7 @@ import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, Logi
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { validLogistiqueChoice } from './choices'
+import { validLogistiqueMatching } from './matching'
 import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
 import { logistiqueStorySelectionCompatible, validLogistiqueAssessment, validLogistiqueEvaluation } from './evaluation'
 
@@ -130,7 +131,7 @@ export function validLogistiquePresentation(type: LogistiqueType, presentation: 
   if (isLogistiqueTablePresentation(presentation)) return type.kind === 'verification' || type.kind === 'situation' ||
     (type.kind === 'maths' && (presentation === 'tableau-donnees' || presentation === 'tableau-dates'))
   if (presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'vrai-faux' ||
-      presentation === 'lignes-simples' || presentation === 'lignes-numerotees') {
+      presentation === 'lignes-simples' || presentation === 'lignes-numerotees' || presentation === 'associer-textes') {
     return type.kind === 'verification'
   }
   return validLogistiqueGapMode(type, presentation)
@@ -199,13 +200,15 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
         (item?.logistiqueLocalModule === undefined || (!isLogistiqueReferenceType(type.id) &&
           !item.logistiqueSource && typeof item.libreId === 'string' &&
           typeof item.prompt === 'string' && typeof item.answer === 'string' &&
-          (item.layout === 'text' || (type.kind !== 'maths' && item.layout === 'select' &&
+          (item.layout === 'text' || (type.kind === 'verification' && item.layout === 'vocab-match' && item.logistiqueMatching === true) ||
+            (type.kind !== 'maths' && item.layout === 'select' &&
             Array.isArray(item.options) && item.options.length >= 2 && item.options.length <= 12 &&
             item.options.every((option: unknown) => typeof option === 'string'))) &&
           subthemes.some(({ code, diploma }) =>
             code === item.logistiqueLocalModule && diploma === type.diploma))) &&
         (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
         (item?.logistiqueChoice === undefined || (type.kind === 'verification' && validLogistiqueChoice(item))) &&
+        (item?.logistiqueMatching === undefined || (type.kind === 'verification' && validLogistiqueMatching(item))) &&
         (item?.logistiqueResponseLines === undefined || (type.kind === 'verification' && item.layout === 'text' &&
           !item.logistiqueGaps && !item.logistiqueTable && validResponseLines(item.logistiqueResponseLines))) &&
         (item?.logistiqueTable === undefined || (

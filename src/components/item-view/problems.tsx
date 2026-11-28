@@ -36,7 +36,7 @@ import {
   tokenIsFrac,
 } from './algebra'
 
-function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem; mode: PreviewMode; children: ReactNode }) {
+export function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem; mode: PreviewMode; children: ReactNode }) {
   const image = item.logistiqueImage
   if (!image || (image.visibility === 'answers' && mode !== 'answers') || !logistiquePhotoPath(image.src)) return children
   const figure = (
@@ -680,7 +680,7 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
   }
   if (item.logistiqueTable) {
     const questions = item.logistiqueTable.questions
-    const offset = item.logistiqueDocumentOffset ?? 0
+    const offset = item.logistiqueSubquestionOffset ?? 0
     return (
       <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}`}>
         <LogistiqueIllustratedPrompt item={item} mode={mode}>

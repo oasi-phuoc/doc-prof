@@ -242,7 +242,7 @@ export function ItemView({
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||
-    item.layout === 'vocab-match' ||
+    item.layout === 'vocab-match' && !item.logistiqueMatching ||
     item.layout === 'letter-grid' ||
     item.layout === 'syllable-complete' ||
     item.layout === 'syllable-table' ||

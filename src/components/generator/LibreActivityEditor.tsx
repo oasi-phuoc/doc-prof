@@ -197,6 +197,7 @@ export function LibreActivityEditor({
           : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'
           : item.logistiqueChoice?.kind === 'multiple' ? 'qcm-multiple'
           : item.logistiqueChoice?.kind === 'true-false' ? 'vrai-faux'
+          : item.logistiqueMatching ? 'associer-textes'
           : item.options?.length ? 'qcm' : undefined)
       return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, presentation)
         .find((entry) => entry.logistiqueSource?.id === source.id)

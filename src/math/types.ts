@@ -438,7 +438,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
-export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees'
+export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees' | 'associer-textes'
 export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueResponseLines =
   | { kind: 'simple'; count: number }
@@ -488,8 +488,10 @@ export type MathItem = {
   logistiqueGaps?: LogistiqueGaps
   logistiqueResponseLines?: LogistiqueResponseLines
   logistiqueChoice?: import('@/logistique/choices').LogistiqueChoice
+  logistiqueMatching?: true
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
-  logistiqueDocumentOffset?: number
+  /** Position de départ d’une suite imprimée, en dehors de la recette. */
+  logistiqueSubquestionOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
@@ -1327,7 +1329,7 @@ export type WorksheetBlock = {
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock;
-    documentRange?: { start: number; end: number }; isLast: boolean }[]
+    subquestionRange?: { start: number; end: number }; isLast: boolean }[]
   /** Index des questions dont le contexte figure juste avant, sur une page de suite. */
   logistiqueDetachedNarratives?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */
