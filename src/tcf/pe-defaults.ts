@@ -2,6 +2,7 @@
  * Barème et détails par défaut des emplacements PE CSC (ex. 10–13).
  */
 import { tcfSlotByTypeId } from './catalog'
+import type { TcfNiveau } from './types'
 
 export const TCF_PE_MOTS_CLES_DETAIL =
   '1 point par mot correctement écrit ; 0,5 point si le mot est écrit incorrectement mais la prononciation est correcte.'
@@ -12,13 +13,14 @@ export const TCF_PE_TEXTE_IMAGES_CONSIGNE =
 /** Largeur du trait inline pour texte à images (px). */
 export const TCF_PE_TEXTE_IMAGES_BLANK_PX = 150
 
-export function tcfPeSlotDefaults(typeId: string): {
+export function tcfPeSlotDefaults(typeId: string, niveau?: TcfNiveau): {
   pointsPerQuestion: number
   tcfPointsDetail?: string
   inlineBlankPx?: number
 } | null {
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.competence !== 'PE' || slot.numero == null) return null
+  if (niveau === 'A2-B1') return slot.numero <= 3 ? { pointsPerQuestion: 10 } : null
   if (slot.numero === 1) return { pointsPerQuestion: 5 }
   if (slot.numero === 2) {
     return {

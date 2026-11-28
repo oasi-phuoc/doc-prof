@@ -57,7 +57,13 @@ export function peEvaluation(ex: TcfPeExercise, total: number, instruction?: str
     }))
   } else {
     referencePoints = 10
-    reference = short ? 'ISA · Ex3 — texte communicatif adapté' : 'ISA · Ex2 — rédaction adaptée'
+    const b1 = ex.niveau === 'A2-B1'
+    const b1Task = ex.tags?.includes('argumentation')
+      ? { label: 'argumentation', objective: 'Les deux points de vue sont reformulés et l’opinion personnelle est justifiée par des exemples.' }
+      : ex.tags?.includes('recit')
+        ? { label: 'récit', objective: 'Les événements sont racontés dans un ordre clair et l’expérience est commentée avec des détails précis.' }
+        : { label: 'message', objective: 'Le message répond à la situation et donne des précisions utiles au destinataire.' }
+    reference = b1 ? `TCF B1 · ${b1Task.label}` : short ? 'ISA · Ex3 — texte communicatif adapté' : 'ISA · Ex2 — rédaction adaptée'
     const register = `Registre adapté au destinataire et à la situation (${format}) : tu/vous, salutations ou politesse selon la consigne.`
     const lexicon = criterion('Lexique / Orthographe lexicale', ['Vocabulaire adapté au sujet ; erreurs mineures sans gêne pour la compréhension.', 'Vocabulaire limité ou erreurs gênant parfois la compréhension.', 'Vocabulaire inadapté ou incompréhensible.'])
     const coherence = ['Idées ordonnées et liées par des connecteurs simples adaptés.', 'Organisation absente ou texte difficile à suivre.']
@@ -69,7 +75,7 @@ export function peEvaluation(ex: TcfPeExercise, total: number, instruction?: str
       criterion('Morphosyntaxe / Orthographe', ['Structures et temps adaptés à la tâche, globalement corrects.', 'Erreurs de structure gênant la compréhension.']),
       criterion('Cohérence et cohésion', coherence),
     ] : [
-      criterion('Réalisation de la tâche', [`Tous les éléments de la consigne sont développés de manière claire. ${length}`, 'Une partie seulement des éléments demandés est développée.', 'Réponse très partielle ; informations très limitées.', 'La réponse ne respecte pas la consigne.']),
+      criterion('Réalisation de la tâche', [`${b1 ? b1Task.objective : 'Tous les éléments de la consigne sont développés de manière claire.'} ${length}`, 'Une partie seulement des éléments demandés est développée.', 'Réponse très partielle ; informations très limitées.', 'La réponse ne respecte pas la consigne.']),
       criterion('Cohérence et cohésion', [coherence[0], 'Certaines idées sont liées, mais le texte reste parfois décousu.', coherence[1]]),
       criterion('Adéquation sociolinguistique', [register, 'Ton ou registre inadapté au destinataire.']),
       lexicon,

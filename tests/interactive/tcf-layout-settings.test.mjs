@@ -9,9 +9,10 @@ try {
   const { buildWorksheets } = await vite.ssrLoadModule('/src/math/generate.ts')
   const { blockPointsTotal } = await vite.ssrLoadModule('/src/tpm/test.ts')
   const { limitTcfCeQuestions } = await vite.ssrLoadModule('/src/tcf/ce-questions.ts')
-  const { resolveTcfExercise } = await vite.ssrLoadModule('/src/tcf/generate.ts')
-  const { tcfSlotBank } = await vite.ssrLoadModule('/src/tcf/loader.ts')
+  const { buildTpfFamilyTestPages, resolveTcfExercise } = await vite.ssrLoadModule('/src/tcf/generate.ts')
+  const { tcfBank, tcfExerciseById, tcfSlotBank } = await vite.ssrLoadModule('/src/tcf/loader.ts')
   const { tcfSlotByTypeId } = await vite.ssrLoadModule('/src/tcf/catalog.ts')
+  const { tcfGroupId } = await vite.ssrLoadModule('/src/tcf/sources.ts')
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
   const { parseFicheRecipe, buildFicheRecipe } = await vite.ssrLoadModule('/src/fiches/recipe.ts')
   const { textFontFamily } = await vite.ssrLoadModule('/src/typography/font-families.ts')
@@ -23,6 +24,32 @@ try {
     support: { audios: ['/fixture.mp3'], transcription: 'Le même document.' }, questions }
   const q = sheets => sheets.flatMap(sheet => sheet.items.flatMap(item => item.tcf?.kind === 'audio_cadre' ? item.tcf.questions : []))
   const points = sheets => sheets.reduce((sum, sheet) => sum + sheet.blocks.reduce((n, b) => n + blockPointsTotal(b.items, 1), 0), 0)
+
+  await test('TCF B1 builds all four competencies from its own banks and retains the layout in saved recipes', async () => {
+    const coPaths = new Set(tcfBank('A2-B1', 'CO').flatMap(ex => ex.support.audios ?? [ex.support.audio]))
+    const lowerAudio = tcfBank('A0-A1', 'CO').find(ex => ex.support.audio)?.support.audio
+    const pages = buildTpfFamilyTestPages('tcf-b1', 42)
+    assert.equal(pages.length, 15)
+    assert.ok(pages.every(page => page.domain === 'tcf-b1' && page.difficulty === 'avance'))
+    const sources = pages.slice(1).map(page => resolveTcfExercise(page, createRng(42)))
+    assert.deepEqual(sources.map(ex => ex.competence), [
+      'CO', 'CO', 'CO', 'CO', 'CE', 'CE', 'CE', 'CE', 'PE', 'PE', 'PE', 'PO', 'PO', 'PO',
+    ])
+    assert.ok(sources.every(ex => ex.niveau === 'A2-B1'))
+    assert.ok(sources.filter(ex => ex.competence === 'CO').every(ex =>
+      (ex.support.audios ?? [ex.support.audio]).every(audio => coPaths.has(audio))))
+    assert.deepEqual(sources.filter(ex => ex.competence === 'PO').map(tcfGroupId),
+      ['entretien', 'interaction', 'point-de-vue'])
+    const picked = resolveTcfExercise({ ...pages[1], difficulty: 'facile', tcfExercise: undefined,
+      tcfAudioPickMode: 'libre', tcfAudioSlots: [lowerAudio] }, createRng(42))
+    assert.ok(picked.support.audios.every(audio => coPaths.has(audio)))
+    const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
+    const recipe = parseFicheRecipe(JSON.parse(JSON.stringify(buildFicheRecipe({ ...template, pages }))))
+    assert.ok(recipe.pages.every(page => page.domain === 'tcf-b1'))
+    const sheets = buildWorksheets(recipe.pages, 42)
+    assert.ok(sheets.every(sheet => sheet.items.every(item => item.tcf?.kind !== 'vide')))
+    assert.ok(sheets[0].items.find(item => item.tcf?.kind === 'informations').tcf.pointsByCompetence.PO > 0)
+  })
 
   await test('CE defaults to five questions, with an explicit choice up to the full source', () => {
     const slot = tcfSlotByTypeId['tcf-ce-ex-4']
@@ -81,6 +108,24 @@ try {
     assert.equal(points(split), points(joined))
     assert.ok(split.flatMap(sheet => sheet.blocks).some(block => block.exerciseIndex === 9))
     assert.ok(q(split).some(question => question.formModeIndex === 4 && question.numero === 2))
+  })
+
+  await test('illustrated reading pages stay separate when the same worksheet also has a cut inside an audio', () => {
+    const reading = tcfExerciseById('tcf-a0a1-ce-001')
+    const ce = { ...base, topic: 'tcf-ce', exerciseType: 'tcf-ce-ex-1', tcfExercise: reading, tcfCeFormat: 'image' }
+    const audio = { ...base, tcfExercise: exercise, tcfQuestionPageBreakBefore: [3] }
+    const mixed = buildWorksheets([{ ...audio, extraBlocks: [ce] }], 42)
+    const audioSheets = buildWorksheets([audio], 42)
+    const withoutAudioCut = buildWorksheets([{ ...audio, tcfQuestionPageBreakBefore: undefined, extraBlocks: [ce] }], 42)
+    const readingItems = withoutAudioCut.flatMap(sheet => sheet.items).filter(item => item.tcfExerciseId === reading.id)
+    assert.equal(mixed.length, 4)
+    assert.deepEqual(q(mixed), q(audioSheets))
+    assert.equal(points(mixed), points(withoutAudioCut))
+    assert.equal(mixed[2].cePosterLandscape, true)
+    assert.equal(mixed[2].blocks[0].sourceBlockIndex, 1)
+    assert.equal(mixed[3].blocks[0].itemOffset, 1)
+    assert.equal(mixed[3].blocks[0].tcfPageBreakAfter[0], true)
+    assert.deepEqual(mixed.slice(2).flatMap(sheet => sheet.items), readingItems)
   })
 
   await test('older frame cuts remain cancellable, with no duplicate cut button on a continued question', async () => {

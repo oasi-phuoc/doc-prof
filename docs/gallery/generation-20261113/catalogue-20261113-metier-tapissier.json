@@ -1,18 +1,25 @@
 {
   "id": "catalogue-20261113-metier-tapissier",
   "label": "tapissier",
+  "source_png": "/workspace/generated_images/exec-30108c6a-37b5-4f3c-9993-b3c87f8dea84.png",
   "type": "Métier",
   "subtype": "Construction et artisanat",
-  "status": "generation_failed",
-  "reuse_candidates": [],
   "path": "/lib/images/tcf/catalogue/metiers/tapissier.webp",
-  "prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Métier réel : tapissier. Montrer un homme blanc adulte aux cheveux gris et lunettes en train d’exercer cette profession, avec geste professionnel précis, véritables outils et lieu de travail approprié. Ne pas réduire le métier à une tenue ou un portrait sans activité ; décor entier peint sobre. Varier les visages, vêtements et rôles sans stéréotypes, pas de duplication de la salle de la référence. Avocat désigne ici le juriste, et glacier le fabricant de glaces. Aucun fruit ou paysage glaciaire comme sujet.",
+  "status": "visually_reviewed",
+  "prompt": "One standalone native PNG 1448x1086 exact landscape 4:3. Grounded painterly TCF illustration with matte semirealistic lines, diffuse daylight, clear detail, slightly warm natural colours and the subject visibly at work in a coherent correctly built location. The appearance of characters must be new and specific to this job, never reuse reference face/build, furniture, props or room. Hands, shoulders, legs, feet, equipment and supporting furniture perfectly plausible, no duplicated person. No letters, digits, brands, signs or overlay. A slim older white French-speaking woman upholsterer with short white hair and round glasses in taupe work apron. On a wooden worktable a partly disassembled solid old chair seat rests solidly, with partly attached upholstery fabric and foam. She holds the edge of green woven fabric taut to fit it over padding, beside spool and small safe hand tool. One pair of attached natural hands.",
   "reference_images": [
-    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
+    "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
   ],
   "style_references": [
     "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
   ],
-  "style_reference_commit": "265211bf90d21b8a22897a36bdd41b635304860c",
-  "error": "missing_generation_artifact: source PNG et indication de fichier non reçues du service pendant les interruptions de transport. Inspection des PNG sans lien : aucun ne correspond à ce sujet."
+  "keywords": [
+    "tapissier",
+    "mobilier",
+    "siège",
+    "rembourrage",
+    "tissu"
+  ],
+  "review_note": "La tapissière tend le tissu qui recouvre le rembourrage d’une chaise.",
+  "sha256": "41dd95374e41471d7699b4430ec641a0c800e515f8bba5c0692b4034f863b509"
 }

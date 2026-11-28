@@ -324,6 +324,7 @@ export type TcfPoEntretien = TcfBase<
   'entretien',
   { questions: string[]; echanges?: { question: string; reponse: string }[] }
 >
+export type TcfPoLecture = TcfBase<'PO', 'lecture_progressive', { titre: string; texte: string }>
 export type TcfPoTheme = { theme: string; images: string[]; exemples_questions: string[] }
 /** Trois thèmes tirés au hasard (graine), 4 images chacun : l’élève pose des questions. */
 export type TcfPoTroisThemes = TcfBase<'PO', 'trois_themes', { themes: TcfPoTheme[] }>
@@ -367,6 +368,7 @@ export type TcfPoDialogue = TcfBase<
 export type TcfPoExercise =
   | TcfPoMotsTheme
   | TcfPoEntretien
+  | TcfPoLecture
   | TcfPoTroisThemes
   | TcfPoImageInteraction
   | TcfPoSequence
@@ -509,4 +511,4 @@ export type TcfSheetItem =
       bulles?: boolean
     }
   | { kind: 'vide'; message: string }
-  | { kind: 'informations'; niveau: TcfNiveau; pointsByCompetence?: Record<TcfCompetence, number> }
+  | { kind: 'informations'; niveau: TcfNiveau; placement?: boolean; pointsByCompetence?: Record<TcfCompetence, number> }

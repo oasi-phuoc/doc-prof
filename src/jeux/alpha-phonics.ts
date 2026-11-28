@@ -5,6 +5,7 @@
 
 export type AlphaTone =
   | 'vowel'
+  | 'mute-e'
   | 'ou'
   | 'oi'
   | 'ai'
@@ -56,6 +57,7 @@ const COMPLEX: ReadonlyArray<{ g: string; tone: AlphaTone }> = [
 const CONS_GROUPS = ['ch', 'gn', 'ph', 'qu'] as const
 
 const VOWEL_RE = /^[aeiouyàâäéèêëïîôöùûüÿœæ]$/i
+const FINAL_E_PRONOUNCED = new Set(['ce', 'de', 'je', 'le', 'me', 'ne', 'que', 'se', 'te'])
 
 function isVowelChar(ch: string): boolean {
   return VOWEL_RE.test(ch)
@@ -81,9 +83,17 @@ function startsWithInsensitive(word: string, start: number, grapheme: string): b
 /**
  * Découpe un mot en segments Alpha (casse d’origine conservée).
  */
-export function tokenizeAlpha(word: string): AlphaSegment[] {
+export function tokenizeAlpha(word: string, { colorFinalMuteE = false } = {}): AlphaSegment[] {
   const raw = word.normalize('NFC')
   const out: AlphaSegment[] = []
+  const muteEPositions = new Set<number>()
+  if (colorFinalMuteE) {
+    for (const match of raw.matchAll(/\p{L}+[eE](?!\p{L})/gu)) {
+      if (!FINAL_E_PRONOUNCED.has(match[0].toLocaleLowerCase('fr-FR'))) {
+        muteEPositions.add(match.index + match[0].length - 1)
+      }
+    }
+  }
   let i = 0
   while (i < raw.length) {
     const ch = raw[i]!
@@ -122,7 +132,9 @@ export function tokenizeAlpha(word: string): AlphaSegment[] {
     }
 
     if (!matched) {
-      if (isVowelChar(ch)) {
+      if (muteEPositions.has(i)) {
+        matched = { text: ch, tone: 'mute-e' }
+      } else if (isVowelChar(ch)) {
         matched = { text: ch, tone: 'vowel' }
       } else {
         matched = { text: ch, tone: 'cons' }

@@ -1,17 +1,33 @@
 import { crc32 } from '@/lib/zip-store'
 import { saveBlob } from '@/gallery/download'
+import { tcfAudioTitle } from '@/tcf/audio-titles'
 import { loadAudioDetail, publicUrl } from './catalog'
 import { audioWordDocument } from './docx'
 import type { CatalogAudio } from './types'
 
-const filename=(audio:CatalogAudio)=>audio.id.split('/').at(-1)!
-export const audioWordFilename=(audio:CatalogAudio)=>filename(audio).replace(/\.[^.]+$/,'.docx')
+function originalFilename(audio: CatalogAudio): string {
+ return audio.id.split('/').at(-1)!
+}
+
+export function audioDownloadFilename(audio: CatalogAudio): string {
+ const original = originalFilename(audio)
+ const title = tcfAudioTitle(audio.id)
+ if (!title) return original
+
+ const stem = title.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+  .replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/['’]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+ const extension = original.match(/\.[^.]+$/)?.[0] ?? ''
+ return stem ? stem + extension : original
+}
+
+export const audioWordFilename=(audio:CatalogAudio)=>audioDownloadFilename(audio).replace(/\.[^.]+$/,'.docx')
 async function audioBlob(audio:CatalogAudio,signal:AbortSignal){
  const response=await fetch(publicUrl(audio.src),{signal}),blob=await response.blob()
  if(!response.ok||!blob.size||blob.type.includes('text/html'))throw new Error(`L’audio « ${audio.label} » est indisponible. Réessayez.`)
  return blob
 }
-export async function downloadAudio(audio:CatalogAudio,signal:AbortSignal){saveBlob(await audioBlob(audio,signal),filename(audio))}
+export async function downloadAudio(audio:CatalogAudio,signal:AbortSignal){saveBlob(await audioBlob(audio,signal),audioDownloadFilename(audio))}
 export async function downloadAudioWord(audio:CatalogAudio,signal:AbortSignal){saveBlob(await audioWordDocument(audio,await loadAudioDetail(audio,signal),signal),audioWordFilename(audio))}
 type Sink={write:(data:Blob|Uint8Array<ArrayBuffer>)=>Promise<void>;close:()=>Promise<void>;abort:()=>Promise<void>}
 type Picker=(options:{suggestedName:string;types:{description:string;accept:Record<string,string[]>}[]})=>Promise<{createWritable:()=>Promise<Sink>}>
@@ -40,10 +56,22 @@ export async function downloadAudioZip(audios:CatalogAudio[],includeWord:boolean
    try{const handle=await picker.call(window,{suggestedName:name,types:[{description:'Archive ZIP',accept:{'application/zip':['.zip']}}]});signal.throwIfAborted();sink=await handle.createWritable()}
    catch(error){if(!(error instanceof DOMException)||!['SecurityError','NotSupportedError'].includes(error.name))throw error}
   }
+  const usedPaths = new Set(audios
+   .filter(audio => audioDownloadFilename(audio) === originalFilename(audio))
+   .map(audio => audio.id.replace(/^\//, '').replace(/\.[^.]+$/, '')))
   for(const [i,audio] of audios.entries()){
-   const base=audio.id.replace(/^\//,'').replace(/\.[^.]+$/,'')
-   await add(audio.id.replace(/^\//,''),await audioBlob(audio,signal))
-   if(includeWord)await add(base+'.docx',await audioWordDocument(audio,await loadAudioDetail(audio,signal),signal))
+   const original=originalFilename(audio)
+   const filename=audioDownloadFilename(audio)
+   const directory=audio.id.slice(1, -original.length)
+   const extension=filename.match(/\.[^.]+$/)?.[0]??''
+   const base=directory+filename.slice(0, filename.length-extension.length)
+   let uniqueBase=base
+   if(filename!==original){
+    for(let number=2;usedPaths.has(uniqueBase);number++)uniqueBase=base+'-'+number
+    usedPaths.add(uniqueBase)
+   }
+   await add(uniqueBase+extension,await audioBlob(audio,signal))
+   if(includeWord)await add(uniqueBase+'.docx',await audioWordDocument(audio,await loadAudioDetail(audio,signal),signal))
    onProgress(i+1)
   }
   const centralSize=centrals.reduce((n,c)=>n+c.length,0)

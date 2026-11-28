@@ -22,10 +22,10 @@
       "status": "completed",
       "activated_trios": 100,
       "prepared_trios": 100,
-      "published_images": 270,
+      "published_images": 345,
       "planned_trios": 100,
       "images_still_to_finalize": 0,
-      "published_images_requested_for_redraw": 3,
+      "published_images_requested_for_redraw": 4,
       "activation_register": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -34,22 +34,22 @@
       "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
       "status": "preparing",
       "activated_trios": 0,
-      "prepared_trios": 51,
-      "published_images": 125,
-      "planned_trios": 60,
-      "images_still_to_finalize": 16,
+      "prepared_trios": 58,
+      "published_images": 181,
+      "planned_trios": 100,
+      "images_still_to_finalize": 88,
       "published_images_requested_for_redraw": 0
     },
     {
       "number": 3,
       "count": 61,
       "packet": "docs/tcf/lots-images-20261124/historique-lot03-preparation.json",
-      "status": "awaiting_context_and_visual_review",
+      "status": "preparing",
       "activated_trios": 0,
       "prepared_trios": 0,
-      "published_images": 0,
-      "planned_trios": 0,
-      "images_still_to_finalize": null,
+      "published_images": 4,
+      "planned_trios": 61,
+      "images_still_to_finalize": 176,
       "published_images_requested_for_redraw": 0
     }
   ],
@@ -57,9 +57,9 @@
   "historical_remaining": 161,
   "delf_remaining": 0,
   "generation_blocker": {
-    "status": "resolved",
-    "register": "docs/tcf/lots-images-20261124/generation-blocker-20261124.json",
-    "reset_at_europe_zurich": "2026-11-24T21:18:36+01:00",
-    "generation_resumed_on": "2026-11-27"
+    "status": "usage_limit_reached",
+    "register": "docs/tcf/lots-images-20261124/generation-blocker-20261128.json",
+    "reset_at_europe_zurich": "2026-11-28T21:37:40+01:00",
+    "previous_register": "docs/tcf/lots-images-20261124/generation-blocker-20261127.json"
   }
 }

@@ -7,7 +7,7 @@ import type { GameBoard, GameCard, GamePanel } from './types'
 
 /** Mot en coloriage Alpha (graphies colorées). */
 function AlphaWord({ text }: { text: string }) {
-  const segments = tokenizeAlpha(text)
+  const segments = tokenizeAlpha(text, { colorFinalMuteE: true })
   return (
     <span className="alpha-word">
       {segments.map((seg, i) => (
@@ -55,6 +55,14 @@ function BorderOverlay({ src }: { src?: string }) {
   return <WorksheetImage className="game-card-border" src={src} alt="" aria-hidden draggable={false} />
 }
 
+function RiddleContent({ children }: { children: ReactNode }) {
+  return (
+    <div className="game-riddle-area">
+      <div className="game-riddle-content">{children}</div>
+    </div>
+  )
+}
+
 function cardShell(
   className: string,
   card: GameCard,
@@ -88,12 +96,14 @@ function CardFace({
   borderVersoId,
   side,
   alphaPhonics,
+  isRiddle,
 }: {
   card: GameCard
   borderRectoId?: string
   borderVersoId?: string
   side?: 'recto' | 'verso'
   alphaPhonics?: boolean
+  isRiddle?: boolean
 }) {
   const variant = card.variant ?? 'default'
   const showImageSlot =
@@ -132,10 +142,11 @@ function CardFace({
 
   if (variant === 'clue') {
     const clueText = (card.text ?? (card.lines ?? []).join('\n')).trim()
+    const clue = <p className="game-card-clue-text">{clueText}</p>
     return cardShell(
       'game-card is-clue is-verso-content',
       card,
-      <p className="game-card-clue-text">{clueText}</p>,
+      isRiddle ? <RiddleContent>{clue}</RiddleContent> : clue,
       { borderSrc: border, hideBadge },
     )
   }
@@ -173,20 +184,14 @@ function CardFace({
       'game-card is-scatter',
       card,
       <div className="game-scatter" aria-label="Mots de la carte">
-        {(card.scatter ?? []).map((word, i) => (
-          <span
-            key={`${word.text}-${i}`}
+        {(card.scatter ?? []).map(({ text }, i) => (
+          <div
+            key={`${text}-${i}`}
             className="game-scatter-word"
-            style={
-              {
-                left: `${word.x}%`,
-                top: `${word.y}%`,
-                '--scatter-rot': `${word.rotate}deg`,
-              } as CSSProperties
-            }
+            style={{ '--intrus-length': Math.max(1, Array.from(text).length) } as CSSProperties}
           >
-            {word.text}
-          </span>
+            <span>{text}</span>
+          </div>
         ))}
       </div>,
       { borderSrc: border, hideBadge },
@@ -212,9 +217,7 @@ function CardFace({
     )
   }
 
-  return cardShell(
-    `game-card is-${variant}`,
-    card,
+  const content = (
     <>
       {showImageSlot ? (
         <div className="game-card-image">
@@ -229,12 +232,22 @@ function CardFace({
         <small className="game-card-sub">{card.lines[0]}</small>
       ) : null}
       {showWord ? (
-        <div className="game-card-word">{renderCardWord(card.text, alphaPhonics)}</div>
+        <div
+          className="game-card-word"
+          style={{ '--game-label-length': Array.from(card.text ?? '').length || 1 } as CSSProperties}
+        >
+          {renderCardWord(card.text, alphaPhonics)}
+        </div>
       ) : null}
       {variant === 'image' && !card.imageSrc ? (
         <div className="game-card-word is-muted">Image</div>
       ) : null}
-    </>,
+    </>
+  )
+  return cardShell(
+    `game-card is-${variant}`,
+    card,
+    isRiddle ? <RiddleContent>{content}</RiddleContent> : content,
     { borderSrc: border, hideBadge },
   )
 }
@@ -372,6 +385,7 @@ export function CardGrid({ board }: { board: GameBoard }) {
             borderVersoId={cellBorderVerso}
             side={side}
             alphaPhonics={alphaPhonics}
+            isRiddle={kind === 'devinettes'}
           />
         ))}
       </div>

@@ -9,6 +9,7 @@ import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
 import { isSocieteType } from '@/societe/types'
 import { isSanteType } from '@/sante/types'
+import { isAcmType } from '@/acm/types'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -198,7 +199,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     firstExerciseNo,
     sheetTotalPoints,
   } = props
-  if (isSanteType(activeBlock.exerciseType)) return null
+  if (isAcmType(activeBlock.exerciseType) || isSanteType(activeBlock.exerciseType)) return null
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
   const questionMin = isTransform ? 3 : activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
   const cscQuestionHint = activeBlock.exerciseType === 'tcm-csc-ex03' ? 'Nombres à entourer, 1 point chacun.'
@@ -226,7 +227,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     }
     return false
   })
-  const peMotsClesSlot = tcfPeTagsForSlot(tcfSlotByTypeId[activeBlock.exerciseType]?.numero).includes(
+  const peMotsClesSlot = tcfPeTagsForSlot(
+    tcfSlotByTypeId[activeBlock.exerciseType]?.numero,
+    tcfNiveauFromDifficulty(activeBlock.difficulty),
+  ).includes(
     TCF_PE_TAG_MOTS_CLES,
   )
   const showInlineBlankWidth = libreMode && sheetHasInlineBlank &&

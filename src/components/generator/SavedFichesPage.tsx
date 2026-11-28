@@ -18,16 +18,16 @@ import { canReuseLogistiqueEvaluation, reuseLogistiqueEvaluation } from '@/logis
 import { randomSeed } from '@/math/rng'
 import type { Domain } from '@/math/types'
 import { LoadingScreen } from '@/components/LoadingScreen'
+import { isTpfFamilyDomain } from '@/tcf/catalog'
 
 type Library = 'fiches' | 'tcf' | 'tpm' | 'alpha' | 'soutien'
 
 const TPM_DOMAINS = new Set<Domain>(['tpm', 'tcm-csc', 'tcm-cfr'])
-const TPF_FAMILY_DOMAINS = new Set<Domain>(['tpf', 'tcf-csc', 'tcf-cfr'])
 
 function ficheLibrary(fiche: SavedFiche): Library {
   if (fiche.recipe.bookKind === 'alpha' || fiche.recipe.bookKind === 'soutien') return fiche.recipe.bookKind
   const domains = fiche.domains
-  if (domains.length > 0 && domains.every((domain) => TPF_FAMILY_DOMAINS.has(domain))) return 'tcf'
+  if (domains.length > 0 && domains.every(isTpfFamilyDomain)) return 'tcf'
   if (domains.length > 0 && domains.every((domain) => TPM_DOMAINS.has(domain))) return 'tpm'
   return 'fiches'
 }

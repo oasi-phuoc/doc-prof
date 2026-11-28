@@ -104,8 +104,8 @@ export function textToEntries(
           }
           while (words.length < 4) words.push('')
           return {
-            text: clip(intrus || `intrus${index + 1}`, maxLen),
-            words: words.slice(0, 4).map((w) => clip(w, maxLen)),
+            text: intrus || `intrus${index + 1}`,
+            words: words.slice(0, 4),
             isIntrus: true,
           }
         })
@@ -119,14 +119,14 @@ export function textToEntries(
             .slice(0, 4)
           while (normals.length < 4) normals.push(`mot${normals.length + 1}`)
           return {
-            text: clip(right || `intrus${groupIndex + 1}`, maxLen),
-            words: normals.map((w) => clip(w, maxLen)),
+            text: right || `intrus${groupIndex + 1}`,
+            words: normals,
             isIntrus: true,
           }
         })
       } else {
         // Liste plate de mots du thème (intrus générés à l’impression).
-        parsed = lines.slice(0, 20).map((line) => ({ text: clip(line, maxLen) }))
+        parsed = lines.slice(0, 20).map((line) => ({ text: line }))
       }
       break
     }

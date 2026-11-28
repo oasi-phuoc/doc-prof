@@ -25,6 +25,7 @@ export type Domain =
   | 'tpf'
   | 'tcf-csc'
   | 'tcf-cfr'
+  | 'tcf-b1'
 
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
@@ -70,6 +71,7 @@ export type Figure =
   | 'pentagon'
 
 export type Layout =
+  | 'acm'
   | 'grammar'
   | 'inline'
   | 'column'
@@ -498,6 +500,8 @@ export type MathItem = {
   /** Corrigé à vérifier après une modification manuelle de l’énoncé. */
   libreCorrectionPending?: boolean
   layout: Layout
+  acm?: import('@/acm/types').AcmActivity
+  acmStepOffset?: number
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
   answer: string
@@ -1377,4 +1381,8 @@ export type WorksheetPage = PageConfig & {
   configIndex?: number
   /** Feuille de suite (questions débordantes). */
   isContinuation?: boolean
+  /** Feuille dédiée à un document de compréhension écrite illustré. */
+  cePosterSheet?: boolean
+  /** Orientation de la feuille dédiée, selon les proportions du document. */
+  cePosterLandscape?: boolean
 }

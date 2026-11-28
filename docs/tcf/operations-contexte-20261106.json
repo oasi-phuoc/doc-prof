@@ -5707,8 +5707,10 @@
           }
         ]
       },
-      "source_sha256": "8cc5ca192cce3828919f1dcf00933428b16ffea9023caa28b72c9987e9e61c11",
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "source_sha256": "0a48788954e4e8136c056e34eda1b75edbd0eff0b0094c3f7d576a2e8b7e3ee9",
+      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "prior_source_sha256": "8cc5ca192cce3828919f1dcf00933428b16ffea9023caa28b72c9987e9e61c11",
+      "editorial_source_review": "docs/tcf/remplacement-audio/contre-verification-audio-pdf-20261127.json"
     },
     {
       "bank": "src/tcf/content/a0-a1/co.json",
@@ -23855,9 +23857,11 @@
           }
         ]
       },
-      "source_sha256": "d66f53b788f46d6f43a9f830b7f00807693dd653ac81c4b6edda461f0d8929e2",
+      "source_sha256": "eb9ac282502539883e0640c4489349c18d0193d7ad2e8fe67ffe1df5f731c6ac",
       "reason": "Durée explicitement indiquée h:min, deux aiguilles du même modèle et secteur rouge proportionnel aux heures ; les trois choix emploient le même modèle et des valeurs calculées exactes.",
-      "review_ledger": "docs/tcf/revue-763-20261107.json"
+      "review_ledger": "docs/tcf/revue-763-20261107.json",
+      "prior_source_sha256": "d66f53b788f46d6f43a9f830b7f00807693dd653ac81c4b6edda461f0d8929e2",
+      "editorial_source_review": "docs/tcf/remplacement-audio/contre-verification-audio-pdf-20261127.json"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -38431,12 +38435,12 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-musee-accueil.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-01-1-qcm-hist1-musee-accueil.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-musee-sortie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-01-2-qcm-hist1-musee-sortie.png"
           },
           {
             "id": "c",
@@ -38445,7 +38449,7 @@
         ]
       },
       "source_sha256": "2da246eb676a6b79e0a9980547b60c7b3ed60f6b9f3e104f6682efe0db880ae0",
-      "reason": "Le texte demande de présenter le ticket à l’accueil du musée. Présentation au comptoir avec œuvres, porte de sortie avec pictogramme et restaurant donnant sur une galerie distinguent les trois réponses complètes.",
+      "reason": "Le texte demande de présenter le ticket à l’accueil du musée. Présentation au comptoir avec œuvres, porte de sortie avec pictogramme et restaurant donnant sur une galerie distinguent les trois réponses complètes. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38464,7 +38468,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ile-lac.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-02-1-qcm-hist1-ile-lac.png",
             "correct": true
           },
           {
@@ -38473,12 +38477,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-musee-pirates.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-02-3-qcm-hist1-musee-pirates.png"
           }
         ]
       },
       "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
-      "reason": "Emma propose une visite de l’île Saint-Pierre. Les illustrations distinguent une île accessible en bateau, un château de pirates et un musée de pirates. Ce sont des illustrations des catégories de lieu proposées, sans prétendre montrer la géographie documentaire exacte d’un site nommé.",
+      "reason": "Emma propose une visite de l’île Saint-Pierre. Les illustrations distinguent une île accessible en bateau, un château de pirates et un musée de pirates. Ce sont des illustrations des catégories de lieu proposées, sans prétendre montrer la géographie documentaire exacte d’un site nommé. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38497,21 +38501,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ascenseur-face-b.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-03-1-qcm-hist1-ascenseur-face-b.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ascenseur-gauche-b.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-03-2-qcm-hist1-ascenseur-gauche-b.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ascenseur-derriere-b.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-03-3-qcm-hist1-ascenseur-derriere-b.png"
           }
         ]
       },
       "source_sha256": "8b7480e270829cbeecf516b08e537c42e4c9efc264576429af574184549cd13a",
-      "reason": "Le message place l’ascenseur en face de la porte B. Même hall et porte B : ascenseur sur la paroi opposée, à gauche sur la même paroi ou au-delà de B ; aucune inversion gauche/droite ni nouvel étage.",
+      "reason": "Le message place l’ascenseur en face de la porte B. Même hall et porte B : ascenseur sur la paroi opposée, à gauche sur la même paroi ou au-delà de B ; aucune inversion gauche/droite ni nouvel étage. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38695,7 +38699,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-bibliotheque-inauguration-entree.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-09-1-qcm-hist1-bibliotheque-inauguration-entree.png",
             "correct": true
           },
           {
@@ -38709,7 +38713,7 @@
         ]
       },
       "source_sha256": "d1a3a166a490c0e283634aa90d8a1feb437fce2d52a7830eff8426717b635f22",
-      "reason": "L’inauguration a lieu devant l’entrée de la bibliothèque, et non dans la salle des fêtes du goûter ni à la mairie. Ruban devant portes et livres, salle des fêtes et façade municipale représentent les trois lieux.",
+      "reason": "L’inauguration a lieu devant l’entrée de la bibliothèque, et non dans la salle des fêtes du goûter ni à la mairie. Ruban devant portes et livres, salle des fêtes et façade municipale représentent les trois lieux. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38761,21 +38765,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rdv-entree-camping.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-11-1-qcm-hist1-rdv-entree-camping.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rdv-devant-chateau.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-11-2-qcm-hist1-rdv-devant-chateau.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rdv-devant-gare.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-11-3-qcm-hist1-rdv-devant-gare.png"
           }
         ]
       },
       "source_sha256": "c7cfaca3d5c5f23f2e127cf1447009a984c0fe062e4dd376e6916008486cd1fb",
-      "reason": "Le rendez-vous est devant l’entrée du camping, avant la visite du château. Même duo et sacs devant portail du camping, portail du château ou gare ; chaque type de lieu est entier et distinct.",
+      "reason": "Le rendez-vous est devant l’entrée du camping, avant la visite du château. Même duo et sacs devant portail du camping, portail du château ou gare ; chaque type de lieu est entier et distinct. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38794,21 +38798,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-passeport-aeroport.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-12-1-qcm-hist1-passeport-aeroport.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-passeport-gare.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-12-2-qcm-hist1-passeport-gare.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-passeport-bureau.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-12-3-qcm-hist1-passeport-bureau.png"
           }
         ]
       },
       "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
-      "reason": "Il faut apporter le passeport à l’aéroport. Mêmes femmes, passeport et bagages dans terminal avec avion, quai de gare avec train, ou bureau avec ordinateur et classeurs. Le document est remis dans chacun des trois lieux.",
+      "reason": "Il faut apporter le passeport à l’aéroport. Mêmes femmes, passeport et bagages dans terminal avec avion, quai de gare avec train, ou bureau avec ordinateur et classeurs. Le document est remis dans chacun des trois lieux. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38827,21 +38831,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-tram-terminus.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-13-1-qcm-hist1-tram-terminus.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-tram-premier-arret.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-13-2-qcm-hist1-tram-premier-arret.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-tram-mairie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-13-3-qcm-hist1-tram-mairie.png"
           }
         ]
       },
       "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
-      "reason": "Le tram doit être pris jusqu’au terminus. Fin physique des rails et repère de fin de ligne, premier arrêt après départ avec rails qui continuent, puis arrêt devant mairie représentent les trois propositions ; aucune route réelle, durée ou distance inventée.",
+      "reason": "Le tram doit être pris jusqu’au terminus. Fin physique des rails et repère de fin de ligne, premier arrêt après départ avec rails qui continuent, puis arrêt devant mairie représentent les trois propositions ; aucune route réelle, durée ou distance inventée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38898,16 +38902,16 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-depart-gare-pharmacie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-15-2-qcm-hist1-depart-gare-pharmacie.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-depart-aeroport-pharmacie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-15-3-qcm-hist1-depart-aeroport-pharmacie.png"
           }
         ]
       },
       "source_sha256": "d4f865e7751d3371e17303a13921cc6d75f031340fe86f32644586f5db24310a",
-      "reason": "L’itinéraire part de l’ancienne pharmacie. Ancienne officine vide avec croix démontée, gare ou aéroport servent de point de départ explicite vers la même nouvelle officine ; une simple image de gare ou de pharmacie seule ne remplacerait pas cette relation.",
+      "reason": "L’itinéraire part de l’ancienne pharmacie. Ancienne officine vide avec croix démontée, gare ou aéroport servent de point de départ explicite vers la même nouvelle officine ; une simple image de gare ou de pharmacie seule ne remplacerait pas cette relation. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38935,12 +38939,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-station-balneaire.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-16-3-qcm-hist1-station-balneaire.png"
           }
         ]
       },
       "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
-      "reason": "Val d’Or est décrit comme village de montagne. Groupe de chalets en montagne, grande agglomération dense et station balnéaire avec hôtels devant plage distinguent trois types de lieux ; aucune adresse réelle déduite des images.",
+      "reason": "Val d’Or est décrit comme village de montagne. Groupe de chalets en montagne, grande agglomération dense et station balnéaire avec hôtels devant plage distinguent trois types de lieux ; aucune adresse réelle déduite des images. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -38959,21 +38963,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piquenique-bord-eau.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-17-1-qcm-hist1-piquenique-bord-eau.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piquenique-chalet.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-17-2-qcm-hist1-piquenique-chalet.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piquenique-centre-village.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-17-3-qcm-hist1-piquenique-centre-village.png"
           }
         ]
       },
       "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
-      "reason": "Le pique-nique est au bord de l’eau. Même trio, panier et aliments pris sur couverture au bord du lac, à table dans chalet ou sur place du village ; aucun instrument copié de la référence de style.",
+      "reason": "Le pique-nique est au bord de l’eau. Même trio, panier et aliments pris sur couverture au bord du lac, à table dans chalet ou sur place du village ; aucun instrument copié de la référence de style. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39124,21 +39128,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-poemes-affiches-bus.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-22-1-qcm-hist1-poemes-affiches-bus.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-poemes-affiches-restaurant.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-22-2-qcm-hist1-poemes-affiches-restaurant.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-poemes-affiches-train.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-22-3-qcm-hist1-poemes-affiches-train.png"
           }
         ]
       },
       "source_sha256": "1510027b7efaa65f2a6987c61c8c2af406dbc14a13c6e7d70f7264b4bea28692",
-      "reason": "Source : poèmes illustrés affichés dans les bus. Les trois lieux sont maintenant distincts : bus avec barres de maintien, restaurant avec tables, train avec sièges face à face, table et porte-bagages ; même trio illustratif. Bonne réponse bus conservée.",
+      "reason": "Source : poèmes illustrés affichés dans les bus. Les trois lieux sont maintenant distincts : bus avec barres de maintien, restaurant avec tables, train avec sièges face à face, table et porte-bagages ; même trio illustratif. Bonne réponse bus conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39162,7 +39166,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boulangerie-ecole.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-23-2-qcm-hist1-boulangerie-ecole.png"
           },
           {
             "id": "c",
@@ -39171,7 +39175,7 @@
         ]
       },
       "source_sha256": "cad06d8977d07f16502b81457596bf63bdc5c7f2cb51538c276d040ecdcf3fb2",
-      "reason": "La boulangerie est en face de la maison. Même boutique de pain de l’autre côté de la rue, à côté d’un bâtiment scolaire ou derrière la gare avec train et quai. Les deux repères de chaque relation spatiale sont visibles.",
+      "reason": "La boulangerie est en face de la maison. Même boutique de pain de l’autre côté de la rue, à côté d’un bâtiment scolaire ou derrière la gare avec train et quai. Les deux repères de chaque relation spatiale sont visibles. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39190,21 +39194,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ballon-dans-bassin.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-24-1-qcm-hist1-ballon-dans-bassin.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ballon-bord-bassin.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-24-2-qcm-hist1-ballon-bord-bassin.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-ballon-vestiaires.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-24-3-qcm-hist1-ballon-vestiaires.png"
           }
         ]
       },
       "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
-      "reason": "Le règlement autorise le ballon dans le bassin seulement. Même duo et ballon jouant dans l’eau, sur le bord sec ou dans les vestiaires. Corps correctement immergés ou pieds soutenus, gestes naturels ; le lieu complet accompagne le ballon dans chaque réponse.",
+      "reason": "Le règlement autorise le ballon dans le bassin seulement. Même duo et ballon jouant dans l’eau, sur le bord sec ou dans les vestiaires. Corps correctement immergés ou pieds soutenus, gestes naturels ; le lieu complet accompagne le ballon dans chaque réponse. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39256,7 +39260,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-devant-centre-commercial.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-26-1-qcm-hist1-devant-centre-commercial.png",
             "correct": true
           },
           {
@@ -39270,7 +39274,7 @@
         ]
       },
       "source_sha256": "d8d6ed45c5467eafa338f4181f16d1202b677f6bda6fe03f717c36ac6cb1565a",
-      "reason": "Le rendez-vous est devant le centre commercial de la Gare. Accès vitré avec vitrines et sacs de courses, façade de mairie ou entrée de piscine avec symbole de nageur représentent les trois types de lieux ; aucune adresse réelle n’est supposée.",
+      "reason": "Le rendez-vous est devant le centre commercial de la Gare. Accès vitré avec vitrines et sacs de courses, façade de mairie ou entrée de piscine avec symbole de nageur représentent les trois types de lieux ; aucune adresse réelle n’est supposée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39294,7 +39298,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-bateau-lac.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-27-2-qcm-hist1-bateau-lac.png"
           },
           {
             "id": "c",
@@ -39303,7 +39307,7 @@
         ]
       },
       "source_sha256": "d90d5240456d6f1bcbfb095455034e9d2f62d06552ca9c9b1e500a27d7813ad2",
-      "reason": "Le jeu Fantôme4 se déroule dans un château isolé des Alpes. Château entier devant les sommets, bateau de passagers sur lac et maison dans rue urbaine distinguent les trois décors fictifs.",
+      "reason": "Le jeu Fantôme4 se déroule dans un château isolé des Alpes. Château entier devant les sommets, bateau de passagers sur lac et maison dans rue urbaine distinguent les trois décors fictifs. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39426,7 +39430,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-lac-leman.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-31-2-qcm-hist1-lac-leman.png"
           },
           {
             "id": "c",
@@ -39435,7 +39439,7 @@
         ]
       },
       "source_sha256": "64e012910dae550699f1b27753826e678e5e5c9ce644d3847de7e1f3f12ccdee",
-      "reason": "Le courriel cite le Cervin aujourd’hui. Sommet pyramidal caractéristique, grand lac avec promenade et château lacustre distinguent les lieux. Les images sont des interprétations peintes des paysages proposés, pas des preuves photographiques de géographie ou d’architecture exacte.",
+      "reason": "Le courriel cite le Cervin aujourd’hui. Sommet pyramidal caractéristique, grand lac avec promenade et château lacustre distinguent les lieux. Les images sont des interprétations peintes des paysages proposés, pas des preuves photographiques de géographie ou d’architecture exacte. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39454,7 +39458,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-folklorique.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-32-1-qcm-hist1-concert-folklorique.png",
             "correct": true
           },
           {
@@ -39463,12 +39467,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-film-horreur.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-32-3-qcm-hist1-film-horreur.png"
           }
         ]
       },
       "source_sha256": "64e012910dae550699f1b27753826e678e5e5c9ce644d3847de7e1f3f12ccdee",
-      "reason": "Le concert de musique folklorique est prévu le soir. Ensemble acoustique avec accordéon, violon et guitare, représentation théâtrale et écran de film de peur dans salle de cinéma distinguent les trois sorties.",
+      "reason": "Le concert de musique folklorique est prévu le soir. Ensemble acoustique avec accordéon, violon et guitare, représentation théâtrale et écran de film de peur dans salle de cinéma distinguent les trois sorties. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39520,21 +39524,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-fete-jardin-hall.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-34-1-qcm-hist1-fete-jardin-hall.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-fete-ascenseur.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-34-2-qcm-hist1-fete-ascenseur.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-fete-toit.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-34-3-qcm-hist1-fete-toit.png"
           }
         ]
       },
       "source_sha256": "dcb307dd9cf4f42ff26fd68f958decd12f35d043a1893e2de06628389dd68c48",
-      "reason": "Le texte permet une fête dans le jardin ou le hall. La première image montre les deux espaces reliés, avec tables et invités dans chacun ; les autres montrent une cabine d’ascenseur et un toit. Aucun lien réel entre les personnages n’est déduit.",
+      "reason": "Le texte permet une fête dans le jardin ou le hall. La première image montre les deux espaces reliés, avec tables et invités dans chacun ; les autres montrent une cabine d’ascenseur et un toit. Aucun lien réel entre les personnages n’est déduit. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39567,7 +39571,7 @@
         ]
       },
       "source_sha256": "789f70661345eba32b56baac12ecc05c85ecfdf1651ce6d13e3928a2611c877e",
-      "reason": "Source : boutique à côté de la sortie du musée. Les trois vues montrent la boutique voisine de la porte de sortie, un comptoir distinct devant la salle12, ou une boutique au premier niveau avec escalier. Le comptoir de la salle12 n’est pas dans la salle ; repères et bonnes réponses conservés.",
+      "reason": "L’annonce situe la boutique près de la sortie et le rendez-vous avec la guide devant la salle 12. Les trois scènes montrent une boutique du même musée. La sortie signalée, la salle 12 et l’escalier rendent les trois positions distinctes, avec le même traitement peint. La boutique près de la sortie reste le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39600,7 +39604,7 @@
         ]
       },
       "source_sha256": "b2d7ee9c8da139e235d87a06b639dbfcbb82f71b6b59aa8f37276b1ca5cebd2d",
-      "reason": "Source : les méthodes sont au rayon derrière la cliente. La première vue montre la vendeuse indiquer le rayon derrière la femme tournée vers le comptoir ; la coupe à trois niveaux place la cible au deuxième étage ; la troisième place le rayon devant le comptoir avec sa caisse visible. Réponses de position conservées, sans numéro de rayon nécessaire à la question.",
+      "reason": "Les trois illustrations gardent le même rayon et les mêmes repères. La variante du deuxième étage montre les deux escaliers entre l’entrée et le rayon.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39619,21 +39623,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-telephone-bureau.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-37-1-qcm-hist1-telephone-bureau.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-interphone-entree.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-37-2-qcm-hist1-interphone-entree.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-telephone-restaurant.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-37-3-qcm-hist1-telephone-restaurant.png"
           }
         ]
       },
       "source_sha256": "f90eeac5bf69683274aee1d80ee3a5813e433c23bc0c15212e1f2bdde61a2a93",
-      "reason": "Le service informatique se contacte avec le téléphone du bureau. Téléphone fixe sur bureau avec ordinateur, interphone fixé près de l’entrée et téléphone au comptoir d’un restaurant ; le lieu est visible avec l’appareil dans chaque proposition.",
+      "reason": "Le service informatique se contacte avec le téléphone du bureau. Téléphone fixe sur bureau avec ordinateur, interphone fixé près de l’entrée et téléphone au comptoir d’un restaurant ; le lieu est visible avec l’appareil dans chaque proposition. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39690,7 +39694,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-frais-entree-magasin-naturel-sans-caisse.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-frais-entree-magasin-naturel.png"
           },
           {
             "id": "c",
@@ -39699,7 +39703,7 @@
         ]
       },
       "source_sha256": "3d3e1d23deaee8b465431d16bfae663a6e2977a131420cfc2485f68a2ca1e83a",
-      "reason": "Source : yaourts au rayon frais au fond du magasin. Comparaison du 27 novembre : frigos intégrés au mur du fond ; frigos le long du mur juste après les portes d’entrée, sans caisse ni portillon contre eux ; petit bout de rayon froid avant les caisses avec circulation séparée. Mêmes deux adultes en échange, frigos et voies de passage naturels. Les premières propositions restent conservées dans la banque.",
+      "reason": "La transcription indique que les yaourts sont au rayon frais, au fond du magasin. Les trois cadrages distinguent le fond, les portes d’entrée et l’approche des caisses. Les frigos sont incorporés aux rayons et la circulation reste dégagée. Les deux interlocuteurs ont des silhouettes, carnations et coiffures distinctes et reviennent dans les trois variantes pour que l’emplacement reste le critère de choix. Les visages sont nouveaux et les décors sont peints avec les mêmes matériaux, volumes et couleurs mates. Le fond, choix a, reste la bonne réponse.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39718,21 +39722,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-derriere-femme.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-40-1-qcm-hist1-piscine-derriere-femme.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-etage.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-40-2-qcm-hist1-piscine-etage.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-cote-gare.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-40-3-qcm-hist1-piscine-cote-gare.png"
           }
         ]
       },
       "source_sha256": "bc8cd60815675289972cdb719de6ff636985336eab987532588a6010a90973b9",
-      "reason": "Source : piscine derrière la personne. Piscine derrière le dos de la femme au premier choix ; bassin à l’étage avec escalier au second ; bâtiment adjacent à des quais au troisième. Même duo illustratif, sans attribuer les voix. Bonne réponse derrière elle conservée.",
+      "reason": "Source : piscine derrière la personne. Piscine derrière le dos de la femme au premier choix ; bassin à l’étage avec escalier au second ; bâtiment adjacent à des quais au troisième. Même duo illustratif, sans attribuer les voix. Bonne réponse derrière elle conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39784,21 +39788,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-pres-parc.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-42-1-qcm-hist1-immeuble-pres-parc.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-pres-gare.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-42-2-qcm-hist1-immeuble-pres-gare.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-place-mairie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-42-3-qcm-hist1-immeuble-place-mairie.png"
           }
         ]
       },
       "source_sha256": "2ce3aff51081af5e9c9edf16b387396e7bfcefb8e1f91e021135c57384610e55",
-      "reason": "Source : immeuble près du parc Mon Repos. Même trio sur un banc devant des lieux distincts : parc, gare avec train ou place avec mairie. Représentation générique du parc, sans prétendre à une photographie documentaire. Bonne réponse parc conservée.",
+      "reason": "Source : immeuble près du parc Mon Repos. Même trio sur un banc devant des lieux distincts : parc, gare avec train ou place avec mairie. Représentation générique du parc, sans prétendre à une photographie documentaire. Bonne réponse parc conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39850,12 +39854,12 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cereales-fond-magasin.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-44-1-qcm-hist1-cereales-fond-magasin.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cereales-caisse.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-44-2-qcm-hist1-cereales-caisse.png"
           },
           {
             "id": "c",
@@ -39864,7 +39868,7 @@
         ]
       },
       "source_sha256": "62e0e50ea7471c12cdb9491e3187c8a482c7a099ef7624f6ee2f4acb0783508b",
-      "reason": "Source : céréales au fond du magasin. Présentoir de boîtes avec bols au fond, près de la caisse ou à l’extérieur de la porte. Pas de confusion avec le rayon de yaourts ; bonne réponse au fond conservée.",
+      "reason": "Source : céréales au fond du magasin. Présentoir de boîtes avec bols au fond, près de la caisse ou à l’extérieur de la porte. Pas de confusion avec le rayon de yaourts ; bonne réponse au fond conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39883,21 +39887,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-centre-commercial.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-45-1-qcm-hist1-glace-centre-commercial.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-maison.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-45-2-qcm-hist1-glace-maison.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-boulangerie.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-45-3-qcm-hist1-glace-boulangerie.png"
           }
         ]
       },
       "source_sha256": "a739457e189c72d34f0be9cf23f26b66975fe0e8486e8380cee7c2553e00eb71",
-      "reason": "Source : manger une glace au centre commercial voisin. Même duo féminin et cornets dans une galerie marchande, un salon domestique ou une boulangerie avec pains. Le salon illustre chez Samia sans établir une identité ou une propriété réelle. Bonne réponse centre commercial conservée.",
+      "reason": "Source : manger une glace au centre commercial voisin. Même duo féminin et cornets dans une galerie marchande, un salon domestique ou une boulangerie avec pains. Le salon illustre chez Samia sans établir une identité ou une propriété réelle. Bonne réponse centre commercial conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39925,12 +39929,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-villa-jardin.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-46-3-qcm-hist1-villa-jardin.png"
           }
         ]
       },
       "source_sha256": "95b351ec4e342cfa9fdefb7ffaa7daf723a50e367a5976bddcad72ee999556ee",
-      "reason": "Source : petit studio sombre avec cuisine non équipée. Pièce unique petite et sombre avec simple évier, sans appareil, face à maison indépendante et grande villa avec piscine. Les personnes ajoutées dans le jardin ne sont pas attribuées aux locuteurs. Bonne réponse studio conservée.",
+      "reason": "Source : petit studio sombre avec cuisine non équipée. Pièce unique petite et sombre avec simple évier, sans appareil, face à maison indépendante et grande villa avec piscine. Les personnes ajoutées dans le jardin ne sont pas attribuées aux locuteurs. Bonne réponse studio conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -39963,7 +39967,7 @@
         ]
       },
       "source_sha256": "ba7faaf219545295c3036b4b1ab66271e15d06373d82c1440a61d09259d1119c",
-      "reason": "Source : livres d’histoire sur l’étagère près de la fenêtre. Mêmes livres aux emblèmes de château dans les trois vues, sur rayon voisin de la fenêtre, sur table voisine de la porte, ou dans l’armoire ouverte du couloir. Chaque réponse composée montre le support et son repère.",
+      "reason": "Les mêmes livres aux blasons sont reconnaissables dans les trois lieux. Ils sont posés sur l’étagère près de la fenêtre, sur la table près de la porte ou rangés dans l’armoire du couloir. Les livres et les meubles ont des appuis visibles.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40090,12 +40094,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-vitrine-vetements-hommes.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-51-3-qcm-hist1-vitrine-vetements-hommes.png"
           }
         ]
       },
       "source_sha256": "6817fbf2246ff67c76fe8c6154873690f55a83e6856d063e0b0b142ecc838490",
-      "reason": "Le conseil est de chercher les vêtements pour hommes sur le site Internet. Même site à l’écran que l’autre dialogue, réserve avec cartons et portants, ou vitrine donnant sur rue ; les trois modalités sont entièrement visibles.",
+      "reason": "Le conseil est de chercher les vêtements pour hommes sur le site Internet. Même site à l’écran que l’autre dialogue, réserve avec cartons et portants, ou vitrine donnant sur rue ; les trois modalités sont entièrement visibles. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40119,7 +40123,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-hotel-derriere-plage.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-52-2-qcm-hist1-hotel-derriere-plage.png"
           },
           {
             "id": "c",
@@ -40128,7 +40132,7 @@
         ]
       },
       "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
-      "reason": "Source : hôtel entre piscine et parc. Façade identique et symbole de lit ; piscine à gauche et parc à droite au bon choix, plage devant l’hôtel au deuxième, forêt adjacente au troisième. Bonne réponse entre conservée.",
+      "reason": "Source : hôtel entre piscine et parc. Façade identique et symbole de lit ; piscine à gauche et parc à droite au bon choix, plage devant l’hôtel au deuxième, forêt adjacente au troisième. Bonne réponse entre conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40147,21 +40151,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-derriere-plage.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-53-1-qcm-hist1-camping-derriere-plage.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-entre-piscine-parc.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-53-2-qcm-hist1-camping-entre-piscine-parc.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-bord-lac.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-53-3-qcm-hist1-camping-bord-lac.png"
           }
         ]
       },
       "source_sha256": "e6657ceb5285a322730d1040d5906e1736bc18494c98b57b89b6b537980da097",
-      "reason": "Source : camping derrière la plage. Tentes et caravanes derrière une plage marine au bon choix ; camping encadré par piscine et parc, puis camping sur rive de lac. Mer et lac rendus distincts, même trio illustratif. Bonne réponse derrière la plage conservée.",
+      "reason": "Source : camping derrière la plage. Tentes et caravanes derrière une plage marine au bon choix ; camping encadré par piscine et parc, puis camping sur rive de lac. Mer et lac rendus distincts, même trio illustratif. Bonne réponse derrière la plage conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40246,21 +40250,21 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-rue-salle.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-56-1-qcm-hist1-concert-rue-salle.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-musee.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-56-2-qcm-hist1-concert-musee.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-bord-fleuve.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-56-3-qcm-hist1-concert-bord-fleuve.png"
           }
         ]
       },
       "source_sha256": "243a1af18bc27d28b7da78c1cc21cd2a0c566043d5718df3348bdf2cc9308a4d",
-      "reason": "Source : concerts dans les rues ou dans les salles. Bonne réponse représentée par deux panneaux avec même ensemble en rue et sur scène ; autres choix limités au musée avec tableaux/statues, puis au bord du fleuve avec pont. Les deux lieux du bon choix sont visibles.",
+      "reason": "Source : concerts dans les rues ou dans les salles. Bonne réponse représentée par deux panneaux avec même ensemble en rue et sur scène ; autres choix limités au musée avec tableaux/statues, puis au bord du fleuve avec pont. Les deux lieux du bon choix sont visibles. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40279,7 +40283,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-trio-metiers-spectacle.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-57-1-qcm-hist1-trio-metiers-spectacle.png",
             "correct": true
           },
           {
@@ -40293,7 +40297,7 @@
         ]
       },
       "source_sha256": "1c995b1a7c45cc13c4ef35423522123e72780953aee11794519a66296dd6898b",
-      "reason": "Source : métiers du spectacle. Trois rôles dans chaque image : acteur avec masque, chanteuse au micro et violoniste ; médecin/infirmière/pharmacien ; serveur/cuisinière/boulanger. Aucune profession ne repose seulement sur le visage ou le genre. Bonne réponse composée conservée.",
+      "reason": "Source : métiers du spectacle. Trois rôles dans chaque image : acteur avec masque, chanteuse au micro et violoniste ; médecin/infirmière/pharmacien ; serveur/cuisinière/boulanger. Aucune profession ne repose seulement sur le visage ou le genre. Bonne réponse composée conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40312,12 +40316,12 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-hall.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-58-1-qcm-hist1-discussion-hall.png",
             "correct": true
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-toit.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-toit-voisins-hall.png"
           },
           {
             "id": "c",
@@ -40326,7 +40330,7 @@
         ]
       },
       "source_sha256": "70e478e9308ac3d74e9cf0f46b160dc09ff924683aa4fef6f02b884900860d0c",
-      "reason": "Source : les voisins parlent souvent dans le hall. Même paire d’adultes et gestes de conversation dans un hall à boîtes aux lettres, sur un toit-terrasse à parapet ou dans une allée de supermarché. Seul le contexte change ; pas de lien familial déduit.",
+      "reason": "Les mêmes deux voisins conversent dans le hall, sur le toit ou au supermarché, avec des appuis naturels. Les boîtes aux lettres, le parapet et les rayons constituent des indices distincts. Le toit de cette question reçoit sa propre image avec le duo du hall. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40359,7 +40363,7 @@
         ]
       },
       "source_sha256": "70e478e9308ac3d74e9cf0f46b160dc09ff924683aa4fef6f02b884900860d0c",
-      "reason": "Source : interdiction de fumer dans les couloirs. Même pictogramme de cigarette barrée au mur du couloir commun, d’une terrasse et d’un salon privé. Les lieux sont reconnaissables sans lire un règlement ou un nom.",
+      "reason": "Le même pictogramme se lit dans trois lieux clairement identifiables : couloir à portes, terrasse à ciel ouvert avec garde-corps, salon privé avec canapé. Traitement peint cohérent et conditions de reconnaissance comparables.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40378,7 +40382,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-guide-porte1.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-60-1-qcm-hist1-guide-porte1.png",
             "correct": true
           },
           {
@@ -40392,7 +40396,7 @@
         ]
       },
       "source_sha256": "1282c8cda07a631cf08482eac7efc21580220ebc7ee1e97c6110194c80534bb7",
-      "reason": "Source : retrouver la guide à la porte1. Même guide au drapeau et même groupe près de la porte1, sur le palier du premier étage ou devant la boutique. Porte et escalier sont des repères visibles ; le chiffre fonctionnel1 n’est ni un prix ni une date.",
+      "reason": "La guide et les trois visiteurs gardent leurs visages et tenues dans les trois variantes. Les repères sont la porte numéro 1, le premier étage et la boutique. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40420,12 +40424,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-local-velos.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-61-3-qcm-hist1-nom-porte-local-velos.png"
           }
         ]
       },
       "source_sha256": "11541505c1c7f0331bec0879140f567f9b19ebcf70fdb90fd2796618c61f66b2",
-      "reason": "Source : nom sur la boîte aux lettres. Plaque apposée sur boîtes aux lettres, porte de garage ou porte avec pictogramme vélo et vélos derrière. Les personnes illustrent le geste sans identité attribuée. Bonne réponse boîte aux lettres conservée.",
+      "reason": "Source : nom sur la boîte aux lettres. Plaque apposée sur boîtes aux lettres, porte de garage ou porte avec pictogramme vélo et vélos derrière. Les personnes illustrent le geste sans identité attribuée. Bonne réponse boîte aux lettres conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40458,7 +40462,7 @@
         ]
       },
       "source_sha256": "11541505c1c7f0331bec0879140f567f9b19ebcf70fdb90fd2796618c61f66b2",
-      "reason": "Source : local à vélos à côté du garage. La coupe montre les deux locaux adjacents, puis le local à vélos au dernier étage, puis un abri au fond du jardin. Vélos et repères nécessaires sont tous présents, sans numérotation d’étage inventée.",
+      "reason": "Le voisin situe le local à vélos à côté du garage. Le premier choix juxtapose deux accès, le deuxième place les vélos au dernier niveau et le troisième les place au bout du jardin. Râteliers, portes et proportions permettent de distinguer les trois situations. La bonne réponse reste a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40491,7 +40495,7 @@
         ]
       },
       "source_sha256": "11541505c1c7f0331bec0879140f567f9b19ebcf70fdb90fd2796618c61f66b2",
-      "reason": "Source : règlement dans le hall d’entrée. Même affiche à pictogrammes dans le hall avec porte et boîtes aux lettres, dans le local à vélos ou dans le garage avec voiture. Les trois lieux sont distincts et aucun texte lisible non fourni n’est créé.",
+      "reason": "Le dialogue situe le règlement dans le hall d’entrée et mentionne un mot séparé dans l’ascenseur. Les trois vues montrent le même panneau avec des pictogrammes. La porte vitrée et les boîtes aux lettres, les râteliers et les vélos, puis la voiture permettent de distinguer les trois lieux. Le hall reste le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40510,7 +40514,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-ascenseur.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-64-1-qcm-hist1-mot-ascenseur.png",
             "correct": true
           },
           {
@@ -40524,7 +40528,7 @@
         ]
       },
       "source_sha256": "11541505c1c7f0331bec0879140f567f9b19ebcf70fdb90fd2796618c61f66b2",
-      "reason": "Source : un mot dans l’ascenseur. Même petite note crème avec traits illisibles dans la cabine, sur le balcon et sur la porte d’accès à la toiture. Garde-corps, cabine ou parapet distinguent les trois lieux ; pas de contenu de message inventé.",
+      "reason": "Les trois variantes présentent le même papier crème et la même voisine. La feuille est dans la cabine de l’ascenseur, sur le mur du balcon ou sur la porte d’accès au toit. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40543,7 +40547,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-hall.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-boites-voisins.png",
             "correct": true
           },
           {
@@ -40557,7 +40561,7 @@
         ]
       },
       "source_sha256": "b42e679fb84dcafe6a3e9e53d9d744e06a6d3b621266e2d7053ddc7ee8331866",
-      "reason": "Source : discussion devant les boîtes aux lettres. Même paire de voisins en interaction devant les boîtes, dans le garage ou sur le toit. Le cadrage inclut les appuis et le repère utile de chaque lieu.",
+      "reason": "Les voisins, tenues et morphologies se retrouvent dans les trois lieux. Les boîtes aux lettres, la voiture dans le garage et la vue en hauteur derrière un garde-corps distinguent les scènes.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40590,7 +40594,7 @@
         ]
       },
       "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
-      "reason": "Source : Madame Martin fume dans les couloirs. Même femme au carré gris et même cigarette avec une petite fumée dans le couloir, le jardin ou le parking. Lieux et action sont visibles ; visage illustratif sans identité réelle déduite.",
+      "reason": "Le personnage, sa tenue et sa cigarette restent reconnaissables dans les trois variantes. Les portes et l’escalier, le massif et le banc, puis les voitures et les marquages distinguent les trois lieux.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40614,16 +40618,16 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-kiosque-journaux.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-67-2-qcm-hist1-kiosque-journaux.png"
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-office-tourisme.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-67-3-qcm-hist1-office-tourisme.png"
           }
         ]
       },
       "source_sha256": "d61a4c243bf9833e8e72d73ce04d1aedabc88b85b9953e9a237d81dc75d10440",
-      "reason": "Source : ticket au distributeur avant de monter. Distributeur de transport avec ticket et tram visible, kiosque de presse avec journaux, puis comptoir touristique avec plan et brochures. Choix distincts, aucun DAB bancaire. Bonne réponse distributeur conservée.",
+      "reason": "Source : ticket au distributeur avant de monter. Distributeur de transport avec ticket et tram visible, kiosque de presse avec journaux, puis comptoir touristique avec plan et brochures. Choix distincts, aucun DAB bancaire. Bonne réponse distributeur conservée. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40642,7 +40646,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-gare.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-68-1-qcm-hist1-metro-face-gare.png",
             "correct": true
           },
           {
@@ -40656,7 +40660,7 @@
         ]
       },
       "source_sha256": "d61a4c243bf9833e8e72d73ce04d1aedabc88b85b9953e9a237d81dc75d10440",
-      "reason": "Source : la station est en face de la gare. Chaussée entre la station et le bâtiment ferroviaire dans le bon choix ; la vue derrière la mairie place le métro dans la cour arrière ; le troisième escalier est sur le même trottoir que la poste au pictogramme enveloppe. Les deux repères de chaque relation sont visibles.",
+      "reason": "Les trois choix montrent une entrée du métro identifiable par le M bleu. La gare lui fait face, la mairie est devant la bouche de métro ou la poste la jouxte. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40675,7 +40679,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-commissariat.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-69-1-qcm-hist1-metro-face-commissariat.png",
             "correct": true
           },
           {
@@ -40689,7 +40693,7 @@
         ]
       },
       "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
-      "reason": "Source : métro en face du commissariat. Bâtiment policier au bouclier et voiture de police de l’autre côté de la rue ; métro derrière la mairie dans la vue élevée ; escalier voisin de la grille du parc dans le dernier choix. Les trois relations de lieu sont distinctes.",
+      "reason": "L’escalier et le M bleu identifient l’entrée du métro. Le commissariat est de l’autre côté de la rue, la mairie masque une partie de la cour où descend le métro ou l’entrée du parc le jouxte. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40755,7 +40759,7 @@
         ]
       },
       "source_sha256": "2d2982d39a1819be707fbde4453c9470d679dffd7a1a7c0f4a5b9f905cd0c1e5",
-      "reason": "Source : chercher la porte sur le tableau des départs. Tableau à pictogramme avion et voyageurs dans le terminal ; ordinateur affichant une chambre et une réservation ; plan urbain déplié. Aucune porte, date, heure ou destination inventée dans l’image ; le support de consultation est le seul objet de la question.",
+      "reason": "La porte du vol n’est pas encore indiquée sur la carte. Le dialogue oriente la passagère vers le tableau des départs. L’afficheur, le site de l’hôtel et le plan de la ville sont montrés séparément sur fond ivoire. Le pictogramme d’avion distingue l’afficheur sans révéler de lieu, heure ou numéro de porte. La bonne réponse reste a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40788,7 +40792,7 @@
         ]
       },
       "source_sha256": "4ec6141339ce160d152804928e0a4aabc94c3ea81e39f737ef7f007935ea6442",
-      "reason": "Source, premier dialogue : rayon BD au fond à droite. Même vue de librairie depuis la porte du premier plan, couvertures de BD au fond à droite, au fond à gauche ou près de l’entrée. Flèches et présentoirs rendent la position lisible ; les autres dialogues de la transcription ne sont pas illustrés par cette question.",
+      "reason": "Les portes, les meubles et l’allée donnent une orientation constante. La flèche longue tourne au fond à droite ou au fond à gauche. La troisième flèche, courte, situe le présentoir à l’entrée.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40821,7 +40825,7 @@
         ]
       },
       "source_sha256": "9ff0d949391d8c8ac85653e59b832522ad22a403847699be8ec7f27d968bd336",
-      "reason": "Source : professeure à lunettes assise sur le banc. Même femme âgée avec lunettes et livre sur banc collectif, chaise individuelle puis muret de pierre. Appuis, jambes et sièges crédibles ; le support de l’assise distingue seul les trois choix.",
+      "reason": "La professeure conserve son visage, ses lunettes, son livre et ses vêtements dans la même cour. Les assises et leurs appuis distinguent le banc horizontal, la chaise individuelle et le muret maçonné.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40840,7 +40844,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-images-mur-bureau.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-cast-hist-74-1-qcm-hist1-images-mur-bureau.png",
             "correct": true
           },
           {
@@ -40854,7 +40858,7 @@
         ]
       },
       "source_sha256": "a9d1567eecd4165ee4d9d2e861ae57cdea461dce3efab577bca6785ea334cd87",
-      "reason": "Source : images du résultat final sur les murs du bureau. Trois collages au mur au-dessus du bureau, sur une porte de cuisine avec évier et cuisinière, ou dans un carnet ouvert. Même personne illustrative dans les trois vues ; aucune identité ou voix réelle attribuée à ce personnage.",
+      "reason": "Les trois mêmes images sont fixées par la même femme, avec des appuis vérifiés. Les murs du bureau, la porte de la cuisine et les pages du carnet restent distincts. Distribution renouvelée. Les personnes et les indices de lieu, d’action ou de position ont été comparés dans les choix de la question.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40887,7 +40891,7 @@
         ]
       },
       "source_sha256": "5fd5c46f498b1f6d232a6551b70c02ecbab86d840d16c2ea39fb603b8443ee0d",
-      "reason": "Source : on peut manger sur le balcon. Mêmes trois adultes aux apparences variées, table et repas sur balcon surélevé, dans jardin de plain-pied, ou sur toiture à parapet et ville plus basse. Aucun des trois n’est confondu avec une simple terrasse sans repère.",
+      "reason": "La visite de l’appartement mentionne le balcon où l’on peut manger. Les trois choix montrent les mêmes personnes et le même repas. Ils se distinguent par le garde-corps d’un balcon étroit avec porte vitrée, le jardin au sol et la terrasse de toiture avec accès technique. Trois âges, carnations et morphologies sont reconnaissables. La bonne réponse reste a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40915,12 +40919,12 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-remboursement-tourisme.png"
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-remboursement-tourisme-comptoir-ferme.png"
           }
         ]
       },
       "source_sha256": "6d954be7a893cafc44ea2b798942a15f736dc25471b526c3874f267bac3acef8",
-      "reason": "Source : demander le remboursement à l’accueil de la gare. Échange de billet et pièces sans montant au comptoir du hall ferroviaire, dans un wagon auprès du contrôleur, ou au comptoir de tourisme avec brochures et plan. Tous les interlocuteurs sont visibles ; seules les catégories de lieu sont comparées.",
+      "reason": "L’annonce distingue le train suivant du lieu du remboursement. La gare (train au quai et comptoir), le wagon (sièges et contrôleur) et l’office du tourisme (brochures et plan de ville) sont lisibles dans trois décors peints. Le même duo permet de comparer le lieu. Il associe deux âges adultes, carnations, tailles et morphologies distincts, avec de nouveaux visages. L’accueil de la gare reste le choix a. Le comptoir de l’office masque les chaussures de l’employé. La voyageuse conserve ses appuis visibles.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40953,7 +40957,7 @@
         ]
       },
       "source_sha256": "921d5dd9f731c381f53e0fd1d40af03124fc580349ab226ee683478da52ff55e",
-      "reason": "Source : sortir les courses de la voiture. Même paire d’adultes avec deux sacs de provisions extraits du coffre ouvert, du placard ou du réfrigérateur ouvert. Repères physiques, mains et regards cohérents ; la voiture reste la seule bonne réponse.",
+      "reason": "Les deux personnes, tenues et sacs sont reconnaissables dans les trois scènes. Le hayon de la voiture, les portes en bois et le réfrigérateur blanc avec bacs distinguent l’origine des courses.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -40986,7 +40990,7 @@
         ]
       },
       "source_sha256": "f708ef4e86aa4687a81409fa13f1101fdcd49933337b978835fe7ef8cc2cc438",
-      "reason": "Source : stations de vélos ou trottinettes au centre-ville et près des gares. Le bon choix comprend deux vues égales, place centrale et gare, avec les deux familles de véhicules dans chacune. Les leurres montrent uniquement aéroport ou campagne avec les mêmes véhicules ; aucun tarif ni station réelle inventés.",
+      "reason": "L’annonce situe les stations de vélos et de trottinettes au centre-ville et près des gares. Le choix a montre ces deux lieux avec les deux types de véhicule. Les autres vues montrent les mêmes moyens de transport à l’aéroport ou à la campagne. Les décors peints fournissent les repères, sans texte.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41019,7 +41023,7 @@
         ]
       },
       "source_sha256": "5301207c62b5ce217f7328cc4810cead7225788b77a85bb12e1e545286019ebc",
-      "reason": "Source : Chloé a deux valises à enregistrer au comptoir. Voyageuse avec deux valises au poste de pesée et tapis d’enregistrement ; même voyageuse et valises au service bagages avec carrousel ; mêmes effets à la sortie vers les taxis. La quantité demandée et le repère de chaque lieu sont visibles.",
+      "reason": "La même voyageuse et les mêmes valises sont visibles. La balance du départ, le carrousel des arrivées et les portes ouvertes vers les taxis distinguent les trois lieux.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41052,7 +41056,7 @@
         ]
       },
       "source_sha256": "02cb86d1fdba43cbeca2263d55207e24fbaf058d7ffd8532c9e3a7b19b85ec5b",
-      "reason": "Source : bureau du directeur à côté de la bibliothèque. Le même bureau et adulte en costume restent fixes ; la pièce adjacente est la bibliothèque, le gymnase ou la cantine, visible par sa porte ouverte. Les deux pièces sont présentes ensemble dans chaque vue.",
+      "reason": "Le directeur et l’organisation restent fixes. La deuxième porte montre successivement des livres, un terrain de basket ou les tables et le comptoir de la cantine.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41085,7 +41089,7 @@
         ]
       },
       "source_sha256": "4020467776cc12258a04b2c97f20650374831461a9780f04376bedfbe6265950",
-      "reason": "Source : elle quitte le restaurant universitaire pour manger dehors. Même étudiante au pull orange, assiette végétarienne et table dehors, chez deux parents illustratifs ou seule au bureau de sa chambre. Porte de restaurant et bâtiment universitaire en fond dans le bon choix ; aucune viande ajoutée.",
+      "reason": "La même jeune femme et le repas végétarien se retrouvent sous le ciel ouvert, à une table entourée de deux adultes dans un salon, et près du lit de sa chambre. Les questions 81 et 95 ont le même texte et la même empreinte audio.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41118,7 +41122,7 @@
         ]
       },
       "source_sha256": "7c435e9a971e30e69f07a01c2f78515e56859952f6e9418c3c99bc6dd31932a1",
-      "reason": "Source : Julie propose l’entrée du théâtre. Deux amis avec billets devant les portes au pictogramme des masques ; façade de gare réutilisée comme lieu ; mêmes amis dans le salon privé. Les variantes illustrent le lieu de rendez-vous, sans identité réelle déduite des voix.",
+      "reason": "Les portes et les masques situent l’entrée du théâtre, la façade ferroviaire situe la gare et le canapé situe le domicile. Les deux nouveaux visuels conservent les personnages et les billets.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41151,7 +41155,7 @@
         ]
       },
       "source_sha256": "574152d2bb3f93be1dc7b4ca4739faaa7b23a26ffcce7060c36602267ad7dbf0",
-      "reason": "Source : attente à l’entrée du magasin. Deux amis se retrouvent devant portes et vitrine, façade de mairie réutilisée comme autre lieu, ou mêmes amis sous l’abribus avec bus. Les repères sont explicites et aucune quantité d’achats ou date n’est ajoutée.",
+      "reason": "Les vitrines, la façade de mairie et le toit de l’abribus distinguent les trois lieux. Les deux nouvelles scènes conservent les personnages, les sacs et la tenue.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41184,7 +41188,7 @@
         ]
       },
       "source_sha256": "593fd9ff0a15ad910a1a1720dc454690f531a8380828f174fda60325f9e23714",
-      "reason": "Source : exposition devant la mairie. Même installation de peintures et visiteurs devant le bâtiment civique au drapeau, devant la gare au train visible, puis dans le hall d’école avec élèves, cartables et classes. Exposition et repère de bâtiment sont présents dans chaque choix.",
+      "reason": "Les tableaux et les trois visiteurs restent les mêmes. Le bâtiment civique, le train et le couloir de classes distinguent les trois lieux.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41217,7 +41221,7 @@
         ]
       },
       "source_sha256": "e99e79950fda94fa2d1da1dd7daeaa0f85a8debdf2ce53bc659ad161ea2fce90",
-      "reason": "Source : consulter l’offre de pompier sur le site de l’agence pour l’emploi. Ordinateur avec cartes métiers et vignette pompier, bibliothèque avec lecteurs et salle de restaurant distinguent les réponses. Aucun URL, horaire ou offre réelle inventés.",
+      "reason": "L’annonce d’emploi de pompier invite à consulter le site de l’agence. Le portable montre le site et l’offre. La bibliothèque et le restaurant sont reconnaissables dans deux scènes peintes. Le site reste le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41250,7 +41254,7 @@
         ]
       },
       "source_sha256": "3192427191592454ccb3b4cf025545847870e618dee406471531bb8ab08844e0",
-      "reason": "Source : le professeur mettra le calendrier au tableau. Même professeur et grille d’anniversaires sur le tableau, sur la porte ou à plat sur son bureau. Les supports concurrents sont nus ; grille et gâteaux sans dates, jours, mois ou noms, puisque seule la localisation est demandée.",
+      "reason": "Le même professeur et la même grille d’anniversaires se retrouvent sur le tableau, sur la porte et à plat sur le bureau. Les autres surfaces ne portent pas de calendrier.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41283,7 +41287,7 @@
         ]
       },
       "source_sha256": "f8b023a4f26a35da3211d671cc1d8efa7beb9272ef5759da6d996f8999c28390",
-      "reason": "Source : parapluie à l’entrée de la salle. Même parapluie rouge plié à la porte de la classe, sur le bureau du professeur visible à travers la porte, ou près des livres d’une bibliothèque. Un seul parapluie dans chaque vue, aucun objet cible laissé à l’ancien emplacement.",
+      "reason": "Un seul parapluie rouge fermé avec poignée recourbée apparaît à chaque fois. L’entrée et le support, le bureau et le tableau, puis les rayonnages et la table de lecture rendent les trois positions distinctes.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41316,7 +41320,7 @@
         ]
       },
       "source_sha256": "f8b023a4f26a35da3211d671cc1d8efa7beb9272ef5759da6d996f8999c28390",
-      "reason": "Source : Thomas doit poser ses livres sur la table. Deux livres, trois journaux et trois affiches sont représentés au pluriel et entièrement. Le choix vise les familles de documents ; les images ne supposent pas le contenu de livres personnels.",
+      "reason": "Thomas doit mettre ses livres et ses stylos sur la table. Les trois propositions montrent des documents au pluriel : livres reliés, journaux pliés et affiches. Les livres restent le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41340,7 +41344,7 @@
           },
           {
             "id": "b",
-            "image": "/lib/images/tcf/qcm-audit/extension573-facture.webp"
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-factures-pluriel.png"
           },
           {
             "id": "c",
@@ -41349,7 +41353,7 @@
         ]
       },
       "source_sha256": "e8e46825d6f59c8a39875781644194590d333671884eb849a1eef0f1092c0fde",
-      "reason": "Source : envoyer les résultats de la classe. Tableau à silhouettes d’élèves, coches et étoiles ; facture générique sans montant ; dépliant ferroviaire à pictogramme train et tableaux illisibles. Les familles de documents restent reconnaissables sans mois, horaire ou valeur fabriqués.",
+      "reason": "Le directeur demande les résultats de la classe. Les trois visuels distinguent la grille des élèves, les deux factures et le livret des horaires sans données chiffrées. La feuille de résultats reste le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41382,7 +41386,7 @@
         ]
       },
       "source_sha256": "e9312dfebb61288b40791db64ec53f2875e5d6c2dfed083de8cb4e56cd3bdbe3",
-      "reason": "Source : disques en promotion à côté des livres. Même meuble de disques contre le rayon de livres, contre les vêtements, ou à l’entrée vitrée. La dernière proposition a été corrigée pour enlever entièrement le rayon de livres voisin ; les trois réponses sont maintenant distinctes. Aucune réduction chiffrée ou date représentée.",
+      "reason": "Le même meuble de CD apparaît à côté des tranches de livre, à côté des portants de vêtements et directement derrière les portes vitrées.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41415,7 +41419,7 @@
         ]
       },
       "source_sha256": "a132427e722bff0c093189831bfb176844eac7238995fa80f50cae19160f5a53",
-      "reason": "Source : billet et pièce d’identité. Chaque image contient les deux pièces annoncées : billet ferroviaire et carte d’identité, passeport et facture, permis automobile et CV. Documents entiers sans données personnelles, date, montant ou numéro ; aucune moitié de choix composée omise.",
+      "reason": "L’annonce demande à la fois le billet et une pièce d’identité. Chaque choix contient ses deux documents entiers, faciles à distinguer par la silhouette, le pictogramme ou la présentation. Les trois fonds ivoire sont comparés aux quatre angles. Aucun chiffre, prix, date ou nom n’est affiché. Le billet de train et la pièce d’identité restent le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41448,7 +41452,7 @@
         ]
       },
       "source_sha256": "e42cfde307289f19ab0aad87572cf8cf5c8da35317bb2b0ccc531bbed3433a0d",
-      "reason": "Source : apporter CV et photocopie d’identité. CV avec portrait fictif et photocopie grise sur une feuille séparée, diplôme et facture, passeport et billet. Deux documents visibles dans chaque choix, sans montant, date ni identité lisible ; fond ivoire de la photocopie corrigé et mesuré.",
+      "reason": "Pour l’entretien, Mme Laforêt demande un CV et une photocopie de la pièce d’identité. Les trois images montrent chaque paire entière et différencient les familles de documents par leur présentation. Le CV et la photocopie restent le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41481,7 +41485,7 @@
         ]
       },
       "source_sha256": "67629aba01d13214eca9bbbd9d04fcf873f0219a67006278cf7bd081c4c39e9f",
-      "reason": "Source : restaurant près de son hôtel. Restaurant et hôtel au pictogramme lit présents ensemble dans la rue ; collègues au restaurant d’entreprise avec badges et bureaux ; deux adultes à table dans une salle à manger privée. Le lien de proximité demandé est visible dans le premier choix, sans lien familial réel attribué aux personnes.",
+      "reason": "Les deux personnes gardent leurs traits et leurs vêtements. Le restaurant près du bâtiment à pictogramme de lit, la restauration d’entreprise et le salon domestique se distinguent nettement.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41500,7 +41504,7 @@
         "choix": [
           {
             "id": "a",
-            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-derriere-femme.png",
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-derriere-cliente-a1.png",
             "correct": true
           },
           {
@@ -41514,7 +41518,7 @@
         ]
       },
       "source_sha256": "c7afee365702d06369bf2bc4052888540a0ee1741f3e66bb38c40b930852afb6",
-      "reason": "Source : rayon derrière elle. Rayon derrière la cliente tournée vers la vendeuse ; rayon au côté gauche de la cliente face à nous, donc côté droit dans l’image ; coupe à deux niveaux avec rayon au premier étage. Mêmes adultes et famille de livres, les positions seules changent.",
+      "reason": "Les deux femmes gardent leurs nouveaux visages et leurs vêtements. Le rayon est derrière la cliente, à sa gauche quand elle fait face, ou au-dessus du niveau où elle se trouve.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41547,7 +41551,7 @@
         ]
       },
       "source_sha256": "5c74907f5e2296ab4b803e05f157b9179b5c777ddbabef34cc1a2e7ec34b8915",
-      "reason": "Source identique à la question81 : elle décide de manger dehors. Réemploi du même trio vérifié : étudiante et repas sans viande en extérieur, chez ses parents illustratifs ou dans sa chambre. Les trois lieux correspondent aux réponses complètes ; aucun nouveau dessin nécessaire.",
+      "reason": "La même jeune femme et le repas végétarien se retrouvent sous le ciel ouvert, à une table entourée de deux adultes dans un salon, et près du lit de sa chambre. Les questions 81 et 95 ont le même texte et la même empreinte audio.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41580,7 +41584,7 @@
         ]
       },
       "source_sha256": "6f8c73e2f3e2814166db6fb9d12d58d584448ece96ff16eef9aebfe1357f112c",
-      "reason": "Source : devant le menu du restaurant. Même femme au téléphone devant un panneau de plats avec couverts, programme de films avec pictogramme caméra ou vitrine de librairie avec livres. La question ne demande pas les plats précis : l’image illustre uniquement le lieu, sans prix, horaires ou date.",
+      "reason": "La femme garde le téléphone, la tenue et le geste de désignation. Le menu de plats, le programme encadré et la vitrine vitrée avec livres sont trois supports nettement différents.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41613,7 +41617,7 @@
         ]
       },
       "source_sha256": "51c55b834ae8d148a23ab52242a019c560c27188fd095b97badb3ef4efe7e34d",
-      "reason": "Source : objet noir mis sur la tête. Même femme en pied, même boucle de tissu noire sur la tête, au sol à ses pieds ou autour du cou. Le bandeau résiduel du leurre aux pieds a été supprimé ; un seul objet noir dans chaque image. Aucune identité d’objet plus précise que la source n’est imposée.",
+      "reason": "Le personnage, le fond ivoire et la boucle noire sont communs. La boucle se trouve au-dessus des cheveux, près des chaussures ou autour du cou selon le choix.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41646,7 +41650,7 @@
         ]
       },
       "source_sha256": "bf6c6559e2b2c5277d380934bb3b142e5292bfe67a57f5a088bc35c6d12d5945",
-      "reason": "Source : lunettes, papiers, bouteille d’eau, verre et téléphone sur le bureau. Cinq catégories d’objets conservées ensemble sur un bureau, sur un lit, ou sur une table de cuisine. Le support et son contexte sont visibles ; rien ne flotte et aucun objet utile n’est omis.",
+      "reason": "Les lunettes, les deux feuilles, la bouteille, le verre et le téléphone sont dans les trois choix. Les surfaces distinguent le bureau, le lit et la table de la cuisine. Les objets restent entiers.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41679,7 +41683,7 @@
         ]
       },
       "source_sha256": "ed8f773b18dd8d0339e7620690046a8596895de87fa52398ffd381e7dab40d82",
-      "reason": "Source : le jeu3 demande de retrouver la couronne de la reine. Couronne royale, clé ancienne de château et montre sont distinctes et entières. Pas de reine réelle, montant, date ou heure de rendez-vous inventés.",
+      "reason": "Le jeu d’évasion sur l’enquête de Sherlock Holmes demande de retrouver la couronne. L’image distingue la couronne royale, la clé ancienne du château et la montre par leurs formes. La couronne reste le choix a.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     },
     {
@@ -41712,7 +41716,7 @@
         ]
       },
       "source_sha256": "e88a39677441a80ccd55fd91be1152ad5ee31d4f091491c5f1a2b5463e479c78",
-      "reason": "Source, document1 : les serviettes sèchent sur le radiateur. Même salle de bains, deux serviettes bleues et blanches sur le sèche-serviettes, pliées dans le placard ou dans la poubelle ouverte. Radiateur, placard et poubelle restent visibles et les supports non choisis sont vides. La consigne de séchage distingue le rangement du linge propre.",
+      "reason": "Deux serviettes bleues à bandes blanches occupent un seul emplacement dans chaque choix. Elles pendent au radiateur, sont pliées dans le placard ouvert ou dépassent de la poubelle ouverte. Les trois repères restent visibles dans le même décor.",
       "review_ledger": "docs/tcf/lots-images-20261124/historique-lot01-activation.json"
     }
   ]

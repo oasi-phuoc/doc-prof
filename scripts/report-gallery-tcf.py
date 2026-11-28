@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/gallery/extension-tcf-20261113.json'
 CLASSES = ROOT / 'docs/gallery/classement-tcf-20261113.json'
+COMPLEMENTS = 'docs/gallery/complements-20261116.json'
 
 def norm(value):
     import unicodedata
@@ -27,12 +28,22 @@ def report():
     plan = json.loads(PLAN.read_text())
     classes = json.loads(CLASSES.read_text())
     reviewed = {r['path']: r for r in classes['images']}
+    complements = [image for image in json.loads((ROOT / COMPLEMENTS).read_text())['images']
+                   if image['status'] == 'visually_reviewed']
+    reviewed.update({image['path']: image for image in complements})
+    foods_by_label = {(image['type'], image['label']): image for image in complements
+                      if image['type'] in ('Fruit', 'Légume')}
+    legacy_food_types = {'Fruits': 'Fruit', 'Légumes': 'Légume'}
+    reused_complements = {}
     baseline = json.loads(subprocess.check_output(['git', 'show', plan['baseline_commit'] + ':src/gallery/catalog.generated.json'], cwd=ROOT, text=True))
     folders = {'Animal': re.compile(r'/vocabulaire/(?:animaux[^/]*|oiseaux|insectes[^/]*)/'),
                'Végétal': re.compile(r'/vocabulaire/(?:plantes|fruits[^/]*|legumes[^/]*)/'),
                'Métier': re.compile(r'/vocabulaire/metiers/'),
                'Maladie': re.compile(r'/vocabulaire/sante/')}
-    originals = {r['src']: r for r in baseline}
+    originals = {r['src'] for r in baseline}
+    generated = json.loads((ROOT / 'docs/tcf/images-generees.json').read_text())
+    reviewed_originals = {r['path']: r['sha256'] for r in generated['images']
+                          if r['status'] == 'visually_reviewed'}
     pending = []; progress = {}; failures = []; approved_ids = set(); inventory = []
     actions = [j for j in plan['jobs'] if j['type'] == 'Action'] + [dict(r, id='catalogue-20261113-action-telephoner') for r in plan['reuses'] if r['type'] == 'Action']
     for typ, targets in [('Action', actions)] + [(typ, [s for s in plan['subjects'] if s['type'] == typ]) for typ in folders]:
@@ -40,6 +51,15 @@ def report():
         for target in targets:
             path = ROOT / 'docs/gallery/generation-20261113' / (target['id'] + '.json')
             state = json.loads(path.read_text()) if path.exists() else target
+            food_type = legacy_food_types.get(target.get('subtype')) if typ == 'Végétal' else None
+            complement = foods_by_label.get((food_type, target['label']))
+            from_complement = complement is not None and (
+                state.get('status') != 'visually_reviewed' or state.get('source_manifest') == COMPLEMENTS)
+            if from_complement:
+                state = dict(target, status='visually_reviewed', reuse=True,
+                             path=complement['path'], sha256=complement['sha256'], source_manifest=COMPLEMENTS)
+                reused_complements[target['id']] = complement
+                target.update(reuse=True, source_manifest=COMPLEMENTS)
             if state.get('status') == 'visually_reviewed':
                 asset = ROOT / 'public' / state['path'].lstrip('/')
                 assert state['path'] in reviewed and sha(asset) == reviewed[state['path']]['sha256'] == state['sha256']
@@ -51,7 +71,7 @@ def report():
                 target.update(status='visually_reviewed', path=state['path'], sha256=state['sha256'])
                 # Archive only a same-concept legacy image within its real family.
                 # An avocado fruit must never replace the lawyer or a rose swatch.
-                if typ in folders:
+                if typ in folders and not from_complement:
                     for original in baseline:
                         if not folders[typ].search(original['src']) or norm(original['label']) != norm(target['label']):
                             continue
@@ -82,6 +102,11 @@ def report():
                     failures.append(dict(id=target['id'], error=state['error']))
         progress[typ] = dict(planned=len(targets), reviewed=counts['reviewed'], generated=counts['generated'], reused=counts['reused'], remaining=counts['remaining'])
     for job in plan['jobs']:
+        complement = reused_complements.get(job['id'])
+        if complement:
+            job.update(status='visually_reviewed', path=complement['path'], sha256=complement['sha256'],
+                       reuse=True, source_manifest=COMPLEMENTS)
+            continue
         metadata = ROOT / 'docs/gallery/generation-20261113' / (job['id'] + '.json')
         if metadata.exists():
             state = json.loads(metadata.read_text())
@@ -93,16 +118,29 @@ def report():
     for replacement in classes['replacements']:
         assert sha(ROOT / 'public' / replacement['original'].lstrip('/')) == replacement['original_sha256']
         assert sha(ROOT / 'public' / replacement['path'].lstrip('/')) == replacement['sha256']
-        assert replacement['original'] in originals
-    blocker = next((r for r in failures if 'usage_limit_reached' in r['error']), None)
+        assert (replacement['original'] in originals
+                or reviewed_originals.get(replacement['original']) == replacement['original_sha256'])
     plan['progress'] = progress
     plan['pending_subjects'] = pending
-    if blocker:
-        error = blocker['error'].replace('\\', '')
+    now = datetime.now(ZoneInfo('UTC')).timestamp()
+    plan.pop('generation_blocker', None)
+    for failure in failures:
+        if 'usage_limit_reached' not in failure['error']:
+            continue
+        error = failure['error'].replace('\\', '')
         match = re.search(r'"resets_at"\s*:\s*(\d+)', error)
-        plan['generation_blocker'] = dict(code='usage_limit_reached', http_status=429, error=blocker['error'])
+        if match and int(match[1]) <= now:
+            continue
+        plan['generation_blocker'] = dict(code='usage_limit_reached', http_status=429, error=failure['error'])
         if match:
-            epoch = int(match[1]);plan['generation_blocker'].update(resets_at=epoch, timezone='Europe/Zurich', resets_at_local=datetime.fromtimestamp(epoch, ZoneInfo('Europe/Zurich')).isoformat())
+            epoch = int(match[1])
+            plan['generation_blocker'].update(
+                resets_at=epoch,
+                timezone='Europe/Zurich',
+                resets_at_local=datetime.fromtimestamp(epoch, ZoneInfo('Europe/Zurich')).isoformat(),
+            )
+        break
+    blocker = plan.get('generation_blocker')
     plan['status'] = 'complete' if not pending else ('blocked_image_generation_quota' if blocker else 'in_progress')
     PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
     CLASSES.write_text(json.dumps(classes, ensure_ascii=False, indent=2) + '\n')

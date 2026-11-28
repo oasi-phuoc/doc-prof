@@ -1,3 +1,4 @@
+import { AcmActivityView } from '@/acm/AcmActivityView'
 import {PhraseSvcBlock} from './item-view/phrase-svc'
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
 import { isWrittenProblem } from '@/math/problem-help'
@@ -369,6 +370,7 @@ export function ItemView({
       <div className="item-content">
         {item.logistiqueNarrative && <p className="logistique-narrative-passage">{item.logistiqueNarrative}</p>}
         {assessmentPoints && <p className="logistique-assessment-points">{assessmentPoints}</p>}
+        {item.layout === 'acm' && item.acm ? <AcmActivityView activity={item.acm} stepOffset={item.acmStepOffset} /> : null}
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}

@@ -8,8 +8,8 @@ await server.listen()
 let browser
 const errors = [], results = []
 try {
-  const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
-  const configs = buildTpfFamilyTestPages('tpf', 531)
+  const { buildTcfRandomTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
+  const configs = ['A0-A1', 'A1-A2', 'A2-B1'].flatMap(level => buildTcfRandomTestPages(level, 531))
   const sample = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
   const pages = []
   for (const [level, difficulty] of [['a0-a1', 'facile'], ['a1-a2', 'moyen'], ['a2-b1', 'avance']]) {

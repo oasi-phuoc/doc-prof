@@ -1,4 +1,5 @@
 import type { TcfCompetence, TcfNiveau } from '@/tcf/types'
+import { TPF_PLACEMENT_TASKS } from '@/tcf/tpf-placement'
 import { CompetenceIcon } from './CompetenceIcon'
 
 type Partie = {
@@ -25,7 +26,7 @@ const PARTIES: readonly Partie[] = [
     id: 'PE',
     titre: 'Production écrite',
     slogan: 'J’écris en français.',
-    exercices: () => 4,
+    exercices: (niveau) => (niveau === 'A2-B1' ? 3 : 4),
   },
   {
     id: 'PO',
@@ -40,12 +41,13 @@ function exercicesLabel(n: number): string {
 }
 
 /** Page 1 du TPF / TCF : les quatre parties du test. */
-export function TcfInformations({ niveau, pointsByCompetence }: { niveau: TcfNiveau; pointsByCompetence?: Record<TcfCompetence, number> }) {
+export function TcfInformations({ niveau, placement, pointsByCompetence }: { niveau: TcfNiveau; placement?: boolean; pointsByCompetence?: Record<TcfCompetence, number> }) {
+  const parties = placement ? [PARTIES[1]!, PARTIES[0]!, PARTIES[2]!, PARTIES[3]!] : PARTIES
   return (
     <div className="tcf-info">
       <ul className="tcf-info-parties">
-        {PARTIES.map((p, i) => {
-          const n = p.exercices(niveau)
+        {parties.map((p, i) => {
+          const n = placement ? TPF_PLACEMENT_TASKS.filter((task) => task.competence === p.id).length : p.exercices(niveau)
           return (
             <li key={p.id} className="tcf-info-partie">
               <span className="tcf-info-num" aria-hidden="true">

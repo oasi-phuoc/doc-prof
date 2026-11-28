@@ -1,0 +1,1355 @@
+{
+  "date": "2026-11-27",
+  "scope": "1 371 références audio des banques de compréhension orale actives du TCF. Chaque piste est reliée à au moins deux reconnaissances par l’empreinte du MP3.",
+  "method": "Vérification des empreintes et des moteurs dans les preuves historiques et DELF Actif, puis exécution locale de deux moteurs sur les 75 MP3 restants. Relecture des écarts de reconnaissance repérés sur ces 75 pistes et de trois alertes ressorties des archives.",
+  "limits": "Les passages signalés ont été relus à partir des reconnaissances et des banques. Une comparaison mot à mot par écoute humaine n’est pas attestée.",
+  "human_audio_listening_performed": false,
+  "summary": {
+    "total": 1371,
+    "preuves_historiques": 950,
+    "pistes_reconnues_dans_ce_lot": 75,
+    "preuves_delf_actif": 346,
+    "additional_cases_reviewed": 10,
+    "model_families_minimum": 2,
+    "additional_answer_corrections": 0
+  },
+  "evidence_sources": [
+    {
+      "path": "docs/tcf/remplacement-audio/bascule-preuves-reconnaissances-20261105.json",
+      "sha256": "4d3910c300d5dcc264cb0b57169020144c2985f1c6b5343857c440b0066e3ae5"
+    },
+    {
+      "path": "docs/tcf/delf-actif-20261113/reconnaissances-montages-finaux.json.gz",
+      "sha256": "af7b42cfdc5ef9be5e99dfd0d5d7759d5a0da35fbc2f118c0532d1d83c0c5bce"
+    },
+    {
+      "path": "docs/tcf/delf-actif-20261113/validation-finale.json",
+      "sha256": "737870f0f128c4af967ff270183e47646d11e7d99025081cf6ae0a192bb5e627"
+    },
+    {
+      "path": "docs/tcf/remplacement-audio/contre-verification-audio-pdf-20261127.json",
+      "sha256": "404d5e29d61b827bd4eb1f257c53ed86d41676adc58fbfb0dc48144cb2d1b39e"
+    }
+  ],
+  "freshly_run_models": [
+    {
+      "name": "sherpa-onnx",
+      "version": "2.0.3",
+      "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+      "language": "multilingue",
+      "model_sha256": {
+        "model.int8.onnx": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511",
+        "tokens.txt": "29effa220ddd8fcae96d2d6c78c2e24de4cd9dfaa4ceb86d54dc3d22259c1f93"
+      },
+      "records": 75
+    },
+    {
+      "name": "sherpa-onnx",
+      "version": "2.0.3",
+      "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+      "language": "multilingue",
+      "model_sha256": {
+        "encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+        "decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+        "joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+        "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+      },
+      "records": 75
+    },
+    {
+      "name": "faster-whisper",
+      "version": "1.2.1",
+      "model": "Systran/faster-whisper-small",
+      "language": "fr",
+      "model_sha256": {
+        "model.bin": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671",
+        "config.json": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828",
+        "tokenizer.json": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab",
+        "vocabulary.txt": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+      },
+      "records": 7
+    }
+  ],
+  "new_coverage": [
+    {
+      "reference": "/lib/audio/tcf/co/travail/le-nouveau-travail.mp3",
+      "active_audio_sha256": "057dd4e81584a93f480a3d8dfd3b7cb44856272d2eeb5ee3842de1e79f0050e5",
+      "active_transcription_sha256": "5190d686f0336480c5173e86f953e3dd41e3f89db5467e33ef4c0158eeac6a77",
+      "seconds": 40.312,
+      "sources": [
+        "tcf-a1-s2-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9217,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9735
+      },
+      "cross_recognizer_similarity": 0.8947,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/radio/a-la-gare.mp3",
+      "active_audio_sha256": "107a40d9e06cfcb52af46a8b552d210764c2e015898d887a254cfecfe848743c",
+      "active_transcription_sha256": "c47b2ca7e342c97623c550b980c6f7b2e9ebf0f332d74fe251115ca35106fd8f",
+      "seconds": 32.952,
+      "sources": [
+        "tcf-a1-tpb-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9091,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9474
+      },
+      "cross_recognizer_similarity": 0.8542,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/ecole/45-école-chercher-où-est-la-piscine.mp3",
+      "active_audio_sha256": "39621bcd81c8e21cf5ae3765fecf18e1e7829f0cf864a3a53eccca45da4df150",
+      "active_transcription_sha256": "d125af7c470db02b973d237c5d46916584d5c6e1305c5bdacc79939f069cb255",
+      "seconds": 13.56,
+      "sources": [
+        "tcf-a1-tpb-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.96,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.96,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/restaurant-entreprise.mp3",
+      "active_audio_sha256": "2617aefadc238e483572474c5e917e4778d8f42c3df81fda5e4f506d98120967",
+      "active_transcription_sha256": "e05b490b12edda99680a64e8cc2220df4ff4ea74ba9a997ed149e0ec782eb956",
+      "seconds": 16.92,
+      "sources": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8475,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.8475,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3",
+      "active_audio_sha256": "c51462043d5e0ee106952a6a125680d1bfc72a3d6fb5b4147d073e5eb915309b",
+      "active_transcription_sha256": "7e9c8ed6b3c75d043b3a9ece58f5013b339008783f293d8bc91dee9f322b4717",
+      "seconds": 10.52,
+      "sources": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.7143,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.8444
+      },
+      "cross_recognizer_similarity": 0.6977,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/essayage-robe-chaussures.mp3",
+      "active_audio_sha256": "8bda8574cdc809f48f27a859e8a53d9576668dc2779fc729d0e8bb3e047b1d52",
+      "active_transcription_sha256": "c9772240f6e09ce6ada141a7b52389bee426a18a18002eb60134235159c9668c",
+      "seconds": 60.36,
+      "sources": [
+        "tcf-a1-sem1-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.939,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9859
+      },
+      "cross_recognizer_similarity": 0.9245,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/ecole/30-école-presenter-nael-kervelek.mp3",
+      "active_audio_sha256": "114447fe890052119ea074f42157676f04ceeb553474e2b7aec4edcf5e2fc9a4",
+      "active_transcription_sha256": "36bd99a8c8a2f356f10f3b95309a7d06b27e0fd122b75ef017cf9418df6c076e",
+      "seconds": 46.392,
+      "sources": [
+        "tcf-ss-a1-s4-co-4",
+        "tcf-ss-a2-s6-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9307,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9804
+      },
+      "cross_recognizer_similarity": 0.9307,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/manon-musique-voisin.mp3",
+      "active_audio_sha256": "e2ea9d096ebb0a0f494f8472b470a46fe06c5d4a260c82912b54fb100d69d8f9",
+      "active_transcription_sha256": "9e174cad7b4f93c18eb1a008a98c7a7a612579ecb89029fd4544a019b5c89d64",
+      "seconds": 19.56,
+      "sources": [
+        "tcf-ss-a1-s6-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9459,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9459
+      },
+      "cross_recognizer_similarity": 0.9459,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-1-1.mp3",
+      "active_audio_sha256": "41fb6cd20cf6d5b960e0eb759ddc3a0cbbb6f84fcba927ce379b3f1a6a1010f6",
+      "active_transcription_sha256": "d6ef399f16073aa1ba5860dd89082ea9f2da8d9db80cca0efef9a6575ab800f1",
+      "seconds": 12.52,
+      "sources": [
+        "tcf-ss-a1-s6-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-1-2.mp3",
+      "active_audio_sha256": "71e63191461e1106979b9e945577cecb3b651feda165570c1266a2c0ad10a476",
+      "active_transcription_sha256": "8ec8ba8cf26915deea32734199a986d8ae1aa2bc86f0d7410b0898e50b6ed514",
+      "seconds": 13.152,
+      "sources": [
+        "tcf-ss-a1-s6-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9706,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9706,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/nature-conversation-2.mp3",
+      "active_audio_sha256": "69fe9d71fe667fdfb756de78fc6714bf3baf402629c3904dd5dc55849f625459",
+      "active_transcription_sha256": "7c21e86ab5aa1c2b9d4ccdac58dddd10da9230be2e8ba56eb713ba19f295a1a8",
+      "seconds": 27.64,
+      "sources": [
+        "tcf-ss-a1-s20-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8833,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9402
+      },
+      "cross_recognizer_similarity": 0.8718,
+      "coverage": "fresh",
+      "review_earlier": true
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/chiens-en-laisse.mp3",
+      "active_audio_sha256": "d1297379b44f168f9deefff38a0fad33c3460d6c070da0c50c0a141cbc932af4",
+      "active_transcription_sha256": "1e1cc1366f1bd36b62ab36007e4cd3e3c49ed01048edbc64a49fd23615745902",
+      "seconds": 2.2,
+      "sources": [
+        "tcf-ss-a1-s25-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/interdiction-fumer-couloir.mp3",
+      "active_audio_sha256": "62b9dc8d7f67af2b52f44bb01b19a79f592327f93f75038baef5bdca9b8083de",
+      "active_transcription_sha256": "5c632f6bfea62e7636c1fb7bb947cf64a1af2f80d277bd25ba29d518526ca00d",
+      "seconds": 2.92,
+      "sources": [
+        "tcf-ss-a1-s25-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8333,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.8333,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+      "active_audio_sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e",
+      "active_transcription_sha256": "d2606b2ce75847cd6a5a3df80c57257dfb02438dafd3d1e95c9030eb5948b9e1",
+      "seconds": 2.92,
+      "sources": [
+        "tcf-ss-a1-s25-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8333,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.8333
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/nom-boite-aux-lettres.mp3",
+      "active_audio_sha256": "f053b3e044a179ecc9bde79c054dac569ec7b44673f6acea47223662a1b35807",
+      "active_transcription_sha256": "97b0c017a478b095e12421daea269fbe3e962b79866b40bc7c073dfdf3729e6c",
+      "seconds": 4.12,
+      "sources": [
+        "tcf-ss-a1-s25-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/calme-apres-22-heures.mp3",
+      "active_audio_sha256": "1aad1e6511e916c1a619ae52bffa82f5e69997d86c78b0c97ec0afc8403b3ccc",
+      "active_transcription_sha256": "73a57cc36c5674bc511d5dd033fe105449fa19e1c019191736e2ebae24954f9c",
+      "seconds": 3.72,
+      "sources": [
+        "tcf-ss-a1-s25-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/ponctualite-christian.mp3",
+      "active_audio_sha256": "ac6e88ee996940b70c5ff67c3fdd620cdd5cd4cb15f6efdba77eda716ad70a46",
+      "active_transcription_sha256": "43da1433604a2fe7540c090b0502c0bd7fd38eaea1d750c5312a56ecf057aba4",
+      "seconds": 17.08,
+      "sources": [
+        "tcf-ss-a1-s27-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.871,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.871,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/bonjour-votre-passeport-votre-1.mp3",
+      "active_audio_sha256": "4e6b85f624babded8887750887c971b92e0e5731d222debe307a026fe06e28a5",
+      "active_transcription_sha256": "df06e44786922c53208cf859252fbf90c9df12b7846a452404d8b4b74ccb9daf",
+      "seconds": 35.224,
+      "sources": [
+        "tcf-ss-a1-s33-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9664,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9664,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/tickets-metro-bordeaux.mp3",
+      "active_audio_sha256": "799865523d1c2802cb084a50f5dfc6a23db3dc47bbb3a4f7ebfd1400abd5d4e2",
+      "active_transcription_sha256": "c396c1305316a5e35cf681dcf061dea4008c6fa67a319d4947cdea099b501d0e",
+      "seconds": 13.96,
+      "sources": [
+        "tcf-ss-a1-s44-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9296,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9722
+      },
+      "cross_recognizer_similarity": 0.9014,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/repondeur-lucie-thomas.mp3",
+      "active_audio_sha256": "9ea8a58eba7a12f182febb9c35ba9bb1f7bf463011e3cf5ccf6fcfabb1fb2c52",
+      "active_transcription_sha256": "59a354f3b282b9018b8e3eb10ce5ec0b28f40e63abe6ee8a7bac2a2b28a05899",
+      "seconds": 22.664,
+      "sources": [
+        "tcf-ss-a1-s51-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8679,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.8679,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/rencontre-nina-felipe.mp3",
+      "active_audio_sha256": "69247621f42b8438e3c4931f5627180a59fb6b9d7ce080a61e8d60eb64393969",
+      "active_transcription_sha256": "ca786fb1893c270d444aed1124d452c1d832e484b1594f245fd1f7c64b4e0f55",
+      "seconds": 46.968,
+      "sources": [
+        "tcf-ss-a1-s51-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8382,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9565
+      },
+      "cross_recognizer_similarity": 0.8235,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/transports/mesdames-messieurs-train-destination.mp3",
+      "active_audio_sha256": "f8323d2ae48ebdf9a915d935317cfba4e966054e6ad344867e1b58ceff8f8b42",
+      "active_transcription_sha256": "c7f1e171fb3aade4e3c4423ee72bbf7950e2021fa007710d1c3e4b6611490126",
+      "seconds": 25.528,
+      "sources": [
+        "tcf-ss-a1-s53-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9231,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9804
+      },
+      "cross_recognizer_similarity": 0.9038,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_08-1.mp3",
+      "active_audio_sha256": "2f1fce9a42f64c1499b7853faa423dc4f6d5ed6ecacbb1097100728c6c4dbfc7",
+      "active_transcription_sha256": "9442ee7b97a9021fd8ddcb39cbd18ceaf227ddd7be0891ca2ba7b8bed71d3142",
+      "seconds": 12.44,
+      "sources": [
+        "delf-a1-2022-co-ex1-08"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.5263,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.8
+      },
+      "cross_recognizer_similarity": 0.4545,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-3.mp3",
+      "active_audio_sha256": "a9bca0062a0ebecaed792ded09f89993f2307e93fd5fb3efdf898ae1aa69d026",
+      "active_transcription_sha256": "658fb24ada1afe0728d45fdfb9ce43c4d497f7f3b02b1cdabd4cb2ce4d10800e",
+      "seconds": 12.168,
+      "sources": [
+        "delf-a1-2022-co-ex2-20"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_31-1.mp3",
+      "active_audio_sha256": "a9df27ecb1f5d84c1c210fb7c6c8bff17105f4ef7cda203fa4288d2cc38d0605",
+      "active_transcription_sha256": "5964cdeb58ce91a09234a3e6d7ff8eeff5c0319c6fba4ff6d08ad33f3e0f5d0d",
+      "seconds": 6.04,
+      "sources": [
+        "delf-a1-2022-co-ex3-31"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-1.mp3",
+      "active_audio_sha256": "e76e310ded35f2b0f8f1f4e4dace723947e05fe30bc0cf4a25229477f92fe98e",
+      "active_transcription_sha256": "37bc41586603872fb6017f4d59c5bd363611570c3a9fab43c2b20a267cadc109",
+      "seconds": 1.88,
+      "sources": [
+        "delf-a1-2022-co-74"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-4.mp3",
+      "active_audio_sha256": "dd0d5c23bf2ff4a54f2ddbd5cce200c33e4fa913838da6110c6fe394719159df",
+      "active_transcription_sha256": "55884c3579a45159378fdd77610b78b7edd04c247cd74ba36ebfb73a5b309650",
+      "seconds": 2.12,
+      "sources": [
+        "delf-a1-2022-co-74"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-1.mp3",
+      "active_audio_sha256": "760909e00a7f1805abc2add11285f24e3349ba9ddcc75b8bffaabf480f340b90",
+      "active_transcription_sha256": "f75a41c428d2176ccee40539b1ae6466579deaad5a80957ed7df38aec35510b5",
+      "seconds": 3.0,
+      "sources": [
+        "delf-a1-2022-co-75"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-2.mp3",
+      "active_audio_sha256": "c4940484efb2b075fba1641f4ee844e585d098b5bf4f1a02cfd2d4d98f677e86",
+      "active_transcription_sha256": "886156c4bee567317e8571a78549dcfeb1cbdc07f75ac455a31c6a6d5afd9f99",
+      "seconds": 3.4,
+      "sources": [
+        "delf-a1-2022-co-75"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_75-5.mp3",
+      "active_audio_sha256": "fd0629acdfdea9817f860a93c631e41dc499ec71b62982dfddf5ead074884fee",
+      "active_transcription_sha256": "30ac106b11f63b00dad84f890db99533a6dbec41a74e1ec86c12768251e17bf2",
+      "seconds": 3.4,
+      "sources": [
+        "delf-a1-2022-co-75"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-1.mp3",
+      "active_audio_sha256": "5ece6252253cf0967784a89772f402f54fefe2418860ee1a43755ebce02958ab",
+      "active_transcription_sha256": "4a1de1c66b094434298e9b7651cbfd96e7e5c1564fb139c8dab8f5109007ace0",
+      "seconds": 2.68,
+      "sources": [
+        "delf-a1-2022-co-78"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-2.mp3",
+      "active_audio_sha256": "fd61482463f8ea8049b3b66c4cdbe4151f3bb8b3a1b064a93ef17afb6bb07758",
+      "active_transcription_sha256": "4cfa3ba45d3326ad7395371a0b4ef9aa108194be0305ac0e325369c89e5a2c56",
+      "seconds": 2.84,
+      "sources": [
+        "delf-a1-2022-co-78"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-3.mp3",
+      "active_audio_sha256": "880fa071c90a71bb5eb0b9aad687beeb2f64ea779aa037bf71d3887bd02a031c",
+      "active_transcription_sha256": "8ad98c7a963f2cae9f598af9af894b8adb6a56c238f07e565c9d97e0e1b5990d",
+      "seconds": 2.44,
+      "sources": [
+        "delf-a1-2022-co-78"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-4.mp3",
+      "active_audio_sha256": "39a1fd1c06d44c65643c5ac23403ddf09f6a3857137eafbe2c8222d2ca750bf1",
+      "active_transcription_sha256": "798625ac24588a9575d9fd3233de2309c134eb1ae11ace7116b45107200b4d84",
+      "seconds": 2.52,
+      "sources": [
+        "delf-a1-2022-co-78"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_78-5.mp3",
+      "active_audio_sha256": "825847d2601abd931951e54ad301b1903bf5c35544ea3f36f3401a15fff89349",
+      "active_transcription_sha256": "72e40b7c776cca940e1401adaf0dff6a62e19fbe2b40d28d03f24c2738fc803b",
+      "seconds": 2.04,
+      "sources": [
+        "delf-a1-2022-co-78"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-1.mp3",
+      "active_audio_sha256": "89583e7e7f9f50451847d789b06488a82c5668f48cf2822d5626c17f6586c5f7",
+      "active_transcription_sha256": "41d023cf10948dd062bdee16c80e4f316ff0773a25846a2b1588e079a2e42ed1",
+      "seconds": 1.64,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-2.mp3",
+      "active_audio_sha256": "84f4316ee92cb2efd498a5c7a6f8589bc5143ebf35684bf3a86a7ad8ecde48b0",
+      "active_transcription_sha256": "dcd3b1f5112e62bfb9389c64f89e0a2adba5a296b32cdbb4eef7db86627b96be",
+      "seconds": 2.68,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-3.mp3",
+      "active_audio_sha256": "519ee9d2a36e4d5473a4f6af8a6eca4cb989ae63c3dc5b3cbdd88029cde2ff72",
+      "active_transcription_sha256": "b2dcfb1d78d0b99f156fd7ea47e18fb57f651f9bd2d24a26eee5e4ecc7716e58",
+      "seconds": 2.12,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-4.mp3",
+      "active_audio_sha256": "c0984b228a1a49a07dc0f4220cf14b624b76bd3eabab3c1cd718ff6f0a9daaf3",
+      "active_transcription_sha256": "0ca862a52cdb851c23d221b9287ceefab2633665f23a589b64ec002c27d858d5",
+      "seconds": 2.76,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-5.mp3",
+      "active_audio_sha256": "975022d76d81406804f62c0bd9efe5e155a8b2590dced9044605438f79873677",
+      "active_transcription_sha256": "aa50071d7a408644665e455905d5a00e51a00970720633dc65a96822127f48c0",
+      "seconds": 1.96,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-6.mp3",
+      "active_audio_sha256": "952a9c40d8b8da9f153323471f1a96eecd25b1b8d039a7bb3c1643f8129c5d2d",
+      "active_transcription_sha256": "9c4eb33028f308acc4820c20432137f76e1521a2b20931ff8a4787ba1bd12ff7",
+      "seconds": 2.76,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_81-7.mp3",
+      "active_audio_sha256": "01ce535e6d43d2f2d160bcc8b0d17d4a2a33080672cd0febfe5494b64813995d",
+      "active_transcription_sha256": "798625ac24588a9575d9fd3233de2309c134eb1ae11ace7116b45107200b4d84",
+      "seconds": 1.96,
+      "sources": [
+        "delf-a1-2022-co-81"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-2.mp3",
+      "active_audio_sha256": "69e9f69c779035393f0eca13b57b19a0d10a01fe64493dbfd17d608902a764ea",
+      "active_transcription_sha256": "355280ef055a9fdc5e91b3659b0804b3bb2b5038d4ad265689e7d7f36913c936",
+      "seconds": 3.32,
+      "sources": [
+        "delf-a1-2022-co-84"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9167,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9167,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-4.mp3",
+      "active_audio_sha256": "15475bed0f5f227f781ace94a6a17cfbc2ca7c353721a1818d7e873f35d77157",
+      "active_transcription_sha256": "c95e6521197414e4357dc07f65e22c7a0347219acb3ca8477a0fe6ae158c46d5",
+      "seconds": 2.36,
+      "sources": [
+        "delf-a1-2022-co-84"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.875,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.875,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3",
+      "active_audio_sha256": "dff5153fa33514f2a7b916ec8efea389984fbf561ecd6a3d76b5ef5e749544e4",
+      "active_transcription_sha256": "33234737f53c2d671239a8e368e8fb78c5bcd3a2911297e8e38265f825a1573d",
+      "seconds": 11.48,
+      "sources": [
+        "delf-a1-2022-co-85"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9455,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9259
+      },
+      "cross_recognizer_similarity": 0.9091,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-2.mp3",
+      "active_audio_sha256": "853e74e24466dc47339411986d3db51455b57114afefd29a8d26206aaf4f10c9",
+      "active_transcription_sha256": "a559a6c0caae20d89752b69fcdd6cf653fd5315311fe25e460df770a6c2b2ee8",
+      "seconds": 3.48,
+      "sources": [
+        "delf-a1-2022-co-ex5-55-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+      "active_audio_sha256": "1195a43e59b746551ffe59cb28405daf230dc931beabc7d1b8061c3b9665d5ec",
+      "active_transcription_sha256": "a641b79538195656f671e6cb0eb5bceed92166eaee7ef1a4dcf88a1ecf2351a5",
+      "seconds": 9.072,
+      "sources": [
+        "tcf-a2j-s2-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.7843
+      },
+      "cross_recognizer_similarity": 0.7843,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-4.mp3",
+      "active_audio_sha256": "a5ffb4f5638254a90553095ae6844bf55c53bd86a1878b7674b9e0a1d423504c",
+      "active_transcription_sha256": "fe11361fc6eb9a6f3186022b459171e967d82ac3b3bf537b93ef04ba5572f780",
+      "seconds": 13.24,
+      "sources": [
+        "tcf-a2-sb-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9286,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9455
+      },
+      "cross_recognizer_similarity": 0.9455,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/radio/les-annonces-publiques-6-5.mp3",
+      "active_audio_sha256": "375687c0e39d26c6a85fef5522bc1d411cf54ac80cd9ce12d588a5c07592049e",
+      "active_transcription_sha256": "0cb33ce325fbcf2aef34f0e8a9b2b1479ebc556d49c839496480c1f23d540db8",
+      "seconds": 11.4,
+      "sources": [
+        "tcf-a2-sb-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9434,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.963
+      },
+      "cross_recognizer_similarity": 0.9057,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/achats-annonce-2.mp3",
+      "active_audio_sha256": "feedf13d1ed10d923c3577f8cb12ac81158cdda5e36bf34b33f01d79ea090d14",
+      "active_transcription_sha256": "dceda5fdd604247654409b3ffc83b9ce99da6bfb0a1808d5983517f07906e7cf",
+      "seconds": 34.936,
+      "sources": [
+        "tcf-ss-a2-s2-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9231,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9231,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-2.mp3",
+      "active_audio_sha256": "4a3fd1c3756c7f01dba017bed0ae0390f5f08c059cdcf57bc5c6b311097339fa",
+      "active_transcription_sha256": "d2a7aa1493f933f71af07e26680e74c8c575acde3f9af9d3df572d6abc7c8305",
+      "seconds": 9.08,
+      "sources": [
+        "tcf-ss-a2-s2-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9388,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9388,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
+      "active_audio_sha256": "d47528b9b67765a7dc9cba6d16de10df3c3cab56b8afc3b26d2d5382676afcc7",
+      "active_transcription_sha256": "ac97ab08d130f18b2857b4675a87cf26144b424c307c255a38281d780f5a6398",
+      "seconds": 10.68,
+      "sources": [
+        "tcf-ss-a2-s3-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8852,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.623
+      },
+      "cross_recognizer_similarity": 0.5667,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
+      "active_audio_sha256": "404f5842bd61242e92b5c2311ebf29212eade0a94667553a4c657ed019a5cd8f",
+      "active_transcription_sha256": "4bcab1e815455e4ee23a75fa473f2fdd4fb1a92c90198aabc67b239ae56d15da",
+      "seconds": 12.76,
+      "sources": [
+        "tcf-ss-a2-s3-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8788,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.5484
+      },
+      "cross_recognizer_similarity": 0.4839,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/travail/04-travail-confirmation-cours-d-informatique.mp3",
+      "active_audio_sha256": "7d71c4c78e115a0d900df6845867933f06d01f93e85cd3558f6de59ea517b4f1",
+      "active_transcription_sha256": "317f7886e810dadea4baeff4afa5553a6d2b00ecbbf5344258b6b4acb29ca3f8",
+      "seconds": 36.824,
+      "sources": [
+        "tcf-ss-a2-s6-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8671,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.975
+      },
+      "cross_recognizer_similarity": 0.8439,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/ecole/26-école-oublier-livre-mathématiques.mp3",
+      "active_audio_sha256": "4abe019f89d7e19fa7e8a74328a25046e1d3c00f57ad2a5a793c1869dd42e1ab",
+      "active_transcription_sha256": "7d63d60ffdc387ddb9efa7b232b551b9ce9d615f8e3dddca3348713275aee07d",
+      "seconds": 11.0,
+      "sources": [
+        "tcf-ss-a2-s8-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9508,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9508,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-4.mp3",
+      "active_audio_sha256": "636e00d62d5beaca191257929734656077f3489b56c39a604ea8c0933ff994c9",
+      "active_transcription_sha256": "9bf59cc144946010412d92b1b02297131cd2317c73070a0a7d71efc7c349b619",
+      "seconds": 13.88,
+      "sources": [
+        "tcf-ss-a2-s10-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9275,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9275,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/alors-isabelle-week-end-2-1.mp3",
+      "active_audio_sha256": "0fa24db1a61c8b6481929dc5ba952eed6cc3136521f4d2d61016740b11e799d4",
+      "active_transcription_sha256": "8e8235dbf8afa798678fb627c6e4e72dd81c78d391e05230aa99728cf2b5e771",
+      "seconds": 9.32,
+      "sources": [
+        "tcf-ss-a2-s14-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.4815
+      },
+      "cross_recognizer_similarity": 0.4815,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-1.mp3",
+      "active_audio_sha256": "f707590f932b3fadec57064109026a4055098c3687d35173d49a42917eb15335",
+      "active_transcription_sha256": "d73a48dae8d62a0c06a70450e4df652963ba27026930b34d52ea0a6f77a3c698",
+      "seconds": 14.36,
+      "sources": [
+        "tcf-ss-a2-s15-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9459,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9459,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-2.mp3",
+      "active_audio_sha256": "a76752313665cfe950dd93f02a391f90b3f9eb4ff071976d026c6d066805fc2b",
+      "active_transcription_sha256": "6a5d9675f3538ee0f53bbe3590cfb4f5f67814fce0aa672d670c3570f49c8121",
+      "seconds": 13.928,
+      "sources": [
+        "tcf-ss-a2-s15-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9474,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9474,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-1.mp3",
+      "active_audio_sha256": "d55cb50ad57dedda1ecba87c4f914098cc8a09e72efccbdcb6c8ce8c7247e9d9",
+      "active_transcription_sha256": "ee194a1831261a44a8600da96265b5c084fcaebf4023a1b53c81ad5dbf71fea9",
+      "seconds": 13.32,
+      "sources": [
+        "tcf-ss-a2-s20-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.95,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.95
+      },
+      "cross_recognizer_similarity": 0.9,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/elisa-peux-me-preter-2.mp3",
+      "active_audio_sha256": "03c5a0f8e04004f34b2cb397eaee6db7a017c9b1743fa442833749e000ccf90a",
+      "active_transcription_sha256": "69ad302d4eec595b113aa16971a0357e593f6a84f3cbc9830e2b573c8c9ee191",
+      "seconds": 12.92,
+      "sources": [
+        "tcf-ss-a2-s21-co-1"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9333,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.3636
+      },
+      "cross_recognizer_similarity": 0.3019,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/maison/nourriture-conversation-2-1.mp3",
+      "active_audio_sha256": "5820021bc281b74f9809b5fdaa888075d87e12e37b6aea043456e02059c29af8",
+      "active_transcription_sha256": "f56afe0cf3a4cd9949c0b5362c8298679fdc942f90c6cd3dec2712c08e4ec8f3",
+      "seconds": 9.8,
+      "sources": [
+        "tcf-ss-a2-s24-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9118,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9394
+      },
+      "cross_recognizer_similarity": 0.8485,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/maison/nourriture-conversation-2-2.mp3",
+      "active_audio_sha256": "35d2f74f0ba9ee00c46297fc99082699706ab668370ae052c2c9a524e0bd0e3f",
+      "active_transcription_sha256": "96086d299e6ee7ba9b9ba00f81c7ea93f968514ef86966657efb3ed7938a045f",
+      "seconds": 14.76,
+      "sources": [
+        "tcf-ss-a2-s24-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9714,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9714,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-2.mp3",
+      "active_audio_sha256": "ec35eacf575defaf211b375dab32a58c6cd6c5f346937585ada91da245fb5aa0",
+      "active_transcription_sha256": "d52a63ff39d4a8e8c3ea005f9ee1f74b9cc492adf7a2307b73188e9523f6f5c6",
+      "seconds": 11.24,
+      "sources": [
+        "tcf-ss-a2-s24-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
+      "active_audio_sha256": "f6f4dd9a87a8ce4f50f81696a8945f9f35463f17f7f5c138a3cc8cf12b6ac9b0",
+      "active_transcription_sha256": "b2d7674c326054e3e341da0f567aaddbd476aae60ddd318ac84f364951a478c2",
+      "seconds": 12.856,
+      "sources": [
+        "tcf-ss-a2-s24-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9474,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.6849
+      },
+      "cross_recognizer_similarity": 0.6849,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-4.mp3",
+      "active_audio_sha256": "a59d896a6bf13969a64f94f35506fb3327898d6f4290676be6417e84c29fa176",
+      "active_transcription_sha256": "47d051e6536597c71580ea47ff1df01fffed0d64ceef203f8510d8f9244333a7",
+      "seconds": 11.64,
+      "sources": [
+        "tcf-ss-a2-s48-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9655,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9655,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-2-1.mp3",
+      "active_audio_sha256": "ddb27b357c2ae0006b4a94d6fd905cab24a93f69fb27c0c7bfa2077f3cdc7fe4",
+      "active_transcription_sha256": "7f55a02b1be97a375970885690e3fe21858a8a66d4821e1429f913576805ff6b",
+      "seconds": 12.68,
+      "sources": [
+        "tcf-ss-a2-s49-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.975,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.975,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/16-magasin-annonce-les-étages.mp3",
+      "active_audio_sha256": "2c6eb358aeaf400e75264ad8cc3cbbc01a5dea5537cc9b2b861c68ab39234c23",
+      "active_transcription_sha256": "a4bc2540d3abb5922d3c25d10bc84f5fc08b14c7ab1ed4d73c068e8b650cec7f",
+      "seconds": 14.2,
+      "sources": [
+        "tcf-ssx-a2-annonce-4-5-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9667,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9667,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.3.mp3",
+      "active_audio_sha256": "20726fc4d0cc75c876a6fbd1f7ae07cc42a01c13f2503b4665026bcca6cccaea",
+      "active_transcription_sha256": "94e8413f66fd2d0d8d92ed9ab22d01ec3b2129f138d9f65b7e654163a4d40032",
+      "seconds": 9.72,
+      "sources": [
+        "tcf-ssx-a2-annonce-2-3-co-2"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.92,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9583
+      },
+      "cross_recognizer_similarity": 0.92,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-2.mp3",
+      "active_audio_sha256": "9d940964d879c6a8491d03b0aa42ab658c639b6c44518a905eec8f5db89c6a62",
+      "active_transcription_sha256": "023fb539a5f2051c416c5d93e3e1ee693c1c934153e995293620b20610e15c9e",
+      "seconds": 12.16,
+      "sources": [
+        "tcf-ssx-a2-conversation-32-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8615,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9697
+      },
+      "cross_recognizer_similarity": 0.8308,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/transports/moyen-a2__radio-14.3.mp3",
+      "active_audio_sha256": "f26d05aed2298bd01739d86fa75064b0ba88f6f330a1ebe8e07698d665e8e1dc",
+      "active_transcription_sha256": "1577f1240604bae81b829350998424fa2682ca4545f1f0ac4de49be3611c3a88",
+      "seconds": 14.28,
+      "sources": [
+        "tcf-ssx-a2-radio-14-3-co-3"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 0.9737
+      },
+      "cross_recognizer_similarity": 0.9737,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/transports/02-transport-le-bus-va-à-la-gare.mp3",
+      "active_audio_sha256": "15668219967ad1b09ebe9c154ab8266bfd397f4155d33c8be0980c986d1ddb14",
+      "active_transcription_sha256": "58963e2f6b537f93ac067734a12540e134e8a8f077a6cb743cebffb74ed4f347",
+      "seconds": 13.24,
+      "sources": [
+        "tcf-ssx-a2-transport-bus-pour-la-gare-co-4"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.9438,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.9438,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_43-2.mp3",
+      "active_audio_sha256": "23d8122988e1b739045192593791388c12a9aaefab9e06cf642738f85d16e18c",
+      "active_transcription_sha256": "b0c82ac1ea41bc6ed25ec5c59be0fcee5e14da68a5125a12b9fd15850b2fcda8",
+      "seconds": 16.024,
+      "sources": [
+        "delf-a2-2021-co-ex4-43"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 1.0,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 1.0,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_43-4.mp3",
+      "active_audio_sha256": "4f0d315d8dfe89ec6ae6c868e43a2262c25e2f8afea7e289a7923ef2a26b3315",
+      "active_transcription_sha256": "aa5dc314c89366301fddf76c5b14b74e9fc5e5c57d675c72892cfec81425dc1e",
+      "seconds": 11.32,
+      "sources": [
+        "delf-a2-2021-co-ex4-43"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.8852,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.8852,
+      "coverage": "fresh",
+      "review_earlier": false
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_46-1.mp3",
+      "active_audio_sha256": "3479ff2b6ce9ff305539659caf8e18be4d576231e905883dc71450832a69a528",
+      "active_transcription_sha256": "082a112ac4d2c87e8709274e78ce2209fe5b3ec821448f6063052553bf939ebc",
+      "seconds": 10.84,
+      "sources": [
+        "delf-a2-2021-co-ex4-46"
+      ],
+      "scores": {
+        "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8": 0.931,
+        "nemo-parakeet-tdt-0.6b-v3-int8": 1.0
+      },
+      "cross_recognizer_similarity": 0.931,
+      "coverage": "fresh",
+      "review_earlier": false
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/achat-cerises.mp3",
+      "active_audio_sha256": "c51462043d5e0ee106952a6a125680d1bfc72a3d6fb5b4147d073e5eb915309b",
+      "active_transcription_sha256": "7e9c8ed6b3c75d043b3a9ece58f5013b339008783f293d8bc91dee9f322b4717",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Whisper confirme 6,40 € le kilo et 500 g. Les deux autres moteurs segmentent la valeur répétée de façon différente. Les trois questions sont cohérentes."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/rangement-velos-local.mp3",
+      "active_audio_sha256": "343d704e89a729339653ac3a2a2f966b7499ef25751c9d0e889594a8b081f25e",
+      "active_transcription_sha256": "d2606b2ce75847cd6a5a3df80c57257dfb02438dafd3d1e95c9030eb5948b9e1",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Les moteurs produisent « ranger ». La forme écrite « rangez » correspond à la consigne adressée au public et se prononce de la même façon. Les réponses sur les vélos et le local concordent."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_08-1.mp3",
+      "active_audio_sha256": "2f1fce9a42f64c1499b7853faa423dc4f6d5ed6ecacbb1097100728c6c4dbfc7",
+      "active_transcription_sha256": "9442ee7b97a9021fd8ddcb39cbd18ceaf227ddd7be0891ca2ba7b8bed71d3142",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Whisper retrouve les dix chiffres du numéro actif dans le même ordre, ainsi que Sylvain et la demande de rappeler. Les autres moteurs fusionnent plusieurs chiffres ou ne les interprètent pas."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_85-4.mp3",
+      "active_audio_sha256": "dff5153fa33514f2a7b916ec8efea389984fbf561ecd6a3d76b5ef5e749544e4",
+      "active_transcription_sha256": "33234737f53c2d671239a8e368e8fb78c5bcd3a2911297e8e38265f825a1573d",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Whisper restitue les 30 minutes d’attente, le billet à 68 € et le second départ à 11 h 58. Le CTC sépare « cinquante » et « huit ». Le corrigé concorde."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/magasins-3-1.mp3",
+      "active_audio_sha256": "d47528b9b67765a7dc9cba6d16de10df3c3cab56b8afc3b26d2d5382676afcc7",
+      "active_transcription_sha256": "ac97ab08d130f18b2857b4675a87cf26144b424c307c255a38281d780f5a6398",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Le CTC et Whisper confirment le jeu anniversaire, les deux questions et le bulletin à l’accueil. Le nom de la librairie est segmenté en « Les Pages » ou « Lepage » et ne fait l’objet d’aucun corrigé."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
+      "active_audio_sha256": "404f5842bd61242e92b5c2311ebf29212eade0a94667553a4c657ed019a5cd8f",
+      "active_transcription_sha256": "4bcab1e815455e4ee23a75fa473f2fdd4fb1a92c90198aabc67b239ae56d15da",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Les deux lectures françaises retrouvent les tomates, les carottes et le rayon boulangerie. La phrase finale et le CTC soutiennent la dégustation de pains spéciaux. Le passage anglais de Parakeet est une erreur de reconnaissance."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.3.mp3",
+      "active_audio_sha256": "20726fc4d0cc75c876a6fbd1f7ae07cc42a01c13f2503b4665026bcca6cccaea",
+      "active_transcription_sha256": "94e8413f66fd2d0d8d92ed9ab22d01ec3b2129f138d9f65b7e654163a4d40032",
+      "decision": "corriges_confirmes",
+      "method": "contre-lecture de trois reconnaissances du MP3 actif",
+      "note": "Whisper et le CTC confirment 15 h 30 pour la fermeture exceptionnelle. Il reste quinze minutes dans l’annonce. La réponse horaire de Parakeet perd une syllabe."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_34-3.mp3",
+      "active_audio_sha256": "012cf1aa9f68a4f395fee6c73eade8d7577fbc5edd6eef0092acb7ee06c66ea3",
+      "decision": "corriges_confirmes",
+      "method": "relecture de la reconnaissance archivée liée au fichier actif",
+      "note": "Les trois moteurs retrouvent mercredi, les étiquettes rouges et le troisième DVD offert. Le nom « Galeries Jitrouvetout » est la graphie éditoriale de « j’y trouve tout »."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/bonjour-cherche-appartement-2.mp3",
+      "active_audio_sha256": "decf157495b12f2842e2c98574bb356f00bbb85d48dc3751b2d07a19aa39ee1b",
+      "decision": "corriges_confirmes",
+      "method": "relecture de la reconnaissance archivée liée au fichier actif",
+      "note": "Le tiret de dialogue précède « 3 chambres » et ne marque pas un nombre négatif. Les deux parents, les deux enfants et la préférence pour trois chambres concordent."
+    },
+    {
+      "reference": "/lib/audio/tcf/co/transports/bonjour-ici-hotel-beaulieu.mp3",
+      "active_audio_sha256": "8efe7dcedf11614598f49b523a95b603fb27fd1cba068c7a8106ddc9fae85186",
+      "decision": "corriges_confirmes",
+      "method": "relecture de la reconnaissance archivée liée au fichier actif",
+      "note": "Le prix de 7 euros 50 correspond à 7,50 €. La différence de longueur des décimales à la reconnaissance laisse le montant inchangé."
+    }
+  ]
+}

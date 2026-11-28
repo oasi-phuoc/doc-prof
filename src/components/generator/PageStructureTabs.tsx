@@ -1,6 +1,7 @@
 import { hasLockedItems } from '@/components/generator/libre/flat-items'
 import { TabRemoveButton } from '@/components/generator/TabRemoveButton'
 import { removePageBlock } from '@/math/page-model'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import type { Dispatch, SetStateAction } from 'react'
 import type { ExerciseBlock, PageConfig, WorksheetPage } from '@/math/types'
 
@@ -39,12 +40,13 @@ export function PageStructureTabs({
   addExerciseOnPage,
   removePage,
 }: PageStructureTabsProps) {
+  const placement = pages[pageIndex]?.domain === 'tpf' && pages.some((page) => tpfPlacementTask(page.exerciseType))
   return (
     <>
             <div className="panel-title">
               <h3>Paramètres de l’activité</h3>
             </div>
-            <div className="mode-toggle is-tabs page-tabs" role="tablist" aria-label="Feuilles">
+            <div className={`mode-toggle is-tabs page-tabs${activeSheet?.domain === 'jeux' ? ' is-card-tabs' : ''}`} role="tablist" aria-label="Feuilles">
               {worksheets.map((sheet, index) => {
                 if (sheet.isContinuation) return null
                 const config = sheet.configIndex ?? index
@@ -53,7 +55,10 @@ export function PageStructureTabs({
                   ? sheet.title.split('—').pop()?.trim()
                   : undefined
                 const activeConfig = activeSheet?.configIndex ?? safeSheetIndex
-                const tabLabel = isJeux && sideLabel ? sideLabel : isJeux ? String(index + 1) : String(config + 1)
+                const lotoGrid = sheet.items[0]?.gameBoard?.panels?.[0]?.title
+                const lotoPage = lotoGrid ? Math.ceil(Number(lotoGrid.match(/\d+$/)?.[0]) / 3) : 0
+                const cue = lotoPage > 0 && sideLabel ? `${sideLabel} ${lotoPage}` : sideLabel
+                const tabLabel = isJeux && cue ? cue : isJeux ? String(index + 1) : String(config + 1)
                 const active = isJeux ? safeSheetIndex === index : config === activeConfig
                 return (
                 <button
@@ -64,10 +69,10 @@ export function PageStructureTabs({
                     setSheetIndex(index)
                     setBlockIndex(0)
                   }}
-                  aria-label={isJeux && sideLabel ? sideLabel : `Page ${config + 1}`}
+                  aria-label={isJeux && cue ? cue : `Page ${config + 1}`}
                 >
                   <span className="tab-number">{tabLabel}</span>
-                  {!isTpmLike &&
+                  {!isTpmLike && !placement &&
                   pages.length > 1 &&
                   (isJeux ? safeSheetIndex === index : config === pageIndex) ? (
                     <TabRemoveButton
@@ -79,14 +84,16 @@ export function PageStructureTabs({
                 )
               })}
             </div>
-            {isTpmLike ? null : (
+            {isTpmLike || placement ? null : (
               <div className="page-structure-actions">
                 <button className="button secondary" type="button" onClick={addPage}>
                   + Page
                 </button>
-                <button className="button secondary" type="button" onClick={addExerciseOnPage}>
-                  + Exercice
-                </button>
+                {pages[pageIndex]?.domain !== 'acm' && pages[pageIndex]?.domain !== 'société' ? (
+                  <button className="button secondary" type="button" onClick={addExerciseOnPage}>
+                    + Exercice
+                  </button>
+                ) : null}
               </div>
             )}
             {pageExerciseBlocks.length > 1 ? (

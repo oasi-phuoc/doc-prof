@@ -42,8 +42,9 @@ import {
 import { QUAD_SHAPE_LABELS } from '@/math/mesures'
 import { TcfCoAudioSlotsPicker, tcfCoAudioSlotCount } from '@/tcf/co-audio-slots'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
-import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
+import { TCF_B1_DOMAIN, tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
 import { TcfTaggedExercisePicker, tcfTaggedSlotKind } from '@/tcf/tagged-picker'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import type { TcfNiveau } from '@/tcf/types'
 import type { Dispatch, SetStateAction } from 'react'
 import type {
@@ -85,7 +86,7 @@ export type DomainThemeTypeFieldsProps = {
     | ReturnType<typeof resolveSoutienSelection>
     | ReturnType<typeof resolveAlphaSelection>
   activeBlock: ExerciseBlock
-  changeTopic: (topic: string) => void
+  changeTopic: (topic: string, typeId?: string) => void
   available: Array<{ id: string; label: string }>
   isSoutienFr: boolean
   isAlphabetisation: boolean
@@ -208,9 +209,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
       item.layout !== 'theory' && !item.noPoints && item.points == null)))
   const selectedGrammarCoAudio = grammarCoAudios.find(entry => entry.exercise.id === activeBlock.grammarCoAudioId) ?? grammarCoAudios[0]
   const availableTrueFalse = selectedGrammarCoAudio ? grammarCoStatements(selectedGrammarCoAudio.exercise).length : 0
+  const placementTask = activePage.domain === 'tpf' ? tpfPlacementTask(activeBlock.exerciseType) : undefined
   return (
     <>
-              {isJeuxDomain || isCalliDomain ? null : (
+              {activePage.domain === 'acm' || activePage.domain === 'société' || isJeuxDomain || isCalliDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Mode de la fiche</b>
                 <div className="mode-toggle">
@@ -436,11 +438,15 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               ) : null}
               {isTpmLike || visibleTypeChoices.length <= 1 ? null : (
               <SelectBox
-                label={isTcf ? 'Exercice' : 'Type d’exercice'}
+                label={activePage.domain === 'acm' ? 'Activité' : isTcf ? 'Exercice' : 'Type d’exercice'}
                 value={activeBlock.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type || value === activeBlock.exerciseType) return
+                  if (placementTask && tpfPlacementTask(value)) {
+                    changeTopic(type.topic, value)
+                    return
+                  }
                   const editedReference = (logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) &&
                     (activeBlock.libreItems?.length || activeBlock.logistiqueEvaluation?.story)
                   const editedFigure = isTransformationExercise(activeBlock.exerciseType) && activeBlock.coordLibre && activeBlock.coordMarks?.length
@@ -561,7 +567,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   <option value="true-false">Vrai ou faux</option>
                 </SelectBox>
               ) : null}
-              {libreMode && ceSupport && !ceShowsImage ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
+              {(libreMode && ceSupport && !ceShowsImage) || placementTask?.competence === 'CE' ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
               {activePage.domain === 'tcf-csc' && ceCanUseImage ? (
                 <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
                   onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />
@@ -569,6 +575,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
                 <TcfCoAudioSlotsPicker
                   niveau={tcfNiveau}
+                  sameLevel={activePage.domain === TCF_B1_DOMAIN}
                   typeId={activeBlock.exerciseType}
                   slots={activeBlock.tcfAudioSlots}
                   questionCount={activeBlock.tcfQuestionCount}
@@ -576,7 +583,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isTcf && tcfTaggedSlotKind(activeBlock.exerciseType) != null ? (
+              {isTcf && tcfTaggedSlotKind(activeBlock.exerciseType, tcfNiveau) != null ? (
                 <TcfTaggedExercisePicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}
@@ -586,9 +593,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isTcf &&
+              {isTcf && !placementTask &&
               tcfCoAudioSlotCount(activeBlock.exerciseType) == null &&
-              tcfTaggedSlotKind(activeBlock.exerciseType) == null ? (
+              tcfTaggedSlotKind(activeBlock.exerciseType, tcfNiveau) == null ? (
                 <TcfBankPicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}
@@ -598,7 +605,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {activePage.domain === 'santé' ||
+              {activePage.domain === 'acm' ||
+              activePage.domain === 'santé' ||
               isReperage ||
               isPhraseDomain ||
               isJeuxDomain ||

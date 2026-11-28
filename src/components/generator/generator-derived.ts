@@ -22,6 +22,7 @@ import {
   vocabulaireTopics,
 } from '@/math/catalog'
 import { isTpfFamilyDomain } from '@/tcf/catalog'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import { blockPointsTotal, isTpmDomain } from '@/tpm/test'
 import {
   ALPHA_LETTER_KINDS,
@@ -101,6 +102,11 @@ export function typeChoicesForBlock(
   block: Pick<ExerciseBlock, 'exerciseType' | 'topic' | 'track'>,
 ) {
   if (isLogistiqueDomain(domain)) return logistiqueTypeChoices(block.topic, block.exerciseType)
+  if (isTpfFamilyDomain(domain)) {
+    const types = typesForTopic(block.topic)
+    const placement = domain === 'tpf' && Boolean(tpfPlacementTask(block.exerciseType))
+    return types.filter((type) => Boolean(tpfPlacementTask(type.id)) === placement)
+  }
   if (domain === 'soutien-fr') {
     const bankId =
       parseSoutienType(block.exerciseType)?.bankId ??

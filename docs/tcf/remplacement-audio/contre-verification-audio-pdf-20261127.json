@@ -1,0 +1,1286 @@
+{
+  "date": "2026-11-27",
+  "method": "Comparaison éditoriale de trois reconnaissances exécutées localement sur chaque MP3 actif avec les écarts archivés du PDF et les corrigés en vigueur.",
+  "pdf_evidence": "Comparaison à l’extraction archivée des écarts. Les PDF originaux de ce registre n’étaient pas disponibles dans le dossier de reprise.",
+  "human_audio_listening_performed": false,
+  "previous_review": "docs/tcf/remplacement-audio/revue-rapprochements-pdf-20261127.json",
+  "historical_pdf_register": "docs/tcf/remplacement-audio/verification-pdf-fournis-20261111.json",
+  "models": [
+    {
+      "name": "faster-whisper",
+      "version": "1.2.1",
+      "model": "Systran/faster-whisper-small",
+      "language": "fr",
+      "model_sha256": {
+        "model.bin": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671",
+        "config.json": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828",
+        "tokenizer.json": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab",
+        "vocabulary.txt": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+      }
+    },
+    {
+      "name": "sherpa-onnx",
+      "version": "2.0.3",
+      "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+      "language": "multilingue",
+      "model_sha256": {
+        "encoder.int8.onnx": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479",
+        "decoder.int8.onnx": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5",
+        "joiner.int8.onnx": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98",
+        "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+      }
+    },
+    {
+      "name": "sherpa-onnx",
+      "version": "2.0.3",
+      "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+      "language": "multilingue",
+      "model_sha256": {
+        "model.int8.onnx": "85451f03e004d607f86f4d6291ca55a8ca984d7e32dedc828cebe7fe61447511",
+        "tokens.txt": "29effa220ddd8fcae96d2d6c78c2e24de4cd9dfaa4ceb86d54dc3d22259c1f93"
+      }
+    }
+  ],
+  "summary": {
+    "reviewed": 10,
+    "version_differences_confirmed": 6,
+    "cut_scope_confirmed": 1,
+    "spellings_resolved": 3,
+    "transcripts_corrected": 3,
+    "corrected_answers": 1,
+    "questions_reviewed": 64,
+    "records_to_confirm": 0,
+    "audio_files_modified": 0
+  },
+  "review": [
+    {
+      "reference": "/lib/audio/tcf/co/fetes/02-fêtes_anniversaire-de-Gerald.mp3",
+      "exercise": "tcf-a1-s3-co-1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "00204a08cb10f5ce1645633c28b0aa2f49cb7dd80463b8167f50d7ca1c7ee05e",
+      "active_transcription_before_sha256": "e8eed22862eee943cacd5633c4df77d7870dc7c72d82d8de5b2d126b87f6dfd3",
+      "active_transcription_after_sha256": "2159d0d2427fe7ab94b0530c02bf7a6bfed94cc89ee9c843264270c7090d3bfd",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 72,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "b3856240467836de1418636f438b5a089d11b9b05d7968ea62a463dfe56ab37a",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "charline",
+            "official": "charlene"
+          },
+          {
+            "kind": "delete",
+            "current": "euros",
+            "official": ""
+          }
+        ]
+      },
+      "prior_decision": "graphie_a_confirmer",
+      "decision": "graphie_retenue_selon_pdf",
+      "reason": "Le texte archivé donne « Charlène ». Parakeet rend Charlène et le CTC donne Charlèine. Whisper rend Charline. Charlène est retenu d’après le PDF et le rapprochement avec le passage sonore. Le prénom n’est pas épelé et ne figure dans aucun corrigé.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            7,
+            12
+          ],
+          "excerpt": "? Charline et Anthony m 'accompagnent."
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            7,
+            12
+          ],
+          "excerpt": "anniversaire? Charlène et Anthony m'accompagn"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            7,
+            12
+          ],
+          "excerpt": "anniversaire? Charlèine et Anthony m'accompagnent"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-a1-s3-co-1#1",
+          "enonce": "Où Gérald propose-t-il de sortir ?",
+          "before_answer": "Au restaurant",
+          "active_answer": "Au restaurant",
+          "active_semantic_sha256": "43101053a33ba4b93565f21ad934139fe6bbeff6528bf671f6ff32333f089cbd"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#2",
+          "enonce": "Quel événement Gérald veut-il fêter ?",
+          "before_answer": "Son anniversaire",
+          "active_answer": "Son anniversaire",
+          "active_semantic_sha256": "56b02f4b5f7de25f44e4a2967a06da867e22f5f5b07c442c02e18614cd703aca"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#3",
+          "enonce": "Quel jour a lieu la sortie ?",
+          "before_answer": "Mercredi",
+          "active_answer": "Mercredi",
+          "active_semantic_sha256": "cd94b2f4dc860994eb28789d8d420c443defdc41d3ef69586284f453e8b159d4"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#4",
+          "enonce": "À quelle heure est le rendez-vous au restaurant ?",
+          "before_answer": "À 20 h",
+          "active_answer": "À 20 h",
+          "active_semantic_sha256": "1c083573455f8b50b7ddd4d4120a74f9cf8a9f30230648697e19ee4a9d40d1ba"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#5",
+          "enonce": "À quelle heure Gérald propose-t-il de venir chercher son invité ?",
+          "before_answer": "À 19 h 40",
+          "active_answer": "À 19 h 40",
+          "active_semantic_sha256": "2aa602aa3c4de1a34d7a3ee591248845d8b5a2e5e08913908f5c5fc3975ffb42"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#6",
+          "enonce": "Combien coûte le menu ?",
+          "before_answer": "16 euros",
+          "active_answer": "16 euros",
+          "active_semantic_sha256": "2413c1ae9f3d6ef6daf04f79bde6e11f4f5f04baa2589aeb2e38e1179082bcc8"
+        },
+        {
+          "key": "tcf-a1-s3-co-1#7",
+          "enonce": "Quand faut-il rappeler Gérald ?",
+          "before_answer": "Aujourd’hui",
+          "active_answer": "Aujourd’hui",
+          "active_semantic_sha256": "89832ce310d838624d0cf6588ca1abb5bf8ff98e9fa7b018948685182672079d"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
+      "exercise": "tcf-ss-a1-s9-co-3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "17019e4e5c1f9e78c63ea24b0e074251a60e91e97f103638865466a3637086ff",
+      "active_transcription_before_sha256": "555e94432a52db5760a2674293baaf8ba6f7ca4af881ae2feb460254669e6be7",
+      "active_transcription_after_sha256": "555e94432a52db5760a2674293baaf8ba6f7ca4af881ae2feb460254669e6be7",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 5,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "006923d15a7e7b42d5b7c4a9bf3b1c73ec963df7b758143fc203519d496803cc",
+        "differences": [
+          {
+            "kind": "delete",
+            "current": "je suis en retard",
+            "official": ""
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "finalement"
+          },
+          {
+            "kind": "delete",
+            "current": "nouveau",
+            "official": ""
+          },
+          {
+            "kind": "delete",
+            "current": "numero",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "en direction du centre commercial des fontaines",
+            "official": "et"
+          },
+          {
+            "kind": "delete",
+            "current": "nouveau",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "le cinema",
+            "official": "il"
+          },
+          {
+            "kind": "delete",
+            "current": "est ce que",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "a tout a l heure bisous",
+            "official": "je ramene des bonbons bises"
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "La piste d’Alex parle d’un retard, du nouveau cinéma et du centre commercial des Fontaines. Whisper et le CTC lisent bien le 16. Le message se termine par « À tout à l’heure, bisous ». Le PDF donne une autre fin sur des bonbons. Les neuf réponses reprennent la piste active.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            11,
+            39.624
+          ],
+          "excerpt": "cinéma. Prends le bus numéro 16 en direction du centre commercial des Fontaines. Descends à l 'arrêt, nouveau cinéma. Le cinéma est rue de la gare au numéro 3. Est -ce que tu peux acheter les tickets s 'il te plaît ? La place coûte 7 euros. A tout à l 'heure. Bisous."
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            11,
+            39.624
+          ],
+          "excerpt": "cinéma. Prends le bus numéro 1, en direction du centre commercial des fontaines. Descends à l'arrêt Nouveau Cinéma. Le cinéma est rue de la Gare, au numéro 3. Est-ce que tu peux acheter les tickets, s'il te plaît ? La place coûte 7 euros. A tout à l'heure. Bisous."
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            11,
+            39.624
+          ],
+          "excerpt": "eau cinéma. Prends le bus n seize, en direction du centre commercial des Fontaines. Descends à l'arrêt NouvVeau Cinéma. Le cinéma est rue de la Gare, au numéro trois. Est ce que tu peux acheter les tickets, s'il te plaît? La place coûte sept euros. A tout à l'heure. Bizou"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a1-s9-co-3#1",
+          "enonce": "Pourquoi Alex ne peut-il pas passer chez son ami ?",
+          "before_answer": "Il est en retard",
+          "active_answer": "Il est en retard",
+          "active_semantic_sha256": "7e3f199d99c5295349d36594dbb86605af15c5224053db565124dfada1082348"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#2",
+          "enonce": "Où Alex donne-t-il rendez-vous ?",
+          "before_answer": "Au nouveau cinéma",
+          "active_answer": "Au nouveau cinéma",
+          "active_semantic_sha256": "abe994a3c9f21b5209e581ea2a3f4830fafa1c38db67fdd4e1b7895a17515c14"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#3",
+          "enonce": "Quelle ligne de bus faut-il prendre ?",
+          "before_answer": "La ligne 16",
+          "active_answer": "La ligne 16",
+          "active_semantic_sha256": "68ff52cf71bc7554691d44c6ebfb36342b87af87d105a8bbd5040fbd3bafb436"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#4",
+          "enonce": "Dans quelle direction faut-il prendre le bus ?",
+          "before_answer": "Le centre commercial des Fontaines",
+          "active_answer": "Le centre commercial des Fontaines",
+          "active_semantic_sha256": "025bcbb92ebe0f87d2a85b77213212955d59f1ab001eb7d56d28ec35b2360149"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#5",
+          "enonce": "À quel arrêt faut-il descendre ?",
+          "before_answer": "Nouveau Cinéma",
+          "active_answer": "Nouveau Cinéma",
+          "active_semantic_sha256": "a84a6859990c2e427361051461ab0e33e7c6f14020d174130408b8ea951073fb"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#6",
+          "enonce": "Dans quelle rue se trouve le cinéma ?",
+          "before_answer": "Rue de la Gare",
+          "active_answer": "Rue de la Gare",
+          "active_semantic_sha256": "f207d70b8e066f9f9cd01428406ef34e020939837fe55ebe6a40919ac5d60bb1"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#7",
+          "enonce": "Quel numéro porte le cinéma ?",
+          "before_answer": "3",
+          "active_answer": "3",
+          "active_semantic_sha256": "a56ebc22a6bffe321c618949fe92ef60ba13a4ae080d617de50e38a302206a37"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#8",
+          "enonce": "Quel achat Alex demande-t-il de faire ?",
+          "before_answer": "Les tickets",
+          "active_answer": "Les tickets",
+          "active_semantic_sha256": "8887d40d8ac21784764f4b2cf0a83bbbfb71e3982087403ab3d6a63562abf21c"
+        },
+        {
+          "key": "tcf-ss-a1-s9-co-3#9",
+          "enonce": "Combien coûte une place ?",
+          "before_answer": "7 euros",
+          "active_answer": "7 euros",
+          "active_semantic_sha256": "3ac93b7d92d7dda2577ec018555ccb0441a747690d191d66a9ad2ef4f5bd97fc"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-l-actualite-musicale-parlons.mp3",
+      "exercise": "tcf-ss-a1-s12-co-3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "be36442526ff0fa1c7132ed3a2de234b00af834152ca963ca07f362213571502",
+      "active_transcription_before_sha256": "0a75e6d9e8c44ee152eb3418f63ec92c52425e4efc987ff252f722fe55bdb428",
+      "active_transcription_after_sha256": "0a75e6d9e8c44ee152eb3418f63ec92c52425e4efc987ff252f722fe55bdb428",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 23,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "1a7025095717ccfecee2851a401d877c2ce4a7b0270a9c24119919e69edf789b",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "si",
+            "official": "rendez"
+          },
+          {
+            "kind": "replace",
+            "current": "allez les voir amusez vous bien",
+            "official": "sur le site web pour reserver vos places"
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "Les trois sorties confirment la fin « Si vous allez les voir, amusez-vous bien ». La réservation sur le site ne fait pas partie du bulletin actif. Les six réponses traitent de Solidays, de ses trois jours, des dates et du nombre de participants et d’artistes.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            16,
+            28.824
+          ],
+          "excerpt": "juin. Plus de 170 000 personnes vont assister au concert de 50 artistes. Si vous allez les voir, amusez -vous bien !"
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            16,
+            28.824
+          ],
+          "excerpt": "0 juin. Plus de 170 000 personnes vont assister au concert de 50 artistes. Si vous allez les voir, amusez-vous bien!"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            16,
+            28.824
+          ],
+          "excerpt": "e juin. P de cent soixante dix mille personnes vont assister  concerts de cinquante artistes. Si vous allez les voir? Amusez vous bien"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a1-s12-co-3#1",
+          "enonce": "Quel festival est présenté ?",
+          "before_answer": "Solidays",
+          "active_answer": "Solidays",
+          "active_semantic_sha256": "1e216dcf5e07c729aa623ea7400c7be09d9bfbaa0b077b06f6d28801eef11f66"
+        },
+        {
+          "key": "tcf-ss-a1-s12-co-3#2",
+          "enonce": "Combien de jours dure le festival ?",
+          "before_answer": "Trois",
+          "active_answer": "Trois",
+          "active_semantic_sha256": "4aa37850ba65c8a43dbdec9aa8012a1ae824bdb3bcfda3d646e804e392479970"
+        },
+        {
+          "key": "tcf-ss-a1-s12-co-3#3",
+          "enonce": "À quelle date commence le festival ?",
+          "before_answer": "Le 28 juin",
+          "active_answer": "Le 28 juin",
+          "active_semantic_sha256": "8d24d0719d480511638861be2d387a66b37d9be14be98847d3f4db2aba16c1cb"
+        },
+        {
+          "key": "tcf-ss-a1-s12-co-3#4",
+          "enonce": "À quelle date se termine le festival ?",
+          "before_answer": "Le 30 juin",
+          "active_answer": "Le 30 juin",
+          "active_semantic_sha256": "ee0fd549b8cf74eb810ca2c17fca394a8ab3b5e8209e5b76fbe78e0e11eafb8a"
+        },
+        {
+          "key": "tcf-ss-a1-s12-co-3#5",
+          "enonce": "Combien de personnes sont attendues ?",
+          "before_answer": "Plus de 170 000",
+          "active_answer": "Plus de 170 000",
+          "active_semantic_sha256": "fc258925a7ee5141614bb73fe7108a258da1b0055111634c712824c4aad416a1"
+        },
+        {
+          "key": "tcf-ss-a1-s12-co-3#6",
+          "enonce": "Combien d’artistes donnent des concerts ?",
+          "before_answer": "Cinquante",
+          "active_answer": "Cinquante",
+          "active_semantic_sha256": "041ef10a64063d73534953dee6748aae0a2bef7ec1fe1a95eedc4ca09efea443"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-c-est-cristina.mp3",
+      "exercise": "tcf-ss-a1-s13-co-1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "9b2dd5ab5f1900f486d574a1743c2475cfc311a80ccf717b0a96403f6b891d1c",
+      "active_transcription_before_sha256": "0185ab0e9f2814fcb78a92e52c52689d146e853cc7255fdfa1a8b77a4af60960",
+      "active_transcription_after_sha256": "0185ab0e9f2814fcb78a92e52c52689d146e853cc7255fdfa1a8b77a4af60960",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 10,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "e4e67d3af0fb6f05cb81a6d7b5c28d9b9be116d0cd35d25e6da6612f5cd823c2",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "cristina",
+            "official": "christina"
+          },
+          {
+            "kind": "replace",
+            "current": "peintures",
+            "official": "peinture"
+          },
+          {
+            "kind": "delete",
+            "current": "est ce que",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "6h00",
+            "official": "16h00"
+          },
+          {
+            "kind": "replace",
+            "current": "y aller",
+            "official": "venir"
+          },
+          {
+            "kind": "replace",
+            "current": "112",
+            "official": "114 je vais venir en taxi"
+          },
+          {
+            "kind": "replace",
+            "current": "virgule 50 euros rappelle",
+            "official": "envoie"
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "1 message"
+          },
+          {
+            "kind": "replace",
+            "current": "14",
+            "official": "30"
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "La piste dit « à six heures », dans la proposition pour jeudi soir. Le corrigé à 18 h traduit ce contexte. Le bus indiqué est le 112 et l’entrée coûte 7,50 €. Ces éléments sont cohérents avec le message actif. Le PDF donne 16 h et le bus 114.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            9,
+            30
+          ],
+          "excerpt": "Est -ce que tu veux venir avec nous ? On peut se retrouver devant l 'espace Mathis à six heures. Pour y aller, tu peux prendre le bus 112. L 'entrée coûte 7 ,50 euros. Rappelle -moi au"
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            9,
+            30
+          ],
+          "excerpt": ". Est-ce que tu veux venir avec nous? On peut se retrouver devant l'espace Matisse à 6 heures. Pour y aller, tu peux prendre le bus 112. L'entrée coûte 7,50 euros. Rappelle-moi au"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            9,
+            30
+          ],
+          "excerpt": ". Est ce que tu veux venir avec nous? On peut se retrouver devant l'espace Matis à six heures. Pour y aller, tu peux prendre le bus cent douze. L'entrée coûte sept eur cinquante. Rappelle moi au"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a1-s13-co-1#1",
+          "enonce": "Quelle sortie Cristina propose-t-elle ?",
+          "before_answer": "Une exposition de peintures",
+          "active_answer": "Une exposition de peintures",
+          "active_semantic_sha256": "59bf41f386b5a9ce4c98cbf6503261b302a01280fcfae2c672a860ae7ccd94e7"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#2",
+          "enonce": "Avec qui Cristina va-t-elle à cette sortie ?",
+          "before_answer": "Armelle",
+          "active_answer": "Armelle",
+          "active_semantic_sha256": "e42b9f666f25f8fcf19b2bafb964a4b5991c47941a452303ddc9c975a1226ac9"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#3",
+          "enonce": "Quel soir Cristina propose-t-elle de sortir ?",
+          "before_answer": "Jeudi soir",
+          "active_answer": "Jeudi soir",
+          "active_semantic_sha256": "d3792e80b87c5f9e8743681a37c33b8ab0cf5473c03504c7c2a42b79532dfeb5"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#4",
+          "enonce": "Devant quel lieu est fixé le rendez-vous ?",
+          "before_answer": "L’espace Matisse",
+          "active_answer": "L’espace Matisse",
+          "active_semantic_sha256": "e4583d91c1510356f09449863fe10fb84f3d35ec855249ea2560d8b30104cb77"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#5",
+          "enonce": "À quelle heure est le rendez-vous ?",
+          "before_answer": "À 18 h",
+          "active_answer": "À 18 h",
+          "active_semantic_sha256": "fe214c46a1e714b3e7194b17e6510b061bc85e9c23160ec02683647aa0d4485f"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#6",
+          "enonce": "Quel bus permet d’y aller ?",
+          "before_answer": "Le bus 112",
+          "active_answer": "Le bus 112",
+          "active_semantic_sha256": "6a1850e4c1ca320c64fdd223c472a11e0d13b3dce10b865d01780f9e6c1d2b50"
+        },
+        {
+          "key": "tcf-ss-a1-s13-co-1#7",
+          "enonce": "Combien coûte l’entrée ?",
+          "before_answer": "7,50 euros",
+          "active_answer": "7,50 euros",
+          "active_semantic_sha256": "7725abd220c79d0b10f2301cb1079e5b63d57ca2cafc4bbb9f8fb03f6f43eb35"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/nature-conversation-2.mp3",
+      "exercise": "tcf-ss-a1-s20-co-2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "69fe9d71fe667fdfb756de78fc6714bf3baf402629c3904dd5dc55849f625459",
+      "active_transcription_before_sha256": "7c21e86ab5aa1c2b9d4ccdac58dddd10da9230be2e8ba56eb713ba19f295a1a8",
+      "active_transcription_after_sha256": "7c21e86ab5aa1c2b9d4ccdac58dddd10da9230be2e8ba56eb713ba19f295a1a8",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 49,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "bb1f37d63319ba5a6511eb7f0b5901d1825fd2d862af334ec8440b4265ed7f7d",
+        "differences": [
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "quentin quel est notre numero de vol c est le af340 l avion decolle dans 2h00 tres bien j ai le temps d aller me chercher 1 cafe"
+          }
+        ]
+      },
+      "prior_decision": "decoupage_a_confirmer",
+      "decision": "decoupage_confirme",
+      "reason": "Les trois moteurs retrouvent les trois échanges sur les dates du DELF, le dîner et le mauvais temps. La liaison précédente contient exactement trois plages et identifie l’exclusion du quatrième dialogue. Le PDF porte sur la piste entière et comprend un échange sur un vol. Les cinq questions sont liées aux trois échanges de l’assemblage.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            0,
+            27.64
+          ],
+          "excerpt": "Tu peux voir les dates du Delph sur Internet. Vraiment ? À quel adresse ? www .abc -delph .fr Qu 'est -ce que tu veux pour dîner ? Pourquoi pas une pizza ? Oui, c 'est une bonne idée. Quel mauvais temps aujourd 'hui ? Oui, il paraît que ça va durer toute la semaine. Oh non ! Je voulais organiser un barbecue ce week -end."
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            0,
+            27.64
+          ],
+          "excerpt": "Tu peux voir les dates du Delphe sur internet. Vraiment? A quelle adresse? www.abc-delph.fr Qu'est-tu pour dîner? Pourquoi pas une pizza? Oui, c'est une bonne idée. Quel mauvais temps aujourd'hui. Oui, il paraît que ça va durer toute la semaine. Oh non! Je voulais organiser un barbecue ce week-end."
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            0,
+            27.64
+          ],
+          "excerpt": "Tu peux voir les dates du Delphes sur internet. Vraiment? A quelle adresse?  W. A C t Delph. fr. Qu'est ce que tu veux pour dîner? Pourquoi pas une pizza? Oui, c'est une bonne idée. Quel mauvais temps aujourd'hui. Oui. Il paraît que ça va durer toute la semaine. Oh. Non. Je voulais organiser un barbecou ce"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a1-s20-co-2#1",
+          "enonce": "Dans la première situation, quelle information peut-on consulter en ligne ?",
+          "before_answer": "Les dates du DELF",
+          "active_answer": "Les dates du DELF",
+          "active_semantic_sha256": "629e4a4ca0f7146876aa93d0e995e4cfdf4e21117cd766cbab88f0aa730a7e26"
+        },
+        {
+          "key": "tcf-ss-a1-s20-co-2#2",
+          "enonce": "Dans la première situation, où peut-on trouver cette information ?",
+          "before_answer": "Sur Internet",
+          "active_answer": "Sur Internet",
+          "active_semantic_sha256": "7cfd52c571634d98c95aeac078c1d23a940e87c35dc1534a4bd20dce7d5b0fd4"
+        },
+        {
+          "key": "tcf-ss-a1-s20-co-2#3",
+          "enonce": "Dans la deuxième situation, de quel repas les personnes parlent-elles ?",
+          "before_answer": "Du dîner",
+          "active_answer": "Du dîner",
+          "active_semantic_sha256": "0a3f2347d36c14e35042f8840c7f0214b062eb16b07ad731579a163145b63713"
+        },
+        {
+          "key": "tcf-ss-a1-s20-co-2#4",
+          "enonce": "Dans la troisième situation, comment le temps est-il décrit ?",
+          "before_answer": "Mauvais",
+          "active_answer": "Mauvais",
+          "active_semantic_sha256": "cad12f1bb14501b5f9d03f00a7bfb25fd8edf8c1c2fc68c03c970da3043b0d4b"
+        },
+        {
+          "key": "tcf-ss-a1-s20-co-2#5",
+          "enonce": "Dans la troisième situation, combien de temps ce mauvais temps devrait-il durer ?",
+          "before_answer": "Toute la semaine",
+          "active_answer": "Toute la semaine",
+          "active_semantic_sha256": "3f665443aa61377d4ee27731e333600938b1ae96325560b827c15c17b1c28f21"
+        }
+      ],
+      "assembly_evidence": {
+        "register": "docs/tcf/remplacement-audio/liaisons-unifiees.json",
+        "source_sha256": "386ecf607b73b78f6e0e812aace763cfa634e0264d59a280088ec8ef621e8471",
+        "source_ranges": [
+          {
+            "id": "additional-20261102-mdf-a1-abc-42-386ecf607b73-433bca6e-d1",
+            "source_start_seconds": 4.263990929705216,
+            "source_end_seconds": 14.544013605442176,
+            "frames": 453349,
+            "flac_sha256": "42e66a4caf9b49d27b3f476075cabb7514f19b389588578a9a323b2fa0803a9b"
+          },
+          {
+            "id": "additional-20261102-mdf-a1-abc-42-386ecf607b73-433bca6e-d2",
+            "source_start_seconds": 18.983990929705215,
+            "source_end_seconds": 25.02401360544218,
+            "frames": 266365,
+            "flac_sha256": "91a99f45126bb0cd50258ed263e1ba59d14b14668b797376cf6392691e440640"
+          },
+          {
+            "id": "additional-20261102-mdf-a1-abc-42-386ecf607b73-433bca6e-d3",
+            "source_start_seconds": 29.335986394557825,
+            "source_end_seconds": 40.656009070294786,
+            "frames": 499213,
+            "flac_sha256": "0bc321fb5c42c8a7b3b7f886a6ab82329bb4ef08a7deb35499586b2f0c247bf7"
+          }
+        ]
+      }
+    },
+    {
+      "reference": "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3",
+      "exercise": "tcf-ss-a1-s53-co-2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "active_audio_sha256": "9a5ea399d27c4c4e5299385dc1a72518fd0d38f6f9b0a8f1f683e948301f8e0c",
+      "active_transcription_before_sha256": "c3f750aec8570e26b4d780cd55295edef8fa4f4888051285deea510513265b30",
+      "active_transcription_after_sha256": "c3f750aec8570e26b4d780cd55295edef8fa4f4888051285deea510513265b30",
+      "pdf": {
+        "pdf_collection": "A1 tout public",
+        "pdf_track": 33,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "f49c27f128f01cdcc4c4e96d00b0b4893238a0f0679e8c052c33b9bf9de763d3",
+        "differences": [
+          {
+            "kind": "delete",
+            "current": "est",
+            "official": ""
+          },
+          {
+            "kind": "delete",
+            "current": "il",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "8h17",
+            "official": "8h20"
+          },
+          {
+            "kind": "replace",
+            "current": "environ 2h00et 20",
+            "official": "une heure et 30"
+          },
+          {
+            "kind": "delete",
+            "current": "votre billet et",
+            "official": ""
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "nous offrons a boire dans l avion mais pas a manger ou de divertissement"
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "Les trois moteurs confirment le vol AF717, le départ à 8 h 17 et la durée de 2 h 20. Le texte du PDF donne 8 h 20 et 1 h 30. Les cinq réponses portent sur l’enregistrement actif, qui cite aussi un embarquement immédiat pour les voyageurs avec enfants.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            5,
+            27.784
+          ],
+          "excerpt": "commence dans 15 minutes. Ce vol est à destination de Paris. Il part à 8h17. Il dure environ 2h et 20 minutes. Merci de préparer votre billet et votre passeport. Les passagers qui voyagent avec des enfants peuvent embarquer maintenant. Merci."
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            5,
+            27.784
+          ],
+          "excerpt": "717 commence dans 15 minutes. Ce vol est à destination de Paris. Il part à 8h17. Il dure environ 2h20. Merci de préparer votre billet et votre passeport. Les passagers qui voyagent avec des enfants peuvent embarquer maintenant. Merci."
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            5,
+            27.784
+          ],
+          "excerpt": "sept cent dix - sept commence dans quinze minutes. Ce vol est à destination de Paris. Il part à huit heures dix - sept. il dure environ deux heures et vingt minutes. Merci de préparer votre billet et votre passeport. Les passagers qui voyagent avec des enfants peuvent embarquer maintenant, Merci"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a1-s53-co-2#1",
+          "enonce": "Dans combien de temps commence l'embarquement ?",
+          "before_answer": "Quinze minutes",
+          "active_answer": "Quinze minutes",
+          "active_semantic_sha256": "12487ddd9752f8785d7f376d2074b65e8554647d583d2207f65a2ff17e0d3222"
+        },
+        {
+          "key": "tcf-ss-a1-s53-co-2#2",
+          "enonce": "Quel est le numéro du vol ?",
+          "before_answer": "AF717",
+          "active_answer": "AF717",
+          "active_semantic_sha256": "e44a8c92337dce3080698a60ebe603fd40aec86ec8ac844765ba1d940b38d87c"
+        },
+        {
+          "key": "tcf-ss-a1-s53-co-2#3",
+          "enonce": "Quelle est sa destination ?",
+          "before_answer": "Paris",
+          "active_answer": "Paris",
+          "active_semantic_sha256": "ce54ca8fb41ddb5b199dac1e327c6a0d5cd991017ba382752ab709d7158324ef"
+        },
+        {
+          "key": "tcf-ss-a1-s53-co-2#4",
+          "enonce": "À quelle heure part-il ?",
+          "before_answer": "8 h 17",
+          "active_answer": "8 h 17",
+          "active_semantic_sha256": "c2b26f60b03a50f4db2fcf66055092644e27c02329692d0d26257c54582d3fcd"
+        },
+        {
+          "key": "tcf-ss-a1-s53-co-2#5",
+          "enonce": "Qui peut embarquer tout de suite ?",
+          "before_answer": "Les passagers avec des enfants",
+          "active_answer": "Les passagers avec des enfants",
+          "active_semantic_sha256": "a279a8e5b1fa62cfb3ccb877bd481aabbc121bdf97a849f48689082659ffb4d8"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/travail/02-travail-demander-un-service.mp3",
+      "exercise": "tcf-ss-a2-s12-co-2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "active_audio_sha256": "770a9af9ab777311de1373cae6b4c9e6df3b2d9ee40ab334acfd44ba36f5774b",
+      "active_transcription_before_sha256": "92a3902af3f4eb96ca1c7a02995078823abffaca09caacb43e91b394b2f0274c",
+      "active_transcription_after_sha256": "92a3902af3f4eb96ca1c7a02995078823abffaca09caacb43e91b394b2f0274c",
+      "pdf": {
+        "pdf_collection": "A2 tout public",
+        "pdf_track": 32,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "f370364c67390b56f7ccb179d22cbb525c39491d16f766c33643417c52ec5a74",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "a mon travail olga",
+            "official": "au magasin elle"
+          },
+          {
+            "kind": "replace",
+            "current": "est ce que ce serait possible aussi de",
+            "official": "peux tu"
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "il faut aussi prendre 1 colis a la poste c est juste a cote"
+          },
+          {
+            "kind": "delete",
+            "current": "de danse",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "je te redonne mon numero de telephone c est le 06",
+            "official": "au 07"
+          },
+          {
+            "kind": "delete",
+            "current": "bonne journee",
+            "official": ""
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "Le message actif demande d’aller chercher Olga à l’école puis de l’accompagner à son cours de danse. Le CTC transcrit seize heures trente pour la sortie et dix-sept heures trente pour le cours. Le passage de la poste du PDF correspond à une autre version.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            9,
+            29
+          ],
+          "excerpt": "? J 'ai une réunion qui finit tard à mon travail. Olga sort de l 'école à 16h30. Est -ce que ce serait possible aussi de l 'amener à son cours de danse à 17h30 ? Gérer la chercher après son cours de danse vers 19h ? Rappelle -moi pour me dire si tu es d 'accord."
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            9,
+            29
+          ],
+          "excerpt": "prochain ? J'ai une réunion qui finit tard, mon travail. Olga sort de l'école à 1h30. Est-ce que ce serait possible aussi de l'amener à son cours de danse à 17h30? J'irai la chercher après son cours de danse vers 19h. Rappelle-moi pour me dire si tu es d"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            9,
+            29
+          ],
+          "excerpt": "rdi prochain? J'ai une réunion qui finit tard à mon travail. Olga sort de l'école à seize heures trente. Est ce que ce serait possible aussi de l'amener à son cours de danse à dix sept heur trente? J'irai la chercher après son cours de danse vers dix neuf heures. Rappelle moi pour me dire si tu es d"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a2-s12-co-2#1",
+          "enonce": "Qui laisse ce message ?",
+          "before_answer": "Marianne",
+          "active_answer": "Marianne",
+          "active_semantic_sha256": "ce0059d8c0c92411d61a5098cb859d5c29ff7966c293a07c038cb2f67d389f97"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#2",
+          "enonce": "Quel jour Marianne demande-t-elle de l’aide ?",
+          "before_answer": "Mardi prochain",
+          "active_answer": "Mardi prochain",
+          "active_semantic_sha256": "c188058f9151082fdd70bb87940e060d8a67158b7f92b25f2a89d7f78449686a"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#3",
+          "enonce": "Pourquoi Marianne ne peut-elle pas aller chercher Olga à l’école ?",
+          "before_answer": "Une réunion finit tard au travail",
+          "active_answer": "Une réunion finit tard au travail",
+          "active_semantic_sha256": "32667738c6f8c4bbed44efcde1a374d862db464a944ed506f1e568768ea44a99"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#4",
+          "enonce": "À quelle heure Olga sort-elle de l’école ?",
+          "before_answer": "16 h 30",
+          "active_answer": "16 h 30",
+          "active_semantic_sha256": "6e3a2f998355a765121736c5d7078cbe377e4c443465ed09c7e0b01f72da23d5"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#5",
+          "enonce": "À quelle activité faut-il ensuite accompagner Olga ?",
+          "before_answer": "Un cours de danse",
+          "active_answer": "Un cours de danse",
+          "active_semantic_sha256": "6add5fae2822cc13f625b79802a4095e7eb1096beb56e34ed7ea313da7071196"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#6",
+          "enonce": "À quelle heure cette activité commence-t-elle ?",
+          "before_answer": "17 h 30",
+          "active_answer": "17 h 30",
+          "active_semantic_sha256": "1e9f5ecd81b6dc386da68379f7dd625259c723f793c6b40ec83e6579e0468b38"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#7",
+          "enonce": "Qui viendra chercher Olga après son cours ?",
+          "before_answer": "Marianne",
+          "active_answer": "Marianne",
+          "active_semantic_sha256": "f301bdd5c2d58c7f5d533f48d14e4cab82863171ad55fdba9e2e21d6e06ade13"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#8",
+          "enonce": "Vers quelle heure Marianne viendra-t-elle la chercher ?",
+          "before_answer": "19 h",
+          "active_answer": "19 h",
+          "active_semantic_sha256": "f3d2a3979507e22f295f1b014a10f1befc576b4093feb00cc212c9c8eb44d2ce"
+        },
+        {
+          "key": "tcf-ss-a2-s12-co-2#9",
+          "enonce": "Comment la personne appelée doit-elle répondre ?",
+          "before_answer": "En rappelant Marianne",
+          "active_answer": "En rappelant Marianne",
+          "active_semantic_sha256": "66257e24a71d96f660c1de98a947f346a04ff985d4a9186c46d7406828910cf6"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/vie-quotidienne/salut-thomas.mp3",
+      "exercise": "tcf-ss-a2-s50-co-4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "active_audio_sha256": "f87ac529a5106b8721acfcf9113a64f0c5dfa20efb60fe903047830f02b3971b",
+      "active_transcription_before_sha256": "63f3e0354572edc2093e630d77203d5321cb3c3eaa3bfbb51630f449445938ac",
+      "active_transcription_after_sha256": "63f3e0354572edc2093e630d77203d5321cb3c3eaa3bfbb51630f449445938ac",
+      "pdf": {
+        "pdf_collection": "A2 tout public",
+        "pdf_track": 31,
+        "pdf_section": "piste_complete",
+        "pdf_sha256": "30bbe1bee17f55eb4b148d772a5580abcaeae4d41c43427055fe8af83c52552d",
+        "differences": [
+          {
+            "kind": "delete",
+            "current": "j espere que tu vas bien",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "portugais",
+            "official": "francais"
+          },
+          {
+            "kind": "insert",
+            "current": "",
+            "official": "les pages 15 a 18 du livre"
+          },
+          {
+            "kind": "replace",
+            "current": "dans la",
+            "official": "en"
+          },
+          {
+            "kind": "replace",
+            "current": "numero 112",
+            "official": "b115"
+          },
+          {
+            "kind": "replace",
+            "current": "donne",
+            "official": "donnera"
+          },
+          {
+            "kind": "delete",
+            "current": "demain",
+            "official": ""
+          },
+          {
+            "kind": "replace",
+            "current": "8h00pour",
+            "official": "8h00demain pour"
+          },
+          {
+            "kind": "replace",
+            "current": "a demain",
+            "official": "et n oublie pas mon cahier s il te plait salut"
+          }
+        ]
+      },
+      "prior_decision": "version_a_confirmer",
+      "decision": "version_active_confirmee",
+      "reason": "Les reconnaissances confirment le portugais et la salle 112. Whisper et le CTC donnent dix heures. Le PDF indique le français, la salle B115 et des pages à réviser. Les sept réponses ont été comparées au message actif.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            8,
+            30
+          ],
+          "excerpt": "un examen de portugais dans deux jours, à dix heures. Il faut réviser les temps du passé et les verbes irréguliers. Il y aura beaucoup d 'exercices de conjugaison. L 'examen sera dans la salle numéro 112, au deuxième étage. Si tu veux, on se donne rendez -vous au café demain à huit heures pour"
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            8,
+            30
+          ],
+          "excerpt": "un examen de portugais dans deux jours, à 1h. Il faut réviser les temps du passé et les verbes irréguliers. Il y aura beaucoup d'exercices de conjugaison. L'examen sera dans la salle numéro 112, au deuxième étage. Si tu veux, on se donne rendez-vous au café demain à 8h pour"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            8,
+            30
+          ],
+          "excerpt": "ons un examen de Pportugais dans deux jours, à dix heures. Il faut réviser les temps du passé et les verbes irréguliers. Il y aura beaucoup d'exercices de conjugaison. L'examen sera dans la salle n cent douze, au deuxième étage. Si tu veux, on se donne rendez vous au café, demain, à huit heures, pour"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ss-a2-s50-co-4#1",
+          "enonce": "Quelle matière concerne l'examen ?",
+          "before_answer": "Le portugais",
+          "active_answer": "Le portugais",
+          "active_semantic_sha256": "9698c647cdb80a40a5e17a905af4cc18b6e8db3fe65a31335aa556bddd427c10"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#2",
+          "enonce": "Dans combien de jours aura-t-il lieu ?",
+          "before_answer": "Dans 2 jours",
+          "active_answer": "Dans 2 jours",
+          "active_semantic_sha256": "f463a73bfc637933bc25a1b38e5268a032f0820dcfe160486d63a3a9de999f51"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#3",
+          "enonce": "À quelle heure aura lieu l'examen ?",
+          "before_answer": "À 10 h",
+          "active_answer": "À 10 h",
+          "active_semantic_sha256": "3fbaf529fb71050d5ae87e13813ae03fb28f9f8c9dadd15c77b1383d48c6caa6"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#4",
+          "enonce": "Dans quelle salle aura-t-il lieu ?",
+          "before_answer": "Salle 112",
+          "active_answer": "Salle 112",
+          "active_semantic_sha256": "4ef471ba6f1a45caa5e04109bc49e4065f9513346a93cdde0f87e836fe477636"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#5",
+          "enonce": "À quel étage est la salle d'examen ?",
+          "before_answer": "Au deuxième étage",
+          "active_answer": "Au deuxième étage",
+          "active_semantic_sha256": "4083381560e1598c1f2db655e8b1397a43bd2fb1924f9b8d3776abb033a43d39"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#6",
+          "enonce": "Quels éléments de langue faut-il réviser ?",
+          "before_answer": "Les temps du passé et les verbes irréguliers",
+          "active_answer": "Les temps du passé et les verbes irréguliers",
+          "active_semantic_sha256": "b00b41e6332068473aac285482c0ee9e83fe2eb244f63336522f8b325e730a8f"
+        },
+        {
+          "key": "tcf-ss-a2-s50-co-4#7",
+          "enonce": "Comment faut-il confirmer le rendez-vous au café ?",
+          "before_answer": "Par SMS",
+          "active_answer": "Par SMS",
+          "active_semantic_sha256": "424b3d6a9e4bcf126014f556b0b90290effd92e6e2cdd83fc4395c5b630f3ecb"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
+      "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "active_audio_sha256": "5400d59b5c4171701f69e2b7405f59a752fc18b1ac593a99da77f9f024ebe6dd",
+      "active_transcription_before_sha256": "c3992cd764cef3e9d07fa35b64b810d2d1de965abaa66fc61a9b55723e62695f",
+      "active_transcription_after_sha256": "586d6596e7b94cfeab61b5a4355427009e3db0f8371e221ffc7e4f1f5a2f6df3",
+      "pdf": {
+        "pdf_collection": "A2 tout public",
+        "pdf_track": 4,
+        "pdf_section": "Document 4",
+        "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "autoprix",
+            "official": "atoutprix"
+          }
+        ]
+      },
+      "prior_decision": "graphie_a_confirmer",
+      "decision": "graphie_corrigee_et_corrige_aligne",
+      "reason": "Les trois moteurs reconnaissent « à tout prix » dans le nom du magasin. Le texte archivé donne la graphie Atoutprix. Cette graphie remplace Autoprix dans la transcription, le choix correct et la réponse modèle. Les autres faits et illustrations restent liés à leur contexte.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            1,
+            7
+          ],
+          "excerpt": "aujourd 'hui dans votre magasin à tout prix, ne manquez pas les promotions exceptionnelles sur les télévisions,"
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            1,
+            7
+          ],
+          "excerpt": ", aujourd'hui dans votre magasin à tout prix, ne manquez pas les promotions exceptionnelles sur les télévisions"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            1,
+            7
+          ],
+          "excerpt": ", aujourd'hui dans votre magasin, à tout prix, ne manquez pas les promotions exceptionnelles sur les télévision"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ssx-a2-annonce-4-4-co-2#1",
+          "enonce": "Quels produits sont en promotion aujourd’hui ?",
+          "before_answer": "Les télévisions",
+          "active_answer": "Les télévisions",
+          "active_semantic_sha256": "b896b326edc030e570dfc38d58a8dd149b365eeae677016faf5a7a89a80f4d11"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-4-co-2#2",
+          "enonce": "Quelle est la réduction la plus grande ?",
+          "before_answer": "40 %",
+          "active_answer": "40 %",
+          "active_semantic_sha256": "db5ccab38f48412f01d32f7e74af2f4dcf3216b2dd7378755b13c0ea0fadddc6"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-4-co-2#3",
+          "enonce": "Quels produits auront des surprises demain ?",
+          "before_answer": "Les téléphones et les ordinateurs",
+          "active_answer": "Les téléphones et les ordinateurs",
+          "active_semantic_sha256": "284e0c2eaeabba1567b68225d0ff855bd08274d0d8b4595b862d75f980773057"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-4-co-2#4",
+          "enonce": "Quel est le nom du magasin ?",
+          "before_answer": "Autoprix",
+          "active_answer": "Atoutprix",
+          "active_semantic_sha256": "ab22826783837f4dfbe145addd8099808fd03fb2ff89678d7bae322811b23ace"
+        }
+      ]
+    },
+    {
+      "reference": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3",
+      "exercise": "tcf-ssx-a2-annonce-4-1-co-2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "active_audio_sha256": "08d2e014295fd567b890a5b883b898d075ac765ac22a40f5793b97d71d52c6e7",
+      "active_transcription_before_sha256": "5346662ada33f031f336d5d062d6e5acdbc028f2912290759286d971d7bddadc",
+      "active_transcription_after_sha256": "c972c20b4b4b907ce7f747a0bc3be377517529353b8e46e9347359e9e8d9a846",
+      "pdf": {
+        "pdf_collection": "A2 tout public",
+        "pdf_track": 4,
+        "pdf_section": "Document 1",
+        "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+        "differences": [
+          {
+            "kind": "replace",
+            "current": "pinder",
+            "official": "pindet"
+          },
+          {
+            "kind": "replace",
+            "current": "une heure 30",
+            "official": "1h30"
+          }
+        ]
+      },
+      "prior_decision": "graphie_a_confirmer",
+      "decision": "graphie_corrigee_selon_pdf",
+      "reason": "Le texte archivé ainsi que Parakeet et le CTC donnent Pindet. Whisper écrit Pindée. La graphie Pindet est retenue. La durée de 1 h 30 et le rendez-vous mardi 14 à 18 h concordent. Aucun corrigé ne repose sur le nom propre.",
+      "recognition": [
+        {
+          "model": "Systran/faster-whisper-small",
+          "window_seconds": [
+            1,
+            13
+          ],
+          "excerpt": "le Cirque -Pindée vous invite à nous retrouver pour un spectacle extraordinaire d 'une heure trente. Venez voir des animaux, des clowns, des acrobates. Rendez -vous mardi 14 à"
+        },
+        {
+          "model": "nemo-parakeet-tdt-0.6b-v3-int8",
+          "window_seconds": [
+            1,
+            13
+          ],
+          "excerpt": "essieurs, le cirque Pindet vous invite à nous retrouver pour un spectacle extraordinaire d'une heure trente. Venez voir des animaux, des clowns, des acrobates. Rendez-vous mardi 14"
+        },
+        {
+          "model": "nemo-fast-conformer-ctc-en-de-es-fr-14288-int8",
+          "window_seconds": [
+            1,
+            13
+          ],
+          "excerpt": "essieurs, le cirque Pindet vous invite à nous retrouver pour un spectacle extraordinaire d'une heure trente. Venez voir des animaux, des clowns, des acrobates. Rendez vous mardi quator"
+        }
+      ],
+      "questions": [
+        {
+          "key": "tcf-ssx-a2-annonce-4-1-co-2#1",
+          "enonce": "Qui vous invite ?",
+          "before_answer": "Un cirque",
+          "active_answer": "Un cirque",
+          "active_semantic_sha256": "a571f1c4a6a35035c1ec3ba933d0eba6b135f9ba97fafa2f13df4ef0f8af528f"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-1-co-2#2",
+          "enonce": "Combien de temps dure le spectacle ?",
+          "before_answer": "1 h 30",
+          "active_answer": "1 h 30",
+          "active_semantic_sha256": "2c24099e842fb36a3133f388dda439cb65ceca42682556e190ae464058d31be5"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-1-co-2#3",
+          "enonce": "Quand a lieu le spectacle ?",
+          "before_answer": "Mardi 14 à 18 h",
+          "active_answer": "Mardi 14 à 18 h",
+          "active_semantic_sha256": "7dcc0e46a0c721914c712fb993623f32a0d6ad6c891b22e4f7cf51ce0202ce92"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-1-co-2#4",
+          "enonce": "Quels artistes comiques peut-on voir ?",
+          "before_answer": "Des clowns",
+          "active_answer": "Des clowns",
+          "active_semantic_sha256": "7d0ef43cfc9aee0acee97cb579f4f135a6cf659d51b623395569ba4c2ba50832"
+        },
+        {
+          "key": "tcf-ssx-a2-annonce-4-1-co-2#5",
+          "enonce": "Quels artistes réalisent des figures physiques ?",
+          "before_answer": "Des acrobates",
+          "active_answer": "Des acrobates",
+          "active_semantic_sha256": "12837816026a7c1c3fc717e2645cae2c16180ca6fa559deb66330d2f40b14b1f"
+        }
+      ]
+    }
+  ],
+  "editorial_edits": [
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s3-co-1",
+      "ref": "/lib/audio/tcf/co/fetes/02-fêtes_anniversaire-de-Gerald.mp3",
+      "replacements": [
+        {
+          "before": " mon anniversaire ? Charline et Anthony m'accompagnent. On a",
+          "after": " mon anniversaire ? Charlène et Anthony m'accompagnent. On a"
+        }
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-4-4-co-2",
+      "ref": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
+      "replacements": [
+        {
+          "before": "Chers clients, aujourd’hui dans votre magasin Autoprix, ne manquez",
+          "after": "Chers clients, aujourd’hui dans votre magasin Atoutprix, ne manquez"
+        },
+        {
+          "before": "{ \"id\": \"a\", \"texte\": \"Autoprix\", \"correct\": true }",
+          "after": "{ \"id\": \"a\", \"texte\": \"Atoutprix\", \"correct\": true }"
+        },
+        {
+          "before": "\"nb_lignes\": 1, \"reponse_modele\": \"Autoprix\"",
+          "after": "\"nb_lignes\": 1, \"reponse_modele\": \"Atoutprix\""
+        }
+      ]
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-4-1-co-2",
+      "ref": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3",
+      "replacements": [
+        {
+          "before": "Mesdames et messieurs, le cirque Pinder vous invite",
+          "after": "Mesdames et messieurs, le cirque Pindet vous invite"
+        }
+      ]
+    }
+  ],
+  "refreshed_live_source_links": {
+    "docs/tcf/revue-763-20261107.json": 1,
+    "docs/tcf/plan-images-contextuel-20261106.json": 16,
+    "docs/tcf/operations-contexte-20261106.json": 2,
+    "docs/tcf/inventaire-objets-tcf-20261126.json": 2
+  }
+}

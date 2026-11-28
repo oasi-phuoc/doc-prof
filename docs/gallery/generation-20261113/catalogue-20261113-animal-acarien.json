@@ -1,17 +1,24 @@
 {
   "id": "catalogue-20261113-animal-acarien",
   "label": "acarien",
+  "source_png": "/workspace/generated_images/exec-06bb6fca-9ffa-4c9a-a042-cc42bbaf22b7.png",
   "type": "Animal",
   "subtype": "Insectes et petites bêtes",
-  "status": "generation_failed",
-  "reuse_candidates": [],
   "path": "/lib/images/tcf/catalogue/animaux/acarien.webp",
-  "prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Un seul animal VIVANT : acarien. Espèce réelle, corps entier avec tous les membres, tête et queue visibles. Respecter exactement l’anatomie et les caractères distinctifs de l’espèce. Fond crème opaque, ombre très légère. Aucun aliment cuit, filet, viande, assiette, outil, accessoire ou légende. Pour un animal marin, posture de nage naturelle dans un espace crème sobre. Pour les insectes six pattes ; araignées et scorpions huit pattes ; autres groupes selon leur anatomie réelle.",
+  "status": "visually_reviewed",
+  "prompt": "Single standalone native landscape 4:3 PNG 1448x1086. Soft matte educational TCF painting true to organism with clear natural whole body and honest anatomical proportions. Absolutely plain opaque very pale ivory full background RGB(253,242,225), no marks, gradient, props or surroundings, small physically coherent contact shadow. Wholly visible even at margins. One common house dust mite Dermatophagoides pteronyssinus depicted in a larger macro-style true to anatomy, pale cream almost translucent round oval corrugated body with very fine grooves and a few hairlike projections, eight short thin pale jointed legs clustered anteriorly. Not a red brown tick, no other creature or skin.",
   "reference_images": [
-    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/furet.webp"
   ],
   "style_references": [
-    "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/furet.webp"
   ],
-  "error": "missing_generation_artifact: source PNG et indication de fichier non reçues du service pendant les interruptions de transport. Inspection des PNG sans lien : aucun ne correspond à ce sujet."
+  "keywords": [
+    "acarien",
+    "corps pâle plissé",
+    "petites pattes",
+    "détail agrandi"
+  ],
+  "review_note": "Le visuel présente corps pâle plissé, petites pattes, détail agrandi sur fond ivoire.",
+  "sha256": "a77a6090b91f3910e00be128bedab5549ab1eda9540d61f5eae50e96a4601aec"
 }

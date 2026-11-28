@@ -1,5 +1,5 @@
 import { normalizeEditorialBank } from './editorial-json.mjs'
-import { TCF_NIVEAUX, tcfPosition, type TcfSlotMeta } from './catalog'
+import { TCF_NIVEAUX, tcfPosition, tcfSlotShownInMenu, type TcfSlotMeta } from './catalog'
 import {
   tcfCeEntriesWithTag,
   tcfCeTagForSlot,
@@ -69,15 +69,16 @@ export function tcfSlotBank(
   niveau: TcfNiveau | readonly TcfNiveau[],
   slot: TcfSlotMeta,
 ): TcfExercise[] {
-  const niveaux = Array.isArray(niveau) ? niveau : [niveau]
+  const niveaux = typeof niveau === 'string' ? [niveau] : niveau
+  if (slot.competence === 'PE' && slot.numero != null) {
+    return niveaux
+      .filter((n) => tcfSlotShownInMenu(slot.typeId, n))
+      .flatMap((n) => tcfPeEntriesWithAnyTag(tcfBank(n, 'PE'), tcfPeTagsForSlot(slot.numero, n)))
+  }
   const pool = niveaux.flatMap((n) => tcfBank(n, slot.competence))
   if (slot.competence === 'CE') {
     const tag = tcfCeTagForSlot(slot.numero)
     return tag ? tcfCeEntriesWithTag(pool, tag) : pool
-  }
-  if (slot.competence === 'PE' && slot.numero != null) {
-    const tags = tcfPeTagsForSlot(slot.numero)
-    return tags.length > 0 ? tcfPeEntriesWithAnyTag(pool, tags) : pool
   }
   if (slot.competence === 'CO' && slot.numero != null) {
     return pool.filter((ex) => tcfPosition(ex.id) === slot.numero)

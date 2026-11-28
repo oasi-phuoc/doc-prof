@@ -237,7 +237,7 @@ export function WorksheetSheet({
   const isJeuxSheet = page.domain === 'jeux'
   /** A5 : chaque moitié a toujours son en-tête (mini-contrôle autonome), sauf chrome masqué. */
   const showHeader =
-    !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
+    !hideChrome && !isJeuxSheet && !page.cePosterSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
   const hasMathTheory = page.items.some((item) => item.mathTheory)
   const compactMathTheoryHeader = Boolean(asHalf) && hasMathTheory
@@ -282,13 +282,16 @@ export function WorksheetSheet({
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
+  const posterClass = page.cePosterSheet
+    ? ` is-ce-poster${page.cePosterLandscape && !asHalf ? ' is-ce-poster-landscape' : ''}`
+    : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass + domainClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
+      className={rootClass + domainClass + posterClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
         (hasLogistiqueStory ? ' has-logistique-story' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
@@ -332,7 +335,10 @@ export function WorksheetSheet({
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
               isWrittenProblem(item),
           )
-          const blockHeading = block.title
+          const acmActivity = block.items.find((item) => item.acm)?.acm
+          const blockHeading = acmActivity?.title ?? block.title
+          const showBlockTitle = !acmActivity || !showHeader ||
+            (institutional.documentTitle.trim() || page.title) !== blockHeading
           const sideProblemInstruction = cfrSideProblemInstruction(block)
           const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
@@ -392,11 +398,18 @@ export function WorksheetSheet({
                   : undefined
               }
             >
+              {continuedSlice && page.domain === 'tpf' && block.exerciseType.startsWith('tpf-ce-') ? (
+                <header className="exercise-heading">
+                  <div className="exercise-heading-main">
+                    <h3>{page.title} (suite)</h3>
+                  </div>
+                </header>
+              ) : null}
               {isJeuxSheet || isTheoryBlock || continuedSlice ? null : (
               <header className="exercise-heading">
                 <div className="exercise-heading-main">
                   <div className="exercise-heading-title-row">
-                    <h3>{blockHeading}</h3>
+                    {showBlockTitle ? <h3>{blockHeading}</h3> : null}
                     {mode === 'answers' && !coAudioInBanner(block) && !hasMathAudioPrompts(block.exerciseType)
                       ? blockCorrigeAudios(block).map((src) => (
                           <audio
@@ -410,7 +423,7 @@ export function WorksheetSheet({
                           </audio>
                         ))
                       : null}
-                    {onRegenerateBlock && showExerciseRefresh ? (
+                    {!acmActivity && onRegenerateBlock && showExerciseRefresh ? (
                       <button
                         type="button"
                         className="no-print exercise-refresh-btn"

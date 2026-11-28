@@ -4,7 +4,7 @@ const norm=text=>String(text??'').normalize('NFD').replace(/\p{M}/gu,'').toLower
 const noun=text=>norm(text).replace(/^(?:(?:un|une|des|du|de la|le|la|les)\s+|l')/,'').replace(/\b([a-z]{4,})s\b/g,'$1')
 const names=Object.fromEntries(Object.entries(subjects).map(([type,labels])=>[type,[...new Set(labels.map(noun))].sort((a,b)=>b.length-a.length)]))
 const specific=new Set(['Fruit','Légume','Plat','Véhicule'])
-const protectedTypes=new Set(['Action','Scénario','Document','Métier','Personnage','Animal','Partie du corps','Maladie','Pays et nationalité','Heure et horloge','Logique','Forme et symbole'])
+const protectedTypes=new Set(['Action','Scène','Scénario','Document','Métier','Personnage','Animal','Partie du corps','Maladie','Pays et nationalité','Heure et horloge','Logique','Forme et symbole'])
 function bestMatch(label){
  const key=noun(label)
  return Object.entries(names).flatMap(([type,words])=>{const name=words.find(word=>key===word||key.startsWith(word+' '));return name?[{type,name}]:[]}).sort((a,b)=>b.name.length-a.name.length)[0]?.type

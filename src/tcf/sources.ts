@@ -18,6 +18,7 @@ export const TCF_PO_GROUPS: readonly TcfGroup[] = [
   { id: 'questions', label: 'Poser des questions' },
   { id: 'image', label: 'Image et interaction' },
   { id: 'interaction', label: 'Jeux de rôle' },
+  { id: 'point-de-vue', label: 'Expression d’un point de vue' },
 ]
 
 /** Groupes du sélecteur : thèmes (PE), parties (PO) ou scénarios (CO, CE). */
@@ -52,7 +53,7 @@ export function tcfGroupId(ex: TcfExercise): string {
     case 'sequence_4_images':
       return 'image'
     case 'dialogue':
-      return 'interaction'
+      return ex.tags?.includes('point-de-vue') ? 'point-de-vue' : 'interaction'
     default:
       return ex.scenario && TCF_SCENARIOS.some((s) => s.id === ex.scenario) ? ex.scenario : TCF_SCENARIO_AUTRE.id
   }

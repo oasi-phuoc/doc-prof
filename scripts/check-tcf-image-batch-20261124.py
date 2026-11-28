@@ -1,9 +1,10 @@
 """Check completed batches against their immutable source and image receipts.
 
 Pass later activation receipts too when their image forms postdate the baseline.
-The raw-bank comparison also protects duplicated editorial JSON fragments.
+Pass image corrections with --revisions to check their before and after forms.
 """
 import argparse
+from collections import defaultdict
 from copy import deepcopy
 import hashlib
 import json
@@ -24,6 +25,8 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('receipts', nargs='+', type=Path)
+    parser.add_argument('--revisions', action='append', default=[], type=Path,
+                        help='Register of later image or audio editorial corrections')
     args = parser.parse_args()
     receipts = [json.loads(path.read_text()) for path in args.receipts]
     baseline = receipts[0]['baseline_commit']
@@ -42,13 +45,41 @@ def main():
             proofs[proof['key']] = proof
         for row in receipt['new_images']:
             new_images[row['path']] = row
+    revisions = {}
+    editorial_edits = defaultdict(list)
+    for path in args.revisions:
+        revision = json.loads(path.read_text())
+        if 'editorial_edits' in revision:
+            for edit in revision['editorial_edits']:
+                editorial_edits[edit['bank']].extend(edit['replacements'])
+            continue
+        assert revision['summary']['corrected_trios'] == len(revision['trios'])
+        for proof in revision['trios']:
+            key = proof['key']
+            assert proof['change_kind'] == 'replaced_image_choices' and proof['visual_review']
+            earlier = proofs.get(key)
+            if earlier:
+                assert earlier['after_image_form'] == proof['before_image_form'], key
+            revisions.setdefault(key, proof['before_image_form'])
+            proofs[key] = proof
+        for row in revision.get('new_images', []):
+            new_images[row['path']] = row
     checked = set()
+    raw_banks_preserved = True
+    added_keys = {proof['key'] for receipt in receipts for proof in receipt['trios']}
+    assert set(editorial_edits) <= {str(bank.relative_to(ROOT)) for bank in BANKS}
     for bank in BANKS:
         relative = str(bank.relative_to(ROOT))
         original_bytes = subprocess.check_output(['git', 'show', baseline + ':' + relative], cwd=ROOT)
         assert hashlib.sha256(original_bytes).hexdigest() == receipts[0]['source_bank_sha256'][relative]
         original = json.loads(original_bytes)
-        current_text = bank.read_text()
+        active_text = bank.read_text()
+        current_text = active_text
+        # Compare image receipts against the wording they were reviewed with.
+        for edit in reversed(editorial_edits.get(relative, [])):
+            assert edit['before'] and edit['after'] and edit['before'] != edit['after']
+            assert current_text.count(edit['after']) == 1, relative + ': missing editorial correction'
+            current_text = current_text.replace(edit['after'], edit['before'], 1)
         restored = json.loads(current_text)
         old_by_id = {e['id']: e for e in original}
         for exercise in restored:
@@ -60,21 +91,38 @@ def main():
                 assert proof['bank'] == relative
                 assert question['formes']['qcm_image'] == proof['after_image_form']
                 old = old_by_id[exercise['id']]['questions'][number - 1]
-                assert not old.get('formes', {}).get('qcm_image'), key
-                question['formes'].pop('qcm_image')
-                if not question['formes'] and 'formes' not in old:
-                    question.pop('formes')
-        assert restored == original, relative + ': unregistered or non-image edit'
-        for exercise in loads(current_text):
+                if key in added_keys:
+                    assert not old.get('formes', {}).get('qcm_image'), key
+                    question['formes'].pop('qcm_image')
+                    if not question['formes'] and 'formes' not in old:
+                        question.pop('formes')
+                else:
+                    previous = revisions[key]
+                    assert old['formes']['qcm_image'] == previous, key
+                    question['formes']['qcm_image'] = previous
+        if restored != original:
+            raw_banks_preserved = False
+            assert args.revisions and loads(json.dumps(restored)) == loads(original_bytes.decode()), (
+                relative + ': unregistered or non-image edit'
+            )
+        original_editorial = {ex['id']: ex for ex in loads(current_text)} if active_text != current_text else {}
+        for exercise in loads(active_text):
             for number, question in enumerate(exercise.get('questions', []), 1):
                 key = f"{exercise['id']}#{number}"
                 if key not in proofs:
                     continue
                 proof = proofs[key]
                 source, audio = source_for(exercise, question)
-                assert source == proof['source'] and digest(source) == proof['source_sha256']
-                assert digest(semantic_question(question)) == proof['semantic_sha256']
                 assert audio == proof['audio']
+                if (source != proof['source'] or digest(semantic_question(question)) != proof['semantic_sha256']) and exercise['id'] in original_editorial:
+                    earlier = original_editorial[exercise['id']]
+                    earlier_question = earlier['questions'][number - 1]
+                    source, _ = source_for(earlier, earlier_question)
+                    semantic = semantic_question(earlier_question)
+                else:
+                    semantic = semantic_question(question)
+                assert source == proof['source'] and digest(source) == proof['source_sha256']
+                assert digest(semantic) == proof['semantic_sha256']
                 if audio:
                     assert sha(ROOT / 'public' / audio.lstrip('/')) == proof['audio_sha256']
                 form = question['formes']['qcm_image']
@@ -97,7 +145,7 @@ def main():
         assert manifest[image]['original_bytes_preserved']
         assert audit[image]['visual_label'] and audit[image]['visual_keywords']
     print(json.dumps(dict(checked_trios=len(checked), checked_new_images=len(new_images),
-        raw_editorial_fragments_preserved=True, source_audio_and_answers_unchanged=True), ensure_ascii=False))
+        raw_editorial_fragments_preserved=raw_banks_preserved, source_audio_and_answers_unchanged=True), ensure_ascii=False))
 
 
 if __name__ == '__main__':

@@ -1,7 +1,8 @@
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
-import { Fragment, useMemo, useState, type CSSProperties, type ReactNode, type RefObject } from 'react'
+import { Fragment, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode, type RefObject } from 'react'
 import { flushSync } from 'react-dom'
 import { useWorksheetImageSources, WorksheetPrintImages } from '@/components/WorksheetImage'
+import { FormesPalette } from '@/components/generator/FormesPalette'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
@@ -33,6 +34,7 @@ export type ResultPanelProps = {
   libreMode: boolean
   settingsTarget?: HTMLElement | null
   settingsBlockIndex: number
+  validateManual: () => void
   correctionsToReview?: boolean
   isTcf: boolean
   isGrammaireExercise?: boolean
@@ -63,7 +65,6 @@ export type ResultPanelProps = {
   onOpenBook: () => void
   isCalliDomain: boolean
   isJeuxDomain: boolean
-  jeuxPreviewSheets: Array<{ sheet: WorksheetPage; index: number }> | null
   previewFrameRef: RefObject<HTMLDivElement | null>
   seed: number
   previewWorksheets: WorksheetPage[]
@@ -100,6 +101,7 @@ export type ResultPanelProps = {
   isTransform: boolean
   isComposer: boolean
   coordTool: string
+  setSelectedCoordShape: (kind: CoordShape | null) => void
   selectedCoordShape: CoordShape | null
   placeCoordMark: (x: number, y: number, kind: CoordShape) => void
   placeOrigin: (col: number, row: number) => void
@@ -110,6 +112,7 @@ export function ResultPanel({
   libreMode,
   settingsTarget,
   settingsBlockIndex,
+  validateManual,
   correctionsToReview,
   isTcf,
   isGrammaireExercise,
@@ -140,7 +143,6 @@ export function ResultPanel({
   onOpenBook,
   isCalliDomain,
   isJeuxDomain,
-  jeuxPreviewSheets,
   previewFrameRef,
   seed,
   previewWorksheets,
@@ -162,6 +164,7 @@ export function ResultPanel({
   isTransform,
   isComposer,
   coordTool,
+  setSelectedCoordShape,
   selectedCoordShape,
   placeCoordMark,
   placeOrigin,
@@ -191,7 +194,8 @@ export function ResultPanel({
     isLogistiqueDomain(sheet.domain) && sheet.blocks.every((block) => isLogistiqueReferenceType(block.exerciseType)),
   )
   const physicalPageCount = a5Pairs?.length ?? previewWorksheets.length
-  const answersBaseCount = isCalliDomain || isJeuxDomain || logisticsReferenceOnly ? 0 : physicalPageCount
+  const acmOnly = previewWorksheets.length > 0 && previewWorksheets.every((sheet) => sheet.domain === 'acm')
+  const answersBaseCount = isCalliDomain || isJeuxDomain || logisticsReferenceOnly || acmOnly ? 0 : physicalPageCount
   /** Corrigé PO : une page pour l’interaction, après la dernière feuille. */
   const correctionFollow = useMemo(() => {
     const seen = new Set<string>()
@@ -218,7 +222,7 @@ export function ResultPanel({
   const corrigeTotalPages = answersBaseCount + correctionFollow.length + transcriptionPacks.length
   const [printCapture, setPrintCapture] = useState<ReactNode>(null)
   const imageSources = useWorksheetImageSources()
-  const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain && !logisticsReferenceOnly
+  const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain && !logisticsReferenceOnly && !acmOnly
   const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
   const activePreviewIndex = Math.min(safeSheetIndex, Math.max(0, previewWorksheets.length - 1))
   const activePreview = previewWorksheets[activePreviewIndex]
@@ -230,7 +234,16 @@ export function ResultPanel({
   const a5Group = a5Pairs?.map((pair, index) => ({ pair, index }))
     .filter(({ pair }) => pair.configIndex === activeConfig)
   const grammarTheoryItems = pageGroup.flatMap(({ sheet }) => sheet.items.filter(item => item.grammarTheoryFalc))
-  const showPageStack = a5Group ? a5Group.length > 1 : pageGroup.some(({ sheet }) => sheet.isContinuation)
+  const showCardStack = activePreview?.domain === 'jeux' && pageGroup.length > 1 && !a5Pairs
+  const showPageStack = a5Group ? a5Group.length > 1 : showCardStack || pageGroup.some(({ sheet }) => sheet.isContinuation)
+  const previewScrollRef = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const container = previewScrollRef.current
+    const frame = previewFrameRef.current
+    if (!showCardStack || !container || !frame || container.scrollHeight <= container.clientHeight) return
+    const inset = parseFloat(getComputedStyle(container).paddingTop)
+    container.scrollTop += frame.getBoundingClientRect().top - container.getBoundingClientRect().top - inset
+  }, [showCardStack, activePreviewIndex, previewFrameRef])
   const lastPreview = previewWorksheets[previewWorksheets.length - 1]
   const onLastPage =
     previewWorksheets.length > 0 &&
@@ -404,6 +417,22 @@ export function ResultPanel({
                     />
                   </svg>
                 </button>
+                {!libreMode ? null : (
+                  <button
+                    className="print-chip is-icon is-validate"
+                    type="button"
+                    onClick={validateManual}
+                    aria-label="Valider les changements"
+                    title="Valider les changements"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+                      <path
+                        fill="currentColor"
+                        d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+                      />
+                    </svg>
+                  </button>
+                )}
                 {showTcfAudioDownload ||
                 isTcmCfr ||
                 isTcmCsc ||
@@ -483,7 +512,7 @@ export function ResultPanel({
                     </svg>
                   </button>
                 ) : null}
-                {libreMode ? null : (
+                {libreMode || acmOnly ? null : (
                   <button
                     className="print-chip is-icon is-generate"
                     type="button"
@@ -553,27 +582,9 @@ export function ResultPanel({
               </div>
             </div>
             {grammarTheoryItems.length > 0 && <GrammarTheoryReading key={activeConfig} items={grammarTheoryItems} mode={sheetProps.mode} />}
-            <div className="sheet-preview-wrap no-print-nav">
+            <div ref={previewScrollRef} className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
-                  {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
-                    <div className="sheet-stage is-jeux-stack">
-                      {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
-                        <A4Frame
-                          key={`jeux-prev-${sheet.exerciseType}-${seed}-${index}`}
-                          ref={stackIdx === 0 ? previewFrameRef : undefined}
-                        >
-                          <WorksheetSheet
-                            page={sheet}
-                            pageNumber={index + 1}
-                            sheetIndex={index + 1}
-                            total={previewWorksheets.length}
-                            {...sheetProps}
-                          />
-                        </A4Frame>
-                      ))}
-                    </div>
-                  ) : (
+                <div className={`sheet-preview-row${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                   <div className={`sheet-stage${a5Pairs ? ' is-a5-double' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                     {a5Group ? a5Group.map(({ pair: { left, right }, index }, stackIndex) => {
                       const domain = (left ?? right)?.domain
@@ -613,7 +624,8 @@ export function ResultPanel({
                       pageGroup.map(({ sheet, index }, stackIdx) => (
                         <A4Frame
                           key={`page-stack-${sheet.exerciseType}-${seed}-${index}`}
-                          ref={stackIdx === 0 ? previewFrameRef : undefined}
+                          ref={(showCardStack ? index === activePreviewIndex : stackIdx === 0) ? previewFrameRef : undefined}
+                          className={sheet.cePosterLandscape ? 'is-landscape' : undefined}
                         >
                           {renderEditableSheet(sheet, index)}
                         </A4Frame>
@@ -621,6 +633,7 @@ export function ResultPanel({
                     ) : (
                       <A4Frame
                         ref={previewFrameRef}
+                        className={previewSheet?.cePosterLandscape ? 'is-landscape' : undefined}
                         key={`${previewSheet?.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
                       >
                         {previewSheet ? renderEditableSheet(previewSheet, safeSheetIndex) : null}
@@ -658,7 +671,16 @@ export function ResultPanel({
                         ))
                       : null}
                   </div>
-                  )}
+                  {isFormes && activeBlock.coordLibre ? (
+                    <aside className="coord-page-palette no-print">
+                      <b>Formes</b>
+                      <FormesPalette
+                        marks={activeBlock.coordMarks ?? []}
+                        selectedKind={selectedCoordShape}
+                        onSelect={setSelectedCoordShape}
+                      />
+                    </aside>
+                  ) : null}
                 </div>
               </div>
             </div>

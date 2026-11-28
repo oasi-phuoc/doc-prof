@@ -27,12 +27,13 @@ interface Env extends CompetitionEnv, AccountsEnv {
 
 type Account = 'admin' | 'full' | 'partial'
 
-const FULL_TEST_DOMAINS = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr'] as const
+const FULL_TEST_DOMAINS = ['tcf-csc', 'tcf-cfr', 'tcf-b1', 'tcm-csc', 'tcm-cfr'] as const
 
 const ADMIN_ONLY = new Set([
   'tpf',
   'tcf-csc',
   'tcf-cfr',
+  'tcf-b1',
   'tcf',
   'tcm-csc',
   'tcm-cfr',
@@ -88,6 +89,7 @@ const ALL_DOMAINS = [
   'tpf',
   'tcf-csc',
   'tcf-cfr',
+  'tcf-b1',
 ] as const
 
 const MAX_BODY = FICHE_BODY_MAX_CHARS

@@ -24,7 +24,8 @@ import { GRAMMAIRE_EXERCISE_TYPES, GRAMMAIRE_TOPICS } from '@/grammaire/catalog'
 import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
-import { ACM_EXERCISE_TYPES, ACM_TOPICS } from '@/acm/catalog'
+import { ACM_DEFAULT_TOPIC, ACM_EXERCISE_TYPES, ACM_TOPICS } from '@/acm/catalog'
+import { TPF_PLACEMENT_TYPES, tpfPlacementTask } from '@/tcf/tpf-placement'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import { isLogistiqueDomain, logistiqueTopics, logistiqueType, logistiqueTypes } from '@/logistique/catalog'
 import { LOGIQUE_EXERCISE_TYPES, LOGIQUE_TOPICS } from '@/logique/catalog'
@@ -917,6 +918,7 @@ export const exerciseTypes: ExerciseType[] = [
     { preferredColumns: 1 },
   ),
   ...TCF_EXERCISE_TYPES,
+  ...TPF_PLACEMENT_TYPES,
   ...GRAMMAIRE_EXERCISE_TYPES,
   ...VOCABULAIRE_EXERCISE_TYPES,
   ...SOCIETE_EXERCISE_TYPES,
@@ -1073,6 +1075,8 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
   }
   if (topic) {
     const list = typesForTopic(topic, track)
+    const tpfType = domain === 'tpf' ? list.find((type) => tpfPlacementTask(type.id)) : undefined
+    if (tpfType) return tpfType
     if (list[0]) return list[0]
     const any = typesForTopic(topic)
     if (any[0]) return any[0]
@@ -1094,7 +1098,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
                   : domain === 'santé'
                     ? SANTE_DEFAULT_TOPIC
                     : domain === 'acm'
-                      ? 'acm-a-venir'
+                      ? ACM_DEFAULT_TOPIC
                       : domain === 'logique'
                         ? 'logique-suite-graphique'
                         : domain === 'tcm-csc'

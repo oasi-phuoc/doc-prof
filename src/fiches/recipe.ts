@@ -1,3 +1,4 @@
+import { normalizeLegacyAcmBlock } from '@/acm/catalog'
 import { normalizeLegacySanteBlock } from '@/sante/catalog'
 import { freezeLogistiquePages, validLogistiquePages } from '@/logistique/recipe'
 import {hasRetiredGrammarRecipe} from '@/grammaire/curriculum/retirement'
@@ -114,6 +115,7 @@ function migratePage(page: PageConfig): PageConfig {
     if (page.domain === 'santé') return normalizeLegacySanteBlock(migrated)
     return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
       : page.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
+      : page.domain === 'acm' ? normalizeLegacyAcmBlock(migrated)
       : page.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated
   })
   const migrated = {
@@ -126,6 +128,7 @@ function migratePage(page: PageConfig): PageConfig {
   if (migrated.domain === 'santé') return normalizeLegacySanteBlock(migrated)
   return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
     : migrated.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
+    : migrated.domain === 'acm' ? normalizeLegacyAcmBlock(migrated)
     : migrated.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated
 }
 

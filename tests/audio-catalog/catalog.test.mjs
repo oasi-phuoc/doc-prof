@@ -62,9 +62,41 @@ await test('multi-track audio and replacement aliases cannot receive another dia
 const server=await createServer({cacheDir:'/tmp/clairfle-audio-unit-vite',server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
  const {filterAudios}=await server.ssrLoadModule('/src/audio-catalog/catalog.ts')
+ const {audioDownloadFilename,audioWordFilename}=await server.ssrLoadModule('/src/audio-catalog/download.ts')
  const {audioWordDocument}=await server.ssrLoadModule('/src/audio-catalog/docx.ts')
- const {tcfAudioEntries}=await server.ssrLoadModule('/src/tcf/audio-bank.ts')
+ const {tcfAudioDisplayName,tcfAudioEntries}=await server.ssrLoadModule('/src/tcf/audio-bank.ts')
  const {tcfBankAllLevels}=await server.ssrLoadModule('/src/tcf/loader.ts')
+ await test('descriptive titles identify the same recordings in the catalogue, picker and exports',async()=>{
+  const titles=await read('src/tcf/content/audio-titles.json')
+  const entriesByPath=new Map(index.entries.map(entry=>[entry.src,entry]))
+  for(const [src,title] of Object.entries(titles)){
+   const entry=entriesByPath.get(src)
+   assert.ok(entry?.transcriptCount,src)
+   assert.equal(entry.label,title,src)
+   assert.equal(tcfAudioDisplayName(src),title,src)
+  }
+  const normalizeTitle=text=>text.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()
+  const transcriptsByTitle=new Map()
+  for(const entry of index.entries){
+   if(!entry.transcriptCount||!entry.src.startsWith('/lib/audio/tcf/co/'))continue
+   assert.doesNotMatch(entry.label,/^(?:piste|extrait|audio|dialogue|document|annonce)\s*(?:n[°o]\s*)?\d+(?:[\s—–.-]+\d+)*$/iu,entry.src)
+   const key=normalizeTitle(entry.label)
+   const transcripts=[...new Set(allDetails[entry.src].transcripts.map(transcript=>normalizeTitle(transcript.text)))].sort()
+   if(transcriptsByTitle.has(key))assert.deepEqual(transcripts,transcriptsByTitle.get(key),entry.label)
+   else transcriptsByTitle.set(key,transcripts)
+  }
+  const bank=tcfAudioEntries(tcfBankAllLevels('CO'))
+  for(const audio of bank){
+   if(titles[audio.audio])assert.equal(audio.label,titles[audio.audio],audio.audio)
+  }
+  const yoghurt=entriesByPath.get('/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3')
+  assert.equal(yoghurt.label,'Chercher les yaourts au supermarché')
+  assert.equal(audioDownloadFilename(yoghurt),'chercher-les-yaourts-au-supermarche.mp3')
+  assert.equal(audioWordFilename(yoghurt),'chercher-les-yaourts-au-supermarche.docx')
+  const excerpt=entriesByPath.get('/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-2.mp3')
+  assert.equal(excerpt.label,'Les lectures universitaires avant de dormir')
+  assert.equal(audioDownloadFilename(excerpt),'les-lectures-universitaires-avant-de-dormir.mp3')
+ })
  await test('short, medium and long catalogue filters agree with every active question pool in the exercise generator',()=>{
   let checked=0
   for(const audio of tcfAudioEntries(tcfBankAllLevels('CO'))){

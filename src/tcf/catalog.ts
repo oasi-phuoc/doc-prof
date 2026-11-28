@@ -8,6 +8,7 @@ import {
   tcfCoConsigneForSlot,
 } from './consignes'
 import type { TcfCompetence, TcfNiveau, TcfTypeExercice, TcfTypeReponse } from './types'
+import { TPF_PLACEMENT_TASKS } from './tpf-placement'
 
 /** TPF — Test de placement de français (tous les niveaux, y compris A2-B1). */
 export const TPF_DOMAIN = 'tpf' as const
@@ -15,48 +16,53 @@ export const TPF_DOMAIN = 'tpf' as const
 export const TCF_CSC_DOMAIN = 'tcf-csc' as const
 /** TCF CFR — Test de connaissance de français, niveau A1-A2. */
 export const TCF_CFR_DOMAIN = 'tcf-cfr' as const
+/** TCF B1 — Test de connaissance de français, banque A2-B1. */
+export const TCF_B1_DOMAIN = 'tcf-b1' as const
 
-export const TPF_FAMILY_DOMAINS = [TPF_DOMAIN, TCF_CSC_DOMAIN, TCF_CFR_DOMAIN] as const
+export const TPF_FAMILY_DOMAINS = [TPF_DOMAIN, TCF_CSC_DOMAIN, TCF_CFR_DOMAIN, TCF_B1_DOMAIN] as const
 export type TpfFamilyDomain = (typeof TPF_FAMILY_DOMAINS)[number]
 
 export function isTpfFamilyDomain(domain: string | undefined): domain is TpfFamilyDomain {
-  return domain === TPF_DOMAIN || domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN
+  return TPF_FAMILY_DOMAINS.some((member) => member === domain)
 }
 
-/** TPF / TCF-CSC / TCF-CFR, plus l’ancien id `tcf`. */
+/** TPF et domaines TCF, plus l’ancien id `tcf`. */
 export function isTcfAudioDomain(domain: string | undefined): boolean {
   return isTpfFamilyDomain(domain) || domain === 'tcf'
 }
 
 /** Ancien id `tcf` → TPF. */
 export function canonicalTpfFamilyDomain(domain: string | undefined): TpfFamilyDomain {
-  if (domain === TCF_CSC_DOMAIN || domain === TCF_CFR_DOMAIN) return domain
-  return TPF_DOMAIN
+  return isTpfFamilyDomain(domain) ? domain : TPF_DOMAIN
 }
 
 export const TPF_DOCUMENT_TITLE = 'Test de placement de français'
 export const TCF_CSC_DOCUMENT_TITLE = 'Test de connaissance de français — CSC'
 export const TCF_CFR_DOCUMENT_TITLE = 'Test de connaissance de français — CFR'
+export const TCF_B1_DOCUMENT_TITLE = 'Test de connaissance de français — B1'
 
 export function tpfDocumentTitle(domain: string | undefined): string {
   if (domain === TCF_CSC_DOMAIN) return TCF_CSC_DOCUMENT_TITLE
   if (domain === TCF_CFR_DOMAIN) return TCF_CFR_DOCUMENT_TITLE
+  if (domain === TCF_B1_DOMAIN) return TCF_B1_DOCUMENT_TITLE
   return TPF_DOCUMENT_TITLE
 }
 
 export function tpfFamilyLabel(domain: string | undefined): string {
   if (domain === TCF_CSC_DOMAIN) return 'TCF CSC'
   if (domain === TCF_CFR_DOMAIN) return 'TCF CFR'
+  if (domain === TCF_B1_DOMAIN) return 'TCF B1'
   return 'TPF'
 }
 
 /**
  * Niveaux de la banque pour ce domaine.
- * TPF : A0-A1, A1-A2 et A2-B1. TCF-CSC : A0-A1. TCF-CFR : A1-A2.
+ * TPF : tous les niveaux. Chaque domaine TCF fixe le niveau.
  */
 export function tpfNiveauxForDomain(domain: string | undefined): readonly TcfNiveau[] {
   if (domain === TCF_CSC_DOMAIN) return ['A0-A1']
   if (domain === TCF_CFR_DOMAIN) return ['A1-A2']
+  if (domain === TCF_B1_DOMAIN) return ['A2-B1']
   return ['A0-A1', 'A1-A2', 'A2-B1']
 }
 
@@ -285,6 +291,15 @@ export const TCF_TYPES: readonly TcfTypeMeta[] = [
     reponses: [],
   },
   {
+    typeId: 'tcf-po-lecture-progressive',
+    competence: 'PO',
+    typeExercice: 'lecture_progressive',
+    label: 'Lecture à voix haute',
+    description: 'Un texte continu avec des phrases de niveau A1, A2 puis B1.',
+    instruction: 'Lisez le texte à voix haute, du début à la fin.',
+    reponses: [],
+  },
+  {
     typeId: 'tcf-po-trois-themes',
     competence: 'PO',
     typeExercice: 'trois_themes',
@@ -377,15 +392,18 @@ const CE_A1 = [
 
 /** CE A1-A2 (CFR). */
 const CE_A2 = ['S’orienter', 'Correspondance', 'Instructions', 'S’informer'] as const
+const CE_B1 = ['Comprendre des consignes', 'Lire une correspondance', 'Comparer des offres', 'Lire un article'] as const
 
 /** CO A0-A1 (CSC / TPF) — 5 emplacements. */
 const CO_A1 = ['Événement', 'Activité', 'Instructions', 'Situations', 'Objets'] as const
 
 /** CO A1-A2 (CFR / TPF) — 4 emplacements (pas d’exercice 5). */
 const CO_A2 = ['Annonces et instructions', 'Radio', 'Message', 'Discussion'] as const
+const CO_B1 = ['Extraits courts', 'Extraits moyens', 'Document long', 'Situations illustrées'] as const
 
 /** PE A0-A1 — tags : formulaire, mots-cles, dialogue, message+email. */
 const PE_A1 = ['Formulaire', 'Texte à compléter', 'Dialogue', 'Message / e-mail'] as const
+const PE_B1 = ['Rédiger un message', 'Raconter une expérience', 'Comparer et argumenter'] as const
 
 export const TCF_CE_NUMEROS = [1, 2, 3, 4] as const
 export const TCF_PE_NUMEROS = [1, 2, 3, 4] as const
@@ -441,6 +459,7 @@ const TCF_CE_LEGACY: TcfSlotMeta = {
 
 export const tcfSlotByTypeId: Readonly<Record<string, TcfSlotMeta>> = {
   ...Object.fromEntries(TCF_SLOTS.map((slot) => [slot.typeId, slot])),
+  ...Object.fromEntries(TPF_PLACEMENT_TASKS.map((task) => [task.typeId, { ...task, description: task.label }])),
   [TCF_CE_LEGACY.typeId]: TCF_CE_LEGACY,
 }
 
@@ -452,17 +471,15 @@ export function tcfMenuLabel(typeId: string, niveau: TcfNiveau): string | undefi
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.numero == null) return undefined
   if (slot.competence === 'CE') {
-    return niveau === 'A1-A2' || niveau === 'A2-B1'
-      ? CE_A2[slot.numero - 1]
-      : CE_A1[slot.numero - 1]
+    const labels = niveau === 'A2-B1' ? CE_B1 : niveau === 'A1-A2' ? CE_A2 : CE_A1
+    return labels[slot.numero - 1]
   }
   if (slot.competence === 'CO') {
-    return niveau === 'A1-A2' || niveau === 'A2-B1'
-      ? CO_A2[slot.numero - 1]
-      : CO_A1[slot.numero - 1]
+    const labels = niveau === 'A2-B1' ? CO_B1 : niveau === 'A1-A2' ? CO_A2 : CO_A1
+    return labels[slot.numero - 1]
   }
   if (slot.competence === 'PE') {
-    return PE_A1[slot.numero - 1]
+    return (niveau === 'A2-B1' ? PE_B1 : PE_A1)[slot.numero - 1]
   }
   return undefined
 }

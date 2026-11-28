@@ -152,9 +152,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Des bus" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp" },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-tramways.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/vocab-taxis.webp" }
+              { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/qcm-transport-bus-pluriel-ivoire.png" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-transport-tramways-pluriel-ivoire.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-transport-taxis-pluriel-ivoire.png" }
             ] }
         },
         "audio": 2
@@ -6838,7 +6838,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp" },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-routes-58-3-qcm-deplacement-marche-ivoire.png" }
             ] }
         }
       }
@@ -13276,7 +13276,7 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Un vélo" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp" },
+              { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/qcm-transport-vtt-blanc-noir.png" },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp" }
             ] }
@@ -17179,7 +17179,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
       "transcription": [
-        "Chers clients, aujourd’hui dans votre magasin Autoprix, ne manquez",
+        "Chers clients, aujourd’hui dans votre magasin Atoutprix, ne manquez",
         " pas les promotions exceptionnelles sur les télévisions.\nJusqu’à 40%",
         " de réduction !\nDemain, nous aurons d’autres surprises sur les",
         " téléphones et les ordinateurs."
@@ -17244,12 +17244,12 @@
         "points": 1,
         "melanger": true,
         "choix": [
-          { "id": "a", "texte": "Autoprix", "correct": true },
+          { "id": "a", "texte": "Atoutprix", "correct": true },
           { "id": "b", "texte": "Toutprix" },
           { "id": "c", "texte": "Monoprix" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Autoprix" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Atoutprix" }
         }
       }
     ],
@@ -18171,7 +18171,7 @@
     "support": {
       "audio": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3",
       "transcription": [
-        "Mesdames et messieurs, le cirque Pinder vous invite à nous retrouver",
+        "Mesdames et messieurs, le cirque Pindet vous invite à nous retrouver",
         " pour un spectacle extraordinaire d'une heure trente. Venez voir des",
         " animaux, des clowns, des acrobates. Rendez-vous mardi 14 à 18h."
       ]
@@ -20145,7 +20145,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp" },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-routes-65-3-qcm-deplacement-marche-ivoire.png" }
             ] }
         },
         "audio": 1
@@ -24145,7 +24145,7 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "En bus" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp" },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-routes-67-2-qcm-deplacement-marche-ivoire.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png" }
             ] }
         }
@@ -33334,7 +33334,7 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "Filmer" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-filmer-spectacle.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-photographier-eleves.png" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-09-2-qcm-a1-lot20-photographier-eleves.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/communication-appeler.webp" }
             ] }
         }
@@ -33500,8 +33500,8 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "Un spectacle" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png" },
-              { "id": "c", "image": "/lib/images/tcf/catalogue/actions/reunion.webp" }
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-10-2-qcm-a1-lot20-cours-sciences.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-10-3-reunion.png" }
             ] }
         }
       },
@@ -34183,7 +34183,7 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "Signer des dédicaces" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/catalogue/actions/dedicace.webp", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2-05-2-co834-concert-dessine.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-presenter-films.png" }
             ] }
         }
@@ -34243,7 +34243,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-bordure-quai.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-04-3-qcm-lot20d-attente-gare.png" }
             ] }
         }
       },
@@ -34293,9 +34293,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "À l’arrière" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-arriere.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-avant.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-milieu.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-1-qcm-lot20f-bus-arriere.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-2-qcm-lot20f-bus-avant.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-3-qcm-lot20f-bus-milieu.png" }
             ] }
         }
       },
@@ -34737,9 +34737,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Des ronds jaunes" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-ronds-jaunes.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-fleches-bleues.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-lignes-rouges.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-1-qcm-lot20c-sol-ronds-jaunes.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-2-qcm-lot20c-sol-fleches-bleues.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-3-qcm-lot20c-sol-lignes-rouges.png" }
             ] }
         }
       }
@@ -35428,7 +35428,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-15-3-qcm-a1-lot20-cours-sciences.png" }
             ] }
         }
       },
@@ -36787,8 +36787,8 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Des auteurs" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/catalogue/actions/dedicace.webp", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp" },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-10-1-dedicace.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-10-2-co834-concert-dessine.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/vocab-medecins.webp" }
             ] }
         }
@@ -36972,7 +36972,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-journaliste-sportif.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-professeur.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2-15-3-co834-medecin-dessine.png" }
             ] }
         }
       }
@@ -37582,8 +37582,8 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Une soirée crêpes" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-crepes.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-pizza.png" },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-15-1-qcm-lot20d-soiree-crepes.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-15-2-qcm-lot20d-soiree-pizza.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp" }
             ] }
         }
@@ -38313,8 +38313,8 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "Apporter quelque chose" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-fermer-porte.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png" }
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-07-2-qcm-lot20d-fermer-porte.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-07-3-qcm-lot20e-allumer-appareil.png" }
             ] }
         }
       },
@@ -39043,9 +39043,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Il marche vite" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-marcher-vite.png", "correct": true },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-09-1-qcm-lot20e-marcher-vite.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-velo-lycee.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-09-3-qcm-lot20e-velo-lycee.png" }
             ] }
         }
       }
@@ -40100,7 +40100,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-interieur.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-jardin.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-parking.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-17-3-qcm-lot20e-chateau-parking.png" }
             ] }
         }
       },
@@ -40431,9 +40431,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Elle cède sa place" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-fille-porte-sac.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-fille-achete-billet.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-1-scenario-a2-ceder-place-femmes.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-2-qcm-delf100-fille-porte-sac.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-3-qcm-delf100-fille-achete-billet.png" }
             ] }
         }
       },
@@ -41279,9 +41279,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Prendre des notes" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-prendre-notes.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-enregistrer-voix.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-chercher-internet.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-1-qcm-lot20f-prendre-notes.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-2-qcm-lot20f-enregistrer-voix.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-3-qcm-lot20f-chercher-internet.png" }
             ] }
         }
       },
@@ -41317,9 +41317,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "L’oral" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/co/scenes/ecole/repondre-a-l-entretien-oral.webp", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-dictee.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-epreuve-calcul.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-1-repondre-a-l-entretien-oral.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-2-qcm-a1-lot20-dictee.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-3-qcm-lot20f-epreuve-calcul.png" }
             ] }
         }
       }
@@ -42292,7 +42292,7 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "La police" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-police.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-10-2-qcm-lot20d-attente-gare.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/vocab-vendeurs.webp" }
             ] }
         }
@@ -42646,9 +42646,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "L’anniversaire de son amie" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-lot20f-anniversaire-amie.png", "correct": true },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-12-1-qcm-lot20f-anniversaire-amie.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-12-3-co306-depart-retraite-dessine.png" }
             ] }
         }
       },
@@ -43144,9 +43144,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "L’inauguration d’une boutique" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-inauguration-boutique.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-anniversaire-client.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-depart-vendeur.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-1-qcm-delf100-inauguration-boutique.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-2-qcm-delf100-anniversaire-client.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-3-qcm-delf100-depart-vendeur.png" }
             ] }
         }
       },
@@ -43963,7 +43963,7 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "La marche" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png", "correct": true },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-routes-81-1-qcm-deplacement-marche-ivoire.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp" }
             ] }
@@ -46050,9 +46050,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Le bureau d’information" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-information.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-change.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-objets-trouves.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-1-qcm-delf100-bureau-information.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-2-qcm-delf100-bureau-change.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-3-qcm-delf100-bureau-objets-trouves.png" }
             ] }
         }
       },
@@ -46274,9 +46274,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "L’enregistrement" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-enregistrement-train.png", "correct": true },
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-89-1-qcm-delf100-enregistrement-train.png", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-service-restauration.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-location-voitures.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-89-3-qcm-delf100-location-voitures.png" }
             ] }
         }
       }
@@ -46433,9 +46433,9 @@
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les bulles" },
           "qcm_image": { "melanger": true, "choix": [
-              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-bulles.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-couverture.png" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-marge.png" }
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-1-qcm-delf100-bd-bulles.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-2-qcm-delf100-bd-couverture.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-3-qcm-delf100-bd-marge.png" }
             ] }
         }
       },
@@ -46521,7 +46521,7 @@
           "lignes": { "nb_lignes": 1, "reponse_modele": "Les jeux vidéo et les mangas" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-jeux-video-mangas.png", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-musique-danse.png" },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-95-2-qcm-delf100-musique-danse.png" },
               { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf100-theatre-peinture.png" }
             ] }
         }
@@ -47193,24 +47193,11 @@
         ],
         "formes": {
           "lignes": { "nb_lignes": 1, "reponse_modele": "Un" },
-          "qcm_image": {
-            "melanger": true,
-            "choix": [
-              {
-                "id": "a",
-                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-1.png",
-                "correct": true
-              },
-              {
-                "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-2.png"
-              },
-              {
-                "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-3.png"
-              }
-            ]
-          }
+          "qcm_image": { "melanger": true, "choix": [
+              { "id": "a", "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-1.png", "correct": true },
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-2.png" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-3.png" }
+            ] }
         }
       }
     ]

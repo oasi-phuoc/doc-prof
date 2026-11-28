@@ -1,17 +1,24 @@
 {
   "id": "catalogue-20261113-animal-hyene",
   "label": "hyène",
+  "source_png": "/workspace/generated_images/exec-675786a1-3792-4079-a6b8-1802f3a24cab.png",
   "type": "Animal",
   "subtype": "Mammifères sauvages",
-  "status": "generation_failed",
-  "reuse_candidates": [],
   "path": "/lib/images/tcf/catalogue/animaux/hyene.webp",
-  "prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Un seul animal VIVANT : hyène. Espèce réelle, corps entier avec tous les membres, tête et queue visibles. Respecter exactement l’anatomie et les caractères distinctifs de l’espèce. Fond crème opaque, ombre très légère. Aucun aliment cuit, filet, viande, assiette, outil, accessoire ou légende. Pour un animal marin, posture de nage naturelle dans un espace crème sobre. Pour les insectes six pattes ; araignées et scorpions huit pattes ; autres groupes selon leur anatomie réelle.",
+  "status": "visually_reviewed",
+  "prompt": "One native 1448x1086 exact 4:3 landscape PNG. Matte warmly realistic digital painted TCF teaching image with tiny soft contact shadow, clean muted fine edges, absolutely smooth opaque pale ivory #FDF2E1 RGB(253,242,225) background to all corners, no habitat, ground line, people, other animals, text, marks, vignettes or other props. Show entire animal in accurate body and limbs from tip to tail. Use reference softness and palette ONLY. Animal: Crocuta crocuta. one adult spotted hyena, sandy ochre fur with dense small dark rounded spots, powerful HIGH forequarters and back slopes DOWN toward hind quarters, round ears, short black tail, natural side view.",
   "reference_images": [
-    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/chevreuil.webp"
   ],
   "style_references": [
-    "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/chevreuil.webp"
   ],
-  "error": "image generation failed: http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1794663055,\\\"eligible_promo\\\":null,\\\"limit_window_minutes\\\":null,\\\"resets_in_seconds\\\":74786}}\")"
+  "keywords": [
+    "hyène",
+    "pelage tacheté",
+    "épaules hautes",
+    "oreilles rondes"
+  ],
+  "review_note": "L’animal est représenté en entier sur fond ivoire. Détails vérifiés : pelage tacheté, épaules hautes, oreilles rondes.",
+  "sha256": "bb824e7341ec549c161eebc91a8acd31de281987a1b3ae332b991fa2e01d1802"
 }

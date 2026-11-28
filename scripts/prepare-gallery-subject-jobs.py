@@ -177,7 +177,7 @@ def prepare():
     from collections import defaultdict
     families = {name: defaultdict(list) for name in ['Animal', 'Végétal', 'Métier', 'Maladie']}
     for index, job in enumerate(plan['jobs']):
-        if job['type'] == 'Action':
+        if job['type'] == 'Action' or job['status'] == 'visually_reviewed':
             continue
         metadata = ROOT / 'docs/gallery/generation-20261113' / (job['id'] + '.json')
         state = json.loads(metadata.read_text()) if metadata.exists() else {}

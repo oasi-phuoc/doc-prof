@@ -3,17 +3,16 @@
   "label": "chameau",
   "type": "Animal",
   "subtype": "Mammifères sauvages",
-  "status": "rejected_visual_review",
-  "reuse_candidates": [],
   "path": "/lib/images/tcf/catalogue/animaux/chameau.webp",
-  "prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Un seul animal VIVANT : chameau. Espèce réelle, corps entier avec tous les membres, tête et queue visibles. Respecter exactement l’anatomie et les caractères distinctifs de l’espèce. Fond crème opaque, ombre très légère. Aucun aliment cuit, filet, viande, assiette, outil, accessoire ou légende. Pour un animal marin, posture de nage naturelle dans un espace crème sobre. Pour les insectes six pattes ; araignées et scorpions huit pattes ; autres groupes selon leur anatomie réelle.",
+  "source_png": "/workspace/generated_images/exec-45c8d11b-1e89-4eb5-b1b4-3466fe0969d1.png",
+  "prompt": "Paint one anatomically correct animal, whole body and all visible feet within a generously spaced standalone 4:3 landscape PNG. Matte hand-painted TCF classroom style from supplied references, gentle soft lighting, precise edges, warm natural volumes. Flat opaque untextured uniform ivory #FDF2E1 RGB 253 242 225, especially the four 30px corners, no backdrop or vignette. Tiny soft contact shadow under feet. No landscape, food or extras, no other animal, no marks, text or border. A real adult Bactrian camel Camelus bactrianus, full side profile facing right. Body's clear skyline has exactly TWO large clearly separate rounded humps, one directly behind shoulder and one ahead of hindquarters, a deep V-shaped valley and no other bumps between. Shaggy sandy brown fur on neck, knees, front of second hump, upright curved neck, long legs, four dark two-toed padded feet, tail hangs at hindquarters.",
   "reference_images": [
-    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/lama.webp"
   ],
   "style_references": [
-    "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/lama.webp"
   ],
-  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-53d7f513-0088-4971-b3c1-49249749d827.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
-  "review_note": "Une seule bosse : dromadaire représenté au lieu du chameau à deux bosses.",
-  "next_prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Un seul animal VIVANT : chameau. Espèce réelle, corps entier avec tous les membres, tête et queue visibles. Respecter exactement l’anatomie et les caractères distinctifs de l’espèce. Fond crème opaque, ombre très légère. Aucun aliment cuit, filet, viande, assiette, outil, accessoire ou légende. Pour un animal marin, posture de nage naturelle dans un espace crème sobre. Pour les insectes six pattes ; araignées et scorpions huit pattes ; autres groupes selon leur anatomie réelle. Espèce demandée : chameau de Bactriane à DEUX bosses clairement séparées, silhouette de profil ; ne pas représenter un dromadaire."
+  "review_note": "Le chameau de Bactriane est vu de profil. Deux bosses indépendantes se détachent, séparées par un creux net.",
+  "status": "visually_reviewed",
+  "sha256": "e7ff2c7f92809fd20931d0b02081c50433f6a5a92f23cbe51f3ae3e26ba3c316"
 }

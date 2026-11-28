@@ -7,7 +7,7 @@ import { chromium } from 'playwright'
 const base = 'http://127.0.0.1:5182'
 const server = await createServer({ cacheDir: '/tmp/clairfle-tcf-formats-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true } })
 await server.listen()
-const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
+const { buildTcfRandomTestPages, buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
 const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
@@ -23,10 +23,12 @@ async function marks(sheet) {
 try {
   await mkdir('docs/tcf/screenshots', { recursive: true })
   for (const [domain, difficulty] of [['tcf-csc', 'facile'], ['tcf-cfr', 'moyen'], ['tpf', 'avance']]) {
-    const all = buildTpfFamilyTestPages(domain, 42).filter((config) => config.difficulty === difficulty)
+    // Le TPF enregistré avant la refonte utilise encore les anciens emplacements CO/CE.
+    const configPages = domain === 'tpf' ? buildTcfRandomTestPages('A2-B1', 42) : buildTpfFamilyTestPages(domain, 42)
+    const all = configPages.filter((config) => config.difficulty === difficulty)
     const pages = all.filter((config) => /^tcf-co-ex-[123]$/.test(config.exerciseType))
       .concat(all.filter((config) => /^tcf-ce-ex-[12]$/.test(config.exerciseType)).map((config) => ({ ...config, tcfQuestionCount: 3 })))
-    assert.equal(pages.length, domain === 'tpf' ? 3 : 5)
+    assert.equal(pages.length, 5)
     const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } })
     await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
     await context.addInitScript((fiche) => {
@@ -97,7 +99,7 @@ try {
       await button(page, 'Corrigé (cliquer pour fiche élève)').click()
       assert.equal(await sheet.locator('.tcf-case.is-filled').count(), 0)
     }
-    results.push({ domain, level: difficulty, co: 'three format buttons for each of 17 questions, including multi-question audio frames; Text / Image / Sentence switching preserves questions, variants, points and recordings', imageSwitches, ce: pages.length > 3 ? 'checkbox corrections on both reading exercises; empty student copies; stable shuffled answers; printable check strokes without background graphics' : 'no CE bank entries at this level; CE covered by CSC and CFR cases' })
+    results.push({ domain, level: difficulty, co: 'three format buttons for each of 17 questions, including multi-question audio frames; Text / Image / Sentence switching preserves questions, variants, points and recordings', imageSwitches, ce: 'checkbox corrections on both reading exercises; empty student copies; stable shuffled answers; printable check strokes without background graphics' })
     await context.close()
     console.log(`TCF : formats CO et corrigés CE vérifiés pour ${domain}.`)
   }

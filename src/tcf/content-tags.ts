@@ -4,7 +4,7 @@
  */
 import { tcfPosition } from './catalog'
 import { tcfGroupId } from './sources'
-import type { TcfExercise } from './types'
+import type { TcfExercise, TcfNiveau } from './types'
 
 export const TCF_CE_TAG_INSTRUCTIONS = 'instructions' as const
 export const TCF_CE_TAG_TEMPS = 'temps' as const
@@ -22,6 +22,8 @@ export const TCF_PE_TAG_MOTS_CLES = 'mots-cles' as const
 export const TCF_PE_TAG_DIALOGUE = 'dialogue' as const
 export const TCF_PE_TAG_MESSAGE = 'message' as const
 export const TCF_PE_TAG_EMAIL = 'email' as const
+const TCF_PE_TAG_RECIT = 'recit' as const
+const TCF_PE_TAG_ARGUMENTATION = 'argumentation' as const
 
 export type TcfPeTag =
   | typeof TCF_PE_TAG_FORMULAIRE
@@ -29,6 +31,8 @@ export type TcfPeTag =
   | typeof TCF_PE_TAG_DIALOGUE
   | typeof TCF_PE_TAG_MESSAGE
   | typeof TCF_PE_TAG_EMAIL
+  | typeof TCF_PE_TAG_RECIT
+  | typeof TCF_PE_TAG_ARGUMENTATION
 
 const CE_TAGS: readonly TcfCeTag[] = [
   TCF_CE_TAG_INSTRUCTIONS,
@@ -43,6 +47,8 @@ const PE_TAGS: readonly TcfPeTag[] = [
   TCF_PE_TAG_DIALOGUE,
   TCF_PE_TAG_MESSAGE,
   TCF_PE_TAG_EMAIL,
+  TCF_PE_TAG_RECIT,
+  TCF_PE_TAG_ARGUMENTATION,
 ]
 
 /**
@@ -70,7 +76,13 @@ export function tcfCeTagForSlot(numero: number | undefined): TcfCeTag | null {
  * Tags PE de l’emplacement :
  * 10→formulaire, 11→mots-cles, 12→dialogue, 13→message+email.
  */
-export function tcfPeTagsForSlot(numero: number | undefined): TcfPeTag[] {
+export function tcfPeTagsForSlot(numero: number | undefined, niveau?: TcfNiveau): TcfPeTag[] {
+  if (niveau === 'A2-B1') {
+    if (numero === 1) return [TCF_PE_TAG_MESSAGE, TCF_PE_TAG_EMAIL]
+    if (numero === 2) return [TCF_PE_TAG_RECIT]
+    if (numero === 3) return [TCF_PE_TAG_ARGUMENTATION]
+    return []
+  }
   if (numero === 1) return [TCF_PE_TAG_FORMULAIRE]
   if (numero === 2) return [TCF_PE_TAG_MOTS_CLES]
   if (numero === 3) return [TCF_PE_TAG_DIALOGUE]

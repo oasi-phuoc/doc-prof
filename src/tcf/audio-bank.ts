@@ -12,6 +12,8 @@ import {
   type TcfAudioTag,
 } from './audio-tags'
 import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-audio'
+import { resolveTcfAudioReference } from './audio-replacements'
+import { tcfAudioTitle } from './audio-titles'
 import type { TcfExercise, TcfQuestion } from './types'
 import audioDurations from './content/audio-durations.json'
 import reviewedPools from './content/co-reviewed-pools.json'
@@ -96,7 +98,7 @@ export function tcfAudioDisplayName(audioPath: string, bankEntries?: readonly Tc
   if (!trimmed) return ''
   const fromBank = bankEntries?.find((e) => e.audio === trimmed)
   if (fromBank?.label) return fromBank.label
-  return tcfAudioBaseFromPath(trimmed)
+  return tcfAudioTitle(resolveTcfAudioReference(trimmed) ?? trimmed) ?? tcfAudioBaseFromPath(trimmed)
 }
 
 /** Base sans numéro (pour regrouper les doublons). */
@@ -451,7 +453,13 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
       scenarioScene,
     })
   }
-  return out.sort((a, b) => a.label.localeCompare(b.label, 'fr', { numeric: true }))
+  // Keep the original pool order for seeded exercise generation.
+  return out
+    .sort((a, b) => a.label.localeCompare(b.label, 'fr', { numeric: true }))
+    .map((entry) => {
+      const title = tcfAudioTitle(entry.audio)
+      return title ? { ...entry, label: title } : entry
+    })
 }
 
 /** Audios tagués `scenario` (petits dialogues d’association). */

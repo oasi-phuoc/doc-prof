@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import {readFile,mkdir,writeFile} from 'node:fs/promises'
 import {execFileSync} from 'node:child_process'
+import path from 'node:path'
 import {createServer} from 'vite'
 import {chromium} from 'playwright'
 import AxeBuilder from '@axe-core/playwright'
@@ -10,8 +11,14 @@ await mkdir(output,{recursive:true});await mkdir('docs/audio-catalog/screenshots
 const server=await createServer({cacheDir:'/tmp/clairfle-audio-browser-vite',server:{host:'127.0.0.1',port:5197,strictPort:true}});await server.listen()
 const index=JSON.parse(await readFile('src/audio-catalog/catalog.generated.json','utf8'))
 const details=JSON.parse(await readFile('public/audio-catalog/tcf.json','utf8'))
+const titles=JSON.parse(await readFile('src/tcf/content/audio-titles.json','utf8'))
+const {audioDownloadFilename}=await server.ssrLoadModule('/src/audio-catalog/download.ts')
 const candidates=index.entries.filter(a=>a.collection==='TCF'&&a.questionCount>=1&&a.questionCount<=3&&details[a.id]?.blocks.some(b=>b.questions.some(q=>q.formats.some(f=>f.kind==='image'))))
-const selected=candidates.slice(0,2);assert.equal(selected.length,2)
+const selected=[candidates.find(audio=>titles[audio.id]),candidates.find(audio=>!titles[audio.id])]
+assert.ok(selected.every(Boolean))
+const zipSources=Object.fromEntries(selected.map(audio=>[
+ path.posix.join(path.posix.dirname(audio.id.slice(1)),audioDownloadFilename(audio)),audio.src,
+]))
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']})
 const results=[],errors=[]
 const button=(page,name)=>page.getByRole('button',{name,exact:true})
@@ -45,7 +52,7 @@ try{
  assert.ok((await catalogueButton.boundingBox()).x<(await settingsButton.boundingBox()).x)
  await page.getByLabel('Rechercher un audio',{exact:true}).fill(selected[0].id);assert.equal(await page.locator('.audio-card').count(),1)
  const player=page.locator('.audio-card audio');await player.evaluate(node=>node.play());await page.waitForFunction(()=>document.querySelector('.audio-card audio').currentTime>.1);await player.evaluate(node=>node.pause())
- const [single]=await Promise.all([page.waitForEvent('download'),button(page,'Télécharger l’audio').click()]);const singlePath=output+'/'+single.suggestedFilename();await single.saveAs(singlePath);assert.deepEqual(await readFile(singlePath),await readFile('public'+selected[0].src))
+ const [single]=await Promise.all([page.waitForEvent('download'),button(page,'Télécharger l’audio').click()]);assert.equal(single.suggestedFilename(),audioDownloadFilename(selected[0]));assert.notEqual(single.suggestedFilename(),path.posix.basename(selected[0].src));const singlePath=output+'/'+single.suggestedFilename();await single.saveAs(singlePath);assert.deepEqual(await readFile(singlePath),await readFile('public'+selected[0].src))
  await player.evaluate(node=>node.play());await button(page,'Voir la transcription et les questions').click();const dialog=page.getByRole('dialog');await dialog.waitFor();await dialog.getByRole('heading',{name:'Transcription',exact:true}).waitFor();assert.ok((await dialog.innerText()).includes(details[selected[0].id].transcripts[0].text))
  await dialog.locator('audio').evaluate(node=>node.play());assert.equal(await player.evaluate(node=>node.paused),true)
  assert.ok(await dialog.locator('table img').count()>0)
@@ -56,16 +63,17 @@ try{
  const [zip]=await Promise.all([page.waitForEvent('download',{timeout:120000}),button(page,'Télécharger la sélection (ZIP)').click()]);await zip.saveAs(output+'/selection.zip')
  const names=JSON.parse(execFileSync('python3',['-c',`import zipfile,sys,json,pathlib,io,xml.etree.ElementTree as E
 z=zipfile.ZipFile(sys.argv[1]);assert z.testzip() is None; assert len(z.namelist())==4
+sources=json.loads(sys.argv[2])
 for name in z.namelist():
- if name.endswith('.mp3'): assert z.read(name)==pathlib.Path('public',name).read_bytes()
+ if name.endswith('.mp3'): assert z.read(name)==pathlib.Path('public'+sources[name]).read_bytes()
  else:
   d=zipfile.ZipFile(io.BytesIO(z.read(name)));assert d.testzip() is None;E.fromstring(d.read('word/document.xml'))
-print(json.dumps(z.namelist()))`,output+'/selection.zip'],{encoding:'utf8'}));results.push({groupZip:names})
+print(json.dumps(z.namelist()))`,output+'/selection.zip',JSON.stringify(zipSources)],{encoding:'utf8'}));results.push({groupZip:names})
  await page.getByRole('checkbox',{name:'Inclure un fichier Word par audio',exact:true}).uncheck()
  await page.evaluate(()=>{window.audioZipParts=[];window.showSaveFilePicker=async()=>({createWritable:async()=>({write:async chunk=>window.audioZipParts.push(Array.from(new Uint8Array(await new Blob([chunk]).arrayBuffer()))),close:async()=>{window.audioZipClosed=true},abort:async()=>{window.audioZipAborted=true}})})})
  await button(page,'Télécharger la sélection (ZIP)').click();await page.waitForFunction(()=>window.audioZipClosed===true)
  await writeFile(output+'/stream.zip',Buffer.from(await page.evaluate(()=>window.audioZipParts.flat())))
- execFileSync('python3',['-c','import zipfile,sys,pathlib;z=zipfile.ZipFile(sys.argv[1]);assert len(z.namelist())==2 and z.testzip() is None;assert all(z.read(n)==pathlib.Path("public",n).read_bytes() for n in z.namelist())',output+'/stream.zip'])
+ execFileSync('python3',['-c','import json,zipfile,sys,pathlib;z=zipfile.ZipFile(sys.argv[1]);sources=json.loads(sys.argv[2]);assert len(z.namelist())==2 and z.testzip() is None;assert all(z.read(n)==pathlib.Path("public"+sources[n]).read_bytes() for n in z.namelist())',output+'/stream.zip',JSON.stringify(zipSources)])
  await page.evaluate(()=>{window.showSaveFilePicker=async()=>{throw new DOMException('Unsupported in this frame','SecurityError')}})
  const [fallback]=await Promise.all([page.waitForEvent('download'),button(page,'Télécharger la sélection (ZIP)').click()]);await fallback.saveAs(output+'/fallback.zip')
  await page.evaluate(()=>{window.showSaveFilePicker=undefined});await page.getByRole('checkbox',{name:'Inclure un fichier Word par audio',exact:true}).check()

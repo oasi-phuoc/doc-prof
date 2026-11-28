@@ -16,7 +16,9 @@ import { tcfNiveauForConfig } from '@/tcf/catalog'
 import { buildTpfFamilyTestPages, nextLastPoExercise } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
 import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
-import { randomSeed } from '@/math/rng'
+import { createRng, pick, randomSeed } from '@/math/rng'
+import { tpfPlacementExercises } from '@/tcf/tpf-content'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import type {
   ExerciseBlock,
   PageConfig,
@@ -360,6 +362,10 @@ export function useGenerateActions({
           ...seedPatch,
           // Repérage : reprend un tirage banque (les marques figées bloqueraient le refresh).
           coordLibre: false,
+        }
+        if (!half && page.domain === 'tpf' && tpfPlacementTask(block.exerciseType) && !block.tcfExercise) {
+          const alternatives = tpfPlacementExercises(block.exerciseType).filter((entry) => entry.id !== block.tcfBankId)
+          if (alternatives.length > 0) patch.tcfBankId = pick(createRng(nextSeed), alternatives).id
         }
         const isLastCscCfrPo =
           !half &&

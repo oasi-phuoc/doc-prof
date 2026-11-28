@@ -366,15 +366,6 @@ export function GeneratorPage({
     content: blockItemsForConfig(halfSheets, pageIndex, safeBlockIndex),
     id: arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds, editableHalf),
   } : undefined
-  /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
-  const jeuxPreviewSheets = useMemo(() => {
-    if (activePage.domain !== 'jeux') return null
-    const related = previewWorksheets
-      .map((sheet, index) => ({ sheet, index }))
-      .filter(({ sheet }) => (sheet.configIndex ?? 0) === pageIndex)
-    return related.length > 0 ? related : null
-  }, [activePage.domain, previewWorksheets, pageIndex])
-
   const available = topicsForDomain(activePage.domain)
   const typeChoices = typeChoicesForBlock(activePage.domain, activeBlock)
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
@@ -815,6 +806,7 @@ export function GeneratorPage({
     libreMode,
     settingsTarget: libreMode ? worksheetSettingsTarget : undefined,
     settingsBlockIndex: safeBlockIndex,
+    validateManual,
     correctionsToReview,
     downloadActiveTcfAudios: audio.downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios: audio.downloadActiveTcmCfrAudios,
@@ -842,7 +834,6 @@ export function GeneratorPage({
         pointsPerQuestion,
         saveCopy: true,
       }),
-    jeuxPreviewSheets,
     previewFrameRef,
     seed,
     previewWorksheets,
@@ -860,6 +851,7 @@ export function GeneratorPage({
     toggleFormulaireLetterGrid,
     toggleTcfPageBreak,
     coordTool,
+    setSelectedCoordShape,
     selectedCoordShape,
     placeCoordMark,
     placeOrigin,
@@ -887,7 +879,7 @@ export function GeneratorPage({
         generator
         rightSlot={
           <>
-            {!isLogistiqueDomain(activePage.domain) && (
+            {activePage.domain !== 'acm' && !isLogistiqueDomain(activePage.domain) && (
               <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
             )}
             <TopbarTools
@@ -939,7 +931,7 @@ export function GeneratorPage({
             onTogglePreviewMode={() =>
               setMode((m) => (m === 'student' ? 'answers' : 'student'))
             }
-            showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
+            showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain || activePage.domain === 'acm')}
             onLogout={() => { void libreDraft.flush().finally(onLogout) }}
           />
           </>

@@ -8,6 +8,8 @@ La fiche suit la présentation habituelle : **titre de l’exercice → consigne
 
 Les questions d’association conservent leur tableau des personnes sur une feuille de réponses et leur barème. La coupure peut également être annulée pour rapprocher ce tableau du document.
 
+Les dimensions de `ce-art.json` correspondent aux fichiers affichés. La vérification du 27 novembre a mis à jour 41 références après lecture des images. Le catalogue actif comprend 150 documents paysage et 12 documents portrait. Le contrôle d’impression vérifie l’orientation de la feuille du document et de la feuille des questions, dans la version élève et le corrigé.
+
 ## Police et illustrations
 
 **URW Gothic**, une police géométrique proche de Century Gothic, est utilisée uniquement dans les images CE. Les polices des titres, consignes, questions, corrigés et images CO ne changent pas. Le fichier et sa licence se trouvent dans `scripts/assets/ce-font/`. Les exports de messages embarquent ce fichier dans Chromium et enregistrent son empreinte dans le catalogue.

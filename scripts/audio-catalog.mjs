@@ -15,6 +15,7 @@ const unique=values=>[...new Set(values.filter(Boolean))]
  * a recording's transcript from its filename. Bank texts are copied verbatim. */
 export function buildAudioCatalog(root) {
  const durations=read(root,'src/tcf/content/audio-durations.json',{}),aliases=read(root,'src/tcf/content/audio-replacements.json',{})
+ const audioTitles=read(root,'src/tcf/content/audio-titles.json',{})
  const reviewedPools=read(root,'src/tcf/content/co-reviewed-pools.json',{}),lengthTags=new Map()
  const scenarioSources=read(root,'src/tcf/association-image-themes.json',{sources:[]}).sources
  const records=new Map()
@@ -126,6 +127,8 @@ export function buildAudioCatalog(root) {
  for(const [src,prompt] of Object.entries(read(root,'src/audio-catalog/prompts.json',{}))){const record=records.get(src);if(record){addTranscript(record,prompt,'Texte de consigne enregistré');record.entry.label=prompt.length>90?prompt.slice(0,87)+'…':prompt}}
  const details={},entries=[]
  for(const [src,{entry,detail}] of records){
+  const curatedTitle=audioTitles[src]
+  if(curatedTitle)entry.label=curatedTitle
   const length=lengthTags.get(src)
   if(length){for(const label of ['Court','Moyen','Long'])entry.types.delete(label);entry.types.add(({court:'Court',moyen:'Moyen',long:'Long'})[length])}
   detail.notes=unique(detail.notes)
