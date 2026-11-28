@@ -22,18 +22,23 @@ export const wordVocabSubthemes = [
   { id: 'a-la-poste', label: 'À la poste', topic: 'gram-demander', theoryTypeIds: [] as string[] },
 ]
 
+type WordCard = Omit<NonNullable<MathItem['grammarWordVocab']>, 'recall'>
+
+export function grammarWordCards(entries: readonly WordCard[], recall: boolean): MathItem[] {
+  return entries.map((entry) => ({
+    layout: 'text', hideItemNumber: !recall, answer: entry.label,
+    grammarWordVocab: { ...entry, recall },
+  }))
+}
+
 export function buildWordVocab(config: PageConfig, seed: number) {
   const bank = data.find(({ subId }) => wordVocabTypeId(subId) === config.exerciseType)
   if (!bank) return null
   const recall = config.grammarVocabRecall === true
   const selected = shuffle(createRng(seed), bank.entries).slice(0, Math.max(1, Math.min(config.count, 9)))
-  const items: MathItem[] = selected.map(({ id, label, image }) => ({
-    layout: 'text', hideItemNumber: !recall, answer: label,
-    grammarWordVocab: { id, label, image, recall },
-  }))
   return {
     instruction: recall ? 'Écrivez le mot ou l’expression sous chaque image.' : 'Regardez les images et lisez les mots ou les expressions.',
-    items,
+    items: grammarWordCards(selected, recall),
     bankQuestionCap: Math.min(bank.entries.length, 9),
   }
 }

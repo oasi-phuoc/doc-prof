@@ -7,7 +7,7 @@ export const SOCIETE_FIRST_TOPIC = 'societe-voisins'
 
 export const SOCIETE_KINDS = [
   ['theorie', 'Théorie', 'Lisez la fiche.'],
-  ['lexique', 'Lexique', 'Lisez les mots et leur définition.'],
+  ['lexique', 'Vocabulaire', 'Lisez les mots et leur définition.'],
   ['ce', 'Compréhension écrite', 'Lisez le document. Répondez aux questions.'],
   ['co', 'Compréhension orale', 'Écoutez deux fois. Répondez aux questions.'],
   ['po', 'Production orale', 'Préparez vos idées. Jouez la situation à deux.'],
@@ -29,7 +29,7 @@ const parcours: ExerciseType[] = SOCIETE_UNITS.flatMap((unite) => {
     description: unite.objectif,
     instruction,
     visual: 'texte',
-    preferredColumns: 1,
+    preferredColumns: kind === 'lexique' ? 2 : 1,
     preferredCount: 1,
     maxCount: 1,
     supportsNumberRange: false,

@@ -692,7 +692,7 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
-  grammarWordVocab?: { id: string; label: string; image?: string; recall: boolean }
+  grammarWordVocab?: { id: string; label: string; image?: string; clue?: string; recall: boolean }
   grammarCoTrueFalse?: GrammarCoStatement[]
   spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
@@ -1069,6 +1069,7 @@ export type ExerciseBlock = {
   grammarCoAudioId?: string
   grammarCoFormat?: 'questions' | 'true-false'
   grammarVocabRecall?: boolean
+  completionPresentation?: 'choice' | 'gap'
   /** Additive non-CO curriculum. Absence preserves the historical generator. */
   grammarLevel?: import('@/grammaire/curriculum/types').GrammarLevel
   grammarActivityId?: string

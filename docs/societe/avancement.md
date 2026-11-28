@@ -35,12 +35,12 @@ Pour chaque remplacement, utiliser un visuel individuel 4:3 dans le style semi-r
 
 | Périmètre | État |
 |---|---|
-| Théorie et lexique | Les 15 thèmes ouvrent les théories par un exemple illustré et terminent par un essai. Les lexiques présentent un visuel de contexte. |
+| Théorie et lexique | Les 15 thèmes ouvrent les théories par un exemple illustré et terminent par un essai. Les 15 vocabulaires reprennent les cartes de Grammaire. Deux présentations permettent de lire ou de retrouver les mots avec leurs définitions et leurs illustrations. |
 | CO | Les 15 activités reprennent le cadre audio de TCF. Toutes proposent le tableau Vrai ou faux de Grammaire avec trois affirmations et leur correction. La piste garde son lecteur, son QR et sa transcription. |
 | CE | Les 15 documents et leurs questions utilisent le rendu TCF. |
 | PO | Les 15 activités utilisent la présentation TCF des situations orales. Le modèle apparaît dans le corrigé. |
 | PE | Les 15 activités reprennent le cadre d’écriture et la grille de correction de TCF. |
-| Atlas et recettes | Les cartes, le tableau des 26 cantons et les galeries restent accessibles. Les identifiants existants et les contenus personnalisés sont conservés. |
+| Atlas et recettes | Les cartes avec questions utilisent le rendu QCM et Lacune de Grammaire. Les cartes à annoter, le tableau des 26 cantons et les galeries restent accessibles. Les identifiants existants et les contenus personnalisés sont conservés. |
 | Réception | La vérification d’impression A4 et double A5 et l’essai en classe restent à faire. |
 
 [Formats des fiches](formats-fiches.md)

@@ -63,7 +63,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'français' && isGrammarTheoryType(exerciseType) ||
     domain === 'santé' && isSanteTheoryType(exerciseType) ||
     (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
-    domain === 'société' && (isSocieteTheoryType(exerciseType) || exerciseType.endsWith('-lexique')) ||
+    domain === 'société' && isSocieteTheoryType(exerciseType) ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
   if (domain === 'logique' && isLogiqueType(exerciseType)) return 'logique-visuelle'
   const wordKind = domain === 'alphabetisation' ? parseAlphaType(exerciseType)?.kind

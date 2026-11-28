@@ -1,8 +1,8 @@
 import type { ExerciseType } from '@/math/types'
+import type { CompletionFiche } from '@/grammaire/exercises/completion-fiche'
 import cantonData from './atlas-cantons.json'
 import views from './atlas-images.json'
-import { choix, reponse, vraiFaux } from './parcours/questions'
-import type { SocieteCanton, SocieteImage, SocieteQuestion } from './types'
+import type { SocieteCanton, SocieteImage } from './types'
 
 const media = '/lib/images/societe/atlas'
 
@@ -22,7 +22,7 @@ type Carte = {
   label: string
   image: SocieteImage
   consigne: string
-  questions: SocieteQuestion[]
+  questions: CompletionFiche[]
   correction?: SocieteImage
 }
 
@@ -52,9 +52,9 @@ export const CARTE_ACTIVITES: Carte[] = [
     image: MAPS.sigles,
     consigne: 'Observe la carte et retrouve les sigles. Utilise la liste des cantons pour vérifier.',
     questions: [
-      choix('Quel sigle correspond au Tessin, au sud ?', ['TI', 'TG', 'JU'], 0),
-      vraiFaux('Le canton de Vaud et le canton du Valais se touchent.', true),
-      reponse('Quel est le sigle du canton dans lequel se trouve Lausanne ?', 'VD.'),
+      { prompt: 'Au sud de la Suisse, le Tessin porte le sigle ___.', answer: 'TI', distractors: ['TG', 'JU'], explanation: 'Cherche TI près de la frontière avec l’Italie.' },
+      { prompt: 'Au sud-est de Vaud, le canton voisin est le ___.', answer: 'Valais', distractors: ['Tessin', 'Jura'], explanation: 'Sur la carte, VD et VS partagent une limite.' },
+      { prompt: 'Lausanne est dans le canton qui porte le sigle ___.', answer: 'VD', distractors: ['VS', 'FR'], explanation: 'Lausanne est le chef-lieu du canton de Vaud.' },
     ],
   },
   {
@@ -71,11 +71,15 @@ export const CARTE_ACTIVITES: Carte[] = [
     image: MAPS.complete,
     consigne: 'Observe les écussons et les sigles. Utilise la liste illustrée pour retrouver les chefs-lieux.',
     questions: [
-      choix('Quel canton a un ours sur son écusson et le sigle BE ?', ['Berne', 'Bâle-Ville', 'Vaud'], 0),
-      reponse('Quel est le chef-lieu du canton VD ?', 'Lausanne.'),
+      { prompt: 'Le canton de ___ a un ours sur son écusson et le sigle BE.', answer: 'Berne', distractors: ['Bâle-Ville', 'Vaud'], explanation: 'Cherche l’ours au-dessus du sigle BE.' },
+      { prompt: 'Le chef-lieu du canton VD est ___.', answer: 'Lausanne', distractors: ['Sion', 'Coire'], explanation: 'Dans le tableau, VD correspond au canton de Vaud, dont le chef-lieu est Lausanne.' },
     ],
   },
 ]
+
+export function hasSocieteAtlasQuestions(typeId: string): boolean {
+  return CARTE_ACTIVITES.some((activity) => activity.id === typeId && activity.questions.length > 0)
+}
 
 export const LISTE_CANTONS_ID = 'societe-cantons-ecussons-chefs-lieux-atlas'
 

@@ -1,13 +1,15 @@
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
+import { completionFicheItems } from '@/grammaire/exercises/completion-fiche'
 import { CANTONS, CARTE_ACTIVITES, GALERIES_ATLAS, LISTE_CANTONS_ID, imageVue } from './atlas'
 import { SOCIETE_KINDS } from './catalog'
 import { societeCommunicationItems } from './communication'
 import { normalizeSocieteBlock } from './legacy'
 import { SOCIETE_UNITS } from './parcours'
 import { theoriesIllustrees } from './parcours/theorie-illustree'
-import { isSocieteType, type SocieteImage, type SocieteQuestion, type SocieteSupport, type SocieteUnite } from './types'
+import { isSocieteType, type SocieteImage, type SocieteSupport, type SocieteUnite } from './types'
+import { societeVocabItems } from './vocabulaire'
 
 const units = new Map(SOCIETE_UNITS.map((unit) => [unit.id, unit]))
 
@@ -52,14 +54,15 @@ function support(item: SocieteSupport): MathItem {
   }
 }
 
-function atlasBlock(exerciseType: string): { instruction: string; items: MathItem[] } | undefined {
+function atlasBlock(exerciseType: string, config: PageConfig, rng: Rng): { instruction: string; items: MathItem[] } | undefined {
   const carte = CARTE_ACTIVITES.find((candidate) => candidate.id === exerciseType)
   if (carte) {
+    const presentation = config.completionPresentation === 'gap' ? 'Complète les phrases.' : 'Choisis une réponse par phrase.'
     return {
-      instruction: carte.consigne,
+      instruction: carte.questions.length ? `${carte.consigne} ${presentation}` : carte.consigne,
       items: [
         support({ kind: 'document', titre: carte.label, lignes: [], image: carte.image, correction: carte.correction }),
-        ...questions(carte.questions),
+        ...completionFicheItems(carte.questions, config, 'src/societe/atlas.ts', rng),
       ],
     }
   }
@@ -101,16 +104,10 @@ function atlasBlock(exerciseType: string): { instruction: string; items: MathIte
 
 const contexteEcoute = new Set(['voisins', 'paysages', 'commune', 'transports', 'logement', 'formation', 'salaire'])
 
-function questions(entries: readonly SocieteQuestion[]): MathItem[] {
-  return entries.map(({ prompt, answer, options }) => options
-    ? { layout: 'select', prompt, answer, options: [...options] }
-    : { layout: 'text', prompt, answer })
-}
-
 export function tryGenerateSocieteBlock(config: PageConfig, rng: Rng): { instruction: string; items: MathItem[] } | null {
   if (!isSocieteType(config.exerciseType)) return null
   const { exerciseType } = normalizeSocieteBlock(config)
-  const atlas = atlasBlock(exerciseType)
+  const atlas = atlasBlock(exerciseType, config, rng)
   if (atlas) return atlas
   const match = /^societe-(.+)-(theorie|lexique|ce|co|po|pe)$/.exec(exerciseType)
   if (!match) return null
@@ -129,13 +126,13 @@ export function tryGenerateSocieteBlock(config: PageConfig, rng: Rng): { instruc
     case 'theorie':
       items = theoryItems(unit)
       break
-    case 'lexique':
-      items = [
-        theory({ kind: 'heading', text: `Lexique · ${unit.titre}` }),
-        ...(imageActivite ? [theoryImage(imageActivite)] : []),
-        theory({ kind: 'table', headers: ['Mot', 'Sens'], rows: unit.lexique.map(([mot, sens]) => [mot, sens]) }),
-      ]
-      break
+    case 'lexique': {
+      const recall = config.grammarVocabRecall === true
+      return {
+        instruction: recall ? 'Retrouvez chaque mot à l’aide de sa définition ou de son image.' : instruction,
+        items: societeVocabItems(unit, recall),
+      }
+    }
     case 'ce':
     case 'co':
     case 'po':

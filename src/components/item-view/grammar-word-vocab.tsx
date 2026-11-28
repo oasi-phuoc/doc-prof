@@ -6,12 +6,11 @@ const visuals = import.meta.glob<string>('../../grammaire/media/word-vocab/*.web
 
 export function GrammarWordVocab({ card, mode }: { card: NonNullable<MathItem['grammarWordVocab']>; mode: PreviewMode }) {
   const reveal = !card.recall || mode === 'answers'
+  const image = card.image ?? visuals[`../../grammaire/media/word-vocab/${card.id}.webp`]
   return (
     <figure className="grammar-word-vocab">
-      <img
-        src={card.image ?? visuals[`../../grammaire/media/word-vocab/${card.id}.webp`]}
-        alt={reveal ? card.label : 'Image à nommer'}
-      />
+      {image && <img src={image} alt={reveal ? card.label : 'Image à nommer'} />}
+      {card.clue && <p className="grammar-word-clue">{card.clue}</p>}
       <figcaption className={card.recall ? `answer-line-field${reveal ? ' filled' : ''}` : undefined}>
         {reveal ? card.label : '\u00a0'}
       </figcaption>

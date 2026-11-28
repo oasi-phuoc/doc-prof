@@ -179,6 +179,7 @@ export function usePageNavigation({
       grammarCoAudioId: fields.grammarCoAudioId,
       grammarCoFormat: fields.grammarCoFormat,
       grammarVocabRecall: fields.grammarVocabRecall,
+      completionPresentation: fields.completionPresentation,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,

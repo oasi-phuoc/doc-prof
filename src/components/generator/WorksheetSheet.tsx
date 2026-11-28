@@ -277,7 +277,7 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
-  const compactHeader = asHalf && (page.domain === 'grammaire' || isTpfFamilyDomain(page.domain))
+  const compactHeader = asHalf && (page.domain === 'grammaire' || page.domain === 'société' || isTpfFamilyDomain(page.domain))
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'

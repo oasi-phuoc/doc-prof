@@ -1,6 +1,7 @@
 import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
 import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
-import { isSocieteCoType } from '@/societe/types'
+import { hasSocieteAtlasQuestions } from '@/societe/atlas'
+import { isSocieteCoType, isSocieteVocabType } from '@/societe/types'
 import { isMathReferenceType } from '@/math/theory-lessons'
 import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathProblemHelpType } from '@/math/problem-help'
@@ -521,11 +522,18 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isGrammaireDomain && isWordVocabType(activeBlock.exerciseType) ? (
+              {(isGrammaireDomain && isWordVocabType(activeBlock.exerciseType)) || isSocieteVocabType(activeBlock.exerciseType) ? (
                 <SelectBox label="Présentation" value={activeBlock.grammarVocabRecall ? 'recall' : 'learn'}
                   onChange={(value) => updatePage({ ...clearLibreContentFreeze(), grammarVocabRecall: value === 'recall' })}>
                   <option value="learn">Lire les mots</option>
                   <option value="recall">Retrouver les mots</option>
+                </SelectBox>
+              ) : null}
+              {hasSocieteAtlasQuestions(activeBlock.exerciseType) ? (
+                <SelectBox label="Présentation" value={activeBlock.completionPresentation ?? 'choice'}
+                  onChange={(value) => updatePage({ ...clearLibreContentFreeze(), completionPresentation: value === 'gap' ? 'gap' : 'choice' })}>
+                  <option value="choice">QCM</option>
+                  <option value="gap">Lacune</option>
                 </SelectBox>
               ) : null}
               {(isGrammaireDomain && availableTrueFalse > 0) || societyListening ? (
