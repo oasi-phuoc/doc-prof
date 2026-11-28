@@ -282,6 +282,9 @@ import { module406 as photoAllocation406 } from './banks/module-406-v004.generat
 import { module408 as photoWarehouse408 } from './banks/module-408-v006.generated.ts'
 import { module503 as photoProduction503 } from './banks/module-503-v004.generated.ts'
 import { module504 as photoProduction504 } from './banks/module-504-v004.generated.ts'
+import { module601 as photoDistribution601 } from './banks/module-601-v004.generated.ts'
+import { module602 as photoDistribution602 } from './banks/module-602-v004.generated.ts'
+import { module603 as photoDistribution603 } from './banks/module-603-v004.generated.ts'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
@@ -712,6 +715,8 @@ const illustratedStockagePublication = reviewedIllustrationPublication(applicati
   'logistique-stockage-illustre-v020', [...photoSafety405, ...photoAllocation406, ...photoWarehouse408])
 const illustratedProductionPublication = reviewedIllustrationPublication(illustratedStockagePublication,
   'logistique-production-illustree-v021', [...photoProduction503, ...photoProduction504])
+const illustratedDistributionPublication = reviewedIllustrationPublication(illustratedProductionPublication,
+  'logistique-distribution-illustree-v022', [...photoDistribution601, ...photoDistribution602, ...photoDistribution603])
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -815,6 +820,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   applicationExercisesPublication,
   illustratedStockagePublication,
   illustratedProductionPublication,
+  illustratedDistributionPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

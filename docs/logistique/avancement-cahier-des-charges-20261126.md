@@ -192,12 +192,15 @@ L’inventaire initial dénombre 193 entrées illustrées par une photo et 977 p
 | Notions communes des thèmes 600 à 900 | 796 entrées en photo sur 1 170 | 36 schémas dédiés ont été remplacés par des photos individuelles en 4:3 déjà utilisées pour les mêmes notions. Les exemples couvrent le conditionnement, la preuve de livraison, les données de stock et les équipements de protection. Les 60 PDF des parcours CFC et AFP concernés ont été contrôlés en A4 et en double A5. |
 | Modules 405, 406 et 408 | 812 entrées en photo sur 1 170 | Seize photos individuelles en couleur et au format 4:3 natif remplacent les derniers schémas dédiés du thème Stockage. Sept scènes sont aussi intégrées aux cours et résumés, dont le principe STOP, l’emplacement fixe, le HIFO, la charge ponctuelle et le calcul du taux d’occupation. Les 36 PDF en CFC et AFP couvrent les glossaires, cours et résumés en A4 et double A5. La réserve minimale est de 45,66 px. |
 | Modules 502 à 506 | 848 entrées en photo sur 1 170 | 36 photos individuelles en couleur et au format 4:3 natif complètent les glossaires du thème Production. Le goulot d’étranglement, la carte Kanban et le Jidoka entrent aussi dans les cours et résumés des 503 et 504. Les 18 PDF CFC couvrent les deux formats, avec une réserve minimale de 71 px. |
+| Modules 601 à 603 | 865 entrées en photo sur 1 170 | Les 17 nouvelles images individuelles montrent notamment la consolidation, la lecture d’un code-barres, le calage, le cerclage et la mesure de traction. Quatre photos complètent les cours et résumés. Les 36 PDF CFC et AFP couvrent l’A4 et le double A5 avec au moins 68,86 px avant le pied de page. |
 
 La révision `logistique-stockage-illustre-v020` inscrit les nouvelles scènes aux chapitres correspondants. [Préparation du 405](preparation/405-v004.json), [du 406](preparation/406-v004.json) et [du 408](preparation/408-v006.json).
 
 La révision `logistique-production-illustree-v021` relie les nouvelles scènes aux principes de production. [Préparation du 503](preparation/503-v004.json) et [du 504](preparation/504-v004.json).
 
-Il reste 322 notions à illustrer. Le thème 600 en compte 148, le 700 en compte 50, le 800 en compte 96 et le 900 en compte 28. Les glossaires des thèmes 100 à 500 sont entièrement en photos.
+La révision `logistique-distribution-illustree-v022` complète la lecture d’une ligne de commande, le rôle du rembourrage et le choix du feuillard avec des exemples concrets. [Préparation du 601](preparation/601-v004.json), [du 602](preparation/602-v004.json) et [du 603](preparation/603-v004.json).
+
+Il reste 305 notions à illustrer. Le thème 600 en compte 131 à partir du module 604, le 700 en compte 50, le 800 en compte 96 et le 900 en compte 28. Les glossaires des thèmes 100 à 500 et des modules 601 à 603 sont entièrement en photos.
 
 La commande `node scripts/prepare-logistique-glossaire.mjs --audit` donne le détail par module et vérifie les chemins, les doublons et les textes alternatifs. Le [registre éditorial des photos](preparation/glossaires-photos-v006.txt) associe chaque nouvelle photo à sa notion exacte.
 
