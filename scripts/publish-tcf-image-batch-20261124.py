@@ -94,7 +94,7 @@ def main():
         path, source = job['path'], Path(review['source']).resolve()
         assert job['id'] in packet['remaining_asset_ids']
         assert path not in manifest and not resolve(path).exists()
-        assert source.parent == Path('/workspace/generated_images') and source.is_file()
+        assert source.parent == Path('/workspace/generated_images').resolve() and source.is_file()
         assert review['label'].strip() and review['keywords'] and review['review_note'].strip()
         with Image.open(source) as image:
             assert image.format == 'PNG' and image.size == (1448, 1086), (job['id'], image.size)
