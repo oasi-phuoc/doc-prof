@@ -2,7 +2,7 @@
 
 Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écoute viennent des pistes répertoriées dans le registre audio. Le thème relie les activités de la séquence. Les personnes, horaires et tarifs d’une piste et d’un document écrit peuvent être différents. [Cahier des charges](cahier-des-charges.md) · [Audios](audios.md) · [Visuels](images-a-produire.md)
 
-## A1 · Gestes et repères en classe
+## A1 · Gestes et repères
 
 ### 1. Le règlement de l’école
 
@@ -54,9 +54,49 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Appeler le secrétariat pour annoncer un retard. Donner son nom, le cours et l’heure d’arrivée. Modèle : « Bonjour, je suis Lina. J’ai le cours de français à 8 h 15. J’arrive à 8 h 30. »
 - **PE.** Écrire un message court pour signaler une absence ou un retard. Indiquer l’identité, le jour, le cours et l’heure prévue si applicable. Une raison personnelle détaillée reste facultative.
 
+### 6. Se repérer dans l’école
+
+**Objectif.** Se repérer dans l’école ou sur le campus. Nommer la classe, le bureau, la bibliothèque, la cantine et le secrétariat. Identifier la personne qui peut aider.
+
+- **Théorie et lexique.** Partir d’un plan et d’un panneau de porte. Expliquer « à côté de », « au premier étage », « à gauche » et « devant ». Essai : « Le bureau est à côté de la bibliothèque. Montre le bureau. »
+- **CE.** Lire un plan et un message de rendez-vous. Retrouver la bonne salle, l’étage et la porte. Donner un repère observable dans le corrigé.
+- **CO.** Écouter la demande sur le bureau du directeur. Retenir le repère de la bibliothèque. Avec une autre piste, identifier l’étage, la salle ou le service chargé d’une demande.
+- **PO.** Demander son chemin et reformuler l’indication. Modèle : « Le secrétariat est à quel étage ? D’accord, je prends l’escalier. »
+- **PE.** Écrire à un camarade pour expliquer comment rejoindre une salle. Donner le lieu de départ et deux repères.
+
+### 7. Une journée à la maison
+
+**Objectif.** Décrire sa routine et ordonner les actions du matin, du retour et du soir.
+
+- **Théorie et lexique.** Associer se lever, se laver, s’habiller, prendre le petit déjeuner, rentrer, dîner et se coucher à des scènes séparées. Lier les actions aux mots d’abord, ensuite et enfin.
+- **CE.** Lire une frise de journée. Sam s’habille à 7 h, prend son petit déjeuner à 7 h 15 et part à 7 h 45. Retrouver l’ordre et le temps entre le repas et le départ.
+- **CO.** Écouter Sacha et sa mère. Relever ce qu’il fait et l’heure prévue de son réveil, 6 h 30 le lendemain.
+- **PO.** Raconter trois actions d’une journée réelle ou fictive. Le camarade demande à quel moment se passe une action.
+- **PE.** Envoyer un message pour expliquer sa routine. Relier deux actions avec « puis » et donner une heure.
+
 ## A2 · École et vie quotidienne
 
-### 6. À la papeterie
+### 8. Les devoirs et les révisions
+
+**Objectif.** Relever la matière, la tâche, le support, la page et l’échéance. Demander une précision et s’organiser avant un contrôle.
+
+- **Théorie et lexique.** Montrer un agenda ouvert. Distinguer « faire les devoirs », « rendre le travail » et « réviser le contrôle ». Modèle : « Pour quel jour ? Sur quelle page ? Dans le cahier ou sur la feuille ? »
+- **CE.** Lire une entrée d’agenda et une modification. Lire la page 32 pour mardi. Rendre les exercices 1 et 2 dans le cahier mercredi. Faire remonter les tâches à la bonne échéance.
+- **CO.** Écouter une demande au professeur. Attendus : faire les exercices pour mercredi, dans le cahier. Avec une autre piste, noter ce qu’il faut réviser et quand.
+- **PO.** Demander à un camarade ou à un professeur de répéter le devoir, puis le reformuler. Proposer un moment de révision.
+- **PE.** Écrire au professeur au sujet du travail après une absence. Préciser le cours et le point à clarifier.
+
+### 9. S’inscrire à l’école ou à l’université
+
+**Objectif.** Comprendre une démarche d’inscription à l’école, en cours de langue ou à l’université. Trouver le contact et la prochaine étape.
+
+- **Théorie et lexique.** Montrer formulaire, dossier, pièce d’identité, justificatif, carte d’étudiant et confirmation. Distinguer « Je dépose le dossier » et « L’établissement confirme mon inscription ».
+- **CE.** Lire une liste fictive de pièces, un calendrier et un message de confirmation. Trouver ce qui manque et où envoyer le dossier. Séparer dépôt et décision.
+- **CO.** Écouter l’annonce de l’université. Relever les pièces annoncées, la photo destinée à la carte et le guichet 320. Expliquer que ces indications appartiennent à la situation entendue.
+- **PO.** À l’accueil, demander les documents, la date limite et le délai. Confirmer l’étape à faire ensuite.
+- **PE.** Écrire au secrétariat au sujet d’une pièce manquante avec une identité fictive.
+
+### 10. À la papeterie
 
 **Objectif.** Choisir des fournitures avec une liste et un budget, puis poser une question au vendeur.
 
@@ -66,7 +106,17 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Jouer le client et le vendeur. Demander deux articles, vérifier le format et le prix, prendre une autre option si nécessaire.
 - **PE.** Rédiger la liste d’achat ou écrire au magasin pour savoir si les articles sont disponibles. Préciser le format, la quantité et le moment du retrait.
 
-### 7. Le règlement de l’immeuble
+### 11. Les tâches domestiques
+
+**Objectif.** Identifier les tâches à la maison, les répartir et prévenir si une personne ne peut pas tenir son engagement.
+
+- **Théorie et lexique.** Montrer ranger, faire la vaisselle, laver le linge, passer l’aspirateur, sortir la poubelle et préparer le repas. Relier chaque tâche à une pièce ou à un objet. Essai : « Le sac est plein. Quelle tâche fais-tu ? » → « Je sors la poubelle. »
+- **CE.** Lire un tableau de tâches. Imane prépare le repas mardi. Alex sort la poubelle à 19 h. Sam s’occupe du linge mercredi. Trouver qui fait quoi et proposer un échange si une personne est absente.
+- **CO.** Écouter un message avant de partir. Identifier où sont les clés, où se trouve la poubelle et ce qu’il faut éteindre.
+- **PO.** Proposer de partager deux tâches. Demander quand l’autre personne est disponible et convenir d’un échange.
+- **PE.** Laisser un message court. Dire ce qui est fait, ce qui reste et à quel moment proposer de le faire.
+
+### 12. Le règlement de l’immeuble
 
 **Objectif.** Repérer une règle des espaces communs et demander une solution à un problème concret.
 
@@ -76,17 +126,17 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Dire calmement qu’un objet gêne le passage. Proposer où le déplacer et demander une précision si besoin.
 - **PE.** Écrire à la régie pour demander l’accès au local ou signaler un passage encombré. Décrire le lieu, le problème et la demande.
 
-### 8. Après l’école et les clubs
+### 13. Après l’école et les activités extrascolaires
 
 **Objectif.** Comparer deux activités, choisir une offre adaptée et demander une séance d’essai.
 
-- **Théorie et lexique.** Lire les rubriques d’une annonce : activité, jour, lieu, âge, prix, niveau, essai et inscription. Présenter aussi des activités de dessin, de musique ou de jeux.
+- **Théorie et lexique.** Lire les rubriques d’une annonce : activité, jour, lieu, âge, prix, niveau, essai et inscription. Présenter aussi des activités de dessin, de musique ou de jeux. Inclure un atelier gratuit à la bibliothèque, une visite ou un projet culturel.
 - **CE.** Deux offres fictives : dessin le mercredi à 16 h avec un essai gratuit et théâtre le jeudi à 17 h avec inscription. Un élève est libre le mercredi et débute. Choisir l’offre et justifier avec deux informations.
 - **CO.** Une personne téléphone à un club pour des cours de yoga et demande les horaires. Repérer l’essai gratuit, les formats et les horaires annoncés.
 - **PO.** Demander quelle activité convient à un débutant, le jour et le coût. Reformuler avant de terminer l’appel.
 - **PE.** Écrire à un club pour demander une séance d’essai. Préciser le jour souhaité, le niveau et une question sur le matériel ou le prix.
 
-### 9. Faire du sport
+### 14. Faire du sport
 
 **Objectif.** Comprendre les informations d’une séance, se préparer et prévenir en cas de changement.
 
@@ -96,7 +146,7 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Téléphoner à l’entraîneur pour annoncer une absence et vérifier les informations de la séance suivante.
 - **PE.** Écrire un message d’absence à l’équipe. Indiquer la séance concernée et le moment où l’on espère revenir.
 
-### 10. Raconter son week-end
+### 15. Raconter son week-end
 
 **Objectif.** Raconter deux ou trois actions passées dans l’ordre et poser une question sur le récit de quelqu’un.
 
@@ -106,7 +156,7 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Raconter deux événements avec le jour et une appréciation. L’interlocuteur pose une question de lieu ou d’horaire.
 - **PE.** Rédiger un message à un camarade ou au groupe. Décrire deux moments, dire ce qui a plu et demander à l’autre ce qu’il a fait.
 
-### 11. Les vacances
+### 16. Les vacances
 
 **Objectif.** Lire un petit programme et préparer une activité avec son horaire et le bon matériel.
 
@@ -116,9 +166,19 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** Proposer une sortie, convenir du lieu de rendez-vous et vérifier ce que chacun apporte.
 - **PE.** Envoyer une invitation à une personne. Donner la date, le lieu, l’heure et les affaires à prendre. Ajouter une solution si la météo change.
 
-## B1 · Agir et argumenter en groupe
+## B1 · Examens, vie de groupe et projets
 
-### 12. Mieux vivre ensemble en classe
+### 17. Examens et résultats
+
+**Objectif.** Lire une convocation, distinguer les épreuves, vérifier une information et demander quoi faire après un résultat.
+
+- **Théorie et lexique.** Mettre en relation convocation, date, salle, début, durée, écrit, oral, réussite et rattrapage. Distinguer « j’ai passé l’examen » et « j’ai réussi l’examen ». Expliquer la différence entre une note et une décision.
+- **CE.** Lire une convocation fictive et un avis de changement de salle. Identifier l’épreuve concernée et écrire un rappel. À partir d’un avis de résultat, trouver la prochaine étape annoncée.
+- **CO.** Écouter le message de Thomas. Relever la langue, l’heure de l’examen, la salle et les points à réviser. Distinguer l’heure de révision avec Thomas de l’heure de l’épreuve.
+- **PO.** Contacter le secrétariat pour vérifier une convocation. Reformuler la réponse et poser une question sur la suite.
+- **PE.** Écrire après la réception d’un résultat. Donner l’épreuve et la question précise sur un rattrapage ou un rendez-vous, avec des références fictives.
+
+### 18. Mieux vivre ensemble en classe
 
 **Objectif.** Comparer les besoins derrière deux avis, formuler une règle applicable et expliquer son choix.
 
@@ -128,7 +188,7 @@ Les exemples écrits ci-dessous sont fictifs. Les faits des activités d’écou
 - **PO.** En réunion de classe, reformuler les deux avis, proposer une règle claire et l’appuyer par une raison. Répondre à une objection sans attaquer la personne.
 - **PE.** Écrire une proposition à l’enseignant ou au groupe. Décrire le problème, proposer un changement concret et expliquer le bénéfice attendu.
 
-### 13. Organiser une sortie
+### 19. Organiser une sortie
 
 **Objectif.** Comparer deux propositions avec des contraintes et transmettre la décision au groupe.
 

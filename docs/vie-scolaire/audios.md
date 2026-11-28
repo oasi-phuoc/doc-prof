@@ -1,6 +1,6 @@
 # Vie scolaire · registre des audios
 
-Le registre retient une piste existante par thème. Les fichiers MP3, leur durée et leur référence dans les banques ont été vérifiés. Les faits ci-dessous ont été relevés dans les transcriptions de Grammaire ou de TCF. Lors de l’intégration, écouter la piste en regard du texte, puis vérifier le lecteur et le corrigé. Les deux formats utilisent la même URL.
+Le registre retient une piste pilote par thème, parmi les 230 pistes recensées dans TCF et Grammaire. [Inventaire complet](inventaire-audios.md) Les fichiers MP3, leur durée et leur référence dans les banques ont été vérifiés. Les faits ci-dessous ont été relevés dans les transcriptions de Grammaire ou de TCF. Lors de l’intégration, écouter la piste en regard du texte, puis vérifier le lecteur et le corrigé. Les deux formats utilisent la même URL.
 
 | Thème | Banque et piste du dépôt | Exercice source | Niveau source | Durée approx. | Repères pour les questions |
 |---|---|---|:---:|---:|---|
@@ -17,8 +17,14 @@ Le registre retient une piste existante par thème. Les fichiers MP3, leur duré
 | Les vacances | [Grammaire · piste_110.mp3](../../public/lib/audio/grammaire/co/vacances/a2/piste_110.mp3) | `gram-co-vacances-a2-piste_110` | A1-A2 | 22 s | Le groupe va au phare à vélo. La balade dure 45 minutes. Il faut prendre maillots et serviettes pour la baignade. |
 | Mieux vivre ensemble en classe | [Grammaire · piste_073.mp3](../../public/lib/audio/grammaire/co/universite-ecole/a2/piste_073.mp3) | `gram-co-universite-ecole-a2-piste_073` | A1-A2 | 44 s | Dans ce conseil de classe, le professeur principal présente les résultats puis les délégués des élèves donnent leur avis avant les délégués des parents. |
 | Organiser une sortie | [TCF · vie-quotidienne-19.mp3](../../public/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-19.mp3) | `tcf-ss-a2-s14-co-2` | A1-A2 | 34 s | Départ à 7 h au parking de l’école. Ski de 10 h à 16 h. Retour à 19 h. Prendre gants, bonnet, écharpe et repas. |
+| Se repérer dans l’école | [TCF · 07-école-où-est-le-bureau-du-directeur.mp3](../../public/lib/audio/tcf/co/ecole/07-%C3%A9cole-o%C3%B9-est-le-bureau-du-directeur.mp3) | `tcf-ssx-a1-ecole-bureau-du-directeur-co-4` | A0-A1 | 7 s | Le bureau du directeur est à côté de la bibliothèque. |
+| Une journée à la maison | [TCF · sacha-retard-1.mp3](../../public/lib/audio/tcf/co/vie-quotidienne/sacha-retard-1.mp3) | `tcf-ss-a1-s26-co-3` | A0-A1 | 61 s | Sacha est au petit déjeuner. Ce soir, il se couchera tôt et mettra son réveil pour 6 h 30. |
+| Les tâches domestiques | [TCF · les-cles-voiture-sont.mp3](../../public/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3) | `tcf-ss-a1-s16-co-4` | A0-A1 | 18 s | Le message demande de sortir la poubelle de la cuisine et d’éteindre les lumières avant de partir. |
+| Les devoirs et les révisions | [TCF · 28-école-demander-explication-devoir.mp3](../../public/lib/audio/tcf/co/ecole/28-%C3%A9cole-demander-explication-devoir.mp3) | `tcf-ss-a2-s8b-co-2` | A1-A2 | 11 s | Les exercices sont pour mercredi et doivent être écrits dans le cahier. |
+| S’inscrire à l’école ou à l’université | [TCF · 03-école-inscription-à-l-université.mp3](../../public/lib/audio/tcf/co/ecole/03-%C3%A9cole-inscription-%C3%A0-l-universit%C3%A9.mp3) | `tcf-ss-a1-s5-co-3` | A0-A1 | 23 s | L’annonce demande notamment des relevés de notes, une pièce d’identité et une photo pour la carte d’étudiant. La carte se récupère au guichet 320. |
+| Examens et résultats | [TCF · salut-thomas.mp3](../../public/lib/audio/tcf/co/vie-quotidienne/salut-thomas.mp3) | `tcf-ss-a2-s50-co-4` | A1-A2 | 35 s | L’examen de portugais est à 10 h dans la salle 112. La proposition de réviser avec Thomas est à 8 h le lendemain du message. |
 
-Les deux activités B1 utilisent une piste de niveau source A1–A2. La tâche B1 porte sur les rôles, les étapes et les conséquences. Le niveau de la piste source reste indiqué.
+Les pistes pilotes B1 viennent de supports A1–A2. La banque étendue inclut aussi des sources A2–B1 pour travailler l’argumentation, l’organisation des examens et les projets de classe.
 
 ## Exemples de questions
 
@@ -37,12 +43,11 @@ Les deux activités B1 utilisent une piste de niveau source A1–A2. La tâche B
 | Les vacances | Combien de temps dure la balade ? 15 / 30 / 45 minutes → 45 minutes. | « Le groupe va au phare en bus. » → Faux. Il y va à vélo. |
 | Mieux vivre ensemble en classe | Qui parle après le professeur principal ? Les délégués des élèves / les délégués des parents / le secrétariat → les délégués des élèves. | « Les délégués des élèves peuvent poser des questions. » → Vrai. |
 | Organiser une sortie | Une famille vient chercher son enfant. Quelle heure faut-il lui communiquer ? 7 h / 16 h / 19 h → 19 h. | « Le repas est fourni. » → Faux. Chaque élève apporte son repas. |
+| Se repérer dans l’école | Où est le bureau ? Près de la bibliothèque / à la cantine / au gymnase → près de la bibliothèque. | « La bibliothèque sert de repère. » → Vrai. |
+| Une journée à la maison | À quelle heure Sacha prévoit-il de se lever ? 6 h / 6 h 30 / 8 h → 6 h 30. | « Sacha prend son petit déjeuner. » → Vrai. |
+| Les tâches domestiques | Où est la poubelle ? À gauche de l’évier / à droite du frigo / sous la table du salon → à droite du frigo. | « Il faut éteindre toutes les lumières. » → Vrai. |
+| Les devoirs et les révisions | Pour quel jour faut-il faire les exercices ? Lundi / mercredi / vendredi → mercredi. | « Les élèves font les exercices dans le livre. » → Faux. Ils les écrivent dans le cahier. |
+| S’inscrire à l’école ou à l’université | Où récupère-t-on la carte ? Au guichet 210 / 320 / 520 → 320. | « Il faut apporter une photo. » → Vrai. |
+| Examens et résultats | Dans quelle salle a lieu l’examen ? 110 / 112 / 212 → 112. | « L’examen commence à 8 h. » → Faux. Il commence à 10 h. |
 
-## Pistes complémentaires
-
-- **Consignes et demande d’aide.** Une personne ne comprend pas l’exercice. Son enseignant lui propose de venir au tableau et lui demande de prendre le livre. [TCF · Ne pas comprendre l’exercice](../../public/lib/audio/tcf/co/ecole/24-%C3%A9cole-ne-pas-comprendre-l-exercice.mp3)
-- **Club culturel.** Un cours de dessin est annulé. Un autre rendez-vous est proposé. [TCF · Cours de dessin](../../public/lib/audio/tcf/co/loisirs/02-loisirs-cours-de-dessin.mp3)
-- **Vie de classe B1.** Un élève explique qu’il préfère les cours en présentiel et donne ses raisons. Cette piste peut accompagner une compréhension écrite avec un avis différent. [TCF · Cours à distance et en classe](../../public/lib/audio/tcf/co/delf-actif-a2/a2-041-01.mp3)
-- **Sortie B1.** Une annonce précise le tarif et le formulaire signé à apporter pour une sortie au musée. Utiliser les euros cités dans cette piste et les francs dans les supports fictifs suisses. [TCF · Inscription à la sortie](../../public/lib/audio/tcf/co/ecole/ecole-5-3.mp3)
-
-[Cahier des charges](cahier-des-charges.md) · [Programme détaillé](programme.md) · [Suivi](avancement.md)
+[Cahier des charges](cahier-des-charges.md) · [Inventaire des pistes](inventaire-audios.md) · [Suivi](avancement.md)

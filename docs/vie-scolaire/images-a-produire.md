@@ -99,6 +99,29 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 | `sortie/choisir-la-balade.webp` | CE, PO | Petit groupe à l’entrée d’un parc, avec un chemin et un panneau de départ. |
 | `sortie/accueillir-le-groupe.webp` | PO, PE | À un point de rendez-vous, une personne vérifie la liste du groupe. |
 
+### École, université et quotidien à la maison
+
+| Chemin prévu | Support | Action ou repère visible |
+|---|---|---|
+| `lieux/chercher-une-salle.webp` | Théorie, PO | Une élève compare le numéro lu sur sa note avec celui de la porte. |
+| `lieux/demander-au-secretariat.webp` | CE, PO | Une personne demande où aller au secrétariat de l’école. |
+| `lieux/entrer-a-la-bibliotheque.webp` | Lexique, théorie | Une personne arrive devant le comptoir de prêt de la bibliothèque. |
+| `quotidien/se-lever.webp` | Théorie | Une personne éteint son réveil le matin. |
+| `quotidien/prendre-le-petit-dejeuner.webp` | Lexique, théorie | La même personne prend son petit déjeuner. |
+| `quotidien/preparer-les-affaires-du-lendemain.webp` | PO, PE | La même personne prépare ses affaires le soir. |
+| `devoirs/noter-un-devoir.webp` | Théorie, CE | Une personne note le travail du lendemain dans son agenda ouvert. |
+| `devoirs/demander-une-explication.webp` | PO | Une personne montre une ligne de son exercice et demande de l’aide. |
+| `devoirs/reviser-a-deux.webp` | Théorie, PO | Deux élèves comparent leurs notes à la bibliothèque. |
+| `inscription/preparer-son-dossier.webp` | Théorie, CE | Une personne rassemble un formulaire et des pièces fictives. Le document lisible est fourni à part. |
+| `inscription/deposer-le-dossier.webp` | PO | Une personne présente son dossier au guichet d’une université. |
+| `inscription/recevoir-sa-carte.webp` | Théorie, PE | Une étudiante reçoit une carte sans données lisibles. |
+| `foyer/ranger-une-piece.webp` | Théorie, lexique | Une personne range des objets par type dans une pièce. |
+| `foyer/faire-la-vaisselle.webp` | Lexique, PO | Une personne lave une assiette dans l’évier. |
+| `foyer/repartir-les-taches.webp` | Théorie, PO | Deux personnes se mettent d’accord en regardant un tableau de tâches. |
+| `examens/lire-la-convocation.webp` | Théorie, CE | Une personne vérifie la salle et l’heure. La convocation lisible est fournie à part. |
+| `examens/se-presenter-a-lecrit.webp` | Théorie, PO | Une personne présente sa convocation à l’entrée de la salle d’examen. |
+| `examens/poser-une-question-sur-le-resultat.webp` | PO, PE | Une personne demande au secrétariat quelle démarche faire après un résultat. |
+
 ## Documents et schémas à réaliser à l’intégration
 
 Ces supports portent une information exacte. Les produire avec du texte affiché dans la fiche ou avec un schéma conçu pour le cours. Les consignes de la fiche et les données du document restent accessibles avec le visuel désactivé.
@@ -119,6 +142,12 @@ Ces supports portent une information exacte. Les produire avec du texte affiché
 | `documents/programme-vacances` | Calendrier court et liste de préparation. |
 | `documents/deux-avis-en-classe` | Avis fictifs en texte aéré. Prévoir la place de noter une raison pour chaque avis. |
 | `documents/choix-sortie` | Deux programmes et un tableau coût, météo, accès et inscription. |
+| `documents/plan-ecole` | Plan simple avec salles, escalier, entrée, secrétariat et bibliothèque. |
+| `documents/frise-quotidien` | Matin, retour et soirée avec des heures repères. |
+| `documents/agenda-devoirs` | Tâches, pages, matières et dates à retrouver. |
+| `documents/dossier-inscription` | Formulaire, liste de justificatifs fictifs et message de confirmation. |
+| `documents/tableau-taches` | Actions, personnes et créneaux pour répartir les tâches. |
+| `documents/convocation-et-resultat` | Convocation fictive, changement de salle et avis de résultat à lire séparément. |
 
 Pour les cadrans, la grande aiguille avance de 6° par minute et la petite de 30° par heure, plus 0,5° par minute. À 8 h 30, la petite aiguille est à mi-chemin entre 8 et 9. À 15 h 45, elle est proche du 4 et la grande est sur le 9. Midi et minuit ont le même cadran à douze heures. Leur écriture et le contexte les distinguent.
 

@@ -1,14 +1,14 @@
 ---
 name: nouvel-exercice
 description: >-
-  Ajoute un type d'exercice maths de bout en bout (entrée catalog.ts, branche
+  Ajoute un type d'exercice maths ou FLE de bout en bout (entrée catalog.ts, branche
   déterministe dans generate.ts, layout ItemView si besoin, colonnes /
   préférences). À utiliser dès qu'on demande d'ajouter, créer ou implémenter un
   exercice, un type de fiche, un générateur (addition en colonnes, fractions,
   périmètre, division posée, suites, problèmes…), même sans le mot « exercice ».
 ---
 
-# Créer un type d'exercice maths
+# Créer un type d’exercice
 
 Un type d'exercice = une entrée dans `src/math/catalog.ts` + une branche dans `src/math/generate.ts` (maths) ou un générateur dans `src/francais/` (FLE / phrase / lecture) + un rendu via un `layout` existant (ou nouveau) dans `ItemView.tsx`.
 
@@ -22,6 +22,14 @@ Lire `CLAUDE.md` et un type proche dans `catalog.ts` / `generate.ts`. Fixer en u
 4. **Paramètres implicites** : bornes de nombres selon `PageConfig.difficulty`, `preferredColumns`, `figure` éventuelle.
 5. **Corrigé** : champ `answer` + données de rendu (chiffres, retenues, dims, steps…).
 
+## Fiches FLE · Grammaire, Société suisse et Vie scolaire
+
+- Reprendre l’organisation de la refonte de Grammaire pour les thèmes, les sous-thèmes, les activités, le niveau et la présentation. Un support peut avoir plusieurs formats de réponse dans le même type. Garder les identifiants stables pour les fiches enregistrées. [Cahier de Grammaire](../../../docs/grammaire/implementation/cahier-des-charges-v2.md)
+- Pour une théorie, utiliser les blocs FALC existants. Partir d’une situation visible, utiliser des phrases courtes, puis donner un exemple et un essai. Pour le lexique, rapprocher le mot de son image, de son geste ou d’un exemple. [Cadre FALC](../falc/SKILL.md)
+- Pour CO, CE, PO et PE, prendre une fiche TCF de même compétence comme référence. Générer les items avec `tcfExerciseItems` et utiliser les vues TCF existantes dans le générateur. Préserver le type de tâche du domaine, ses médias, ses réponses et ses exemples de correction.
+- Pour une CO, réutiliser une piste adaptée et garder le lien avec sa transcription. Quand le vrai ou faux est proposé, reprendre le tableau de Grammaire. Pour une CE, rattacher les réponses au document. Pour une PO ou une PE, situer l’échange, préciser le résultat attendu et présenter le modèle dans le corrigé.
+- Examiner le chemin normal du générateur, les versions élève et corrigé, et les contraintes d’impression du domaine. [Formats communs](../../../docs/societe/formats-fiches.md)
+
 ## Niveau (Facile / Moyen / Avancé)
 
 Champ `difficulty` sur `PageConfig` (`src/math/difficulty.ts` + SelectBox **Niveau** sous le type).
@@ -34,13 +42,13 @@ Champ `difficulty` sur `PageConfig` (`src/math/difficulty.ts` + SelectBox **Nive
 
 Toujours lire `config.difficulty` dans `generate.ts` / `algebra.ts` (via `pairAdd`, `makeWordProblem`, `generateEquations`…).
 
-## Étapes
+## Étapes pour les maths
 
 1. Ajouter l'entrée avec l'helper `t(...)` dans `exerciseTypes` (`catalog.ts`) : `id`, `topic`, `label`, `description`, `instruction`, `visual`, extras (`preferredColumns`, `figure`).
 2. Dans `generate.ts`, brancher sur `config.exerciseType` (ou le motif déjà utilisé) pour produire des `MathItem[]` via `rng` uniquement (`int`, `pick`, `shuffle` de `src/math/rng.ts`).
 3. Si le `layout` n'existe pas : l'ajouter dans `types.ts`, le rendu dans `ItemView.tsx`, les styles dans `App.css` (école, N&B).
 4. Vérifier densité A4 : `preferredColumns` et `count` par défaut compatibles avec une page fixe (voir skill `test-impression`).
-5. `npm run lint` puis `npm run build`. Contrôler aperçu élève + corrigé.
+5. Appliquer la procédure du dépôt pour les vérifications et la publication. [Publier sur main](../pousser-main/SKILL.md)
 
 ## Contrat du générateur
 
@@ -88,4 +96,4 @@ Voir `assets/` pour un squelette de branche générateur et de test de détermin
 
 ## Terminé quand
 
-Type visible dans les SelectBox Thème → Type · générateur déterministe · rendu élève/corrigé · page A4 non déformée · lint/build OK.
+Type visible dans les SelectBox Thème → Type · générateur déterministe · rendu élève/corrigé · mise en page élève et corrigé cohérente avec le type.
