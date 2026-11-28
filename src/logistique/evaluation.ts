@@ -11,6 +11,8 @@ export const logistiqueBloomLevels = {
   analyser: 'Analyser', evaluer: 'Évaluer', creer: 'Créer',
 } as const
 
+export const logistiqueDifficultyLabels = { facile: 'Facile', moyen: 'Moyenne', avance: 'Avancée' } as const satisfies Record<Difficulty, string>
+
 export type LogistiqueAssessment = {
   bloom?: keyof typeof logistiqueBloomLevels
   difficulty?: Difficulty

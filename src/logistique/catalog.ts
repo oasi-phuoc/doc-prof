@@ -1,4 +1,4 @@
-import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
+import type { Domain, ExerciseBlock, ExerciseType, LogistiquePresentation, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { validLogistiqueChoice } from './choices'
@@ -126,6 +126,30 @@ export function validLogistiqueGapMode(type: LogistiqueType, mode: unknown): boo
 export function logistiquePresentationFor(block: Pick<ExerciseBlock, 'logistiquePresentation' | 'logistiqueGapMode'>) {
   return block.logistiquePresentation ?? block.logistiqueGapMode
 }
+
+export const logistiquePresentationLabels = {
+  qcm: 'QCM à réponse unique',
+  'qcm-multiple': 'QCM à réponses multiples',
+  'vrai-faux': 'Vrai ou faux',
+  'associer-textes': 'Associations de termes et définitions',
+  'lignes-simples': 'Lignes simples',
+  'lignes-numerotees': 'Lignes numérotées',
+  'sans-liste': 'Texte à trous sans liste',
+  'avec-liste': 'Texte à trous avec liste',
+  'tableau-donnees': 'Tableau de données à compléter',
+  'tableau-dates': 'Tableau de dates à compléter',
+  'tableau-comparaison': 'Tableau de comparaison',
+  'tableau-classement': 'Classement par catégorie',
+  'tableau-ordre': 'Ordre des étapes',
+  'lire-document': 'Lecture de document professionnel',
+  'corriger-erreurs': 'Repérage et correction d’erreurs',
+  'frise-chronologique': 'Frise chronologique à compléter',
+  'justifier-decision': 'Décision à justifier',
+  'processus-a-completer': 'Processus à compléter',
+  'lire-graphique': 'Lecture de graphique',
+  'completer-graphique': 'Graphique à compléter',
+  'cas-mixte': 'Cas mixte',
+} as const satisfies Record<LogistiquePresentation, string>
 
 export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
   if (presentation === 'cas-mixte') return type.kind === 'situation'

@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { assignLogistiqueReplacement, newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
-import { logistiqueBloomLevels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
+import { logistiqueBloomLevels, logistiqueDifficultyLabels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
 import { logistiqueCasePoints } from '@/logistique/tables'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
@@ -344,9 +344,7 @@ export function GenericLibreEditor({
                 <SelectBox label="Difficulté de la question" value={item.logistiqueAssessment?.difficulty ?? ''} onChange={(difficulty) =>
                   patchAssessment(index, { difficulty: difficulty ? difficulty as LogistiqueAssessment['difficulty'] : undefined })}>
                   <option value="">À renseigner</option>
-                  <option value="facile">Facile</option>
-                  <option value="moyen">Moyenne</option>
-                  <option value="avance">Avancée</option>
+                  {Object.entries(logistiqueDifficultyLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
                 </SelectBox>
                 <label className="libre-field is-line">
                   <span>Durée indicative en minutes</span>

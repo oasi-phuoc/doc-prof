@@ -3,7 +3,7 @@ import { mathGlossaryBank } from '@/math/glossary-banks'
 import { isGuidedColumnType, isSingleColumnPractice, REAL_MAP_TYPE } from '@/math/guided-practice'
 import { isFundamentalPractice, SHAPE_PRACTICE } from '@/math/fundamental-practice'
 import { realMapPlan, realMapPlans } from '@/math/real-map-catalog'
-import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
+import { isLogistiqueReferenceType, logistiquePresentationFor, logistiquePresentationLabels, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
@@ -246,32 +246,17 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
-      { id: 'qcm', label: 'QCM à réponse unique' },
-      { id: 'qcm-multiple', label: 'QCM à réponses multiples' },
-      { id: 'vrai-faux', label: 'Vrai ou faux' },
-      { id: 'associer-textes', label: 'Associations de termes et définitions' },
-      { id: 'lignes-simples', label: 'Lignes simples' },
-      { id: 'lignes-numerotees', label: 'Lignes numérotées' },
-      { id: 'sans-liste', label: 'Texte à trous sans liste' },
-      { id: 'avec-liste', label: 'Texte à trous avec liste' },
+      'qcm', 'qcm-multiple', 'vrai-faux', 'associer-textes',
+      'lignes-simples', 'lignes-numerotees', 'sans-liste', 'avec-liste',
     ] as const : []),
-    { id: 'tableau-donnees', label: 'Tableau de données à compléter' },
-    { id: 'tableau-dates', label: 'Tableau de dates à compléter' },
+    'tableau-donnees', 'tableau-dates',
     ...(logistics.kind !== 'maths' ? [
-      { id: 'tableau-comparaison', label: 'Tableau de comparaison' },
-      { id: 'tableau-classement', label: 'Classement par catégorie' },
-      { id: 'tableau-ordre', label: 'Ordre des étapes' },
-      { id: 'lire-document', label: 'Lecture de document professionnel' },
-      { id: 'corriger-erreurs', label: 'Repérage et correction d’erreurs' },
-      { id: 'frise-chronologique', label: 'Frise chronologique à compléter' },
-      { id: 'justifier-decision', label: 'Décision à justifier' },
-      { id: 'processus-a-completer', label: 'Processus à compléter' },
-      { id: 'lire-graphique', label: 'Lecture de graphique' },
-      ...(logistics.kind === 'situation' ? [{ id: 'completer-graphique', label: 'Graphique à compléter' }] as const : []),
+      'tableau-comparaison', 'tableau-classement', 'tableau-ordre', 'lire-document', 'corriger-erreurs',
+      'frise-chronologique', 'justifier-decision', 'processus-a-completer', 'lire-graphique',
     ] as const : []),
-    ...(logistics.kind === 'situation' ? [{ id: 'cas-mixte', label: 'Cas mixte' }] as const : []),
-  ] as const).map(({ id, label }) => ({
-    id, label, capacity: [...logistiqueModuleCapacities(
+    ...(logistics.kind === 'situation' ? ['completer-graphique', 'cas-mixte'] as const : []),
+  ] as const).map((id) => ({
+    id, label: logistiquePresentationLabels[id], capacity: [...logistiqueModuleCapacities(
       logistics, selectedModules, activeBlock.logistiqueBankRevision, id,
     ).values()].reduce((total, stock) => total + stock, 0),
   })) : []
