@@ -118,7 +118,11 @@ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server')
 const {GrammarCoLevelControl}=load(path.join(root,'src/components/generator/GrammarCoLevelControl.tsx'))
 for(const [a1Available,a2Available]of [[true,false],[false,true],[true,true]]){
  const html=renderToStaticMarkup(React.createElement(GrammarCoLevelControl,{value:a1Available?'A1':'A2',a1Available,a2Available,onChange:()=>{}}))
- check((html.match(/<button/g)||[]).length===2&&(html.match(/disabled/g)||[]).length===Number(!a1Available)+Number(!a2Available),'only available levels enabled')
+ if(a1Available&&a2Available){
+  check((html.match(/<button/g)||[]).length===2&&html.includes('>A1</button>')&&html.includes('>A2</button>'),'both available levels can be selected')
+ }else{
+  check(html==='','level control hidden when only one level is available')
+ }
 }
 check(illustrated===Object.values(editorial.by_level).reduce((n,level)=>n+level.qcm_image,0),'illustrated question count')
 check(scenes===Object.values(editorial.by_level).reduce((n,level)=>n+level.illustrative_scenes,0),'support scene count')

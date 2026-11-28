@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "generation_enabled": false,
-  "status": "illustrations_individuelles_a_preparer",
+  "status": "illustrations_individuelles_integrees",
   "reuse_collection": "public/lib/images/tcf/",
-  "qcm_image_disponibles": 239,
-  "questions_avec_choix_a_preparer": 10,
+  "qcm_image_disponibles": 249,
+  "questions_avec_choix_a_preparer": 0,
   "requirements": [
     "Vérifier la transcription et les trois choix de la question.",
     "Générer chaque nouvelle illustration dans un fichier individuel ou réutiliser une illustration TCF contrôlée.",
@@ -21,21 +21,26 @@
           "id": "a",
           "texte": "Il est étudiant",
           "correct": true,
-          "sujet": "a male adult student studying at an open notebook in a classroom"
+          "sujet": "a male adult student studying at an open notebook in a classroom",
+          "image": "/lib/images/tcf/qcm-audit/etudier-en-salle-de-cours.webp"
         },
         {
           "id": "b",
           "texte": "Il est professeur",
           "correct": false,
-          "sujet": "a male adult professor teaching at a blackboard"
+          "sujet": "a male adult professor teaching at a blackboard",
+          "image": "/lib/images/tcf/qcm-audit/enseigner-devant-un-tableau.webp"
         },
         {
           "id": "c",
           "texte": "Il est ingénieur",
           "correct": false,
-          "sujet": "a male engineer in safety helmet checking a drawing on a structural work site"
+          "sujet": "a male engineer in safety helmet checking a drawing on a structural work site",
+          "image": "/lib/images/tcf/qcm-audit/ingenieur-verifier-un-plan-sur-un-chantier.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "Oui, je suis étudiant avec elle"
     },
     {
       "piste": "gram-co-aeroport-piste192",
@@ -47,21 +52,26 @@
           "id": "a",
           "texte": "L’ouvrir",
           "correct": true,
-          "sujet": "traveller opens his own suitcase on a baggage table, fully open clearly visible"
+          "sujet": "traveller opens his own suitcase on a baggage table, fully open clearly visible",
+          "image": "/lib/images/tcf/qcm-audit/ouvrir-une-valise-au-controle.webp"
         },
         {
           "id": "b",
           "texte": "La peser",
           "correct": false,
-          "sujet": "same traveller places his closed suitcase on a weighing scale"
+          "sujet": "same traveller places his closed suitcase on a weighing scale",
+          "image": "/lib/images/tcf/qcm-audit/peser-une-valise-au-controle.webp"
         },
         {
           "id": "c",
           "texte": "La fermer",
           "correct": false,
-          "sujet": "same traveller presses down to close the lid of his suitcase with the zipper in reach"
+          "sujet": "same traveller presses down to close the lid of his suitcase with the zipper in reach",
+          "image": "/lib/images/tcf/qcm-audit/fermer-une-valise-au-controle.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "L’ouvrir"
     },
     {
       "piste": "gram-co-hotel-piste204",
@@ -73,21 +83,26 @@
           "id": "a",
           "texte": "Une baignoire et un sèche-cheveux",
           "correct": true,
-          "sujet": "bathtub and hand-held hair dryer in a bathroom"
+          "sujet": "bathtub and hand-held hair dryer in a bathroom",
+          "image": "/lib/images/tcf/qcm-audit/salle-de-bains-avec-baignoire-et-seche-cheveux.webp"
         },
         {
           "id": "b",
           "texte": "Une douche et un lave-linge",
           "correct": false,
-          "sujet": "walk-in shower and washing machine in a bathroom"
+          "sujet": "walk-in shower and washing machine in a bathroom",
+          "image": "/lib/images/tcf/qcm-audit/salle-de-bains-avec-douche-et-lave-linge.webp"
         },
         {
           "id": "c",
           "texte": "Un sauna et un jacuzzi",
           "correct": false,
-          "sujet": "wood sauna and a separate bubbling jacuzzi in a spa room"
+          "sujet": "wood sauna and a separate bubbling jacuzzi in a spa room",
+          "image": "/lib/images/tcf/qcm-audit/sauna-et-bain-a-remous-a-lhotel.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "Une baignoire et un sèche-cheveux"
     },
     {
       "piste": "gram-co-fetes-a2-piste_058",
@@ -99,21 +114,26 @@
           "id": "a",
           "texte": "Dehors",
           "correct": true,
-          "sujet": "wedding meal tables and a small area for dancing outside in a garden"
+          "sujet": "wedding meal tables and a small area for dancing outside in a garden",
+          "image": "/lib/images/tcf/qcm-audit/repas-de-mariage-dans-le-jardin.webp"
         },
         {
           "id": "b",
           "texte": "Dans une salle de la mairie",
           "correct": false,
-          "sujet": "same type wedding meal and dance in a municipal hall room"
+          "sujet": "same type wedding meal and dance in a municipal hall room",
+          "image": "/lib/images/tcf/qcm-audit/repas-de-mariage-dans-une-salle-de-la-mairie.webp"
         },
         {
           "id": "c",
           "texte": "Dans le hall de la gare",
           "correct": false,
-          "sujet": "same event in a big recognizable rail station hall with platform visible behind a window"
+          "sujet": "same event in a big recognizable rail station hall with platform visible behind a window",
+          "image": "/lib/images/tcf/qcm-audit/repas-de-mariage-dans-un-hall-de-gare.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "on mangera et on dansera dehors"
     },
     {
       "piste": "gram-co-universite-ecole-a2-piste_066",
@@ -125,21 +145,26 @@
           "id": "a",
           "texte": "Dans le cahier de liaison",
           "correct": true,
-          "sujet": "adult hand signing a school-to-home notebook with abstract non-legible strokes"
+          "sujet": "adult hand signing a school-to-home notebook with abstract non-legible strokes",
+          "image": "/lib/images/tcf/qcm-audit/signer-un-cahier-de-liaison.webp"
         },
         {
           "id": "b",
           "texte": "Sur un billet de train",
           "correct": false,
-          "sujet": "same hand marks a small paper train ticket with tiny train symbol"
+          "sujet": "same hand marks a small paper train ticket with tiny train symbol",
+          "image": "/lib/images/tcf/qcm-audit/signer-un-billet-de-train.webp"
         },
         {
           "id": "c",
           "texte": "Au dos d’une photo",
           "correct": false,
-          "sujet": "same hand signs the visible back of a printed photograph that is turning face-up along one edge"
+          "sujet": "same hand signs the visible back of a printed photograph that is turning face-up along one edge",
+          "image": "/lib/images/tcf/qcm-audit/signer-au-dos-dune-photo.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "ont signée dans le cahier de liaison"
     },
     {
       "piste": "gram-co-faire-achats-a2-piste_007",
@@ -151,21 +176,26 @@
           "id": "a",
           "texte": "Son téléphone ne s’allume plus",
           "correct": true,
-          "sujet": "person tries to switch on a phone with dark screen, no icons, and small finger on power switch"
+          "sujet": "person tries to switch on a phone with dark screen, no icons, and small finger on power switch",
+          "image": "/lib/images/tcf/qcm-audit/essayer-dallumer-un-telephone-en-panne.webp"
         },
         {
           "id": "b",
           "texte": "Son colis n’est pas arrivé",
           "correct": false,
-          "sujet": "same person checks an open empty delivery mailbox in front of house, expecting a parcel"
+          "sujet": "same person checks an open empty delivery mailbox in front of house, expecting a parcel",
+          "image": "/lib/images/tcf/qcm-audit/verifier-un-casier-a-colis-vide.webp"
         },
         {
           "id": "c",
           "texte": "Il a oublié le prix payé",
           "correct": false,
-          "sujet": "same person looks at a receipt with a puzzled expression and rubs head, receipt has no amount"
+          "sujet": "same person looks at a receipt with a puzzled expression and rubs head, receipt has no amount",
+          "image": "/lib/images/tcf/qcm-audit/chercher-le-prix-sur-un-ticket-de-caisse.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "il ne s'allume plus"
     },
     {
       "piste": "gram-co-actualite-a2-piste_033",
@@ -177,21 +207,26 @@
           "id": "a",
           "texte": "Elle lit la presse en ligne",
           "correct": true,
-          "sujet": "adult reads news articles on a tablet, abstract heading and article pictures only"
+          "sujet": "adult reads news articles on a tablet, abstract heading and article pictures only",
+          "image": "/lib/images/tcf/qcm-audit/lire-la-presse-en-ligne-sur-une-tablette.webp"
         },
         {
           "id": "b",
           "texte": "Elle regarde le journal télévisé chaque soir",
           "correct": false,
-          "sujet": "same adult watches a newscast on a television at home"
+          "sujet": "same adult watches a newscast on a television at home",
+          "image": "/lib/images/tcf/qcm-audit/regarder-le-journal-televise-le-soir.webp"
         },
         {
           "id": "c",
           "texte": "Elle achète tous ses journaux à la gare",
           "correct": false,
-          "sujet": "same adult buys printed newspapers at a railway station's news kiosk"
+          "sujet": "same adult buys printed newspapers at a railway station's news kiosk",
+          "image": "/lib/images/tcf/qcm-audit/acheter-un-journal-au-kiosque-de-la-gare.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "je lis la presse en ligne"
     },
     {
       "piste": "gram-co-actualite-a2-piste_037",
@@ -203,21 +238,26 @@
           "id": "a",
           "texte": "L’actualité culturelle",
           "correct": true,
-          "sujet": "a magazine cover collage showing people in cinema, theatre and museum, textless"
+          "sujet": "a magazine cover collage showing people in cinema, theatre and museum, textless",
+          "image": "/lib/images/tcf/qcm-audit/couverture-de-magazine-culturel.webp"
         },
         {
           "id": "b",
           "texte": "La mode",
           "correct": false,
-          "sujet": "magazine showing clothes and a fashion runway, textless"
+          "sujet": "magazine showing clothes and a fashion runway, textless",
+          "image": "/lib/images/tcf/qcm-audit/couverture-de-magazine-de-mode.webp"
         },
         {
           "id": "c",
           "texte": "Le sport",
           "correct": false,
-          "sujet": "magazine showing athletes and stadium sports, textless"
+          "sujet": "magazine showing athletes and stadium sports, textless",
+          "image": "/lib/images/tcf/qcm-audit/couverture-de-magazine-de-sport.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "Télérama pour l'actualité culturelle"
     },
     {
       "piste": "gram-co-vie-associative-a2-piste_078",
@@ -229,21 +269,26 @@
           "id": "a",
           "texte": "De l’aide pour les devoirs ou les études",
           "correct": true,
-          "sujet": "adult volunteer helps a learner do homework at a desk with books"
+          "sujet": "adult volunteer helps a learner do homework at a desk with books",
+          "image": "/lib/images/tcf/qcm-audit/aider-un-adulte-a-faire-ses-devoirs.webp"
         },
         {
           "id": "b",
           "texte": "De l’aide pour conduire un bus",
           "correct": false,
-          "sujet": "adult instructor helps a driver at the controls of a city bus"
+          "sujet": "adult instructor helps a driver at the controls of a city bus",
+          "image": "/lib/images/tcf/qcm-audit/aider-a-conduire-un-bus.webp"
         },
         {
           "id": "c",
           "texte": "De l’aide pour vendre des vélos",
           "correct": false,
-          "sujet": "adult volunteer helps sell bicycles to customers in a shop"
+          "sujet": "adult volunteer helps sell bicycles to customers in a shop",
+          "image": "/lib/images/tcf/qcm-audit/aider-a-vendre-des-velos.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "avec ses devoirs ou ses études"
     },
     {
       "piste": "gram-co-sante-a2-piste_118",
@@ -255,21 +300,26 @@
           "id": "a",
           "texte": "Sortir",
           "correct": true,
-          "sujet": "same adult steps out through a doorway onto pavement"
+          "sujet": "same adult steps out through a doorway onto pavement",
+          "image": "/lib/images/tcf/qcm-audit/sortir-par-la-porte-dentree.webp"
         },
         {
           "id": "b",
           "texte": "Ouvrir seulement la fenêtre",
           "correct": false,
-          "sujet": "same adult opens a window while remaining inside the room"
+          "sujet": "same adult opens a window while remaining inside the room",
+          "image": "/lib/images/tcf/qcm-audit/ouvrir-une-fenetre-depuis-le-salon.webp"
         },
         {
           "id": "c",
           "texte": "Changer de place dans la pièce",
           "correct": false,
-          "sujet": "same adult moves between two seats inside the room, window stays closed"
+          "sujet": "same adult moves between two seats inside the room, window stays closed",
+          "image": "/lib/images/tcf/qcm-audit/changer-de-fauteuil-dans-le-salon.webp"
         }
-      ]
+      ],
+      "status": "qcm_image_actif",
+      "preuve_transcription": "il faut que tu sortes"
     }
   ]
 }
