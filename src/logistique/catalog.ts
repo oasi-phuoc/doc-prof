@@ -2,6 +2,7 @@ import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, Logi
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
+import { logistiqueStorySelectionCompatible, validLogistiqueAssessment, validLogistiqueEvaluation } from './evaluation'
 
 export const LOGISTIQUE_DOMAINS = [
   { id: 'logistique-afp', label: 'Logistique AFP', diploma: 'AFP' },
@@ -176,13 +177,23 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const selection = 'logistiqueSelection' in block ? block.logistiqueSelection : undefined
     const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
     const presentation = 'logistiquePresentation' in block ? block.logistiquePresentation : undefined
+    const evaluation = 'logistiqueEvaluation' in block ? block.logistiqueEvaluation : undefined
     const items = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
       validLogistiquePresentation(type, presentation) &&
       (gapMode === undefined || presentation === undefined) &&
+      (evaluation === undefined || (!isLogistiqueReferenceType(type.id) && validLogistiqueEvaluation(evaluation) &&
+        (evaluation.mode !== 'histoire' || (type.kind === 'maths' && gapMode === undefined && presentation === undefined &&
+          logistiqueStorySelectionCompatible(
+            (selection as ExerciseBlock['logistiqueSelection'])?.modules ?? [type.module],
+            (selection as ExerciseBlock['logistiqueSelection'])?.quantities))))) &&
       items.every((item) =>
+        (item?.logistiqueAssessment === undefined || (!isLogistiqueReferenceType(type.id) &&
+          validLogistiqueAssessment(item.logistiqueAssessment))) &&
+        (item?.logistiqueNarrative === undefined || (!isLogistiqueReferenceType(type.id) &&
+          typeof item.logistiqueNarrative === 'string' && item.logistiqueNarrative.length <= 1100)) &&
         (item?.logistiqueLocalModule === undefined || (!isLogistiqueReferenceType(type.id) &&
           !item.logistiqueSource && typeof item.libreId === 'string' &&
           typeof item.prompt === 'string' && typeof item.answer === 'string' &&

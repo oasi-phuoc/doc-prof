@@ -257,10 +257,14 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const logistics = logistiqueType(activeBlock.exerciseType)
-const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ? [...logistiqueModuleCapacities(
-  logistics, activeBlock.logistiqueSelection?.modules ?? [logistics.module], activeBlock.logistiqueBankRevision,
-  logistiquePresentationFor(activeBlock),
-).values()].reduce((sum, count) => sum + count, 0) : undefined
+const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ?
+  activeBlock.logistiqueEvaluation?.mode === 'histoire' && activeSheetBlock?.bankQuestionCap !== undefined
+    ? activeSheetBlock.bankQuestionCap
+    : [...logistiqueModuleCapacities(
+      logistics, activeBlock.logistiqueSelection?.modules ?? [logistics.module], activeBlock.logistiqueBankRevision,
+      logistiquePresentationFor(activeBlock),
+    ).values()].reduce((sum, count) => sum + count, 0)
+  : undefined
 const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
 const syllablePairCap = isSoutienRelier && bankQuestionCap !== undefined ? Math.max(1, bankQuestionCap) : undefined
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined

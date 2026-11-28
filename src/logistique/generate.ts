@@ -3,6 +3,8 @@ import { createRng, shuffle, type Rng } from '@/math/rng'
 import type { LogistiquePresentation, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
 import { completeLogistiqueGlossaryItem } from './glossary'
+import { logistiqueStoryModules, logistiqueStoryQuestions, logistiqueStorySelectionCompatible, validLogistiqueEvaluation,
+  type LogistiqueEvaluation } from './evaluation'
 import {
   isLogistiqueReferenceType, logistiquePhotoPath, logistiquePresentationFor, logistiqueType,
   validLogistiquePresentation, validLogistiqueSelection, type LogistiqueType,
@@ -93,7 +95,13 @@ export function logistiqueEligibleCount(typeId: string): number {
   return type ? eligibleUnits(type, currentLogistiquePublication.units).length : 0
 }
 
-export function logistiqueModuleCapacities(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation) {
+export function logistiqueModuleCapacities(
+  type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation,
+  evaluation?: LogistiqueEvaluation,
+) {
+  if (evaluation?.mode === 'histoire' && type.kind === 'maths') {
+    return new Map(modules.map((code) => [code, logistiqueStoryModules.some((module) => module === code) ? 1 : 0]))
+  }
   const counts = new Map(modules.map((code) => [code, 0]))
   for (const unit of eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation)) {
     counts.set(unit.module, (counts.get(unit.module) ?? 0) + 1)
@@ -169,9 +177,22 @@ export function generateLogistique(
 
   const modules = config.logistiqueSelection?.modules ?? [type.module]
   const quantities = config.logistiqueSelection?.quantities
+  const count = Number.isFinite(config.count) ? Math.max(1, Math.floor(config.count)) : 1
+  const evaluation = config.logistiqueEvaluation
+  if (evaluation?.mode === 'histoire') {
+    if (type.kind !== 'maths' || presentation !== undefined || !validLogistiqueEvaluation(evaluation) ||
+        !evaluation.story || !logistiqueStorySelectionCompatible(modules, quantities)) {
+      return { title: logistiqueDocumentTitle([config], true), instruction: 'La sélection doit correspondre à la trame de réception et de préparation.', items: [], bankQuestionCap: 0 }
+    }
+    const items = logistiqueStoryQuestions(evaluation.story, modules)
+      .filter((item) => !excludedIds?.has(item.logistiqueSource!.id))
+    return {
+      title: logistiqueDocumentTitle([config], true), instruction: type.instruction,
+      items: quantities ? items : items.slice(0, count), bankQuestionCap: modules.length,
+    }
+  }
   const eligible = eligibleUnits(type, units, modules, presentation)
   const reference = isLogistiqueReferenceType(type.id)
-  const count = Number.isFinite(config.count) ? Math.max(1, Math.floor(config.count)) : 1
   const candidates = excludedIds?.size ? eligible.filter(({ id }) => !excludedIds.has(id)) : eligible
   const rng = createRng(seed)
   const selected = reference ? eligible : quantities

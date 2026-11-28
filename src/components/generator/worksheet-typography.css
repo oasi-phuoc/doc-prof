@@ -204,3 +204,38 @@
 .logistique-numbered-lines > li + li {
   margin-block-start: .18em;
 }
+
+.logistique-narrative-passage {
+  margin: 0 0 .45em;
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+:root {
+  --logistique-story-a5-scale: min(var(--sheet-font-scale, 1), 1);
+}
+
+.a5-half.is-logistique.has-logistique-story {
+  --sheet-font-scale: var(--logistique-story-a5-scale, 1);
+}
+
+.has-logistique-story .exercise-document-text {
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.logistique-assessment-points {
+  margin: 0 0 .15em;
+  font-size: calc(11px * var(--app-font-scale, 1));
+  font-weight: 700;
+  text-align: end;
+}
+
+.logistique-assessment-criteria {
+  margin: .35em 0 0;
+  font-size: calc(12px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  white-space: pre-line;
+}

@@ -447,7 +447,10 @@ export function buildPage(
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(page, block)
-    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) single.logistiqueSelection = undefined
+    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) {
+      single.logistiqueSelection = undefined
+      single.logistiqueEvaluation = undefined
+    }
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const logistics = logistiqueType(block.exerciseType)
@@ -479,13 +482,17 @@ export function buildPage(
         exerciseIndex = exerciseCursor++
       }
     }
-    const hasLocalQuestions = logisticsQuestions && result.items.length === 0 &&
-      libre?.items.some((item) => item.logistiqueLocalModule) && validLogistiquePages([single])
-    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasLocalQuestions
+    const hasStandaloneQuestions = logisticsQuestions && result.items.length === 0 &&
+      libre?.items.some((item) => item.logistiqueLocalModule ||
+        single.logistiqueEvaluation?.story && item.logistiqueSource?.revision === 'evaluation-v010') &&
+      validLogistiquePages([single])
+    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasStandaloneQuestions
       ? result.items : (libre?.items ?? result.items)
     const glossaryBank = mathGlossaryBank(block.exerciseType)
     const items = rawItems.map((item) => {
-      const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      const sanitized = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      const clean = sanitized.logistiqueNarrative && single.logistiqueEvaluation?.mode !== 'histoire'
+        ? { ...sanitized, logistiqueNarrative: undefined } : sanitized
       if (clean.sionMap && block.sionMapBackground) {
         return { ...clean, sionMap: { ...clean.sionMap, background: block.sionMapBackground } }
       }

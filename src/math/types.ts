@@ -478,6 +478,8 @@ export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Module choisi pour une question rédigée dans la fiche. */
   logistiqueLocalModule?: string
+  logistiqueAssessment?: import('@/logistique/evaluation').LogistiqueAssessment
+  logistiqueNarrative?: string
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
@@ -980,6 +982,7 @@ export type ExerciseBlock = {
   logistiqueTheoryView?: 'complet' | 'resume'
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
+  logistiqueEvaluation?: import('@/logistique/evaluation').LogistiqueEvaluation
   logistiqueGapMode?: LogistiqueGapMode
   logistiquePresentation?: LogistiquePresentation
   topic: string
@@ -1311,6 +1314,8 @@ export type WorksheetBlock = {
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
+  /** Index des questions dont le contexte figure juste avant, sur une page de suite. */
+  logistiqueDetachedNarratives?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
   /**

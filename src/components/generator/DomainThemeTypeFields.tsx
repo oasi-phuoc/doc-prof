@@ -21,8 +21,9 @@ import { ACCESS_DOMAIN_OPTIONS, ACTIVE_DOMAIN_OPTIONS } from '@/access'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
-import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
+import { isLogistiqueDomain, isLogistiqueReferenceType, logistiquePresentationFor, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
+import { initialLogistiqueStory, logistiqueStorySelectionCompatible } from '@/logistique/evaluation'
 import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
 import { exerciseTypeById } from '@/math/catalog'
 import { santeActivityLevel, santeLevelsForTopic } from '@/sante/catalog'
@@ -179,7 +180,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     }
     const type = logistiqueTypeForSubtheme(id, activeBlock.exerciseType)
     if (type?.domain !== activePage.domain || type.topic !== activeBlock.topic) return
-    if (activeBlock.libreItems?.length && !window.confirm('Changer de sous-thème remplacera les modifications de cette activité. Continuer ?')) return
+    if ((activeBlock.libreItems?.length || activeBlock.logistiqueEvaluation?.story) &&
+      !window.confirm('Changer de sous-thème remplacera les modifications de cette activité. Continuer ?')) return
     updatePage(applyType(type, activeBlock))
   }
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
@@ -216,6 +218,16 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     type="button"
                     className={evalMode ? 'active' : ''}
                     onClick={() => {
+                      const modules = activeBlock.logistiqueSelection?.modules ?? (logisticsType ? [logisticsType.module] : [])
+                      if (!evalMode && logisticsType?.kind === 'maths' && !activeBlock.logistiqueEvaluation &&
+                        !activeBlock.libreItems?.length && !logistiquePresentationFor(activeBlock) &&
+                        logistiqueStorySelectionCompatible(modules, activeBlock.logistiqueSelection?.quantities)) {
+                        updatePage({
+                          logistiqueEvaluation: { mode: 'histoire', story: initialLogistiqueStory },
+                          logistiqueSelection: { modules, quantities: Object.fromEntries(modules.map((code) => [code, 1])) },
+                          count: modules.length,
+                        })
+                      }
                       setEvalMode(true)
                       if (!logisticsDomain && !institutional.documentTitle.trim()) {
                         setInstitutional((current) => ({ ...current, documentTitle: 'Évaluation' }))
@@ -256,7 +268,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               </SelectBox>}
               {mixedActivity ? (
                 <LogistiqueEvaluationFields key={logisticsType.id} type={logisticsType}
-                  themes={available} activeBlock={activeBlock} updatePage={updatePage} />
+                  themes={available} activeBlock={activeBlock} updatePage={updatePage} defaultPoints={pointsPerQuestion}
+                  items={blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items ?? []} />
               ) : isTpmLike || available.length < 2 ? null : (
                 <SelectBox
                   label={isTcf ? 'Compétence' : 'Thème'}
@@ -421,7 +434,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type || value === activeBlock.exerciseType) return
-                  const editedReference = (logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) && activeBlock.libreItems?.length
+                  const editedReference = (logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) &&
+                    (activeBlock.libreItems?.length || activeBlock.logistiqueEvaluation?.story)
                   const editedFigure = isTransformationExercise(activeBlock.exerciseType) && activeBlock.coordLibre && activeBlock.coordMarks?.length
                   if ((editedReference || editedFigure) &&
                       !window.confirm('Changer de type remplacera les modifications de cette activité. Continuer ?')) return
