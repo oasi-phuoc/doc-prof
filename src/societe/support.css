@@ -80,27 +80,26 @@
   border-bottom: 1px solid var(--line, #ccc);
   padding: 1.4mm 2mm;
 }
-.societe-cantons-table tbody th {
-  width: 54%;
+.societe-cantons-table tr > :nth-child(-n+2) {
+  width: 1%;
+  text-align: center;
 }
-.societe-canton,
 .societe-chef-lieu {
   display: flex;
+  flex-wrap: wrap;
   gap: 2.2mm;
   align-items: center;
   justify-content: space-between;
 }
-.societe-canton {
-  justify-content: start;
-}
-.societe-canton small {
+.societe-cantons-table th small {
   display: block;
   font-weight: 400;
 }
 .societe-ecusson {
-  flex: none;
+  display: block;
   width: 11mm;
   height: 14mm;
+  margin-inline: auto;
   object-fit: contain;
 }
 .societe-chef-lieu-vue {

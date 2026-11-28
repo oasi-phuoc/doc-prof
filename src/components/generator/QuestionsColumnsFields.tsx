@@ -241,6 +241,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
       { id: 'qcm', label: 'QCM à réponse unique' },
+      { id: 'qcm-multiple', label: 'QCM à réponses multiples' },
+      { id: 'vrai-faux', label: 'Vrai ou faux' },
       { id: 'lignes-simples', label: 'Lignes simples' },
       { id: 'lignes-numerotees', label: 'Lignes numérotées' },
       { id: 'sans-liste', label: 'Texte à trous sans liste' },

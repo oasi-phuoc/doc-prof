@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
-import { newLogistiqueQuestion, reviewableLogistiqueAnswer } from '@/logistique/libre'
+import { newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
 import { logistiqueBloomLevels, type LogistiqueAssessment } from '@/logistique/evaluation'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
@@ -44,7 +44,9 @@ export function GenericLibreEditor({
   onRegenerate?: (itemId: string) => void
 }) {
   const [localModule, setLocalModule] = useState(logistique?.defaultModule)
-  const [localFormat, setLocalFormat] = useState<'open' | 'qcm'>('open')
+  const [localFormat, setLocalFormat] = useState<LogistiqueQuestionFormat>('open')
+  const questionFormat = logistique?.kind === 'verification' || localFormat === 'qcm' && logistique?.kind === 'situation'
+    ? localFormat : 'open'
   const module = logistique?.modules.some(({ code }) => code === localModule)
     ? localModule : logistique?.modules[0]?.code
   const TextField = logistique ? 'textarea' : 'input'
@@ -63,8 +65,17 @@ export function GenericLibreEditor({
     onChangeItems(next)
   }
 
-  function changeChoices(index: number, options: string[], answer = items[index]!.answer) {
-    patchItem(index, { options, answer, libreCorrectionPending: true })
+  function changeChoices(index: number, options: string[], edited?: { previous: string; next: string }) {
+    const item = items[index]!
+    const replace = (answer: string) => edited?.previous && edited.previous === answer ? edited.next : answer
+    const choice = item.logistiqueChoice
+    if (choice?.kind === 'multiple') {
+      const correct = choice.correct.map(replace).filter((text) => text && options.includes(text))
+      patchItem(index, { options, answer: correct.join('\n'), logistiqueChoice: { ...choice, correct }, libreCorrectionPending: true })
+      return
+    }
+    const answer = replace(item.answer)
+    patchItem(index, { options, answer: options.includes(answer) ? answer : '', libreCorrectionPending: true })
   }
 
   function patchAssessment(index: number, patch: Partial<LogistiqueAssessment>) {
@@ -87,7 +98,9 @@ export function GenericLibreEditor({
         />
       </label>
       <ul className="libre-item-list" aria-label="Questions">
-        {items.map((item, index) => (
+        {items.map((item, index) => {
+          const choice = item.logistiqueChoice
+          return (
           <li key={item.libreId ?? index} className="libre-item-card is-libre-row">
             <span className="libre-item-num is-accent">{index + 1}.</span>
             <div className="libre-item-body">
@@ -169,7 +182,7 @@ export function GenericLibreEditor({
               {item.options && item.options.length > 0 ? (
                 <div className="libre-options">
                   <b>Choix</b>
-                  {item.options.map((opt, oi) => {
+                  {choice?.kind !== 'true-false' && item.options.map((opt, oi) => {
                     const id = `${item.libreId}:choix:${oi}`
                     const invalid = fields?.[id]
                     return <Fragment key={oi}>
@@ -190,7 +203,7 @@ export function GenericLibreEditor({
                             }
                             options[oi] = text
                             writeField?.(id, null)
-                            if (logistique) changeChoices(index, options, opt && item.answer === opt ? text : item.answer)
+                            if (logistique) changeChoices(index, options, { previous: opt, next: text })
                             else patchItem(index, { options, ...(direct && item.answer === opt ? { answer: text } : {}) })
                           }}
                         />
@@ -200,24 +213,49 @@ export function GenericLibreEditor({
                         <button type="button" className="button small secondary" aria-label={`Retirer le choix ${oi + 1} de la question ${index + 1}`}
                           onClick={() => {
                             item.options!.forEach((_, position) => writeField?.(`${item.libreId}:choix:${position}`, null))
-                            changeChoices(index, item.options!.filter((_, position) => position !== oi),
-                              item.answer === opt ? '' : item.answer)
+                            changeChoices(index, item.options!.filter((_, position) => position !== oi))
                           }}>Retirer ce choix</button>}
+                      {choice?.kind === 'multiple' && <label>
+                        <input type="checkbox" disabled={!opt.trim()} checked={choice.correct.includes(opt)}
+                          onChange={(event) => {
+                            const correct = event.target.checked ? [...choice.correct, opt] : choice.correct.filter((value) => value !== opt)
+                            patchItem(index, { logistiqueChoice: { ...choice, correct }, answer: correct.join('\n'), libreCorrectionPending: true })
+                          }} />
+                        {`Le choix ${String.fromCharCode(65 + oi)} est correct`}
+                      </label>}
                     </Fragment>
                   })}
-                  {logistique && item.layout === 'select' && item.options.length < 12 &&
+                  {logistique && item.layout === 'select' && choice?.kind !== 'true-false' && item.options.length < 12 &&
                     <button type="button" className="button small secondary"
                       onClick={() => changeChoices(index, [...item.options!, ''])}>Ajouter un choix</button>}
-                  {direct && item.layout === 'select' ? (
+                  {direct && item.layout === 'select' && choice?.kind !== 'multiple' ? (
                     <label className="libre-field is-line">
                       <span>Bonne réponse</span>
                       <select className="libre-line-input" value={item.answer}
-                        onChange={(event) => patchItem(index, { answer: event.target.value })}>
+                        onChange={(event) => patchItem(index, { answer: event.target.value,
+                          ...(choice ? { libreCorrectionPending: true } : {}),
+                        })}>
                         <option value="" disabled>Choisir une réponse</option>
                         {item.options.filter(Boolean).map((option) => <option key={option} value={option}>{option}</option>)}
                       </select>
                     </label>
                   ) : null}
+                  {choice?.kind === 'true-false' && <>
+                    <label>
+                      <input type="checkbox" checked={choice.justification !== undefined}
+                        onChange={(event) => patchItem(index, {
+                          logistiqueChoice: { ...choice, justification: event.target.checked ? '' : undefined },
+                          libreCorrectionPending: true,
+                        })} /> Demander une justification
+                    </label>
+                    {choice.justification !== undefined && <label className="libre-field is-line">
+                      <span>Justification du corrigé</span>
+                      <textarea className="libre-line-input is-textarea" rows={2} maxLength={400} value={choice.justification}
+                        onChange={(event) => patchItem(index, {
+                          logistiqueChoice: { ...choice, justification: event.target.value }, libreCorrectionPending: true,
+                        })} />
+                    </label>}
+                  </>}
                 </div>
               ) : null}
               {direct && item.libreCorrectionPending ? (
@@ -325,20 +363,25 @@ export function GenericLibreEditor({
               ) : null}
             </div>
           </li>
-        ))}
+          )
+        })}
       </ul>
       {logistique ? <details>
         <summary>Ajouter une question libre</summary>
         <SelectBox label="Module de la nouvelle question" value={module ?? ''} onChange={setLocalModule}>
           {logistique.modules.map(({ code, label }) => <option key={code} value={code}>{label}</option>)}
         </SelectBox>
-        {logistique.kind !== 'maths' && <SelectBox label="Format de la nouvelle question" value={localFormat}
-          onChange={(value) => setLocalFormat(value === 'qcm' ? 'qcm' : 'open')}>
+        {logistique.kind !== 'maths' && <SelectBox label="Format de la nouvelle question" value={questionFormat}
+          onChange={(value) => setLocalFormat(value as LogistiqueQuestionFormat)}>
           <option value="open">Réponse ouverte</option>
           <option value="qcm">QCM à réponse unique</option>
+          {logistique.kind === 'verification' && <>
+            <option value="qcm-multiple">QCM à réponses multiples</option>
+            <option value="vrai-faux">Vrai ou faux</option>
+          </>}
         </SelectBox>}
         <button type="button" className="button small secondary" disabled={!module} onClick={() => {
-          if (module) onChangeItems([...items, newLogistiqueQuestion(module, logistique.kind, localFormat === 'qcm' && logistique.kind !== 'maths')])
+          if (module) onChangeItems([...items, newLogistiqueQuestion(module, logistique.kind, questionFormat)])
         }}>Ajouter à la fiche</button>
       </details> : items.length === 0 ? (
         <p className="type-hint muted">Aucun item sur cette fiche — générez d’abord un contenu.</p>

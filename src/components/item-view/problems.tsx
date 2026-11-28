@@ -57,8 +57,9 @@ function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem;
 export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
   const isLogistique = Boolean(item.logistiqueSource || item.logistiqueLocalModule)
+  const choice = item.logistiqueChoice
   const selectedSet = new Set(
-    isLogistique ? [item.answer] :
+    choice?.kind === 'multiple' ? choice.correct : isLogistique ? [item.answer] :
       (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
   )
   const answerMode = item.answerMode ?? 'qcm'
@@ -104,11 +105,13 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
 
   if (isOral || isLogistique) {
     const letters = ['A', 'B', 'C']
+    const justification = choice?.kind === 'true-false' ? choice.justification : undefined
     return (
-      <div className="oral-answer-stack" aria-label="Choix">
+      <div className={`oral-answer-stack${choice ? ` logistique-choices is-${choice.kind}` : ''}`} aria-label="Choix">
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="oral-qcm-prompt">{item.prompt}</p>
         </LogistiqueIllustratedPrompt>
+        {choice?.kind === 'multiple' && <span className="logistique-choice-instruction">Cochez toutes les bonnes réponses.</span>}
         <div className="oral-qcm-options" role="group">
           {options.map((option, index) => {
             const selected = mode === 'answers' && selectedSet.has(option)
@@ -116,7 +119,8 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
               <div key={`${option}-${index}`} className={`oral-qcm-option ${selected ? 'selected' : ''}`}>
                 <span className="oral-qcm-option-text">{option}</span>
                 <span className="oral-qcm-check">
-                  {isLogistique ? String.fromCharCode(65 + index) : letters[index] ?? String(index + 1)}{' '}
+                  {choice?.kind === 'true-false' ? null
+                    : isLogistique ? String.fromCharCode(65 + index) : letters[index] ?? String(index + 1)}{' '}
                   <span className={`oral-qcm-box ${selected ? 'checked' : ''}`} aria-hidden>
                     {selected ? '✓' : ''}
                   </span>
@@ -125,6 +129,13 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
             )
           })}
         </div>
+        {justification !== undefined && <div className="logistique-choice-justification">
+          <span>{mode === 'answers' ? 'Justification' : 'Justifiez votre réponse.'}</span>
+          {mode === 'answers' ? <p>{justification}</p> : <>
+            <span className="answer-line-field" aria-hidden="true">&nbsp;</span>
+            <span className="answer-line-field" aria-hidden="true">&nbsp;</span>
+          </>}
+        </div>}
       </div>
     )
   }

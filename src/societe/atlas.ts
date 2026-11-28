@@ -106,8 +106,8 @@ export const ATLAS_EXERCISE_TYPES: ExerciseType[] = [
     ...fixe,
     id: LISTE_CANTONS_ID,
     topic: 'societe-cantons',
-    label: 'Les cantons et leurs chefs-lieux · Écussons',
-    description: 'Lire les 26 noms, sigles et chefs-lieux à côté des écussons.',
+    label: 'Tableau des cantons et des chefs-lieux',
+    description: 'Les 26 cantons avec leur écusson, leur sigle, leur nom et leur chef-lieu.',
     instruction: 'Observe les écussons et retrouve les chefs-lieux.',
   },
   ...GALERIES_ATLAS.map(({ id, topic, label }) => ({

@@ -558,7 +558,7 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
 test('les questions locales sont imprimables et protégées même avec un filtre sans banque', () => {
   for (const diploma of ['AFP', 'CFC']) {
     const page = { ...config(diploma, '100', 'maths'), logistiqueSelection: { modules: [] } }
-    const draft = newLogistiqueQuestion('100', 'maths', false)
+    const draft = newLogistiqueQuestion('100', 'maths', 'open')
     assert(draft.libreId && draft.libreCorrectionPending)
     assert(!reviewableLogistiqueAnswer(draft))
     assert.equal(draft.logistiqueSource, undefined)
@@ -573,7 +573,7 @@ test('les questions locales sont imprimables et protégées même avec un filtre
     const selected = config(diploma, '100', 'maths')
     assert.deepEqual(buildPage({ ...selected, libreItems: [] }, 7).items, [])
   }
-  const qcm = newLogistiqueQuestion('100', 'verification', true)
+  const qcm = newLogistiqueQuestion('100', 'verification', 'qcm')
   assert(!reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', answer: 'A' }))
   assert(reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', options: ['Le bleu, fermé', 'Le rouge'], answer: 'Le bleu, fermé' }))
 })
@@ -622,6 +622,41 @@ test('les formats de comparaison, classement et ordre conservent les données et
       assert(validLogistiquePages([{ ...page, libreItems: draw.items }]))
     }
   }
+})
+
+test('les choix multiples et les verdicts restent exacts dans le tirage et dans les recettes', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'choix-v011')
+  assert.equal(units.length, 18)
+  for (const unit of units) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    const presentation = unit.choice.kind === 'multiple' ? 'qcm-multiple' : 'vrai-faux'
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, 'verification'), logistiquePresentation: presentation }
+      const result = generateLogistique(page, 43)
+      assert.equal(result.bankQuestionCap, Number(unit.approvedFor.includes(diploma)))
+      if (!result.bankQuestionCap) continue
+      const [item] = result.items
+      assert.equal(item.logistiqueSource.id, unit.id)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 71).items, [item])
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-reponses-v009' }, 43).bankQuestionCap, 0)
+      if (item.logistiqueChoice.kind === 'multiple') {
+        assert.deepEqual(item.logistiqueChoice.correct, unit.choice.correct)
+        assert.deepEqual(new Set(item.options), new Set(unit.options))
+        assert(!validLogistiquePages([{ ...frozen, libreItems: [{ ...item, options: ['Autre', 'Choix'] }] }]))
+      } else {
+        assert.deepEqual(item.options, ['Vrai', 'Faux'])
+        assert.equal(item.logistiqueChoice.justification, unit.choice.justification)
+      }
+    }
+  }
+  const local = newLogistiqueQuestion('103', 'verification', 'vrai-faux')
+  assert(!reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.' }))
+  assert(!reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.', answer: 'Vrai', logistiqueChoice: { kind: 'true-false', justification: '' } }))
+  assert(reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.', answer: 'Vrai' }))
 })
 
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
