@@ -1,0 +1,112 @@
+{
+  "id": "qcm-hist2-076-position-caisses-automatiques-1",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même borne d’encaissement automatique avec écran, lecteur et plateau à sacs, des caisses à délimiter des simples rayons. Magasin peint en coupe oblique, même accès au rez-de-chaussée et perspective comparables. Aucun numéro. Deux ou trois caisses automatiques sont dans la zone au fond du magasin, derrière les rayons, seuil visible au premier plan. Une illustration individuelle pour un seul choix. Jamais de planche des trois choix ni de nom du style TCF écrit dans le décor. Les références de style donnent seulement le rendu peint, jamais leurs personnages, instruments, textes ou accessoires. Aucun prix, montant, date, jour ou mois.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist2-076-position-caisses-automatiques-1",
+    "desc": "Deux ou trois caisses automatiques sont dans la zone au fond du magasin, derrière les rayons, seuil visible au premier plan.",
+    "type": "Scène",
+    "seed": null,
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist2-076-position-caisses-automatiques-1.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même borne d’encaissement automatique avec écran, lecteur et plateau à sacs, des caisses à délimiter des simples rayons. Magasin peint en coupe oblique, même accès au rez-de-chaussée et perspective comparables. Aucun numéro. Deux ou trois caisses automatiques sont dans la zone au fond du magasin, derrière les rayons, seuil visible au premier plan.",
+    "status": "pending_generation",
+    "question_key": "tcf-a2j-s2-co-1#14",
+    "choice": 1
+  },
+  "question_context": {
+    "key": "tcf-a2j-s2-co-1#14",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/co.json",
+    "exercise": "tcf-a2j-s2-co-1",
+    "question": 14,
+    "level": "A1-A2",
+    "source": "Le magasin va fermer ses portes dans 20 minutes. Merci de terminer vos achats et de vous rapprocher des caisses automatiques situées au fond du magasin.",
+    "source_sha256": "94d744f93b1a6add0c337cb66b156d3f298499120eeb62bf3c3bdb140a8a15dd",
+    "semantic_sha256": "abc54c212b394743d1ffd8d5987b027c9cb350a804f2aa44ed059ee155a36ed5",
+    "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+    "audio_sha256": "1195a43e59b746551ffe59cb28405daf230dc931beabc7d1b8061c3b9665d5ec",
+    "question_snapshot": {
+      "enonce": "Où les caisses automatiques sont-elles situées ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Au fond du magasin",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "À l’entrée du magasin"
+        },
+        {
+          "id": "c",
+          "texte": "Au premier étage"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "Au fond du magasin"
+        }
+      },
+      "audio": 4
+    },
+    "prior_context_review": {
+      "key": "tcf-a2j-s2-co-1#14",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2j-s2-co-1",
+      "question": 14,
+      "enonce": "Où les caisses automatiques sont-elles situées ?",
+      "labels": [
+        "Au fond du magasin",
+        "À l’entrée du magasin",
+        "Au premier étage"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "94d744f93b1a6add0c337cb66b156d3f298499120eeb62bf3c3bdb140a8a15dd",
+      "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-4.mp3",
+      "review_index": 562,
+      "semantic_sha256": "abc54c212b394743d1ffd8d5987b027c9cb350a804f2aa44ed059ee155a36ed5",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où les caisses automatiques sont-elles situées ?",
+        "choices_to_illustrate": [
+          "Au fond du magasin",
+          "À l’entrée du magasin",
+          "Au premier étage"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/co.json",
+        "source_exercise": "tcf-a2j-s2-co-1",
+        "source_question": 14,
+        "source_sha256": "94d744f93b1a6add0c337cb66b156d3f298499120eeb62bf3c3bdb140a8a15dd",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
+    }
+  },
+  "source_sha256": "10b560462d60578e7cadb172844b892918d2af0af4e9878068adf255d8678c50",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "rejected",
+  "original_bytes_preserved": true,
+  "rejection_reason": "Personnages et/ou instruments des références de style recopiés sans être demandés dans la question ; régénérer un décor sans personne et sans instruments."
+}

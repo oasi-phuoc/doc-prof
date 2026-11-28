@@ -1,0 +1,112 @@
+{
+  "id": "qcm-hist2-078-achat-aspirateur-1",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même aspirateur traîneau bleu et tuyau complet, chaque choix montre le produit et le canal d’achat. Aucune personne reconnaissable de référence, numéro de prix ou marque. Le produit apparaît sur une page Web de vente, ordinateur ou tablette et bouton neutre de commande visibles, sans prix ni autre canal. Une illustration individuelle pour un seul choix. Jamais de planche des trois choix ni de nom du style TCF écrit dans le décor. Les références de style donnent seulement le rendu peint, jamais leurs personnages, instruments, textes ou accessoires. Aucun prix, montant, date, jour ou mois.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist2-078-achat-aspirateur-1",
+    "desc": "Le produit apparaît sur une page Web de vente, ordinateur ou tablette et bouton neutre de commande visibles, sans prix ni autre canal.",
+    "type": "Scène",
+    "seed": null,
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist2-078-achat-aspirateur-1.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même aspirateur traîneau bleu et tuyau complet, chaque choix montre le produit et le canal d’achat. Aucune personne reconnaissable de référence, numéro de prix ou marque. Le produit apparaît sur une page Web de vente, ordinateur ou tablette et bouton neutre de commande visibles, sans prix ni autre canal.",
+    "status": "pending_generation",
+    "question_key": "tcf-a2-sb-co-4#5",
+    "choice": 1
+  },
+  "question_context": {
+    "key": "tcf-a2-sb-co-4#5",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/co.json",
+    "exercise": "tcf-a2-sb-co-4",
+    "question": 5,
+    "level": "A1-A2",
+    "source": "Il est génial, ton nouvel aspirateur ! Oui, je l'ai acheté sur Internet. Et pas cher en plus. Ah oui ? Combien il t'a coûté ? 78 euros. Oh super ! Je vais acheter le même.",
+    "source_sha256": "0628a0f38b084d03b34bf6119681ede6dbeb159c5fe380d7fb68a86d35f72525",
+    "semantic_sha256": "accfd4ed10bb95cbc8408f9a83ce50c1deda2a255594b458929db468cd4691da",
+    "audio": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
+    "audio_sha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3",
+    "question_snapshot": {
+      "enonce": "Où l’a-t-elle acheté ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Sur Internet",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans un marché"
+        },
+        {
+          "id": "c",
+          "texte": "Dans une brocante"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "Sur Internet"
+        }
+      },
+      "audio": 2
+    },
+    "prior_context_review": {
+      "key": "tcf-a2-sb-co-4#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "question": 5,
+      "enonce": "Où l’a-t-elle acheté ?",
+      "labels": [
+        "Sur Internet",
+        "Dans un marché",
+        "Dans une brocante"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "0628a0f38b084d03b34bf6119681ede6dbeb159c5fe380d7fb68a86d35f72525",
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
+      "review_index": 575,
+      "semantic_sha256": "accfd4ed10bb95cbc8408f9a83ce50c1deda2a255594b458929db468cd4691da",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où l’a-t-elle acheté ?",
+        "choices_to_illustrate": [
+          "Sur Internet",
+          "Dans un marché",
+          "Dans une brocante"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/co.json",
+        "source_exercise": "tcf-a2-sb-co-4",
+        "source_question": 5,
+        "source_sha256": "0628a0f38b084d03b34bf6119681ede6dbeb159c5fe380d7fb68a86d35f72525",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
+    }
+  },
+  "source_sha256": "a962137268bfb33c542586b37daf26457d4e4b2096dd5203ee969ec551dd2e2f",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "rejected",
+  "original_bytes_preserved": true,
+  "rejection_reason": "Personnages et/ou instruments des références de style recopiés sans être demandés dans la question ; régénérer un décor sans personne et sans instruments."
+}
