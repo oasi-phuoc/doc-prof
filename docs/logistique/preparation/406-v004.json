@@ -1,0 +1,73 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-406-v003",
+  "keepBaseFigures": true,
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "visuals": [
+    {
+      "anchor": "6.1 Lotissement par case (emplacement fixe)",
+      "file": "log-406-emplacement-fixe-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-emplacement-fixe-photo-v010.webp",
+      "alt": "Le bac revient à la place où la même référence est indiquée sur le rayonnage.",
+      "caption": "La référence du bac et celle de son emplacement sont identiques. La place reste réservée quand le bac est vide.",
+      "sha256": "0f1574ecdb2104bb80e3d9f141e2963874a3f23396e30588e4d957b839d8fcf0",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof."
+    },
+    {
+      "anchor": "6.2 Stockage chaotique (anarchique)",
+      "file": "log-406-affectation-dynamique-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-affectation-dynamique-photo-v010.webp",
+      "alt": "Une opératrice relève l’adresse d’une position libre avant de ranger le lot.",
+      "caption": "L’opératrice relève l’adresse d’une place libre pour enregistrer la nouvelle position du lot.",
+      "sha256": "6883966ae9b9438d3a83266b4a4c47bd6f53bb79920cb7c41e0b4648a74fde83",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof.",
+      "replaces": "log-110-mouvement-photo-v002.webp"
+    },
+    {
+      "anchor": "6.5 HIFO — Highest In, First Out",
+      "file": "log-406-hifo-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-hifo-photo-v010.webp",
+      "alt": "Au bureau, la fiche de la pièce à 48 CHF passe avant celle de la pièce à 32 CHF dans le dossier de sortie.",
+      "caption": "Dans cet exemple, la sortie est valorisée d’abord au coût de 48 CHF.",
+      "sha256": "ddc018a7b718814e2752df6e18b7c1481f116736cbcf0f1a2ea4c8bad51e540f",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof.",
+      "prose": "Dans cette convention de valorisation, l’unité achetée 48 CHF entre dans le calcul du coût de sortie avant celle achetée 32 CHF. Le préparateur suit la règle physique et la consigne de lot applicables, par exemple FIFO ou FEFO."
+    }
+  ],
+  "summaryVisuals": [
+    {
+      "anchor": "6.1 Lotissement par case (emplacement fixe)",
+      "file": "log-406-emplacement-fixe-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-emplacement-fixe-photo-v010.webp",
+      "alt": "Le bac revient à la place où la même référence est indiquée sur le rayonnage.",
+      "caption": "La référence du bac et celle de son emplacement sont identiques. La place reste réservée quand le bac est vide.",
+      "sha256": "0f1574ecdb2104bb80e3d9f141e2963874a3f23396e30588e4d957b839d8fcf0",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof."
+    },
+    {
+      "anchor": "6.2 Stockage chaotique (anarchique)",
+      "file": "log-406-affectation-dynamique-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-affectation-dynamique-photo-v010.webp",
+      "alt": "Une opératrice relève l’adresse d’une position libre avant de ranger le lot.",
+      "caption": "L’opératrice relève l’adresse d’une place libre pour enregistrer la nouvelle position du lot.",
+      "sha256": "6883966ae9b9438d3a83266b4a4c47bd6f53bb79920cb7c41e0b4648a74fde83",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof.",
+      "replaces": "log-110-mouvement-photo-v002.webp"
+    },
+    {
+      "anchor": "6.4 et 6.5 LIFO et HIFO",
+      "file": "log-406-hifo-photo-v010.webp",
+      "path": "assets/logistique/400/406/commun/log-406-hifo-photo-v010.webp",
+      "alt": "Au bureau, la fiche de la pièce à 48 CHF passe avant celle de la pièce à 32 CHF dans le dossier de sortie.",
+      "caption": "Dans cet exemple, la sortie est valorisée d’abord au coût de 48 CHF.",
+      "sha256": "ddc018a7b718814e2752df6e18b7c1481f116736cbcf0f1a2ea4c8bad51e540f",
+      "origin": "Reconstitution photographique individuelle en couleur, au format 4:3 natif, pour Doc-Prof.",
+      "prose": "Dans cette convention de valorisation, l’unité achetée 48 CHF entre dans le calcul du coût de sortie avant celle achetée 32 CHF. Le préparateur suit la règle physique et la consigne de lot applicables, par exemple FIFO ou FEFO.",
+      "endOfSection": true
+    }
+  ]
+}

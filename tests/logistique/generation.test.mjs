@@ -7,6 +7,11 @@ import { dossierMaths } from '../../scripts/logistique-dossier-maths.mjs'
 const require = createRequire(import.meta.url)
 const fixture = require('./fixture.json')
 const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').visuals[0]
+const illustratedRevisions = new Map([
+  ['405', require('../../docs/logistique/preparation/405-v004.json')],
+  ['406', require('../../docs/logistique/preparation/406-v004.json')],
+  ['408', require('../../docs/logistique/preparation/408-v006.json')],
+])
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
@@ -152,7 +157,15 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
         assert(figures.length > images(previous).length, `${diploma} ${code}`)
         assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption), `${diploma} ${code}`)
         if (code !== '101') {
-          const originalText = textBlocks(version).filter((block) => code !== '306' || block.text !== palletPhoto.prose)
+          const plan = illustratedRevisions.get(code)
+          const additions = code === '306' ? [palletPhoto] :
+            (view.logistiqueTheoryView === 'resume' ? plan?.summaryVisuals : undefined) ?? plan?.visuals ?? []
+          for (const addition of additions) {
+            const position = version.findIndex((block) => block.kind === 'image' && block.src.endsWith(addition.file))
+            assert(position > 0, `${diploma} ${code} ${addition.file}`)
+            if (addition.prose) assert.equal(version[position + 1].text, addition.prose)
+          }
+          const originalText = textBlocks(version).filter((block) => !additions.some(({ prose }) => prose && block.text === prose))
           assert.deepEqual(originalText, textBlocks(previous), `${diploma} ${code}`)
         }
       }

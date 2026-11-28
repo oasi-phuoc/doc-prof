@@ -277,6 +277,9 @@ import { logistiqueMixedCases } from './banks/cas-mixtes-v016'
 import { logistiqueProcessExercises } from './banks/processus-v017'
 import { logistiqueChartExercises } from './banks/graphiques-v018'
 import { logistiqueApplicationExercises } from './banks/applications-v019'
+import { module405 as photoSafety405 } from './banks/module-405-v004.generated.ts'
+import { module406 as photoAllocation406 } from './banks/module-406-v004.generated.ts'
+import { module408 as photoWarehouse408 } from './banks/module-408-v006.generated.ts'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
@@ -700,6 +703,11 @@ const processExercisesPublication: LogistiquePublication = {
 const chartExercisesPublication: LogistiquePublication = {
   revision: 'logistique-graphiques-v018', units: [...processExercisesPublication.units, ...logistiqueChartExercises],
 }
+const applicationExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-applications-v019', units: [...chartExercisesPublication.units, ...logistiqueApplicationExercises],
+}
+const illustratedStockagePublication = reviewedIllustrationPublication(applicationExercisesPublication,
+  'logistique-stockage-illustre-v020', [...photoSafety405, ...photoAllocation406, ...photoWarehouse408])
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -800,7 +808,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   mixedCasesPublication,
   processExercisesPublication,
   chartExercisesPublication,
-  { revision: 'logistique-applications-v019', units: [...chartExercisesPublication.units, ...logistiqueApplicationExercises] },
+  applicationExercisesPublication,
+  illustratedStockagePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
