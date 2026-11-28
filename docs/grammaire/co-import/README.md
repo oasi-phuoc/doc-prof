@@ -34,7 +34,9 @@ Whisper large-v3 en français a recoupé des passages ciblés des pistes A1 005,
 
 Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 619 questions proposent les deux premières formes et 249 proposent la forme Image. Quinze pistes disposent d’une scène de support. Les dix trios suivis ont reçu chacun trois illustrations individuelles vérifiées avec les choix et le passage transcrit. [Registre des illustrations](illustrations-co-20261127.json) · [Suivi des dix trios](images-a-preparer.json)
 
-Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. Les 252 pistes ont été décodées intégralement sans erreur. L’écoute de validation et l’approbation enseignante restent à faire.
+Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF.
+
+Le 28 novembre, les 252 fichiers originaux, soit 2 h 58 d’audio, ont été décodés intégralement et reconnus de nouveau en français. Trente-sept pistes ont été reprises avec un autre réglage. Lorsque seul le début apparaissait, la reprise séparait au besoin l’annonce du corps de la piste. Les lectures ciblées de Whisper large-v3 et les reconnaissances précédentes ont permis de corriger sept transcriptions. Le relevé de cette vérification acoustique automatisée garde une lecture et son empreinte pour chaque piste, les corrections apportées et les incertitudes qui subsistent, notamment les noms non épelés et le numéro coupé de la piste 136. [Relevé des 252 pistes](validation-audio-20261128.json)
 
 La scène du conseil professionnel donné à Stéphane a été remplacée après comparaison des personnages. Les 252 pistes et leurs formats figurent aussi dans le catalogue audio de l’application.
 
@@ -44,4 +46,4 @@ La scène du conseil professionnel donné à Stéphane a été remplacée après
 node scripts/audit-grammar-co-import.cjs
 ```
 
-Le contrôle vérifie les 252 fichiers et leurs empreintes, les 38 liens du catalogue, les transcriptions, la sélection et la sauvegarde de chaque piste au bon niveau, puis les formes de réponse et les références des images. Le script `scripts/build-grammar-co-questions.py` documente la construction de la première passe à partir des transcriptions. La banque active comprend aussi les ajouts Word ultérieurs.
+Le contrôle vérifie les 252 fichiers et leurs empreintes, le lien entre chaque contrôle acoustique et la transcription publiée, les 38 liens du catalogue, la sélection et la sauvegarde de chaque piste au bon niveau, puis les formes de réponse et les références des images. Le script `scripts/build-grammar-co-questions.py` documente la construction de la première passe à partir des transcriptions. La banque active comprend aussi les ajouts Word ultérieurs.
