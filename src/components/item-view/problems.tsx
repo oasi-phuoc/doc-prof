@@ -679,13 +679,20 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
     )
   }
   if (item.logistiqueTable) {
+    const questions = item.logistiqueTable.questions
+    const offset = item.logistiqueDocumentOffset ?? 0
     return (
-      <div className="prompt-stack">
+      <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}`}>
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{prompt}</p>
         </LogistiqueIllustratedPrompt>
         <LogistiqueTableView table={item.logistiqueTable} mode={mode} />
-        {show && item.answer ? <strong className="filled-answer logistique-table-note">{item.answer}</strong> : null}
+        {questions ? <ol type="a" start={offset + 1} className="logistique-document-questions">
+          {questions.map((question, index) => <li key={index}>
+            <p>{question.prompt}</p>
+            <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? question.answer : '\u00a0'}</span>
+          </li>)}
+        </ol> : show && item.answer ? <strong className="filled-answer logistique-table-note">{item.answer}</strong> : null}
       </div>
     )
   }

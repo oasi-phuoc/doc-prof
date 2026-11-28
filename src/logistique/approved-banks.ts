@@ -270,6 +270,7 @@ import {
 import { logistiqueAcquisitionExercises } from './banks/acquis-v008'
 import { logistiqueResponseExercises, logistiqueStructuredExercises } from './banks/reponses-v009'
 import { logistiqueChoiceExercises } from './banks/choix-v011'
+import { logistiqueDocumentExercises } from './banks/documents-v012'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
@@ -671,6 +672,9 @@ const responseExercisesPublication: LogistiquePublication = {
   revision: 'logistique-reponses-v009',
   units: [...illustratedObjectivesPublication.units, ...logistiqueResponseExercises, ...logistiqueStructuredExercises],
 }
+const choiceExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-choix-v011', units: [...responseExercisesPublication.units, ...logistiqueChoiceExercises],
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -764,7 +768,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   historyMapsPublication,
   illustratedObjectivesPublication,
   responseExercisesPublication,
-  { revision: 'logistique-choix-v011', units: [...responseExercisesPublication.units, ...logistiqueChoiceExercises] },
+  choiceExercisesPublication,
+  { revision: 'logistique-documents-v012', units: [...choiceExercisesPublication.units, ...logistiqueDocumentExercises] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

@@ -255,6 +255,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       { id: 'tableau-comparaison', label: 'Tableau de comparaison' },
       { id: 'tableau-classement', label: 'Classement par catégorie' },
       { id: 'tableau-ordre', label: 'Ordre des étapes' },
+      { id: 'lire-document', label: 'Lecture de document professionnel' },
+      { id: 'corriger-erreurs', label: 'Repérage et correction d’erreurs' },
     ] as const : []),
   ] as const).map(({ id, label }) => ({
     id, label, capacity: [...logistiqueModuleCapacities(

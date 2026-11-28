@@ -31,6 +31,9 @@ export function completeLogistiquePrompt(item: MathItem): boolean {
 }
 
 export function reviewableLogistiqueAnswer(item: MathItem): boolean {
+  if (item.logistiqueTable?.questions) {
+    return completeLogistiquePrompt(item) && item.logistiqueTable.questions.every(({ answer }) => answer.trim())
+  }
   if (item.logistiqueChoice) {
     const choice = item.logistiqueChoice
     return completeLogistiquePrompt(item) && validLogistiqueChoice(item) && Boolean(item.answer.trim()) &&

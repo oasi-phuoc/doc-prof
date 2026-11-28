@@ -486,6 +486,7 @@ export type MathItem = {
   logistiqueResponseLines?: LogistiqueResponseLines
   logistiqueChoice?: import('@/logistique/choices').LogistiqueChoice
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
+  logistiqueDocumentOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
@@ -1320,7 +1321,8 @@ export type WorksheetBlock = {
   logistiqueGlossaryLength?: number
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
-  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
+  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock;
+    documentRange?: { start: number; end: number }; isLast: boolean }[]
   /** Index des questions dont le contexte figure juste avant, sur une page de suite. */
   logistiqueDetachedNarratives?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */

@@ -53,7 +53,8 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
           logistiqueChoice: unit.choice }]
       }
       if (unit.table) {
-        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueTable: unit.table }]
+        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt,
+          answer: unit.table.questions?.map(({ answer }) => answer).join('\n') ?? unit.answer, logistiqueTable: unit.table }]
       }
       if (unit.gaps) {
         const answers = [...unit.gaps.answers]
@@ -71,7 +72,8 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
         } } : presentation === 'lignes-simples' ? { logistiqueResponseLines: { kind: 'simple', count: 2 } } : {}),
       }]
     case 'situation':
-      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer,
+      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt,
+        answer: unit.table?.questions?.map(({ answer }) => answer).join('\n') ?? unit.answer,
         ...(unit.table ? { logistiqueTable: unit.table } : {}),
       }]
   }

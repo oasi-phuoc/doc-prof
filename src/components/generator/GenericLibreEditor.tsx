@@ -128,7 +128,7 @@ export function GenericLibreEditor({
                     }
                   />
                 </label>
-                {!(direct && item.layout === 'select') && item.logistiqueResponseLines?.kind !== 'numbered' ? <label className="libre-field is-line">
+                {!(direct && item.layout === 'select') && item.logistiqueResponseLines?.kind !== 'numbered' && !item.logistiqueTable?.questions ? <label className="libre-field is-line">
                   <span>Réponse</span>
                   <TextField
                     className={logistique ? 'libre-line-input is-textarea' : 'libre-line-input'}
@@ -169,7 +169,9 @@ export function GenericLibreEditor({
                 </label>
               ))}
               {item.logistiqueTable && <LogistiqueTableEditor table={item.logistiqueTable}
-                onChange={(logistiqueTable) => patchItem(index, { logistiqueTable, libreCorrectionPending: true })} />}
+                onChange={(logistiqueTable) => patchItem(index, { logistiqueTable, libreCorrectionPending: true,
+                  ...(logistiqueTable.questions ? { answer: logistiqueTable.questions.map(({ answer }) => answer).join('\n') } : {}),
+                })} />}
               {(editableCalculation || direct && item.calcAnswer != null) && (
                 <label className="libre-field is-line">
                   <span>Calcul du corrigé</span>

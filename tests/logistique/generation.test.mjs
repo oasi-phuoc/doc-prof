@@ -660,6 +660,37 @@ test('les choix multiples et les verdicts restent exacts dans le tirage et dans 
   assert(reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.', answer: 'Vrai' }))
 })
 
+test('les documents professionnels gardent leurs sous-questions et leur corrigé après pagination', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'documents-v012')
+  assert.equal(units.length, 4)
+  for (const unit of units) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    const incomplete = { ...unit.table, questions: unit.table.questions.slice(0, 2) }
+    assert.equal(validLogistiqueExerciseTable(incomplete), false)
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: unit.table.presentation }
+      const worksheet = buildPage(page, 25)
+      const [item] = worksheet.items
+      assert.deepEqual(item.logistiqueTable, unit.table)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 91).items, [item])
+      const questions = [...unit.table.questions, ...unit.table.questions, ...unit.table.questions.slice(0, 2)]
+      const longItem = { ...item, logistiqueTable: { ...unit.table, questions } }
+      const longWorksheet = { ...worksheet, items: [longItem], blocks: [{ ...worksheet.blocks[0], items: [longItem] }] }
+      const pages = splitLogistiquePages(longWorksheet, { a5: true, fontScale: 1.5 }).map((sheet) => ({ ...sheet, configIndex: 0 }))
+      const ranges = pages.flatMap(({ blocks }) => blocks.flatMap(({ logistiqueTheorySlices }) => logistiqueTheorySlices ?? []))
+        .flatMap(({ documentRange }) => documentRange ? [documentRange] : [])
+      assert(ranges.length > 1)
+      assert.deepEqual(ranges.flatMap(({ start, end }) => questions.slice(start, end)), questions)
+      assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [longItem])
+    }
+  }
+})
+
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
   const scenario = initialLogistiqueStory
   for (const diploma of ['CFC', 'AFP']) {

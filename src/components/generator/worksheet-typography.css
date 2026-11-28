@@ -254,6 +254,47 @@
   overflow-wrap: anywhere;
 }
 
+.logistique-document-exercise {
+  gap: 4px;
+}
+
+.logistique-document-exercise .logistique-exercise-table caption {
+  padding-bottom: 4px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.logistique-document-questions {
+  margin: 0;
+  padding-inline-start: 1.35em;
+  font-size: calc(14px * var(--app-font-scale, 1));
+  line-height: 1.3;
+  list-style: lower-alpha;
+}
+
+.logistique-document-questions p {
+  margin: 0 0 2px;
+  overflow-wrap: anywhere;
+}
+
+.logistique-document-questions li + li {
+  margin-top: 4px;
+}
+
+.logistique-document-questions .answer-line-field {
+  display: block;
+  width: 100%;
+}
+
+.a5-half .exercise-block:has(.logistique-document-exercise) .exercise-heading {
+  margin-bottom: 7px;
+}
+
+.a5-half .logistique-document-questions .answer-line-field.filled {
+  min-height: 1.2em;
+  line-height: 1.25;
+}
+
 .logistique-assessment-points {
   margin: 0 0 .15em;
   font-size: calc(11px * var(--app-font-scale, 1));
