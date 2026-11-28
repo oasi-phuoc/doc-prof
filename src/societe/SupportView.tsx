@@ -1,7 +1,16 @@
 import type { PreviewMode } from '@/math/types'
 import { PlayerAudio } from '@/components/tcf/PlayerAudio'
-import type { SocieteSupport } from './types'
+import type { SocieteImage, SocieteSupport } from './types'
 import './support.css'
+
+function Illustration({ image }: { image: SocieteImage }) {
+  return (
+    <figure>
+      <img src={image.src} alt={image.alt} />
+      <figcaption>{image.caption}</figcaption>
+    </figure>
+  )
+}
 
 export function SocieteSupportView({ support, mode }: { support: SocieteSupport; mode: PreviewMode }) {
   const corrigé = mode === 'answers'
@@ -9,19 +18,15 @@ export function SocieteSupportView({ support, mode }: { support: SocieteSupport;
     return (
       <div className="societe-support">
         <strong>{support.titre}</strong>
-        {support.image && (
-          <figure>
-            <img src={support.image.src} alt={support.image.alt} />
-            <figcaption>{support.image.caption}</figcaption>
-          </figure>
-        )}
+        {support.image && <Illustration image={corrigé ? support.correction ?? support.image : support.image} />}
         {support.lignes.map((ligne) => <p key={ligne}>{ligne}</p>)}
       </div>
     )
   }
   if (support.kind === 'ecoute') {
     return (
-      <div className="societe-support">
+      <div className="societe-support societe-with-context">
+        {support.image && <Illustration image={support.image} />}
         <PlayerAudio src={support.audioSrc} label="Écouter le document" />
         {corrigé && <>
           <strong>Transcription</strong>
@@ -30,9 +35,42 @@ export function SocieteSupportView({ support, mode }: { support: SocieteSupport;
       </div>
     )
   }
+  if (support.kind === 'cantons') {
+    return (
+      <table className="societe-cantons-table">
+        <thead>
+          <tr>
+            <th scope="col">Écusson</th>
+            <th scope="col">Sigle</th>
+            <th scope="col">Nom du canton</th>
+            <th scope="col">Chef-lieu</th>
+          </tr>
+        </thead>
+        <tbody>
+          {support.cantons.map((canton) => (
+            <tr key={canton.sigle}>
+              <td><img className="societe-ecusson" src={canton.ecusson} alt="" /></td>
+              <td>{canton.sigle}</td>
+              <th scope="row">
+                {canton.nom}
+                {canton.ancienDemiCanton && <small>Ancien demi-canton</small>}
+              </th>
+              <td>
+                <span className="societe-chef-lieu">
+                  <span>{canton.chefLieu}</span>
+                  <img className="societe-chef-lieu-vue" src={canton.vue} alt="" />
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
   const { production, lignes } = support
   return (
-    <div className="societe-support">
+    <div className="societe-support societe-with-context">
+      {support.image && <Illustration image={support.image} />}
       <p>{production.consigne}</p>
       <ul>{production.actions.map((action) => <li key={action}>{action}</li>)}</ul>
       {corrigé ? <>

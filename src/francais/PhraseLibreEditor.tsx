@@ -129,7 +129,7 @@ export function PhraseLibreEditor({
   onChangeInstruction: (instruction: string) => void
   reviewOrder?: boolean
 }) {
-  const kind = parsePhraseKind(exerciseType)
+  const kind = reviewOrder ? 'ordre' : parsePhraseKind(exerciseType)
   if (!kind) return null
   if(kind==='images')return <PhraseImageEditor items={items} instruction={instruction} onChangeItems={onChangeItems} onChangeInstruction={onChangeInstruction}/>
 
@@ -389,20 +389,20 @@ export function PhraseLibreEditor({
                         onChange={(event) =>
                           updateToken(itemIndex, tokenIndex, { text: event.target.value })
                         }
-                        style={{
+                        style={item.plainPhraseOrder ? undefined : {
                           backgroundColor: PHRASE_COLORS[token.category],
                           color: inkFor(token.category),
                           borderColor: '#111',
                         }}
                         aria-label={`Mot ${tokenIndex + 1} de la phrase ${itemIndex + 1}`}
                       />
-                      <CategorySelect
+                      {!item.plainPhraseOrder && <CategorySelect
                         value={token.category}
                         ariaLabel={`Catégorie du mot ${tokenIndex + 1}`}
                         onChange={(category) =>
                           updateToken(itemIndex, tokenIndex, { category })
                         }
-                      />
+                      />}
                       <div className="phrase-libre-actions">
                         {kind === 'ordre' ? (
                           <>

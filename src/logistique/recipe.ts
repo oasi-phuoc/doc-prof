@@ -1,8 +1,8 @@
-import { pageBlocks, replacePageBlock } from '@/math/page-model'
+import { pageAsConfig, pageBlocks, replacePageBlock } from '@/math/page-model'
 import type { PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication } from './approved-banks'
 import { isLogistiqueDomain, validLogistiqueCataloguePages } from './catalog'
-import { logistiqueHasSummary } from './generate'
+import { generateLogistique, logistiqueHasSummary } from './generate'
 
 export function validLogistiquePages(pages: readonly PageConfig[]): boolean {
   return validLogistiqueCataloguePages(pages) && pages.every((page) =>
@@ -12,12 +12,15 @@ export function validLogistiquePages(pages: readonly PageConfig[]): boolean {
   )
 }
 
-export function freezeLogistiquePages(pages: PageConfig[]): PageConfig[] {
+export function freezeLogistiquePages(pages: PageConfig[], evaluation = false): PageConfig[] {
   return pages.map((page) => {
     if (!isLogistiqueDomain(page.domain)) return page
-    return pageBlocks(page).reduce<PageConfig>((current, block, index) => block.logistiqueBankRevision
-      ? current
-      : replacePageBlock(current, index, { ...block, logistiqueBankRevision: currentLogistiquePublication.revision }),
-    page)
+    return pageBlocks(page).reduce<PageConfig>((current, block, index) => {
+      const freezeStory = evaluation && block.logistiqueEvaluation?.mode === 'histoire' && block.libreItems === undefined
+      if (block.logistiqueBankRevision && !freezeStory) return current
+      const frozen = { ...block, logistiqueBankRevision: block.logistiqueBankRevision ?? currentLogistiquePublication.revision }
+      if (freezeStory) frozen.libreItems = generateLogistique(pageAsConfig(page, frozen), 1).items
+      return replacePageBlock(current, index, frozen)
+    }, page)
   })
 }

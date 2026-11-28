@@ -1,6 +1,7 @@
 import { isCalligraphieType } from '@/calligraphie/generate'
 import { isJeuxType } from '@/jeux/templates'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
+import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isTpfFamilyDomain, tcfSlotByTypeId } from '@/tcf/catalog'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -9,6 +10,7 @@ import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/type
 import { isProtectedGrammarCo, type GrammarPresentation } from '@/grammaire/curriculum/types'
 import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { isSocieteTheoryType, isSocieteType } from '@/societe/types'
+import { isSanteTheoryType } from '@/sante/catalog'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageCadrans, isReperageConstruire, isReperageDroites, isReperageFormes } from '@/math/coord-reperage'
 import { isTransformationExercise } from '@/math/coord-transformations'
@@ -58,6 +60,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-csc' && ['tcm-csc-ex04', 'tcm-csc-ex05'].includes(exerciseType)) return 'suite-numerique'
   const logistics = logistiqueType(exerciseType)
   if (domain === 'grammaire' && isGrammaireTheoryType(exerciseType) ||
+    domain === 'français' && isGrammarTheoryType(exerciseType) ||
+    domain === 'santé' && isSanteTheoryType(exerciseType) ||
     (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
     domain === 'société' && (isSocieteTheoryType(exerciseType) || exerciseType.endsWith('-lexique')) ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
@@ -66,10 +70,12 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     : domain === 'soutien-fr' ? parseSoutienType(exerciseType)?.kind : undefined
   if (wordKind === 'lettres' || wordKind === 'lettres-maj' || wordKind === 'lettres-min' ||
     wordKind === 'souligner-maj' || wordKind === 'souligner-min') return 'lettres-et-graphèmes'
+  if (wordKind === 'lire-grille' || wordKind === 'lire-cursive') return 'lecture-en-grille'
+  if (wordKind === 'entourer') return 'mots-a-entourer'
   if (wordKind === 'syllabes' || wordKind === 'syllabes-cv' || wordKind === 'syllabes-long') return 'grille-syllabique'
-  if (wordKind === 'dictee') return 'dictee-de-mots'
-  if (wordKind === 'lire') return 'lecture-de-phrases'
-  if (wordKind === 'ordre') return 'mots-dans-l-ordre'
+  if (wordKind === 'dictee' || wordKind === 'dictee-mots') return 'dictee-de-mots'
+  if (wordKind === 'lire' || wordKind === 'lire-phrases') return 'lecture-de-phrases'
+  if (wordKind === 'ordre' || wordKind === 'ordre-phrases') return 'mots-dans-l-ordre'
   if (wordKind === 'compter') return 'sons-a-compter'
   if (wordKind === 'determinants') return 'determinants'
   if (wordKind === 'lettres-phrase') return 'lettres-dans-phrase'
@@ -140,7 +146,11 @@ export function opensWithoutOverlay(profile: LiveEditorProfile): boolean {
 
 export function isWordListProfile(profile: LiveEditorProfile): boolean {
   return profile === 'lettres-et-graphèmes' || profile === 'grille-syllabique' ||
-    profile === 'dictee-de-mots' || profile === 'lecture-de-phrases'
+    profile === 'dictee-de-mots' || profile === 'lecture-de-phrases' || isAlphaWordGridProfile(profile)
+}
+
+export function isAlphaWordGridProfile(profile: LiveEditorProfile): boolean {
+  return profile === 'lecture-en-grille' || profile === 'mots-a-entourer'
 }
 
 export function isIndependentListProfile(profile: LiveEditorProfile): boolean {

@@ -12,6 +12,8 @@ const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions, newLogistiqueQuestion, reviewableLogistiqueAnswer } = load(root + '/src/logistique/libre.ts')
 const { buildPage } = load(root + '/src/math/generate.ts')
+const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryChange, logistiqueDuration,
+  logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
@@ -557,7 +559,7 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
 test('les questions locales sont imprimables et protégées même avec un filtre sans banque', () => {
   for (const diploma of ['AFP', 'CFC']) {
     const page = { ...config(diploma, '100', 'maths'), logistiqueSelection: { modules: [] } }
-    const draft = newLogistiqueQuestion('100', 'maths', false)
+    const draft = newLogistiqueQuestion('100', 'maths', 'open')
     assert(draft.libreId && draft.libreCorrectionPending)
     assert(!reviewableLogistiqueAnswer(draft))
     assert.equal(draft.logistiqueSource, undefined)
@@ -572,7 +574,7 @@ test('les questions locales sont imprimables et protégées même avec un filtre
     const selected = config(diploma, '100', 'maths')
     assert.deepEqual(buildPage({ ...selected, libreItems: [] }, 7).items, [])
   }
-  const qcm = newLogistiqueQuestion('100', 'verification', true)
+  const qcm = newLogistiqueQuestion('100', 'verification', 'qcm')
   assert(!reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', answer: 'A' }))
   assert(reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', options: ['Le bleu, fermé', 'Le rouge'], answer: 'Le bleu, fermé' }))
 })
@@ -621,6 +623,155 @@ test('les formats de comparaison, classement et ordre conservent les données et
       assert(validLogistiquePages([{ ...page, libreItems: draw.items }]))
     }
   }
+})
+
+test('les choix multiples et les verdicts restent exacts dans le tirage et dans les recettes', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'choix-v011')
+  assert.equal(units.length, 18)
+  for (const unit of units) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    const presentation = unit.choice.kind === 'multiple' ? 'qcm-multiple' : 'vrai-faux'
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, 'verification'), logistiquePresentation: presentation }
+      const result = generateLogistique(page, 43)
+      assert.equal(result.bankQuestionCap, Number(unit.approvedFor.includes(diploma)))
+      if (!result.bankQuestionCap) continue
+      const [item] = result.items
+      assert.equal(item.logistiqueSource.id, unit.id)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 71).items, [item])
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-reponses-v009' }, 43).bankQuestionCap, 0)
+      if (item.logistiqueChoice.kind === 'multiple') {
+        assert.deepEqual(item.logistiqueChoice.correct, unit.choice.correct)
+        assert.deepEqual(new Set(item.options), new Set(unit.options))
+        assert(!validLogistiquePages([{ ...frozen, libreItems: [{ ...item, options: ['Autre', 'Choix'] }] }]))
+      } else {
+        assert.deepEqual(item.options, ['Vrai', 'Faux'])
+        assert.equal(item.logistiqueChoice.justification, unit.choice.justification)
+      }
+    }
+  }
+  const local = newLogistiqueQuestion('103', 'verification', 'vrai-faux')
+  assert(!reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.' }))
+  assert(!reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.', answer: 'Vrai', logistiqueChoice: { kind: 'true-false', justification: '' } }))
+  assert(reviewableLogistiqueAnswer({ ...local, prompt: 'Vérifiez cette affirmation.', answer: 'Vrai' }))
+})
+
+test('les documents professionnels gardent leurs sous-questions et leur corrigé après pagination', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'documents-v012')
+  assert.equal(units.length, 4)
+  for (const unit of units) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    const incomplete = { ...unit.table, questions: unit.table.questions.slice(0, 2) }
+    assert.equal(validLogistiqueExerciseTable(incomplete), false)
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: unit.table.presentation }
+      const worksheet = buildPage(page, 25)
+      const [item] = worksheet.items
+      assert.deepEqual(item.logistiqueTable, unit.table)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 91).items, [item])
+      const questions = [...unit.table.questions, ...unit.table.questions, ...unit.table.questions.slice(0, 2)]
+      const longItem = { ...item, logistiqueTable: { ...unit.table, questions } }
+      const longWorksheet = { ...worksheet, items: [longItem], blocks: [{ ...worksheet.blocks[0], items: [longItem] }] }
+      const pages = splitLogistiquePages(longWorksheet, { a5: true, fontScale: 1.5 }).map((sheet) => ({ ...sheet, configIndex: 0 }))
+      const ranges = pages.flatMap(({ blocks }) => blocks.flatMap(({ logistiqueTheorySlices }) => logistiqueTheorySlices ?? []))
+        .flatMap(({ documentRange }) => documentRange ? [documentRange] : [])
+      assert(ranges.length > 1)
+      assert.deepEqual(ranges.flatMap(({ start, end }) => questions.slice(start, end)), questions)
+      assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [longItem])
+    }
+  }
+})
+
+test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
+  const scenario = initialLogistiqueStory
+  for (const diploma of ['CFC', 'AFP']) {
+    const page = { ...config(diploma, '303', 'maths'), count: 3,
+      logistiqueSelection: { modules: ['601', '303', '312'], quantities: { 303: 1, 312: 1, 601: 1 } },
+      logistiqueEvaluation: { mode: 'histoire', story: scenario } }
+    const draw = generateLogistique(page, 31)
+    assert.equal(draw.bankQuestionCap, 3)
+    assert.deepEqual(draw.items.map(({ logistiqueSource }) => logistiqueSource.module), ['303', '312', '601'])
+    assert.match(draw.items[0].logistiqueNarrative, /Chez EnterSite, vous suivez/)
+    assert(!draw.items[1].logistiqueNarrative.includes(scenario.company))
+    assert.equal(draw.items[0].calcAnswer, '56 − 60 = -4')
+    assert.equal(draw.items[1].calcAnswer, '56 − 5 = 51')
+    assert.match(draw.items[2].answer, /44 unité.*7 unité.*0 unité/)
+    assert.equal(draw.items.reduce((points, item) => points + item.points, 0), 9)
+    assert.equal(validLogistiquePages([page]), true)
+    const updatedStory = { ...scenario, ordered: 55 }
+    const updated = applyLogistiqueStoryChange(scenario, updatedStory, page.logistiqueSelection.modules, draw.items)
+    assert.strictEqual(updated.items[0], draw.items[0])
+    assert.strictEqual(updated.items[1], draw.items[1])
+    assert.match(updated.items[2].answer, /51 unité.*0 unité.*4 unité/)
+    assert(applyLogistiqueStoryChange(scenario, updatedStory, page.logistiqueSelection.modules,
+      draw.items.with(2, { ...draw.items[2], libreLocked: true })).conflict)
+    assert(applyLogistiqueStoryChange({ ...scenario, introductionLocked: true },
+      { ...updatedStory, introductionLocked: true }, page.logistiqueSelection.modules).conflict)
+    const [frozen] = freezeLogistiquePages([page], true)
+    assert.deepEqual(frozen.libreItems, draw.items)
+    assert.deepEqual(buildPage(frozen, 55).items, draw.items)
+    const independent = { ...frozen, logistiqueEvaluation: { mode: 'independantes', story: scenario } }
+    assert(buildPage(independent, 55).items.every((item) => !item.logistiqueNarrative))
+    assert.match(frozen.libreItems[0].logistiqueNarrative, /Chez EnterSite/)
+    assert.equal(validLogistiquePages([{ ...page, logistiqueSelection: { modules: ['105'] } }]), false)
+    assert.equal(validLogistiquePages([{ ...page, logistiqueEvaluation: { mode: 'histoire', story: { ...scenario, held: 99 } } }]), false)
+  }
+  assert(validLogistiqueStory(logistiqueStoryVariant(scenario, 20261127)))
+  assert.deepEqual(logistiqueStoryVariant(scenario, 20261127), logistiqueStoryVariant(scenario, 20261127))
+})
+
+test('une introduction longue se poursuit avant les calculs sans dupliquer les questions', () => {
+  const story = {
+    ...initialLogistiqueStory,
+    introduction: Array(11).fill('Le lot reste au quai pendant le contrôle.').join('\n'),
+  }
+  const page = buildPage({ ...config('AFP', '303', 'maths'), count: 3,
+    logistiqueSelection: { modules: ['303', '312', '601'], quantities: { 303: 1, 312: 1, 601: 1 } },
+    logistiqueEvaluation: { mode: 'histoire', story },
+  }, 31)
+  const sheets = splitLogistiquePages(page, { a5: true, fontScale: 1.5, evaluation: true })
+  assert.deepEqual(sheets.flatMap((sheet) => sheet.items), page.items)
+  const contexts = sheets.flatMap((sheet) => sheet.blocks.filter((block) => block.document))
+  assert(contexts.length > 1)
+  assert.equal(contexts.map((block) => block.document.text).join(' ').replace(/\s+/g, ' '),
+    page.items[0].logistiqueNarrative.replace(/\s+/g, ' '))
+  assert(sheets.slice(0, contexts.length).every((sheet) => !sheet.items.length))
+  assert.deepEqual(sheets[contexts.length].blocks[0].logistiqueDetachedNarratives, [0])
+})
+
+test('le barème atteint la cible par demi-points et la durée compte une seule lecture commune', () => {
+  const page = { ...config('AFP', '303', 'maths'), count: 3,
+    logistiqueSelection: { modules: ['303', '312', '601'], quantities: { 303: 1, 312: 1, 601: 1 } },
+    logistiqueEvaluation: { mode: 'histoire', story: initialLogistiqueStory, targetPoints: 10, readingMinutes: 3.5, reviewMinutes: 1.5 },
+  }
+  const [first, second, third] = generateLogistique(page, 7).items
+  const locked = { ...first, logistiqueAssessment: { ...first.logistiqueAssessment, pointsLocked: true } }
+  const ungraded = { layout: 'text', prompt: 'Rappel', answer: '', noPoints: true }
+  const items = [locked, second, third, ungraded]
+  const result = allocateLogistiquePoints(items, 10, 1)
+  assert.deepEqual(result.items.slice(0, 3).map(({ points }) => points), [3, 2.5, 4.5])
+  assert.strictEqual(result.items[0], locked)
+  assert.strictEqual(result.items[3], ungraded)
+  assert(result.items[1].logistiqueRetained)
+  assert(allocateLogistiquePoints(items, 3.5, 1).conflict)
+  assert(allocateLogistiquePoints(items, 10, 0).conflict)
+  assert(allocateLogistiquePoints([locked, { ...third, libreLocked: true }], 12, 1).conflict)
+  const [frozen] = freezeLogistiquePages([{ ...page, libreItems: result.items }], true)
+  assert(validLogistiquePages([frozen]))
+  assert.deepEqual(buildPage(frozen, 23).items, result.items)
+  assert.deepEqual(logistiqueDuration(items.slice(0, 3), page.logistiqueEvaluation, 'AFP'),
+    { questions: 10.5, reading: 3.5, review: 1.5, total: 16 })
+  assert.equal(logistiqueDuration(items.slice(0, 3), { mode: 'histoire' }, 'AFP').total, 14)
+  assert.equal(validLogistiquePages([{ ...page, logistiqueEvaluation: { ...page.logistiqueEvaluation, readingMinutes: '2' } }]), false)
 })
 
 test('les questions restent dans l’ordre et partagent les pages sauf saut manuel', () => {

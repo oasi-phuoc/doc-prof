@@ -278,6 +278,8 @@ export function WorksheetSheet({
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
   const compactHeader = asHalf && (page.domain === 'grammaire' || isTpfFamilyDomain(page.domain))
+  const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
+    block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const Root = asHalf ? 'div' : 'article'
@@ -286,7 +288,8 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass + domainClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '')}
+      className={rootClass + domainClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
+        (hasLogistiqueStory ? ' has-logistique-story' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -342,7 +345,8 @@ export function WorksheetSheet({
             : blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
           const isGrammarScenario = Boolean(grammarScenarioFor(block.exerciseType))
-          const continuedSlice = (block.itemOffset ?? 0) > 0 && !isGrammarScenario
+          const continuedSlice = ((block.itemOffset ?? 0) > 0 || !!block.logistiqueTheorySlices?.[0]?.documentRange?.start) && !isGrammarScenario &&
+            !(block.document && block.logistiqueDetachedNarratives?.length)
           const dualForm = isGramDualFormExercise(block.exerciseType)
           const marginForm = isGramMarginFormExercise(block.exerciseType)
           const firstQuestion = block.items.find(
@@ -559,6 +563,14 @@ export function WorksheetSheet({
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   const theorySlice = block.logistiqueTheorySlices?.[index]
                   const sourceIndex = theorySlice?.sourceIndex ?? index + (block.itemOffset ?? 0)
+                  const documentRange = theorySlice?.documentRange
+                  const printableItem = theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock }
+                    : item.logistiqueTable && documentRange ? { ...item, logistiqueDocumentOffset: documentRange.start,
+                      logistiqueTable: { ...item.logistiqueTable,
+                        title: documentRange.start ? `${item.logistiqueTable.title} (suite)` : item.logistiqueTable.title,
+                        questions: item.logistiqueTable.questions?.slice(documentRange.start, documentRange.end),
+                      } }
+                    : block.logistiqueDetachedNarratives?.includes(sourceIndex) ? { ...item, logistiqueNarrative: undefined } : item
                   const tcfFormMode =
                     block.tcfFormModes?.[sourceIndex] ?? page.tcfFormModes?.[sourceIndex]
                   const tcfPageBreakBefore =
@@ -580,7 +592,7 @@ export function WorksheetSheet({
                     item.grammar?grammarPageBreakQuestionId(item)!==undefined:!item.hideItemNumber&&item.layout!=='theory'&&(item.layout!=='tcf'||item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes'||item.tcf?.kind==='dialogue')
                   )
                   const isQuestionPageBreakable = isGrammarPageBreakable || (isLogistiqueDomain(page.domain) && item.layout !== 'theory')
-                  const canBreakAfter = isTheoryPageBreakable || isQuestionPageBreakable
+                  const canBreakAfter = isTheoryPageBreakable || isQuestionPageBreakable && theorySlice?.isLast !== false
                   const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(item.grammar&&block.grammarPageBreakAfterQuestionIds?.includes(grammarPageBreakQuestionId(item)!)||!item.grammar&&(block.tcfPageBreakAfter?.[sourceIndex]??page.tcfPageBreakAfter?.[sourceIndex])) : Boolean(
                     block.tcfPageBreakAfter?.[sourceIndex] ??
                       page.tcfPageBreakAfter?.[sourceIndex] ??
@@ -615,7 +627,9 @@ export function WorksheetSheet({
                     <ItemView
                       grammarTheory={item.layout === 'theory' && isGrammaireTheoryType(block.exerciseType)}
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
-                      item={theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock } : item}
+                      item={printableItem}
+                      assessmentPoints={isLogistiqueDomain(page.domain) && evalMode && !isTheoryBlock && !documentRange?.start && !item.noPoints && perQ > 0
+                        ? formatPointsLabel(item.points ?? perQ) : undefined}
                       settingsLabel={item.layout === 'theory' ? `Section ${sourceIndex + 1}`
                         : item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes' ? `Question ${item.tcf.numeroLabel ?? item.tcf.numero}`
                         : item.tcf?.kind === 'audio_cadre' ? item.tcf.audioLabel : `Question ${sourceIndex + 1}`}

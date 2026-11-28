@@ -1,5 +1,6 @@
 import type { SocieteImage, SocieteUnite } from '../types'
 import { choix, reponse, vraiFaux } from './questions'
+import { MAPS } from '../atlas'
 
 const frontieres: SocieteImage = {
   src: '/lib/images/societe/suisse-voisins.webp',
@@ -82,7 +83,7 @@ export const unitesA1: SocieteUnite[] = [
       ['le sigle', 'Des lettres courtes qui représentent un nom.'],
       ['le chef-lieu', 'La ville où se trouvent les autorités d’un canton.'],
     ],
-    image: cantons,
+    image: MAPS.sigles,
     document: {
       titre: 'Les étapes du groupe',
       lignes: ['Lundi · Genève (GE)', 'Mardi · Lausanne, canton de Vaud (VD)', 'Jeudi · Sion, canton du Valais (VS)'],

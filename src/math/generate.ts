@@ -25,7 +25,7 @@ import { tryGenerateSoutienBatch } from '@/francais/soutien/generate'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { mathGlossaryBank } from './glossary-banks'
-import { tryGenerateAlphabetisationBatch } from '@/alphabetisation/generate'
+import { alphaPhraseOrderItem, tryGenerateAlphabetisationBatch } from '@/alphabetisation/generate'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
 import { phraseImageWordFields } from '@/francais/phrase-image-words'
@@ -300,6 +300,7 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: alphabetisation.instruction ?? type?.instruction ?? 'Complétez.',
       items: alphabetisation.items,
+      bankQuestionCap: alphabetisation.bankQuestionCap,
     }
   }
   const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)
@@ -447,7 +448,10 @@ export function buildPage(
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(page, block)
-    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) single.logistiqueSelection = undefined
+    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) {
+      single.logistiqueSelection = undefined
+      single.logistiqueEvaluation = undefined
+    }
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const logistics = logistiqueType(block.exerciseType)
@@ -479,13 +483,33 @@ export function buildPage(
         exerciseIndex = exerciseCursor++
       }
     }
-    const hasLocalQuestions = logisticsQuestions && result.items.length === 0 &&
-      libre?.items.some((item) => item.logistiqueLocalModule) && validLogistiquePages([single])
-    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasLocalQuestions
+    const hasStandaloneQuestions = logisticsQuestions && result.items.length === 0 &&
+      libre?.items.some((item) => item.logistiqueLocalModule ||
+        single.logistiqueEvaluation?.story && item.logistiqueSource?.revision === 'evaluation-v010') &&
+      validLogistiquePages([single])
+    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasStandaloneQuestions
       ? result.items : (libre?.items ?? result.items)
     const glossaryBank = mathGlossaryBank(block.exerciseType)
+    const alphaKind = page.domain === 'alphabetisation' ? parseAlphaType(block.exerciseType)?.kind : undefined
     const items = rawItems.map((item) => {
-      const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      const sanitized = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      const clean = sanitized.logistiqueNarrative && single.logistiqueEvaluation?.mode !== 'histoire'
+        ? { ...sanitized, logistiqueNarrative: undefined } : sanitized
+      if (clean.layout === 'letter-grid') {
+        if (alphaKind === 'lire-grille' || alphaKind === 'lire-cursive') {
+          return { ...clean, letterGridPurpose: 'reading' as const, noPoints: true,
+            letterGridFont: clean.letterGridFont ?? (alphaKind === 'lire-cursive' ? 'cursive' : 'script') }
+        }
+        if (alphaKind === 'entourer') return { ...clean, letterGridPurpose: 'circle' as const }
+      }
+      if (alphaKind === 'lire-phrases' && clean.layout === 'text') {
+        const sentence = clean.prompt ?? clean.answer
+        return { ...clean, prompt: sentence, answer: sentence, readingText: true as const, noPoints: true }
+      }
+      if (alphaKind === 'ordre-phrases' && clean.layout === 'order') {
+        const words = clean.sequence ?? clean.placeParts ?? clean.answer.split(/\s+/).filter(Boolean)
+        return { ...clean, ...alphaPhraseOrderItem(clean.answer, words) }
+      }
       if (clean.sionMap && block.sionMapBackground) {
         return { ...clean, sionMap: { ...clean.sionMap, background: block.sionMapBackground } }
       }

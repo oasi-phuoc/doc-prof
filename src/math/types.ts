@@ -435,7 +435,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
-export type LogistiqueResponsePresentation = 'qcm' | 'lignes-simples' | 'lignes-numerotees'
+export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees'
 export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueResponseLines =
   | { kind: 'simple'; count: number }
@@ -478,11 +478,15 @@ export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Module choisi pour une question rédigée dans la fiche. */
   logistiqueLocalModule?: string
+  logistiqueAssessment?: import('@/logistique/evaluation').LogistiqueAssessment
+  logistiqueNarrative?: string
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
   logistiqueResponseLines?: LogistiqueResponseLines
+  logistiqueChoice?: import('@/logistique/choices').LogistiqueChoice
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
+  logistiqueDocumentOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
@@ -541,6 +545,8 @@ export type MathItem = {
   letterGridCols?: number
   /** Rendu cercles (lecture) ou tableau sans bordure (Soutien FR). */
   letterGridVariant?: 'circles' | 'table'
+  letterGridPurpose?: 'reading' | 'circle'
+  letterGridFont?: 'script' | 'cursive'
   /** Variante de rendu pour les QCM (orale empilée, cartes vocabulaire). */
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
@@ -721,6 +727,8 @@ export type MathItem = {
   }>
   /** Mots étiquetés (grammaire en couleur). */
   tokens?: PhraseToken[]
+  /** Mots à ordonner présentés sans catégories grammaticales. */
+  plainPhraseOrder?: true
   phraseQuestion?: boolean
   /** Present when the interrogative words are already included in tokens. */
   phraseQuestionForm?: import('@/francais/phrase-interrogatives').PhraseQuestionForm
@@ -815,6 +823,8 @@ export type MathItem = {
   }>
   /** Soutien FR type 14 : phrases à lire (voyelle colorée). */
   readPhrases?: string[]
+  /** Phrase à lire, sans zone de réponse. */
+  readingText?: true
   /** Soutien FR type 15 (ancien) : QR audio + mots à relier. */
   audioMatchRows?: Array<{
     /** Mot entendu (ordre d’écoute / QR). */
@@ -980,6 +990,7 @@ export type ExerciseBlock = {
   logistiqueTheoryView?: 'complet' | 'resume'
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
+  logistiqueEvaluation?: import('@/logistique/evaluation').LogistiqueEvaluation
   logistiqueGapMode?: LogistiqueGapMode
   logistiquePresentation?: LogistiquePresentation
   topic: string
@@ -1310,7 +1321,10 @@ export type WorksheetBlock = {
   logistiqueGlossaryLength?: number
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
-  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
+  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock;
+    documentRange?: { start: number; end: number }; isLast: boolean }[]
+  /** Index des questions dont le contexte figure juste avant, sur une page de suite. */
+  logistiqueDetachedNarratives?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
   /**

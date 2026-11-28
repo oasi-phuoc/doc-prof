@@ -74,6 +74,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
         ? 'Lisez les syllabes (écriture cursive).'
         : 'Lisez les syllabes ci-dessous.',
       preferredColumns: 1,
+      bankQuestionCap: blocks.length,
       items: chosen.map((b) =>
         gridItem(b.title, shuffle(rng, [...b.items]).slice(0, 15)),
       ),
@@ -93,6 +94,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
     return {
       instruction: cursive ? 'Lisez les mots-outils (cursive).' : 'Lisez les mots-outils.',
       preferredColumns: 1,
+      bankQuestionCap: cats.length,
       items,
     }
   }
@@ -106,6 +108,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
     return {
       instruction: cursive ? 'Lisez les mots (cursive).' : 'Lisez les mots.',
       preferredColumns: 1,
+      bankQuestionCap: pools.length,
       items: pools.slice(0, count).map((p) =>
         gridItem(p.title, shuffle(rng, p.words).slice(0, 12)),
       ),
@@ -225,10 +228,12 @@ function genClasser(bankId: string, count: number, rng: Rng): AlphaBatch {
 }
 
 function genDictee(bankId: string, count: number, rng: Rng): AlphaBatch {
-  const pool = shuffle(rng, poolForBank(bankId)).slice(0, count)
+  const bank = poolForBank(bankId)
+  const pool = shuffle(rng, bank).slice(0, count)
   return {
     instruction: 'Écrivez correctement.',
     preferredColumns: 1,
+    bankQuestionCap: bank.length,
     items: pool.map((w, i) => ({
       layout: 'text',
       prompt: `${i + 1}.`,
@@ -247,7 +252,19 @@ function genLirePhrases(bankId: string): AlphaBatch {
       layout: 'text',
       prompt: sentence,
       answer: sentence,
+      readingText: true,
+      noPoints: true,
     })),
+  }
+}
+
+export function alphaPhraseOrderItem(sentence: string, words: readonly string[]): MathItem {
+  return {
+    layout: 'phrase-order',
+    plainPhraseOrder: true,
+    tokens: words.map((text) => ({ text, category: 'nom' })),
+    answer: sentence,
+    responseAnswer: sentence,
   }
 }
 
@@ -258,15 +275,10 @@ function genOrdrePhrases(bankId: string, count: number, rng: Rng): AlphaBatch {
   return {
     instruction: 'Mettez les mots dans l’ordre.',
     preferredColumns: 1,
+    bankQuestionCap: story.sentences.length,
     items: pool.map((sentence) => {
       const words = sentence.replace(/[.!?,;:]/g, '').split(/\s+/).filter(Boolean)
-      return {
-        layout: 'order',
-        prompt: 'Remettez la phrase en ordre.',
-        sequence: shuffle(rng, [...words]),
-        placeParts: words,
-        answer: words.join(' '),
-      }
+      return alphaPhraseOrderItem(sentence, shuffle(rng, words))
     }),
   }
 }

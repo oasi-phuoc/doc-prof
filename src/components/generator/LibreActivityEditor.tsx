@@ -19,6 +19,7 @@ import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { isLogistiqueReferenceType, logistiqueModules, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionItems, logistiqueQuestionPhotos } from '@/logistique/generate'
+import { logistiqueStoryQuestions } from '@/logistique/evaluation'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
 function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefined {
@@ -165,6 +166,7 @@ export function LibreActivityEditor({
   onRegenerateBlock,
 }: LibreActivityEditorProps) {
   const logistics = logistiqueType(activeBlock.exerciseType)
+  const storyEvaluation = evalMode && activeBlock.logistiqueEvaluation?.mode === 'histoire'
   const logistiqueQuestionType = logistics && !isLogistiqueReferenceType(logistics.id) ? logistics : undefined
   const genericItems = activeBlock.libreItems ?? logistiqueActiveItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
   const logistiquePhotos = logistiqueQuestionType ? {
@@ -176,16 +178,25 @@ export function LibreActivityEditor({
   const allowedModules = evalMode ? activeBlock.logistiqueSelection?.modules : undefined
   const logistiqueEditor = logistiqueQuestionType ? {
     kind: logistiqueQuestionType.kind,
+    diploma: logistiqueQuestionType.diploma,
+    evaluation: evalMode,
     defaultModule: logistiqueQuestionType.module,
     modules: logistiqueModules(logistiqueQuestionType.domain).filter(({ code }) =>
       !allowedModules?.length || allowedModules.includes(code)),
     original(item: MathItem) {
       const source = item.logistiqueSource
       if (!source) return undefined
+      if (source.revision === 'evaluation-v010' && activeBlock.logistiqueEvaluation?.story) {
+        return logistiqueStoryQuestions(activeBlock.logistiqueEvaluation.story,
+          activeBlock.logistiqueSelection?.modules ?? [logistiqueQuestionType.module])
+          .find((entry) => entry.logistiqueSource?.id === source.id)
+      }
       const presentation = item.logistiqueTable?.presentation ??
         (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste'
           : item.logistiqueResponseLines?.kind === 'simple' ? 'lignes-simples'
           : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'
+          : item.logistiqueChoice?.kind === 'multiple' ? 'qcm-multiple'
+          : item.logistiqueChoice?.kind === 'true-false' ? 'vrai-faux'
           : item.options?.length ? 'qcm' : undefined)
       return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, presentation)
         .find((entry) => entry.logistiqueSource?.id === source.id)
@@ -263,7 +274,15 @@ export function LibreActivityEditor({
         </div>
       )}
       {theory ? (
-        <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
+        <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems, removedIndex) => {
+          const breaks = activeBlock.tcfPageBreakAfter
+          updatePage({
+            libreItems,
+            ...(removedIndex === undefined || !breaks ? {} : {
+              tcfPageBreakAfter: breaks.filter((_, index) => index !== removedIndex),
+            }),
+          })
+        }} />
       ) : null}
       {measuredFigures?.items.length ? (
         <FigureMeasureEditor type={activeBlock.exerciseType} difficulty={activeBlock.difficulty}
@@ -331,8 +350,8 @@ export function LibreActivityEditor({
           preferred={soutienType1Words} excluded={activeBlock.soutienExcludeWords}
           onChange={(items) => editActivityItems(items, audioSeries.instruction, true)} />
       ) : null}
-      {logistics && !isLogistiqueReferenceType(logistics.id) && (
-        <LogistiqueLibreBank key={logistics.id} type={logistics} revision={activeBlock.logistiqueBankRevision}
+      {logistiqueQuestionType && !storyEvaluation && (
+        <LogistiqueLibreBank key={logistiqueQuestionType.id} type={logistiqueQuestionType} revision={activeBlock.logistiqueBankRevision}
           presentation={logistiquePresentationFor(activeBlock)}
           items={logistiqueItemsOnSheet ?? genericItems}
           onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
@@ -354,7 +373,7 @@ export function LibreActivityEditor({
           writeField={onTransientField}
           onChangeInstruction={(instruction) => editActivityItems(identifyItems(questions.items, editedActivityId), instruction)}
           onChangeItems={(items) => editActivityItems(items, questionInstruction)}
-          onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, halfEditor?.value, id)}
+          onRegenerate={storyEvaluation ? undefined : (id) => onRegenerateBlock?.(safeBlockIndex, halfEditor?.value, id)}
         />
       ) : null}
       {isPhraseDomain &&

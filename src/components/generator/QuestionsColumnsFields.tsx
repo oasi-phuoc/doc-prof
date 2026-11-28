@@ -211,6 +211,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const hideTcmCscColumns = activeBlock.exerciseType.startsWith('tcm-csc-') && !['tcm-csc-ex07', 'tcm-csc-ex10', 'tcm-csc-ex11'].includes(activeBlock.exerciseType)
   const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
   const isMathGlossary = Boolean(mathGlossaryBank(activeBlock.exerciseType))
+  const isAlphaPhraseOrder = soutienKind === 'ordre-phrases'
+  const isAlphaWordGrid = soutienKind === 'lire-grille' || soutienKind === 'lire-cursive' || soutienKind === 'entourer'
   const sheetBlock = activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
   const sheetItems = sheetBlock?.items ?? []
   const hasOuterColumns = sheetItems.length > 1 &&
@@ -240,6 +242,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
       { id: 'qcm', label: 'QCM à réponse unique' },
+      { id: 'qcm-multiple', label: 'QCM à réponses multiples' },
+      { id: 'vrai-faux', label: 'Vrai ou faux' },
       { id: 'lignes-simples', label: 'Lignes simples' },
       { id: 'lignes-numerotees', label: 'Lignes numérotées' },
       { id: 'sans-liste', label: 'Texte à trous sans liste' },
@@ -251,6 +255,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       { id: 'tableau-comparaison', label: 'Tableau de comparaison' },
       { id: 'tableau-classement', label: 'Classement par catégorie' },
       { id: 'tableau-ordre', label: 'Ordre des étapes' },
+      { id: 'lire-document', label: 'Lecture de document professionnel' },
+      { id: 'corriger-erreurs', label: 'Repérage et correction d’erreurs' },
     ] as const : []),
   ] as const).map(({ id, label }) => ({
     id, label, capacity: [...logistiqueModuleCapacities(
@@ -322,7 +328,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         ? 'Lignes'
                         : isSoutienMotsCount
                           ? 'Mots'
-                          : isMathGlossary ? 'Notions' : 'QUESTIONS'}
+                          : isMathGlossary ? 'Notions' : isAlphaPhraseOrder ? 'Phrases' : isAlphaWordGrid ? 'Grilles' : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
@@ -331,7 +337,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       ? 'Nombre de lignes'
                       : isSoutienMotsCount
                         ? 'Nombre de mots'
-                        : isMathGlossary ? 'Nombre de notions' : 'Nombre de questions'
+                        : isMathGlossary ? 'Nombre de notions' : isAlphaPhraseOrder ? 'Nombre de phrases'
+                          : isAlphaWordGrid ? 'Nombre de grilles' : 'Nombre de questions'
                   }
                   aria-invalid={questionsInputOverflow}
                   title={

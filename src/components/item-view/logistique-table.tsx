@@ -5,6 +5,7 @@ export function LogistiqueTableView({ table, mode }: { table: LogistiqueExercise
   const corrected = mode === 'answers'
   return (
     <table className="theory-table has-col-head logistique-exercise-table">
+      {table.title && <caption>{table.title}</caption>}
       <thead>
         <tr>{table.headers.map((header, col) => <th key={col} scope="col">{header}</th>)}</tr>
       </thead>

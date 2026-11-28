@@ -204,3 +204,107 @@
 .logistique-numbered-lines > li + li {
   margin-block-start: .18em;
 }
+
+.logistique-narrative-passage {
+  margin: 0 0 .45em;
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+:root {
+  --logistique-story-a5-scale: min(var(--sheet-font-scale, 1), 1);
+}
+
+.a5-half.is-logistique.has-logistique-story {
+  --sheet-font-scale: var(--logistique-story-a5-scale, 1);
+}
+
+.has-logistique-story .exercise-document-text {
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.is-logistique .logistique-choices.is-multiple .oral-qcm-options {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: none;
+  grid-auto-flow: row;
+}
+
+.is-logistique .logistique-choices.is-true-false .oral-qcm-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.logistique-choice-instruction,
+.logistique-choice-justification {
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+}
+
+.logistique-choice-justification .answer-line-field {
+  display: block;
+  width: 100%;
+}
+
+.logistique-choice-justification p {
+  margin: 4px 0 0;
+  font-weight: 400;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.logistique-document-exercise {
+  gap: 4px;
+}
+
+.logistique-document-exercise .logistique-exercise-table caption {
+  padding-bottom: 4px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.logistique-document-questions {
+  margin: 0;
+  padding-inline-start: 1.35em;
+  font-size: calc(14px * var(--app-font-scale, 1));
+  line-height: 1.3;
+  list-style: lower-alpha;
+}
+
+.logistique-document-questions p {
+  margin: 0 0 2px;
+  overflow-wrap: anywhere;
+}
+
+.logistique-document-questions li + li {
+  margin-top: 4px;
+}
+
+.logistique-document-questions .answer-line-field {
+  display: block;
+  width: 100%;
+}
+
+.a5-half .exercise-block:has(.logistique-document-exercise) .exercise-heading {
+  margin-bottom: 7px;
+}
+
+.a5-half .logistique-document-questions .answer-line-field.filled {
+  min-height: 1.2em;
+  line-height: 1.25;
+}
+
+.logistique-assessment-points {
+  margin: 0 0 .15em;
+  font-size: calc(11px * var(--app-font-scale, 1));
+  font-weight: 700;
+  text-align: end;
+}
+
+.logistique-assessment-criteria {
+  margin: .35em 0 0;
+  font-size: calc(12px * var(--app-font-scale, 1));
+  line-height: 1.35;
+  white-space: pre-line;
+}

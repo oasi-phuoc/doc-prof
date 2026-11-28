@@ -10,7 +10,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { isFigureMeasureProfile, isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
+import { isAlphaWordGridProfile, isFigureMeasureProfile, isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { listenRows, replaceListenRows, resizeListenRows } from '@/components/generator/libre/listen-rows'
@@ -173,7 +173,8 @@ export function usePageConfig({
           ...(right && rightGrid ? { a5RightLibre: { ...rightGrid, items: identifyItems(right, rightGrid.id) } } : {}) }
       }
     }
-    if (isIndependentListProfile(editorProfile) &&
+    if (isIndependentListProfile(editorProfile) && !isAlphaWordGridProfile(editorProfile) &&
+      parseAlphaType(activeBlock.exerciseType)?.kind !== 'lire-phrases' &&
       activeSheet && (activeBlock.libreItems?.length || rightGrid?.items.length) && !patch.libreItems && !patch.exerciseType &&
       (count !== undefined || patch.columns !== undefined)) {
       const nextBlock = { ...activeBlock, ...patch, libreItems: undefined }
@@ -292,7 +293,7 @@ export function usePageConfig({
     }
     const glossaryBank = mathGlossaryBank(activeBlock.exerciseType)
     const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || isFigureMeasureProfile(editorProfile) ||
-      editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
+      isAlphaWordGridProfile(editorProfile) || editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
       const locked = Math.max(...lists.map((items) => items.filter(({ libreLocked }) => libreLocked).length))

@@ -1,18 +1,24 @@
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { isLogistiqueDomain, type LogistiqueType } from './catalog'
+import { logistiqueVerdicts, validLogistiqueChoice } from './choices'
 import { generateLogistique } from './generate'
 
-export function newLogistiqueQuestion(module: string, kind: LogistiqueType['kind'], qcm: boolean): MathItem {
+export type LogistiqueQuestionFormat = 'open' | 'qcm' | 'qcm-multiple' | 'vrai-faux'
+
+export function newLogistiqueQuestion(module: string, kind: LogistiqueType['kind'], format: LogistiqueQuestionFormat): MathItem {
+  const select = format !== 'open'
   return {
     libreId: `log-question-${crypto.randomUUID()}`,
     logistiqueLocalModule: module,
     logistiqueRetained: true,
     libreCorrectionPending: true,
-    layout: qcm ? 'select' : 'text',
+    layout: select ? 'select' : 'text',
     prompt: '',
     answer: '',
-    ...(qcm ? { options: ['', '', '', ''] } : {}),
+    ...(select ? { options: format === 'vrai-faux' ? [...logistiqueVerdicts] : ['', '', '', ''] } : {}),
+    ...(format === 'qcm-multiple' ? { logistiqueChoice: { kind: 'multiple', correct: [] } } : {}),
+    ...(format === 'vrai-faux' ? { logistiqueChoice: { kind: 'true-false' } } : {}),
     ...(kind === 'maths' ? { calcAnswer: '', responseAnswer: '' } : {}),
   }
 }
@@ -25,6 +31,14 @@ export function completeLogistiquePrompt(item: MathItem): boolean {
 }
 
 export function reviewableLogistiqueAnswer(item: MathItem): boolean {
+  if (item.logistiqueTable?.questions) {
+    return completeLogistiquePrompt(item) && item.logistiqueTable.questions.every(({ answer }) => answer.trim())
+  }
+  if (item.logistiqueChoice) {
+    const choice = item.logistiqueChoice
+    return completeLogistiquePrompt(item) && validLogistiqueChoice(item) && Boolean(item.answer.trim()) &&
+      (choice.kind !== 'true-false' || choice.justification === undefined || Boolean(choice.justification.trim()))
+  }
   return completeLogistiquePrompt(item) && Boolean(item.answer.trim()) &&
     (item.calcAnswer === undefined || Boolean(item.calcAnswer.trim())) &&
     (item.logistiqueResponseLines?.kind !== 'numbered' || item.logistiqueResponseLines.answers.every((answer) => answer.trim())) &&
@@ -51,6 +65,6 @@ export function retainLogistiqueQuestions(config: PageConfig, seed: number, eval
   const retained = config.libreItems?.filter((item) => item.logistiqueRetained || item.libreLocked)
   if (!retained?.length) return {}
   const excluded = new Set(retained.flatMap((item) => item.logistiqueSource ? [item.logistiqueSource.id] : []))
-  const draw = generateLogistique(evaluation ? config : { ...config, logistiqueSelection: undefined }, seed, undefined, excluded)
+  const draw = generateLogistique(evaluation ? config : { ...config, logistiqueSelection: undefined, logistiqueEvaluation: undefined }, seed, undefined, excluded)
   return { libreItems: [...draw.items, ...retained], libreInstruction: config.libreInstruction }
 }

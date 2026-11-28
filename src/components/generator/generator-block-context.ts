@@ -143,6 +143,7 @@ const isSoutienMotsCount =
   soutienKind === 'lettres-phrase' ||
   soutienKind === 'determinants' ||
   soutienKind === 'dictee' ||
+  soutienKind === 'dictee-mots' ||
   soutienKind === 'associer-audio' ||
   soutienKind === 'associer-image' ||
   soutienKind === 'associer-syllabe' ||
@@ -257,18 +258,26 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const logistics = logistiqueType(activeBlock.exerciseType)
-const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ? [...logistiqueModuleCapacities(
-  logistics, activeBlock.logistiqueSelection?.modules ?? [logistics.module], activeBlock.logistiqueBankRevision,
-  logistiquePresentationFor(activeBlock),
-).values()].reduce((sum, count) => sum + count, 0) : undefined
+const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ?
+  activeBlock.logistiqueEvaluation?.mode === 'histoire' && activeSheetBlock?.bankQuestionCap !== undefined
+    ? activeSheetBlock.bankQuestionCap
+    : [...logistiqueModuleCapacities(
+      logistics, activeBlock.logistiqueSelection?.modules ?? [logistics.module], activeBlock.logistiqueBankRevision,
+      logistiquePresentationFor(activeBlock),
+    ).values()].reduce((sum, count) => sum + count, 0)
+  : undefined
 const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
 const syllablePairCap = isSoutienRelier && bankQuestionCap !== undefined ? Math.max(1, bankQuestionCap) : undefined
+const alphaWordBankCap = (soutienKind === 'dictee-mots' || soutienKind === 'ordre-phrases' ||
+  soutienKind === 'lire-grille' || soutienKind === 'lire-cursive') && bankQuestionCap !== undefined
+  ? Math.max(1, Math.min(baseMaxQuestions, bankQuestionCap)) : undefined
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
 const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logisticsCap))
   ?? exerciseTypeById[activeBlock.exerciseType]?.maxCount
   ?? cscQuestionLimit(activeBlock.exerciseType)
   ?? audioSeriesCap
   ?? syllablePairCap
+  ?? alphaWordBankCap
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : activePage.domain === 'gattegno' && bankQuestionCap != null

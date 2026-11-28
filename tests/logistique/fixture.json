@@ -90,6 +90,47 @@
       }
     },
     {
+      "id": "fixture-306-choix-multiples",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Quelles informations vérifier avant d’accepter un support à l’échange ?",
+      "answer": "Le marquage\nL’état du support",
+      "options": ["Le marquage", "L’état du support", "La couleur du camion", "Le prix du colis"],
+      "choice": { "kind": "multiple", "correct": ["Le marquage", "L’état du support"] }
+    },
+    {
+      "id": "fixture-306-vrai-faux",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Une palette fendue est admise à l’échange dès que le marquage correspond.",
+      "answer": "Faux",
+      "choice": { "kind": "true-false", "justification": "Contrôlez aussi l’état de la palette." }
+    },
+    {
+      "id": "fixture-306-document",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Lisez le relevé des supports au quai.",
+      "answer": "",
+      "table": {
+        "presentation": "lire-document",
+        "title": "Relevé des supports",
+        "headers": ["Support", "Quantité"],
+        "rows": [["Palette EUR", "6"], ["Couvercle", "2"]],
+        "questions": [
+          { "prompt": "Combien de palettes sont relevées ?", "answer": "Six palettes." },
+          { "prompt": "Combien de couvercles sont relevés ?", "answer": "Deux couvercles." },
+          { "prompt": "Quels accessoires manquent si le dossier en annonce trois ?", "answer": "Il manque un couvercle." }
+        ]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

@@ -311,6 +311,278 @@ async function formAndOral(context) {
   await oral.close()
 }
 
+function theoryRecipe(config) {
+  const data = recipe(config.exerciseType, config.topic)
+  data.printCorrections = false
+  data.pages[0] = { ...data.pages[0], ...config }
+  return data
+}
+
+async function removeTheoryParts(context) {
+  const theoryItem = (theoryBlock) => ({ layout: 'theory', answer: '', theoryBlock })
+  const items = [
+    theoryItem({ kind: 'heading', text: 'Théorie témoin' }),
+    theoryItem({ kind: 'paragraph', text: 'À retirer avant la coupure.' }),
+    theoryItem({ kind: 'section', role: 'expliquer', blocks: [
+      { kind: 'paragraph', text: 'Ce paragraphe est facultatif.' },
+      { kind: 'paragraph', text: 'Le paragraphe voisin est conservé.' },
+    ] }),
+    theoryItem({ kind: 'paragraph', text: 'Début de la deuxième page.' }),
+  ]
+
+  const grammar = await context.newPage()
+  let saved
+  await grammar.route('**/fiches/fixture', async (route) => {
+    assert.equal(route.request().method(), 'PUT')
+    const { name, recipe: stored } = route.request().postDataJSON()
+    saved = stored
+    await route.fulfill({ json: { fiche: { id: 'fixture', name, domains: ['grammaire'],
+      createdAt: '2026-11-28T00:00:00Z', updatedAt: '2026-11-28T00:00:00Z', recipe: stored } } })
+  })
+  await openFiche(grammar, theoryRecipe({
+    domain: 'grammaire', topic: 'gram-entrer-contact', exerciseType: 'gram-b1-theorie',
+    libreItems: items, tcfPageBreakAfter: [false, false, true, false],
+  }), false)
+  const editor = grammar.getByLabel('Contenu de la théorie', { exact: true })
+  const blocks = editor.locator(':scope > details')
+  const sheets = grammar.locator('.print-only-sheets .worksheet-sheet')
+  assert.equal(await sheets.count(), 2)
+  await blocks.nth(2).locator(':scope > summary').click()
+  await button(blocks.nth(2), 'Retirer le paragraphe').click()
+  assert.doesNotMatch(await sheets.first().textContent(), /Ce paragraphe est facultatif/)
+  assert.match(await sheets.first().textContent(), /Le paragraphe voisin est conservé/)
+  await blocks.nth(1).locator(':scope > summary').click()
+  await button(blocks.nth(1), 'Retirer le paragraphe').click()
+  assert.equal(await sheets.count(), 2)
+  assert.match(await sheets.nth(1).textContent(), /Début de la deuxième page/)
+  assert.doesNotMatch(await sheets.first().textContent(), /À retirer avant la coupure/)
+  await button(grammar, 'Annuler').click()
+  assert.match(await sheets.first().textContent(), /À retirer avant la coupure/)
+  await button(grammar, 'Rétablir').click()
+  await button(grammar, 'Enregistrer').click()
+  const save = grammar.getByRole('dialog', { name: 'Enregistrer la fiche' })
+  await save.getByRole('textbox', { name: 'Enregistré par', exact: true }).fill('Enseignant Témoin')
+  await button(save, 'Mettre à jour').click()
+  await save.waitFor({ state: 'detached' })
+  assert.equal(saved.pages[0].libreItems.length, 3)
+  assert.deepEqual(saved.pages[0].tcfPageBreakAfter, [false, true, false])
+  await grammar.reload()
+  await sheets.nth(1).waitFor({ state: 'attached' })
+  assert.doesNotMatch((await sheets.allTextContents()).join(' '), /Ce paragraphe est facultatif|À retirer avant la coupure/)
+  await grammar.close()
+
+  for (const config of [
+    { domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-theorie' },
+    { domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-101-theorie' },
+    { domain: 'société', topic: 'societe-voisins', exerciseType: 'societe-voisins-theorie' },
+    { domain: 'santé', topic: 'sante-corps', exerciseType: 'sante-corps-theorie-a1' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe({ ...config, libreItems: items }), false)
+    const section = page.getByLabel('Contenu de la théorie', { exact: true }).locator(':scope > details').nth(2)
+    await section.locator(':scope > summary').click()
+    await button(section, 'Retirer la section').click()
+    assert.doesNotMatch((await page.locator('.print-only-sheets').allTextContents()).join(' '), /Le paragraphe voisin est conservé/)
+    assert.match(await worksheet(page).textContent(), /Théorie témoin/)
+    await button(page, 'Annuler').click()
+    assert.match((await page.locator('.print-only-sheets').allTextContents()).join(' '), /Le paragraphe voisin est conservé/)
+    await page.close()
+  }
+
+  for (const config of [
+    { domain: 'algèbre', topic: 'addition', exerciseType: 'math-theorie-addition' },
+    { domain: 'géométrie', topic: 'figures', exerciseType: 'math-theorie-figures' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe(config), false)
+    const panel = page.getByLabel('Contenu de la théorie', { exact: true })
+    const lesson = worksheet(page).locator('.math-theory-lesson').first()
+    const vocabulary = await lesson.locator('dt').allTextContents()
+    await button(panel, 'Retirer le vocabulaire').click()
+    assert.equal(await lesson.locator('dl').count(), 0)
+    await button(panel, 'Retirer l’exemple').click()
+    assert.equal(await lesson.locator('figcaption, .math-theory-example').count(), 0)
+    assert(await lesson.locator('h3').isVisible())
+    await button(page, 'Annuler').click()
+    await button(page, 'Annuler').click()
+    assert.deepEqual(await lesson.locator('dt').allTextContents(), vocabulary)
+    await page.close()
+  }
+
+  for (const config of [
+    { domain: 'géométrie', topic: 'glossaire-geometrie', exerciseType: 'glossaire-geometrie-mots' },
+    { domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-glossaire' },
+    { domain: 'société', topic: 'societe-voisins', exerciseType: 'societe-voisins-lexique' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe(config), false)
+    const panel = page.getByLabel('Contenu de la théorie', { exact: true })
+    assert.equal(await panel.getByRole('button', { name: /^Retirer / }).count(), 0)
+    await page.close()
+  }
+}
+
+async function alphaStoryReading(context) {
+  const config = { domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-lire-phrases' }
+  for (const archive of [false, true]) {
+    const page = await context.newPage()
+    const data = theoryRecipe({
+      ...config,
+      ...(archive ? { libreItems: [
+        { layout: 'text', prompt: 'Le chat longe la fenêtre.', answer: 'Le chat longe la fenêtre.' },
+        { layout: 'text', prompt: 'La pluie tombe dans la cour.', answer: 'La pluie tombe dans la cour.' },
+      ] } : {}),
+    })
+    data.evalMode = true
+    await openFiche(page, data, false)
+    const panel = page.locator('#activity-editor')
+    const first = panel.getByRole('textbox', { name: 'Phrase 1', exact: true })
+    const original = await first.inputValue()
+    assert(original)
+    if (archive) assert.equal(original, 'Le chat longe la fenêtre.')
+    assert.equal(await panel.getByRole('spinbutton', { name: 'Nombre de questions', exact: true }).count(), 0)
+    assert.equal(await panel.getByRole('spinbutton', { name: /Points par question/ }).count(), 0)
+    const written = worksheet(page).locator('.prompt-stack-text')
+    const sentences = await written.allTextContents()
+    await first.fill('Le chat regarde tomber la pluie.')
+    assert.deepEqual(await written.allTextContents(), ['Le chat regarde tomber la pluie.', ...sentences.slice(1)])
+    assert.equal(await worksheet(page).locator('.answer-line-field').count(), 0)
+    await button(page, 'Annuler').click()
+    assert.equal(await first.inputValue(), original)
+    await button(page, 'Rétablir').click()
+    await button(page, 'Fermer le mode libre').click()
+    assert.match(await page.locator('.print-only-sheets .worksheet-sheet').first().textContent(), /Le chat regarde tomber la pluie/)
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true }).count(), 0)
+    await page.close()
+  }
+}
+
+async function alphaDictation(context) {
+  for (const [topic, exerciseType, word] of [
+    ['alpha-syllabes', 'alpha-syll-a-dictee-mots', 'pla'],
+    ['alpha-phrases', 'alpha-phrase-le-chat-dictee-mots', 'gouttière'],
+  ]) {
+    const page = await context.newPage()
+    const data = theoryRecipe({ domain: 'alphabetisation', topic, exerciseType, count: 2 })
+    data.printCorrections = true
+    await openFiche(page, data, false)
+    const panel = page.locator('#activity-editor')
+    const first = panel.getByRole('textbox', { name: 'Mot dicté 1', exact: true })
+    const quantity = panel.getByRole('spinbutton', { name: 'Nombre de mots', exact: true })
+    const correction = page.locator('.print-only-sheets .worksheet-sheet').last()
+    await first.fill(word)
+    assert.equal(await worksheet(page).locator('.answer-line-field').count(), 2)
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    assert.equal((await worksheet(page).locator('.answer-line-field').allTextContents()).includes(word), false)
+    await first.fill('')
+    assert.equal(await first.getAttribute('aria-invalid'), 'true')
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    await first.fill(word)
+    await quantity.fill('3')
+    assert.equal(await correction.locator('.answer-line-field').count(), 3)
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    await button(page, 'Annuler').click()
+    assert.equal(await correction.locator('.answer-line-field').count(), 2)
+    assert.equal(await first.inputValue(), word)
+    await page.close()
+  }
+}
+
+async function alphaSentenceOrder(context) {
+  const config = { domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-ordre-phrases' }
+  const generated = await context.newPage()
+  await openFiche(generated, theoryRecipe(config), false)
+  assert(await worksheet(generated).locator('.phrase-order-block .phrase-bubble').first().isVisible())
+  await generated.close()
+
+  const page = await context.newPage()
+  const data = theoryRecipe({
+    ...config, count: 1,
+    libreItems: [{ layout: 'order', sequence: ['dort', 'chat', 'Le'], placeParts: ['Le', 'chat', 'dort'], answer: 'Le chat dort' }],
+  })
+  data.printCorrections = true
+  await openFiche(page, data, false)
+  const panel = page.locator('#activity-editor')
+  const words = worksheet(page).locator('.phrase-bubble')
+  const correction = page.locator('.print-only-sheets .worksheet-sheet').last()
+  assert.deepEqual(await words.allTextContents(), ['dort', 'chat', 'Le'])
+  assert.equal(await panel.getByLabel(/^Catégorie du mot/).count(), 0)
+  await panel.getByRole('textbox', { name: 'Mot 1 de la phrase 1', exact: true }).fill('lit')
+  await button(panel, 'Monter le mot').nth(1).click()
+  assert.deepEqual(await words.allTextContents(), ['chat', 'lit', 'Le'])
+  assert(await button(panel, 'Corrigé vérifié').isDisabled())
+  await panel.getByRole('textbox', { name: 'Phrase correcte 1', exact: true }).fill('Le chat lit.')
+  await button(panel, 'Corrigé vérifié').click()
+  assert.equal(await correction.locator('.phrase-slot-answer').first().textContent(), 'Le chat lit.')
+  assert.equal(await worksheet(page).locator('.phrase-slot-answer').count(), 0)
+  await panel.getByRole('spinbutton', { name: 'Nombre de phrases', exact: true }).fill('2')
+  assert.equal(await worksheet(page).locator('.phrase-order-block').count(), 2)
+  assert.equal(await correction.locator('.phrase-slot-answer').first().textContent(), 'Le chat lit.')
+  await button(page, 'Annuler').click()
+  assert.equal(await worksheet(page).locator('.phrase-order-block').count(), 1)
+  await page.close()
+}
+
+async function alphaWordGrids(context) {
+  const reading = await context.newPage()
+  await openFiche(reading, theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-mots', exerciseType: 'alpha-mots-outils-lire-grille', count: 2,
+  }), false)
+  const settings = reading.locator('#activity-editor')
+  const firstGrid = settings.getByRole('group', { name: 'Grille 1', exact: true })
+  await firstGrid.getByRole('textbox', { name: 'Case 1', exact: true }).fill('aujourd’hui')
+  await firstGrid.getByRole('textbox', { name: 'Titre de la grille', exact: true }).fill('Mots pour lire une histoire')
+  await firstGrid.getByRole('combobox', { name: 'Écriture de la grille', exact: true }).selectOption('cursive')
+  await firstGrid.getByRole('combobox', { name: 'Colonnes de la grille', exact: true }).selectOption('4')
+  const grids = worksheet(reading).locator('.letter-grid-block')
+  assert.match(await grids.first().innerText(), /Mots pour lire une histoire.*aujourd’hui/s)
+  assert.match(await grids.first().locator('.letter-cell').first().evaluate((cell) => getComputedStyle(cell).fontFamily), /Calli Playwrite/)
+  assert.match(await grids.first().locator('.letter-grid').getAttribute('style'), /repeat\(4,/)
+  await settings.getByRole('spinbutton', { name: 'Nombre de grilles', exact: true }).fill('3')
+  assert.equal(await grids.count(), 3)
+  assert.equal(await firstGrid.getByRole('textbox', { name: 'Case 1', exact: true }).inputValue(), 'aujourd’hui')
+  await button(firstGrid, 'Majuscules').click()
+  assert.equal(await grids.first().locator('.letter-cell').first().textContent(), 'AUJOURD’HUI')
+  assert.equal(await reading.locator('.print-only-sheets .letter-cell.selected').count(), 0)
+  await reading.close()
+
+  const cursive = await context.newPage()
+  await openFiche(cursive, theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-syllabes', exerciseType: 'alpha-syll-a-lire-cursive',
+    libreItems: [{ layout: 'letter-grid', options: ['ma', 'pa'], labels: ['ma', 'pa'], answer: 'ma · pa' }],
+  }), false)
+  const cursiveGrid = worksheet(cursive).locator('.letter-grid-block')
+  assert.match(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await cursive.locator('#activity-editor').getByRole('combobox', { name: 'Écriture de la grille', exact: true }).selectOption('script')
+  assert.doesNotMatch(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await button(cursive, 'Annuler').click()
+  assert.match(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await cursive.close()
+
+  const circle = await context.newPage()
+  const data = theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-entourer',
+  })
+  data.printCorrections = true
+  await openFiche(circle, data, false)
+  const panel = circle.locator('#activity-editor')
+  await panel.getByRole('textbox', { name: 'Mot ou syllabe à entourer', exact: true }).fill('maison')
+  const printed = circle.locator('.print-only-sheets .letter-grid-block')
+  assert.match(await printed.first().textContent(), /Entourez « maison »/)
+  assert.equal(await printed.first().locator('.letter-cell.selected').count(), 0)
+  const cells = await printed.last().locator('.letter-cell').allTextContents()
+  const targets = cells.flatMap((word, index) => word.toLowerCase() === 'maison' ? [index] : [])
+  assert(targets.length >= 2)
+  for (const position of targets.slice(0, -1)) {
+    await panel.getByRole('textbox', { name: `Case ${position + 1}`, exact: true }).fill('coquillage')
+  }
+  const lastTarget = panel.getByRole('textbox', { name: `Case ${targets.at(-1) + 1}`, exact: true })
+  await lastTarget.fill('verger')
+  assert.equal(await lastTarget.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await printed.last().locator('.letter-cell.selected').allTextContents(), ['maison'])
+  await circle.close()
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -333,8 +605,13 @@ try {
   await pictureRecognition(await context.newPage())
   await formAndOral(context)
   await worksheetImage(await context.newPage())
+  await removeTheoryParts(context)
+  await alphaStoryReading(context)
+  await alphaDictation(context)
+  await alphaSentenceOrder(context)
+  await alphaWordGrids(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire et oral vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture, dictées, ordre des phrases et grilles vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

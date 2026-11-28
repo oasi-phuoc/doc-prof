@@ -1,6 +1,6 @@
 # Suivi de la refonte du mode Libre
 
-**Mise à jour le 27 novembre 2026**
+**Mise à jour le 28 novembre 2026**
 
 Le mode Libre est réservé au format A4. Les chiffres de raccordement en double A5 figurant dans l’historique décrivent les versions antérieures. Les contrôles actuels de ce format portent sur l’aperçu, l’impression, l’ouverture des recettes existantes et la conservation du contenu lors du passage d’A4 à double A5.
 
@@ -51,6 +51,36 @@ L’inventaire de la version intégrée `e500ef9e` compte 4 272 contextes, dont 
 Les 23 leçons et les deux glossaires d’algèbre et de géométrie utilisent le panneau Libre. Les leçons exposent le titre, l’objectif, le vocabulaire, les étapes, l’exemple et le schéma. Le glossaire permet de modifier les notions, leurs définitions, les exemples, les schémas et l’ordre. La quantité de notions est bornée par la banque et conserve les entrées personnalisées. Les fiches de référence ne portent pas de barème et les options de difficulté sont masquées.
 
 Le scénario `tests/mode-libre/native-browser.mjs` vérifie sur la leçon d’addition et le glossaire de géométrie la mise à jour de la fiche, l’import et le rétablissement du schéma, l’annulation, la quantité et le contenu destiné à l’impression.
+
+### Retrait de contenu dans les théories
+
+Le panneau Libre propose le retrait d’un bloc principal ou d’un élément à l’intérieur d’une section. Une activité garde au moins un bloc principal. Les théories de mathématiques permettent aussi de retirer l’objectif, l’exemple, les mots et les étapes. Les sections vides sont retirées de la fiche et de l’impression. Les sauts manuels restent associés aux blocs conservés. Les actions de retrait de parties sont réservées aux types de théorie.
+
+`node tests/mode-libre/structured-browser.mjs` couvre l’Algèbre, la Géométrie, la Grammaire, la Logistique AFP et CFC, Société et Sciences et santé. Le parcours de Grammaire vérifie le retrait avant un saut de page, l’annulation, le rétablissement et la recette après enregistrement et réouverture. Le PDF témoin présente les blocs conservés sur deux pages A4. Les témoins de glossaire vérifient la portée de la commande. L’inventaire raccorde les 12 théories de Sciences et santé et relève 483 contextes en attente sur 4 420, sans erreur de génération.
+
+### Phrases à lire en Alphabétisation
+
+Les 15 récits donnent accès à la consigne et au texte de chaque phrase dans le panneau Libre. Le nombre de phrases suit le récit choisi. La fiche présente le texte à lire, y compris lorsqu’elle est associée à des activités notées.
+
+Le parcours Chromium vérifie un récit généré, une ancienne recette, l’annulation et la mise à jour du texte imprimable. L’inventaire relève 468 contextes A4 à raccorder sur 4 420 et aucune erreur de génération.
+
+### Dictées de mots et de syllabes en Alphabétisation
+
+Le panneau Libre permet de modifier les éléments dictés et leur consigne. Le réglage de quantité suit la capacité de la banque. Un changement de quantité conserve les éléments déjà modifiés. La fiche élève garde les lignes d’écriture et les mots attendus apparaissent au corrigé.
+
+Le parcours Chromium couvre une dictée de syllabes et une dictée de mots issue d’un récit. Il vérifie le corrigé, la saisie vide, la quantité et l’annulation. L’inventaire raccorde 24 contextes et relève 444 contextes A4 en attente sur 4 420, sans erreur de génération.
+
+### Phrases à remettre en ordre en Alphabétisation
+
+Le panneau Libre permet de modifier et déplacer les mots proposés, d’ajuster la phrase attendue et de vérifier sa correspondance avec les mots. Le sujet affiche les mots et une ligne d’écriture. Le nombre de phrases suit la capacité du récit.
+
+Le parcours Chromium vérifie le tirage, la reprise d’une ancienne recette, le déplacement des mots et la confirmation du corrigé. L’inventaire raccorde 15 contextes et relève 429 contextes A4 en attente sur 4 430, sans erreur de génération.
+
+### Grilles de lecture et mots à entourer en Alphabétisation
+
+Les grilles de lecture permettent de modifier les cases, le titre, l’écriture script ou cursive, la casse et le nombre de colonnes. Les grilles à entourer proposent le choix de la cible et des autres cases. Le corrigé marque les occurrences de la cible. Le réglage de quantité conserve les grilles personnalisées.
+
+Le parcours Chromium couvre une grille de mots-outils, une ancienne grille de syllabes et une activité à entourer issue d’un récit. L’inventaire raccorde 18 contextes de lecture en grille et 24 contextes à entourer. Sur 4 430 contextes, 387 raccordements A4 restent en attente, dont 15 en Alphabétisation. Aucune erreur de génération n’est relevée.
 
 ### Symétries axiales et centrales en A4
 

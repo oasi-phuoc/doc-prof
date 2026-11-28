@@ -223,6 +223,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     logistiqueBankRevision: undefined,
     logistiqueTheoryView: undefined,
     logistiqueSelection: undefined,
+    logistiqueEvaluation: undefined,
     logistiqueGapMode: undefined,
     logistiquePresentation: undefined,
     topic: type.topic,

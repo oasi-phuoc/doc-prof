@@ -20,8 +20,23 @@ function lineCount(text: string, width: number): number {
   return text.split('\n').reduce((sum, line) => sum + Math.max(1, Math.ceil(line.length / width)), 0)
 }
 
+function splitNarrative(text: string, width: number, limit: number): string[] {
+  const chunks: string[] = []
+  let chunk = ''
+  for (const part of text.match(/[^\s]{1,64}[^\S\n]*|\n|[^\S\n]+/g) ?? []) {
+    if (chunk.trim() && lineCount((chunk + part).trim(), width) > limit) {
+      chunks.push(chunk.trim())
+      chunk = ''
+    }
+    chunk += part
+  }
+  if (chunk.trim()) chunks.push(chunk.trim())
+  return chunks
+}
+
 type A5TheoryBlock = Extract<GrammarTheoryBlock, { kind: 'table' | 'list' | 'examples' }>
-type TheoryLayoutSlice = { item: MathItem; sourceIndex: number; theoryBlock?: A5TheoryBlock; isLast: boolean }
+type TheoryLayoutSlice = { item: MathItem; sourceIndex: number; theoryBlock?: A5TheoryBlock;
+  documentRange?: { start: number; end: number }; isLast: boolean }
 
 function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
   if (block.kind === 'list') {
@@ -151,6 +166,8 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   const image = item.logistiqueImage
   const captionColumns = image ? Math.max(8, (image.width - 12) / (7 * scale)) : 1
   const imageHeight = image ? (a5 ? 99 : 136) + (image.caption ? lineCount(image.caption, captionColumns) * 17 * scale : 0) : 0
+  const narrativeHeight = item.logistiqueNarrative
+    ? 8 + lineCount(item.logistiqueNarrative, width * 1.2) * 18 * scale : 0
   if (item.logistiqueGaps) {
     const prompt = lineCount((item.prompt ?? '').replace(/_{3,}|_ _ _/g, '                 '), width) * 26 * scale
     const words = item.logistiqueGaps.words
@@ -164,35 +181,54 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
     return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
   }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
+  if (table?.questions) {
+    const questions = table.questions.reduce((total, { prompt, answer }) => total + 6 * scale +
+      (18 * lineCount(prompt, width * 1.1) + 19 * lineCount(answer, width * 1.1)) * scale, 0)
+    return imageHeight + prompt * 0.85 + tableHeight + questions + 22 * scale
+  }
   if (isWrittenProblem(item)) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
     const minimum = (a5 ? 183 : 248) + (scale - 1) * 56
     const calculations = item.calcAnswer && (!a5 || table || item.logistiqueLocalModule)
       ? lineCount(item.calcAnswer, width) * 18 * scale : 0
-    return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
+    return imageHeight + tableHeight + narrativeHeight +
+      Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
   const spacing = a5 || table ? 48 : 58
+  const choice = item.logistiqueChoice
+  if (choice?.kind === 'multiple') {
+    const choicesHeight = item.options?.reduce((total, text) => total + (13 + 19 * lineCount(text, width * 0.8)) * scale, 0) ?? 0
+    return imageHeight + spacing + prompt + choicesHeight + 21 * scale
+  }
+  if (choice?.kind === 'true-false') {
+    const justification = choice.justification === undefined ? 0
+      : Math.max(3, lineCount(choice.justification, width)) * 25 * scale
+    return imageHeight + spacing + prompt + 37 * scale + justification
+  }
   const lines = item.logistiqueResponseLines
   const responseHeight = lines?.kind === 'numbered'
     ? lines.answers.reduce((total, text) => total + (8 + 26 * lineCount(text, width * 0.83)) * scale, 0)
     : lines?.kind === 'simple' ? Math.max(lines.count * 27 * scale, answer) : answer
   const choicesHeight = item.options?.reduce((total, text) => total + (9 + 23 * lineCount(text, width * 0.8)) * scale, 0) ?? 0
-  return imageHeight + tableHeight + spacing + prompt + responseHeight + choicesHeight
+  return imageHeight + tableHeight + narrativeHeight + spacing + prompt + responseHeight + choicesHeight
 }
 
 /** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */
 export function splitLogistiquePages(
   page: WorksheetPage,
-  { a5 = false, hideChrome = false, fontScale = 1, firstPageHasHeader = true }:
+  { a5 = false, hideChrome = false, fontScale = 1, evaluation = false, firstPageHasHeader = true }:
     LogistiquePageLayout & { firstPageHasHeader?: boolean } = {},
 ): WorksheetPage[] {
+  if (a5 && evaluation && page.items.some((item) => item.logistiqueNarrative)) {
+    fontScale = Math.min(fontScale, 1)
+  }
   const pages: WorksheetPage[] = []
   let blocks: WorksheetBlock[] = []
   let used = 0
-  const budget = (pageIndex = pages.length) => {
+  const budget = (pageIndex = pages.length, scale = fontScale) => {
     const hasHeader = !hideChrome && (a5 || (firstPageHasHeader && pageIndex === 0))
     return (a5 ? A5_CONTENT : A4_CONTENT) + (hideChrome ? 45 : 0)
-      - (hasHeader ? (a5 ? A5_HEADER : A4_HEADER) + (fontScale - 1) * 92 : 0)
+      - (hasHeader ? (a5 ? A5_HEADER : A4_HEADER) + (scale - 1) * 92 : 0)
   }
   const flush = () => {
     if (!blocks.length) return
@@ -206,6 +242,23 @@ export function splitLogistiquePages(
     const glossaryHeadingHeight = glossary ? (a5 ? 29 : 34) + (fontScale - 1) * 45 : 0
     const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
       const theory = item.theoryBlock
+      const table = item.logistiqueTable
+      if (table?.questions) {
+        const { questions } = table
+        const scale = a5 ? Math.min(fontScale, 1.125) : fontScale
+        const limit = budget(0, a5 ? Math.min(fontScale, 1.25) : fontScale) - (a5 ? 66 : 55)
+        const fragments: TheoryLayoutSlice[] = []
+        let start = 0
+        for (let end = 2; end <= questions.length; end++) {
+          if (height({ ...item, logistiqueTable: { ...table, questions: questions.slice(start, end) } }, a5, scale) <= limit) continue
+          fragments.push({ item, sourceIndex, documentRange: { start, end: end - 1 }, isLast: false })
+          start = end - 1
+        }
+        if (fragments.length) {
+          fragments.push({ item, sourceIndex, documentRange: { start, end: questions.length }, isLast: true })
+          return fragments
+        }
+      }
       if (a5 && (theory?.kind === 'table' || theory?.kind === 'list' || theory?.kind === 'examples' && theory.marker !== 'numeros')) {
         const fragments = splitA5Theory(theory, a5ItemLimit, fontScale)
         if (fragments.length > 1) {
@@ -215,6 +268,16 @@ export function splitLogistiquePages(
       return [{ item, sourceIndex, theoryBlock: undefined, isLast: true }]
     })
     const hasSlices = slices.length !== block.items.length
+    const detachedNarratives = new Map<number, string[]>()
+    if (evaluation) {
+      for (const { item, sourceIndex } of slices) {
+        const text = item.logistiqueNarrative
+        const width = (a5 ? 53 : 65) / fontScale
+        if (text && lineCount(text, width) > (a5 ? 3 : 9)) {
+          detachedNarratives.set(sourceIndex, splitNarrative(text, width, a5 ? 8 : 16))
+        }
+      }
+    }
     // L’estimation par caractères laisse une marge aux retours réels et au corrigé imprimé.
     const questionReserve = block.items.some((item) => item.layout !== 'theory')
       ? 12 + (!a5 ? Math.max(0, fontScale - 1) * 200 : 0)
@@ -233,9 +296,12 @@ export function splitLogistiquePages(
         logistiqueSourceItemCount: block.items.length,
         itemOffset: offset,
         items: slice.map(({ item }) => item),
+        ...(detachedNarratives.size ? {
+          logistiqueDetachedNarratives: slice.flatMap(({ sourceIndex }) => detachedNarratives.has(sourceIndex) ? [sourceIndex] : []),
+        } : {}),
         ...(glossary ? { logistiqueGlossaryLength: block.items.length } : {}),
         ...(hasSlices ? {
-          logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, isLast }) => ({ sourceIndex, theoryBlock, isLast })),
+          logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, documentRange, isLast }) => ({ sourceIndex, theoryBlock, documentRange, isLast })),
         } : {}),
         ...(wrappedFigures.length ? {
           logistiqueWrappedFigures: wrappedFigures.filter((figure) => figure.start >= start && figure.end <= end)
@@ -246,7 +312,16 @@ export function splitLogistiquePages(
       start = end
       overhead = 0
     }
-    const heights = slices.map(({ item, theoryBlock }) => height(theoryBlock ? { ...item, theoryBlock } : item, a5, fontScale))
+    const heights = slices.map(({ item, sourceIndex, theoryBlock, documentRange }) => {
+      const printable = theoryBlock ? { ...item, theoryBlock }
+        : documentRange && item.logistiqueTable ? { ...item,
+          logistiqueTable: { ...item.logistiqueTable, questions: item.logistiqueTable.questions?.slice(documentRange.start, documentRange.end) } }
+        : detachedNarratives.has(sourceIndex) ? { ...item, logistiqueNarrative: undefined } : item
+      const base = height(printable, a5, a5 && item.logistiqueTable?.questions ? Math.min(fontScale, 1.125) : fontScale)
+      if (!evaluation || item.layout === 'theory' || item.noPoints) return base
+      const criteria = item.logistiqueAssessment?.criteria
+      return base + (criteria ? lineCount(criteria, (a5 ? 48 : 65) / fontScale) * 19 * fontScale + 7 : 0) + 16 * fontScale
+    })
     const wrappedFigures: { start: number; end: number }[] = []
     const wrappedParagraphs = new Set<number>()
     for (let index = 0; index + 1 < slices.length; index++) {
@@ -285,6 +360,21 @@ export function splitLogistiquePages(
       }
     }
     for (const [index, slice] of slices.entries()) {
+      const narrative = detachedNarratives.get(slice.sourceIndex)
+      if (narrative) {
+        if (index > start) append(index)
+        flush()
+        for (const [part, text] of narrative.entries()) {
+          blocks.push({
+            ...block, sourceBlockIndex: blockIndex, itemOffset: slice.sourceIndex,
+            title: part === 0 ? 'Contexte de l’histoire' : 'Contexte de l’histoire, suite',
+            instruction: '', items: [], pointsPerQuestion: 0, pointsWeights: undefined,
+            document: { kind: 'written', text },
+            logistiqueDetachedNarratives: [slice.sourceIndex],
+          })
+          flush()
+        }
+      }
       const itemHeight = heights[index]!
       if (!wrappedParagraphs.has(index) && used > 0 && used + overhead + withFollowing[index]! + questionReserve > budget()) {
         const previousHeight = heights[index - 1] ?? 0
@@ -297,7 +387,7 @@ export function splitLogistiquePages(
       }
       used += overhead + itemHeight
       overhead = 0
-      if (breakAfter(slice)) {
+      if (breakAfter(slice) || (slice.documentRange && !slice.isLast)) {
         append(index + 1)
         flush()
         overhead = glossaryHeadingHeight

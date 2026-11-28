@@ -51,6 +51,10 @@ Chaque thème comporte deux pages. La première donne un objectif, une situation
 
 Les images montrent l’information utile à l’endroit où elle sert. Sur un horaire, trois flèches relient les heures à l’arrivée du train, au départ du bus et à l’arrivée au centre. Sur un décompte, les flèches distinguent la franchise de la quote-part. Deux schémas séparés présentent les niveaux politiques et les pouvoirs. Les illustrations de situation existantes sont réutilisées lorsqu’elles correspondent à l’action. Les scènes à produire sont consignées dans le suivi. [Avancement](avancement.md#théorie-illustrée) · [Cahier de Sciences et santé](../sciences-sante/cahier-des-charges.md)
 
+### Atlas géographique
+
+Prévoir quatre cartes sur le même contour suisse. Les limites des cantons sont toujours présentes. Les sigles et les écussons peuvent être affichés séparément ou ensemble. La liste associe les 26 cantons à leur sigle, à leur écusson et à leur chef-lieu. Elle montre aussi chaque chef-lieu en image. Les galeries de lieux donnent des repères concrets à observer. Les photos ou illustrations réalistes d’un lieu sont vérifiées à partir d’une source identifiable avant d’attribuer le nom du lieu. [Sources de l’atlas](sources-atlas.md) · [Liste des images à produire](images-a-produire.md)
+
 ### Formats de classe
 
 - **Théorie et lexique**. Prévoir un exemple visible, un tableau ou un repère sur une image. Les cartes utilisent une légende, des formes distinctes et des libellés lisibles en noir et blanc.

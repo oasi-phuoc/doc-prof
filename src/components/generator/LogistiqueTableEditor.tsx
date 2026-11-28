@@ -14,6 +14,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
 }) {
   const [draft, setDraft] = useState<{ basis: LogistiqueExerciseTable; value: LogistiqueExerciseTable }>()
   const value = draft?.basis === table ? draft.value : table
+  const isDocument = Boolean(value.questions)
   const valid = validLogistiqueExerciseTable(value)
 
   function update(next: LogistiqueExerciseTable) {
@@ -40,6 +41,10 @@ export function LogistiqueTableEditor({ table, onChange }: {
   return (
     <details className="logistique-table-editor">
       <summary>Modifier le tableau</summary>
+      {value.questions && <label className="libre-field is-line">
+        <span>Titre du document</span>
+        <input className="libre-line-input" value={value.title ?? ''} onChange={(event) => update({ ...value, title: event.target.value })} />
+      </label>}
       <fieldset>
         <legend>En-têtes</legend>
         {value.headers.map((header, column) => <div key={column}>
@@ -81,13 +86,13 @@ export function LogistiqueTableEditor({ table, onChange }: {
                       update({ ...value, rows: value.rows.with(index, row.with(column, given ? text : { answer: text })) })
                     }} />
                 </label>
-                <label className="logistique-bank-question">
+                {!value.questions && <label className="logistique-bank-question">
                   <input type="checkbox" checked={!given}
                     aria-label={`Cellule à compléter, ligne ${index + 1}, colonne ${column + 1}`}
                     onChange={() => update({ ...value,
                       rows: value.rows.with(index, row.with(column, given ? { answer: cell } : cell.answer)) })} />
                   <span>À compléter</span>
-                </label>
+                </label>}
               </div>
             )
           })}
@@ -110,7 +115,27 @@ export function LogistiqueTableEditor({ table, onChange }: {
       <button type="button" className="button small secondary" onClick={() => update({
         ...value, rows: [...value.rows, value.headers.map(() => '')],
       })}>Ajouter une ligne</button>
-      {!valid && <small role="status" className="access-error">Remplissez les en-têtes et les réponses. La fiche conserve le dernier tableau valide.</small>}
+      {value.questions?.map((question, index, all) => <fieldset key={index}>
+        <legend>Sous-question {index + 1}</legend>
+        <label className="libre-field is-line">
+          <span>Énoncé {index + 1}</span>
+          <textarea className="libre-line-input is-textarea" rows={2} value={question.prompt}
+            onChange={(event) => update({ ...value, questions: all.with(index, { ...question, prompt: event.target.value }) })} />
+        </label>
+        <label className="libre-field is-line">
+          <span>Réponse {index + 1}</span>
+          <textarea className="libre-line-input is-textarea" rows={2} value={question.answer}
+            onChange={(event) => update({ ...value, questions: all.with(index, { ...question, answer: event.target.value }) })} />
+        </label>
+        {all.length > 3 && <button type="button" className="button small secondary"
+          aria-label={`Retirer la sous-question ${index + 1}`}
+          onClick={() => update({ ...value, questions: all.toSpliced(index, 1) })}>Retirer cette sous-question</button>}
+      </fieldset>)}
+      {value.questions && value.questions.length < 8 && <button type="button" className="button small secondary"
+        onClick={() => update({ ...value, questions: [...value.questions!, { prompt: '', answer: '' }] })}>Ajouter une sous-question</button>}
+      {!valid && <small role="status" className="access-error">{isDocument
+        ? 'Renseignez le titre, les en-têtes, les sous-questions et leurs réponses. La fiche conserve le dernier document valide.'
+        : 'Remplissez les en-têtes et les réponses. La fiche conserve le dernier tableau valide.'}</small>}
     </details>
   )
 }

@@ -64,8 +64,10 @@ for (const doc of docs) {
   for (const visual of printed.filter(block => block.kind === 'image-row')) {
     for (const scene of visual.cells) {
       assert(scene.alt && scene.caption, doc.typeId)
-      if (scene.src) illustrationCount++
-      else {
+      if (scene.src) {
+        assert(fs.statSync(path.join(root, 'public', scene.src)).size > 0, scene.src)
+        illustrationCount++
+      } else {
         assert(scene.example, doc.typeId)
         imagePlaceholders++
       }
@@ -105,12 +107,7 @@ for (const doc of docs) {
 }
 
 const map = theoryDocByTypeId['gram-e6-theorie']
-const illustration = falcLessonBlocks(map)[1]
-assert.equal(illustration.cells.length, 2)
-for (const image of illustration.cells) {
-  assert(image.alt && image.caption)
-  assert(fs.statSync(path.join(root, 'public', image.src)).size > 0)
-}
+assert.equal(falcLessonBlocks(map)[1].cells.length, 2)
 
 const etre = configFor(theoryDocByTypeId['gram-m2-theorie'])
 const oldBreaks = [false, false, false, false, true, false]
@@ -130,7 +127,8 @@ assert.equal(reopened.length, 2)
 const greetings = configFor(theoryDocByTypeId['gram-b2-theorie'])
 const withImage = JSON.parse(JSON.stringify(buildWorksheets([greetings], 1).flatMap(sheet => sheet.items)))
 const scene = withImage.find(item => item.theoryBlock.kind === 'image-row').theoryBlock.cells[1]
-assert.equal(scene.src, '')
+scene.src = ''
+assert.deepEqual(buildWorksheets([{ ...greetings, libreItems: withImage }], 1).flatMap(sheet => sheet.items), withImage)
 scene.src = '/lib/images/exemple-de-remplacement.png'
 assert.deepEqual(buildWorksheets([{ ...greetings, libreItems: withImage }], 1).flatMap(sheet => sheet.items), withImage)
 
