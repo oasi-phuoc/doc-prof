@@ -809,6 +809,28 @@ test('les processus gardent les étapes, les réponses et les suites dans l’or
   }
 })
 
+test('les deux présentations de graphiques gardent les valeurs, les repères et le corrigé', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'graphiques-v018')
+  assert.equal(units.length, 4)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    assert(!validLogistiqueExerciseTable({ ...unit.table, rows: [['A', '12'], ['A', '5']] }))
+    assert(!validLogistiqueExerciseTable({ ...unit.table, rows: [['A', '-1'], ['B', '5']] }))
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: unit.table.presentation }
+      const [item] = buildPage(page, 30).items
+      assert.deepEqual(item.logistiqueTable, unit.table)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 161).items, [item])
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-processus-v017' }, 20).bankQuestionCap, 0)
+    }
+  }
+})
+
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
   const scenario = initialLogistiqueStory
   for (const diploma of ['CFC', 'AFP']) {

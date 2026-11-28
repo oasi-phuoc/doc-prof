@@ -266,6 +266,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       { id: 'frise-chronologique', label: 'Frise chronologique à compléter' },
       { id: 'justifier-decision', label: 'Décision à justifier' },
       { id: 'processus-a-completer', label: 'Processus à compléter' },
+      { id: 'lire-graphique', label: 'Lecture de graphique' },
+      ...(logistics.kind === 'situation' ? [{ id: 'completer-graphique', label: 'Graphique à compléter' }] as const : []),
     ] as const : []),
     ...(logistics.kind === 'situation' ? [{ id: 'cas-mixte', label: 'Cas mixte' }] as const : []),
   ] as const).map(({ id, label }) => ({

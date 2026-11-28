@@ -1,8 +1,10 @@
 import type { LogistiqueExerciseTable, LogistiqueTableCell } from '@/logistique/tables'
 import type { PreviewMode } from '@/math/types'
+import { LogistiqueBarChart } from './logistique-chart'
 
 export function LogistiqueTableView({ table, mode, offset = 0 }: { table: LogistiqueExerciseTable; mode: PreviewMode; offset?: number }) {
   const corrected = mode === 'answers'
+  if (table.presentation === 'lire-graphique') return <LogistiqueBarChart table={table} mode={mode} />
   const renderCell = (cell: LogistiqueTableCell) => typeof cell === 'string' ? cell
     : corrected ? <strong className="filled-answer">{cell.answer}</strong>
       : <span className="logistique-table-blank" aria-label="Case à compléter">{'\u00a0'}</span>
@@ -15,6 +17,19 @@ export function LogistiqueTableView({ table, mode, offset = 0 }: { table: Logist
     </ol>
   }
   const chronology = table.presentation === 'frise-chronologique'
+  if (table.presentation === 'completer-graphique') return <>
+    <table className="theory-table has-col-head logistique-exercise-table">
+      <thead><tr>
+        <th scope="col">{table.headers[0]}</th>
+        {table.rows.map(([label]) => <th key={String(label)} scope="col">{String(label)}</th>)}
+      </tr></thead>
+      <tbody><tr>
+        <th scope="row">{table.headers[1]}</th>
+        {table.rows.map(([label, value]) => <td key={String(label)}>{String(value)}</td>)}
+      </tr></tbody>
+    </table>
+    <LogistiqueBarChart table={table} mode={mode} />
+  </>
   return (
     <table className={`theory-table has-col-head logistique-exercise-table${chronology ? ' logistique-timeline' : ''}`}>
       {table.title && <caption>{table.title}</caption>}

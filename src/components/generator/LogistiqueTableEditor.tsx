@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { validLogistiqueExerciseTable, type LogistiqueDocumentQuestion, type LogistiqueExerciseTable } from '@/logistique/tables'
+import { isLogistiqueChartPresentation, validLogistiqueExerciseTable, type LogistiqueDocumentQuestion, type LogistiqueExerciseTable } from '@/logistique/tables'
 
 function move<T>(entries: T[], from: number, to: number): T[] {
   const result = [...entries]
@@ -17,6 +17,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
   const isDocument = Boolean(value.questions)
   const mixed = value.presentation === 'cas-mixte'
   const process = value.presentation === 'processus-a-completer'
+  const chart = isLogistiqueChartPresentation(value.presentation)
   const valid = validLogistiqueExerciseTable(value)
 
   function update(next: LogistiqueExerciseTable) {
@@ -42,10 +43,11 @@ export function LogistiqueTableEditor({ table, onChange }: {
 
   return (
     <details className="logistique-table-editor">
-      <summary>{process ? 'Modifier le processus' : 'Modifier le tableau'}</summary>
-      {value.questions && <label className="libre-field is-line">
-        <span>Titre du document</span>
-        <input className="libre-line-input" value={value.title ?? ''} onChange={(event) => update({ ...value, title: event.target.value })} />
+      <summary>{process ? 'Modifier le processus' : chart ? 'Modifier le graphique' : 'Modifier le tableau'}</summary>
+      {(value.questions || chart) && <label className="libre-field is-line">
+        <span>{chart ? 'Titre du graphique' : 'Titre du document'}</span>
+        <input className="libre-line-input" value={value.title ?? ''} maxLength={chart ? 90 : undefined}
+          onChange={(event) => update({ ...value, title: event.target.value })} />
       </label>}
       {!process && <fieldset>
         <legend>En-têtes</legend>
@@ -55,7 +57,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
             <input className="libre-line-input" aria-label={`En-tête de la colonne ${column + 1}`} value={header}
               onChange={(event) => update({ ...value, headers: value.headers.with(column, event.target.value) })} />
           </label>
-          <div className="libre-unit-actions">
+          {!chart && <div className="libre-unit-actions">
             <button type="button" className="button small secondary" disabled={column === 0}
               aria-label={`Déplacer la colonne ${column + 1} à gauche`}
               onClick={() => moveColumn(column, column - 1)}>À gauche</button>
@@ -64,13 +66,13 @@ export function LogistiqueTableEditor({ table, onChange }: {
               onClick={() => moveColumn(column, column + 1)}>À droite</button>
             <button type="button" className="button small secondary" disabled={value.headers.length <= 2}
               aria-label={`Supprimer la colonne ${column + 1}`} onClick={() => removeColumn(column)}>Supprimer</button>
-          </div>
+          </div>}
         </div>)}
-        <button type="button" className="button small secondary" onClick={() => update({
+        {!chart && <button type="button" className="button small secondary" onClick={() => update({
           ...value,
           headers: [...value.headers, `Colonne ${value.headers.length + 1}`],
           rows: value.rows.map((row) => [...row, '']),
-        })}>Ajouter une colonne</button>
+        })}>Ajouter une colonne</button>}
       </fieldset>}
       {value.rows.map((row, index) => (
         <fieldset key={index}>
@@ -83,13 +85,14 @@ export function LogistiqueTableEditor({ table, onChange }: {
                 <label className="libre-field is-line">
                   <span>{label}</span>
                   <input className="libre-line-input" aria-label={`${label}, ligne ${index + 1}`} value={given ? cell : cell.answer}
-                    maxLength={process ? column === 0 ? 58 : 120 : undefined}
+                    maxLength={process ? column === 0 ? 58 : 120 : chart ? column === 0 ? 24 : 4 : undefined}
+                    inputMode={chart && column === 1 ? 'numeric' : undefined}
                     onChange={(event) => {
                       const text = event.target.value
                       update({ ...value, rows: value.rows.with(index, row.with(column, given ? text : { answer: text })) })
                     }} />
                 </label>
-                {!value.questions && (!process || column === 1) && <label className="logistique-bank-question">
+                {!chart && !value.questions && (!process || column === 1) && <label className="logistique-bank-question">
                   <input type="checkbox" checked={!given}
                     aria-label={`Cellule à compléter, ligne ${index + 1}, colonne ${column + 1}`}
                     onChange={() => update({ ...value,
@@ -106,7 +109,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
             <button type="button" className="button small secondary" disabled={index === value.rows.length - 1}
               aria-label={`Descendre la ligne ${index + 1}`}
               onClick={() => update({ ...value, rows: move(value.rows, index, index + 1) })}>Descendre</button>
-            <button type="button" className="button small secondary" disabled={value.rows.length <= (process ? 3 : 1)}
+            <button type="button" className="button small secondary" disabled={value.rows.length <= (process ? 3 : chart ? 2 : 1)}
               aria-label={`Supprimer la ligne ${index + 1}`} onClick={() => {
                 if (row.some((cell) => typeof cell !== 'string') &&
                   !window.confirm('Retirer cette ligne et les réponses qu’elle contient ?')) return
@@ -115,7 +118,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
           </div>
         </fieldset>
       ))}
-      {(!process || value.rows.length < 6) && <button type="button" className="button small secondary" onClick={() => update({
+      {(!(process || chart) || value.rows.length < 6) && <button type="button" className="button small secondary" onClick={() => update({
         ...value, rows: [...value.rows, value.headers.map(() => '')],
       })}>Ajouter une ligne</button>}
       {value.questions?.map((question, index, all) => {
@@ -178,7 +181,9 @@ export function LogistiqueTableEditor({ table, onChange }: {
       })}
       {value.questions && value.questions.length < 8 && <button type="button" className="button small secondary"
         onClick={() => update({ ...value, questions: [...value.questions!, { prompt: '', answer: '', ...(mixed ? { points: 1 } : {}) }] })}>Ajouter une sous-question</button>}
-      {!valid && <small role="status" className="access-error">{process
+      {!valid && <small role="status" className="access-error">{chart
+        ? 'Indiquez un titre, des catégories distinctes et des valeurs entières de 0 à 9 999. La fiche conserve le dernier graphique valide.'
+        : process
         ? 'Renseignez chaque étape et laissez au moins une action à compléter. La fiche conserve le dernier processus valide.'
         : isDocument
         ? 'Renseignez le titre, les en-têtes, les sous-questions et leurs réponses. La fiche conserve le dernier document valide.'

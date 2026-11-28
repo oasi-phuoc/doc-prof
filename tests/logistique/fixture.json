@@ -213,6 +213,41 @@
       }
     },
     {
+      "id": "fixture-306-lecture-graphique",
+      "module": "306",
+      "kind": "situation",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Lisez le relevé des supports remis.",
+      "answer": "",
+      "table": {
+        "presentation": "lire-graphique",
+        "title": "Échanges par quai",
+        "headers": ["Quai", "Nombre de supports"],
+        "rows": [["A", "4"], ["B", "8"], ["C", "12"]],
+        "questions": [
+          { "prompt": "Quel quai a remis le plus de supports ?", "answer": "Le quai C." },
+          { "prompt": "Combien sont remis au quai A ?", "answer": "Quatre supports." },
+          { "prompt": "Quel est l’écart entre A et B ?", "answer": "Quatre supports." }
+        ]
+      }
+    },
+    {
+      "id": "fixture-306-completer-graphique",
+      "module": "306",
+      "kind": "situation",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Tracez les barres à partir du relevé.",
+      "answer": "",
+      "table": {
+        "presentation": "completer-graphique",
+        "title": "Supports du matin",
+        "headers": ["Lot", "Nombre de supports"],
+        "rows": [["M1", "4"], ["M2", "8"], ["M3", "12"]]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

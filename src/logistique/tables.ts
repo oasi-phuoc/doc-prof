@@ -1,6 +1,7 @@
 export type LogistiqueTablePresentation =
   | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
   | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique' | 'cas-mixte' | 'processus-a-completer'
+  | 'lire-graphique' | 'completer-graphique'
 export type LogistiqueTableCell = string | { answer: string }
 export type LogistiqueDocumentQuestion = { prompt: string; answer: string; points?: number } & (
   | { kind?: 'redaction' }
@@ -19,11 +20,16 @@ export type LogistiqueExerciseTable = {
 export function isLogistiqueTablePresentation(value: unknown): value is LogistiqueTablePresentation {
   return value === 'tableau-donnees' || value === 'tableau-dates' ||
     value === 'tableau-comparaison' || value === 'tableau-classement' || value === 'tableau-ordre' ||
-    value === 'frise-chronologique' || value === 'processus-a-completer' || isLogistiqueDocumentPresentation(value)
+    value === 'frise-chronologique' || value === 'processus-a-completer' || isLogistiqueChartPresentation(value) ||
+    isLogistiqueDocumentPresentation(value)
 }
 
-export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'cas-mixte' {
-  return value === 'lire-document' || value === 'corriger-erreurs' || value === 'justifier-decision' || value === 'cas-mixte'
+export function isLogistiqueChartPresentation(value: unknown): value is 'lire-graphique' | 'completer-graphique' {
+  return value === 'lire-graphique' || value === 'completer-graphique'
+}
+
+export function isLogistiqueDocumentPresentation(value: unknown): boolean {
+  return value === 'lire-document' || value === 'corriger-erreurs' || value === 'justifier-decision' || value === 'cas-mixte' || value === 'lire-graphique'
 }
 
 export function logistiqueCasePoints(table?: LogistiqueExerciseTable): number | undefined {
@@ -58,6 +64,12 @@ export function validLogistiqueExerciseTable(value: unknown): value is Logistiqu
       !Array.isArray(rows) || !rows.length ||
       !rows.every((row) => Array.isArray(row) && row.length === headers.length && row.every(isLogistiqueTableCell))) {
     return false
+  }
+  if (isLogistiqueChartPresentation(presentation)) {
+    if (typeof title !== 'string' || !title.trim() || title.length > 90 || headers.length !== 2 || rows.length < 2 || rows.length > 6 ||
+        !rows.every(([label, number]) => typeof label === 'string' && Boolean(label.trim()) && label.length <= 24 &&
+          typeof number === 'string' && /^\d{1,4}$/.test(number)) || new Set(rows.map(([label]) => label)).size !== rows.length) return false
+    if (presentation === 'completer-graphique') return questions === undefined
   }
   if (isLogistiqueDocumentPresentation(presentation)) {
     const mixed = presentation === 'cas-mixte'

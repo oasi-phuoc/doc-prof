@@ -2,6 +2,7 @@ import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import { headingForSlice } from '@/math/page-break-heading'
 import { isWrittenProblem } from '@/math/problem-help'
 import { sliceLogistiqueMatch } from './matching'
+import { isLogistiqueChartPresentation } from './tables'
 import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 
 export type LogistiquePageLayout = {
@@ -137,7 +138,8 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
 
 function height(item: MathItem, a5: boolean, scale: number): number {
   const table = item.logistiqueTable
-  if (a5 && table) scale = Math.min(table.presentation === 'cas-mixte' || table.presentation === 'processus-a-completer' ? 1 : 1.125, scale)
+  const chart = isLogistiqueChartPresentation(table?.presentation)
+  if (a5 && table) scale = Math.min(chart || table.presentation === 'cas-mixte' || table.presentation === 'processus-a-completer' ? 1 : 1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
   const entry = item.logistiqueGlossaryEntry
@@ -197,6 +199,8 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
     return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
   }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
+  const chartHeight = a5 ? 147 : 210
+  if (table?.presentation === 'completer-graphique') return imageHeight + prompt + tableHeight + chartHeight + 16
   if (table?.questions) {
     const questions = table.questions.reduce((total, question) => {
       const response = 18 * lineCount(question.prompt, width * 1.1) + 19 * lineCount(question.answer, width * 1.1)
@@ -204,7 +208,7 @@ function height(item: MathItem, a5: boolean, scale: number): number {
         : question.kind === 'choix' ? 24 + 14 * Math.max(0, ...question.options.map((option) => lineCount(option, width * .27) - 1)) : 0
       return total + (6 + response + format + (question.points !== undefined ? 15 : 0)) * scale
     }, 0)
-    return imageHeight + prompt * 0.85 + tableHeight + questions + 22 * scale
+    return imageHeight + prompt * 0.85 + (chart ? chartHeight : tableHeight) + questions + 22 * scale
   }
   if (isWrittenProblem(item)) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
@@ -282,8 +286,9 @@ export function splitLogistiquePages(
       if (table?.questions) {
         const { questions } = table
         const mixed = table.presentation === 'cas-mixte'
-        const scale = a5 ? Math.min(fontScale, mixed ? 1 : 1.125) : fontScale
-        const limit = budget(0, a5 ? Math.min(fontScale, mixed ? 1 : 1.25) : fontScale) - (a5 ? 66 : 55)
+        const compact = mixed || isLogistiqueChartPresentation(table.presentation)
+        const scale = a5 ? Math.min(fontScale, compact ? 1 : 1.125) : fontScale
+        const limit = budget(0, a5 ? Math.min(fontScale, compact ? 1 : 1.25) : fontScale) - (a5 ? 66 : 55)
         const fragments: TheoryLayoutSlice[] = []
         let start = 0
         for (let end = 2; end <= questions.length; end++) {

@@ -1,5 +1,6 @@
 import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
 import { sliceLogistiqueMatch } from '@/logistique/matching'
+import { isLogistiqueChartPresentation } from '@/logistique/tables'
 import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
@@ -282,7 +283,8 @@ export function WorksheetSheet({
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
   const hasCompactLogistiqueActivity = Boolean(asHalf && page.items.some(({ logistiqueTable }) =>
-    logistiqueTable?.presentation === 'cas-mixte' || logistiqueTable?.presentation === 'processus-a-completer'))
+    logistiqueTable?.presentation === 'cas-mixte' || logistiqueTable?.presentation === 'processus-a-completer' ||
+    isLogistiqueChartPresentation(logistiqueTable?.presentation)))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const posterClass = page.cePosterSheet
