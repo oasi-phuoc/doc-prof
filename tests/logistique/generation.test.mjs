@@ -937,6 +937,20 @@ test('les formulations relues gardent les données, le corrigé et les droits de
   }
 })
 
+test('la relecture des calculs corrige les répétitions sans modifier le lot déjà relu', () => {
+  const earlier = logistiquePublications.find(({ revision }) => revision === 'logistique-formulations-v025')
+  const current = logistiquePublications.find(({ revision }) => revision === 'logistique-calculs-formulations-v026')
+  const updated = new Map(current.units.map((unit) => [unit.id, unit]))
+  for (const unit of earlier.units.filter(({ wording, kind }) => wording || kind !== 'maths')) {
+    assert.strictEqual(updated.get(unit.id), unit)
+  }
+  const id = 'log-409-maths-v005-controle-1'
+  assert.match(earlier.units.find((unit) => unit.id === id).prompt, /contrôles contrôlés/)
+  const { wording } = updated.get(id)
+  assert.match(wording.normal, /Le relevé porte sur 124 contrôles\. Il indique 13 écarts/)
+  assert.match(wording.falc, /Il indique 13 écarts\.\nCalculez le taux d’écart en pourcentage/)
+})
+
 test('le choix Normal ou FALC garde le tirage, les deux moitiés et les changements locaux', () => {
   const page = { ...config('CFC', '301', 'maths'), count: 40 }
   const normal = generateLogistique(page, 17).items

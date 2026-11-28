@@ -397,7 +397,14 @@ Le CFC affiche le choix Normal ou FALC dans les paramètres des activités qui p
 | CFC | 80 | 600 | 2 547 | 1 239 | 4 386 |
 | AFP | 63 | 475 | 1 974 | 956 | 3 405 |
 
-Les 4 222 autres unités du catalogue conservent leur formulation actuelle et restent à relire. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
+La révision `logistique-calculs-formulations-v026` ajoute 793 reformulations de problèmes en CFC, dont 622 accessibles à l’AFP. Elle clarifie les contrôles et leurs taux d’écart, les durées et les marges de transport, les cadences, les coûts, les volumes et le taux d’occupation. Par exemple, « 124 contrôles contrôlés et 13 écarts » devient « Le relevé porte sur 124 contrôles. Il indique 13 écarts. » Les calculs FALC longs utilisent la mise en page compacte en double A5 lorsque l’estimation de la hauteur l’exige. La recette des modules 402, 408, 409, 602 et 604 a couvert 144 configurations et 40 PDF, avec une réserve minimale de 25,03 px. [Formulations des calculs](../../src/logistique/banks/calculs-formulations-v026.ts).
+
+| Diplôme | Modules concernés | Problèmes de calcul reformulés | Vérifications reformulées | Situations reformulées | Total cumulé |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 1 393 | 2 547 | 1 239 | 5 179 |
+| AFP | 63 | 1 097 | 1 974 | 956 | 4 027 |
+
+La relecture des 3 429 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
 
 ## Commandes
 

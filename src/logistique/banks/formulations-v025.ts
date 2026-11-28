@@ -41,7 +41,9 @@ const plainContexts: Readonly<Record<string, string>> = {
     'Avant de remettre l’envoi, l’expéditeur prévoit du temps pour contrôler la marchandise et remplir les documents.',
 }
 
-const dossierRules: readonly { pattern: RegExp; normal: string; falc: string }[] = [
+export type LogistiqueMathsWordingRule = { pattern: RegExp; normal: string; falc: string }
+
+const dossierRules: readonly LogistiqueMathsWordingRule[] = [
   {
     pattern: /Le relevé ouvre à (\d+) ([^.]+)\. Il enregistre une entrée de (\d+) et une sortie de (\d+)\. Quel est le stock physique final \?$/u,
     normal: 'Le stock initial est de $1 $2. Le relevé indique une entrée de $3 unités et une sortie de $4 unités. Quel est le stock physique à la fin ?',
@@ -246,14 +248,15 @@ function withContext(prompt: string, start: number, normal: string, falc: string
   }
 }
 
-function dossierWording(prompt: string, maths: boolean): LogistiqueWording | undefined {
-  if (maths) {
-    for (const { pattern, normal, falc } of dossierRules) {
-      const match = pattern.exec(prompt)
-      if (match) return withContext(prompt, match.index, match[0].replace(pattern, normal), match[0].replace(pattern, falc))
-    }
-    return undefined
+function mathsWording(prompt: string, rules: readonly LogistiqueMathsWordingRule[]): LogistiqueWording | undefined {
+  for (const { pattern, normal, falc } of rules) {
+    const match = pattern.exec(prompt)
+    if (match) return withContext(prompt, match.index, match[0].replace(pattern, normal), match[0].replace(pattern, falc))
   }
+  return undefined
+}
+
+function shortWording(prompt: string): LogistiqueWording | undefined {
   const matched = shortQuestions.find(([suffix]) => prompt.endsWith(suffix))
   if (matched) return withContext(prompt, prompt.length - matched[0].length, matched[1], matched[2])
   return undefined
@@ -273,7 +276,15 @@ export function reviewLogistiqueWording(units: readonly LogistiqueUnit[]): Logis
       } }
     }
     const wording = photoWording[unit.id] ?? (/^dossiers-\d{3}-v005$/.test(unit.revision)
-      ? dossierWording(unit.prompt, unit.kind === 'maths') : undefined)
+      ? unit.kind === 'maths' ? mathsWording(unit.prompt, dossierRules) : shortWording(unit.prompt) : undefined)
+    return wording ? { ...unit, prompt: wording.normal, wording } : unit
+  })
+}
+
+export function reviewLogistiqueMathsWording(units: readonly LogistiqueUnit[], rules: readonly LogistiqueMathsWordingRule[]): LogistiqueUnit[] {
+  return units.map((unit) => {
+    if (unit.wording || unit.kind !== 'maths' || !/^dossiers-\d{3}-v005$/.test(unit.revision)) return unit
+    const wording = mathsWording(unit.prompt, rules)
     return wording ? { ...unit, prompt: wording.normal, wording } : unit
   })
 }

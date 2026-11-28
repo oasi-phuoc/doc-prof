@@ -243,8 +243,12 @@ export function splitLogistiquePages(
   { a5 = false, hideChrome = false, fontScale = 1, evaluation = false, firstPageHasHeader = true }:
     LogistiquePageLayout & { firstPageHasHeader?: boolean } = {},
 ): WorksheetPage[] {
-  const compactWording = a5 && page.blocks.some((block) => block.exerciseType.endsWith('-situation') &&
-    block.items.some((item) => item.logistiqueWording && !item.logistiqueTable))
+  const compactWording = a5 && page.blocks.some((block) => block.items.some((item) => {
+    if (!item.logistiqueWording || item.logistiqueTable) return false
+    if (block.exerciseType.endsWith('-situation')) return true
+    return block.exerciseType.endsWith('-maths') && item.prompt === item.logistiqueWording.falc &&
+      height(item, true, Math.max(fontScale, 1)) > A5_CONTENT - A5_HEADER - 56
+  }))
   if (compactWording || a5 && evaluation && page.items.some((item) => item.logistiqueNarrative)) {
     fontScale = Math.min(fontScale, 1)
   }
